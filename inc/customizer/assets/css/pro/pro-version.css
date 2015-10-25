@@ -1,0 +1,119 @@
+.control-section-themes .accordion-section-title {
+    margin              : 0;
+}
+
+
+    /* Upsell link */
+    .upsell-link {
+        display         : inline-block;
+        background-color: #e25136;
+        color           : #fff;
+        text-transform  : uppercase;
+        padding         : 7px 12px;
+        font-size       : 10px;
+        letter-spacing  : 1px;
+        line-height     : 1.5;
+        clear           : both;
+        border          : none;
+        border-radius   : 4px;
+        position        : absolute;
+        left            : 75px;
+        top             : 9px;
+    }
+
+    .upsell-banner {
+        height          : 200px;
+        width           : 100%;
+        margin          : 0 auto;
+    }
+
+.upgrade,
+.review,
+.document {
+    color               : #777 !important;
+    cursor              : pointer;
+    display             : inline-block;
+    margin-bottom       : 0;
+    font-size           : 13px;
+    padding             : 15px 10px;
+    text-transform      : uppercase;
+    width               : 90%;
+    border-radius       : 4px;
+    font-weight         : 600;
+}
+.document{
+    border              : 1px solid rgb(226, 81, 54);
+}
+.document:hover {
+    background-color    : rgb(226, 81, 54);
+    color               : #FFF !important;
+}
+
+.upgrade {
+    border              : 1px solid #2ecc71;
+}
+.upgrade:hover {
+    background-color    : #2ecc71;
+    color               : #FFF !important;
+}
+
+.pro-box {
+    text-align          :center;
+}
+
+.pro-version {
+    text-align          : center;
+    margin              : 15px auto;
+}
+
+.pro-version p{
+    line-height         : 1.5;
+}
+
+
+/* Add dotted lines on PRO sections */
+#accordion-panel-regina_lite_panel_advanced .accordion-section-title,
+#accordion-panel-regina_lite_panel_general .accordion-section-title,
+#accordion-panel-regina_lite_panel_preloader .accordion-section-title,
+#accordion-panel-regina_lite_panel_blog .accordion-section-title,
+#accordion-panel-regina_lite_panel_formats .accordion-section-title {
+    background-image: url('../../images/gray-lines.png');
+    background-size: cover;
+    background-position: center center;
+    background-repeat: repeat;
+}
+
+
+#accordion-section-pixova_lite_pro_section .accordion-section-title {
+    background-color: #e25136;
+    color: #FFF;
+    border-bottom: 1px solid transparent;
+}
+
+/* PRO disabled fields */
+.textarea-pro-feature,
+.text-pro-feature,
+.checkbox-pro-feature,
+.radio-pro-feature {
+    border: 1px solid #e25136;
+    border-top-right-radius: 4px;
+    padding: 7.5px;
+    position: relative;
+}
+
+.textarea-pro-feature .pro-badge,
+.text-pro-feature .pro-badge,
+.checkbox-pro-feature .pro-badge,
+.radio-pro-feature .pro-badge {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 7.5px;
+    background: #e25136;
+    color: #FFF;
+    border-bottom-left-radius: 4px;
+
+}
+.checkbox-pro-feature .pro-badge {
+    padding: 13px 7.5px;
+}
