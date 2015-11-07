@@ -8,7 +8,7 @@
 <?php get_header(); ?>
 
 
-<?php if( 'page' !== get_option( 'show_on_front' ) ): ?>
+<?php if( 'page' == get_option( 'show_on_front' ) ): ?>
     <?php
     if( is_page_template( 'page-templates/blog-template.php' ) ):
         get_template_part( 'page-templates/blog', 'template' );

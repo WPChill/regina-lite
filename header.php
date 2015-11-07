@@ -39,9 +39,7 @@
                             <?php if( get_theme_mod( 'regina_lite_text_logo', __( 'Regina Lite', 'regina-lite' ) ) ): ?>
                                 <span class="logo-title"><?php echo esc_html( get_theme_mod( 'regina_lite_text_logo', __( 'Regina Lite', 'regina-lite' ) ) ); ?></span>
                             <?php endif; ?>
-                            <?php if( !empty( get_bloginfo( 'description' ) ) ): ?>
-                                <span class="logo-description"><?php echo esc_html( get_bloginfo( 'description' ) ); ?></span>
-                            <?php endif; ?>
+
                         </a>
                     </div><!--#logo-->
                     <button class="mobile-nav-btn hidden-lg"><span class="nc-icon-glyph ui-2_menu-bold"></span></button>

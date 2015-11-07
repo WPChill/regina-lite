@@ -6,7 +6,7 @@
  */
 ?>
 <?php
-if( !empty( get_custom_header() ) ):
+if(  get_custom_header() ):
     $background_image_url = get_custom_header()->url;
 else:
     $background_image_url = get_template_directory_uri() . '/layout/images/page-headers/blog.jpg';

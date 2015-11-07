@@ -3,7 +3,7 @@ Theme Name: Regina Lite
 Theme URI: http://www.machothemes.com/themes/regina-lite/
 Author: Macho Themes
 Author URI: http://www.machothemes.com/
-Description: Regina Lite is a medical wordpress theme
+Description: Regina Lite is a medical wordpress theme, suitable for medical clinics, dentistry websites, medical research facilities and more. It features a
 Version: 1.0.3
 License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
@@ -12,9 +12,9 @@ Tags: light,black,blue,silver,dark,fixed-layout,fluid-layout,responsive-layout,o
 
 This theme, like WordPress, is licensed under the GPL.
 
-Normalizing styles have been helped along thanks to the fine work of
-Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 */
+
+@import 'layout/css/styles.min.css';
 
 .wp-caption,
 .wp-caption-text,

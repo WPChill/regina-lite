@@ -199,9 +199,17 @@ if( !function_exists( 'regina_lite_prefix_upsell_notice' ) ) {
             'regina-lite-customizer-upsell',
             'prefixL10n',
             array(
-                'prefixURL' => esc_url('https://www.machothemes.com/?edd_action=add_to_cart&download_id=13&discount=DEMO10'),
-                'prefixLabel' => esc_html__('Buy PRO', 'regina-lite'),
-                'prefixImageURL' => esc_url( get_template_directory_uri() . '/layout/images/upsell/placeholdit-300x100.png')
+                # Upsell URL
+                'prefixUpsellURL' => esc_url('http://www.machothemes.com/themes/regina-pro/'),
+                'prefixUpsellLabel' => __('View PRO version', 'regina-lite'),
+
+                # Documentation URLs
+                'prefixDocURL' => esc_url('http://docs.machothemes.com/regina-lite/'),
+                'prefixDocLabel' => __('Theme Documentation', 'regina-lite'),
+
+                # Rate US URL
+                'prefixRateURL' => esc_url('https://wordpress.org/support/view/theme-reviews/regina-lite#postform'),
+                'prefixRateLabel' => __('If you like it, rate it !', 'regina-lite'),
             )
         );
 

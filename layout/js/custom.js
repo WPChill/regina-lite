@@ -24,97 +24,26 @@ jQuery(document).ready(function($){
 		return false;
 	});
 
-	// (function() {
-	// 	var morphSearch = $('#morphsearch'),
-	// 		navSearch = document.getElementsByClassName( 'nav-search' ),
-	// 		input = $('input.morphsearch-input'),
-	// 		// ctrlClose = $('div.morphsearch-close'),
-	// 		isOpen = isAnimating = false,
-	// 		// show/hide search area
-	// 		toggleSearch = function(evt) {
-	// 			// return if open and the input gets focused
-	// 			// if( evt.type.toLowerCase() === 'focus' && isOpen ) return false;
-
-	// 			var offsets = morphsearch.getBoundingClientRect();
-	// 			if( isOpen ) {
-	// 				classie.remove( morphSearch, 'open' );
-
-	// 				// trick to hide input text once the search overlay closes 
-	// 				// todo: hardcoded times, should be done after transition ends
-	// 				if( input.value !== '' ) {
-	// 					setTimeout(function() {
-	// 						classie.add( morphSearch, 'hideInput' );
-	// 						setTimeout(function() {
-	// 							classie.remove( morphSearch, 'hideInput' );
-	// 							input.value = '';
-	// 						}, 300 );
-	// 					}, 500);
-	// 				}
-					
-	// 				input.blur();
-	// 			}
-	// 			else {
-	// 				classie.add( morphSearch, 'open' );
-	// 			}
-	// 			isOpen = !isOpen;
-	// 		};
-
-	// 	// events
-	// 	// navSearch.addEventListener( 'click', toggleSearch );
-
-	// 	$('.nav-search').click(function(){
-	// 		toggleSearch();
-
-	// 		return false;
-	// 	});
-
-	// 	$('.morphsearch-close').click(function(){
-	// 		toggleSearch();
-
-	// 		return false;
-	// 	});
-
-	// 	// ctrlClose.addEventListener( 'click', toggleSearch );
-	// 	// esc key closes search overlay
-	// 	// keyboard navigation events
-	// 	document.addEventListener( 'keydown', function( ev ) {
-	// 		var keyCode = ev.keyCode || ev.which;
-	// 		if( keyCode === 27 && isOpen ) {
-	// 			toggleSearch(ev);
-	// 		}
-	// 	} );
-
-
-	// 	/***** for demo purposes only: don't allow to submit the form *****/
-	// 	// morphSearch.querySelector( 'button[type="submit"]' ).addEventListener( 'click', function(ev) { ev.preventDefault(); } );
-	// })();
-
-
 	/* ---------------------------------------------------------------------- */
 	/*  Sliders
 	/* ---------------------------------------------------------------------- */
-	if( typeof bxSlider !== 'undefined' && $.isFunction(bxSlider) ) {
-		$('#home-slider .bxslider').bxSlider({
-			mode:'fade',
-			nextText: '<span class="nc-icon-glyph arrows-1_bold-down"></span>',
-			prevText: '<span class="nc-icon-glyph arrows-1_bold-up"></span>'
-		});
+	if( typeof $.fn.bxSlider !== 'undefined' ) {
 
-		$('#home-slider .bx-wrapper .bx-controls').css({'margin-top' : '-' + ($('#home-slider .bx-wrapper .bx-controls').outerHeight() / 2) + 'px'});
-
-		$('#testimonials-slider .bxslider').bxSlider({
-			mode:'fade',		
-			nextText: '<span class="nc-icon-glyph arrows-1_bold-right"></span>',
-			prevText: '<span class="nc-icon-glyph arrows-1_bold-left"></span>'
-	});
-	}
+		$('.bxslider').each(function(){
+            $(this).bxSlider({
+                mode: 'fade',
+                nextText: '<span class="nc-icon-glyph arrows-1_bold-right"></span>',
+                prevText: '<span class="nc-icon-glyph arrows-1_bold-left"></span>'
+            })
+	    });
+    }
 
 
 	/* ---------------------------------------------------------------------- */
 	/*  Back to Top & Waypoint
 	/* ---------------------------------------------------------------------- */
 
-	if( typeof bxSlider !== 'undefined' && $.isFunction(bxSlider) ) {
+
 		$('.back-to-top').on('click', function(event){
 			event.preventDefault();
 			$('body,html').animate({
@@ -126,7 +55,7 @@ jQuery(document).ready(function($){
 		$('#footer').waypoint(function(){
 			$('.back-to-top').fadeIn(1000);
 		}, { offset: '50%' });
-	}
+
 
 
 	/* ---------------------------------------------------------------------- */

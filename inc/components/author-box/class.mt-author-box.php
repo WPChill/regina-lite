@@ -89,7 +89,7 @@ if( !class_exists( 'MTL_Author_Box_Output' ) ) {
                     echo '<div class="col-xs-10">';
                         echo '<div class="content">';
                             echo '<h3>'. esc_html( get_the_author() ) .'</h3>';
-                            if( !empty( get_the_author_meta( 'description' ) ) ) {
+                            if(  get_the_author_meta( 'description' )  ) {
                                 echo '<p>'. esc_html( get_the_author_meta( 'description' ) ) .'</p>';
                             }
                         echo '</div><!--/.content-->';
