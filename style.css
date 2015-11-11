@@ -16,6 +16,10 @@ This theme, like WordPress, is licensed under the GPL.
 
 @import 'layout/css/styles.min.css';
 
+body {
+    background-color: #fff;
+}
+
 .wp-caption,
 .wp-caption-text,
 .sticky,
