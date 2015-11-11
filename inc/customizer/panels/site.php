@@ -54,42 +54,6 @@
     /************** General Site Settings  ***************/
     /***********************************************/
 
-    /* Layout */
-    $wp_customize->add_section( $prefix.'_layout_section' ,
-        array(
-            'title'       => esc_html__( 'Site Layout', 'regina-lite' ),
-            'description' => esc_html__( 'Depending on the quality of your pictures / videos, you can switch the site layout. We do recommend the boxed one so you can also set a nice looking background image.', 'regina-lite' ),
-            'priority'    => 1,
-            'panel' 	  => $panel_id
-        )
-    );
-
-    /* Site Layout */
-    $wp_customize->add_setting($prefix.'_site_layout',
-        array(
-            'sanitize_callback' => $prefix.'_sanitize_radio_buttons',
-            'default' => 'boxed'
-        )
-    );
-
-    $wp_customize->add_control( new regina_lite_Layout_Picker_Custom_Control( $wp_customize,
-        $prefix.'_site_layout',
-            array(
-                'type'          => 'radio-image',
-                'label' 		=> esc_html__('Select Site Layout', 'regina-lite'),
-                'description'   => esc_html__('Fixed / Fluid layout', 'regina-lite'),
-                'section' 		=> $prefix.'_layout_section',
-                'priority' 		=> 2,
-                'choices'     => array(
-                    'boxed' => get_template_directory_uri() . '/inc/customizer/assets/images/boxed.png',
-                    'full' => get_template_directory_uri() . '/inc/customizer/assets/images/fullwidth.png',
-                ),
-            )
-        )
-    );
-
-
-
     /* Logo */
     $wp_customize->add_section( $prefix.'_general_section' ,
         array(

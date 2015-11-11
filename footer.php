@@ -12,7 +12,7 @@
 <?php global $container_class; ?>
 <?php if( is_active_sidebar( 'footer-sidebar-1' ) || is_active_sidebar( 'footer-sidebar-2' ) || is_active_sidebar( 'footer-sidebar-3' ) || is_active_sidebar( 'footer-sidebar-4' ) ): ?>
     <footer id="footer">
-        <div class="<?php echo $container_class; ?>">
+        <div class="container">
             <div class="row">
                 <?php if( is_active_sidebar( 'footer-sidebar-1' ) ): ?>
                     <div class="col-sm-3">
@@ -43,7 +43,7 @@
     </footer><!--#footer-->
 <?php endif; ?>
 <footer id="sub-footer">
-    <div class="<?php echo $container_class; ?>">
+    <div class="container">
         <div class="row">
             <div class="col-xs-12">
                 <?php echo get_theme_mod('regina_lite_footer_copyright', sprintf('&copy; %s', __('Macho Themes 2015. All Rights Reserved', 'regina-lite') ) ); ?>

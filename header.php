@@ -23,15 +23,7 @@
     <body <?php body_class(); ?>>
     <?php do_action( 'mtl_before_header' ); ?>
     <header id="header">
-        <?php
-        global $container_class;
-        if( get_theme_mod( 'regina_lite_site_layout', 'boxed' ) == 'boxed' ):
-            $container_class = 'container';
-        elseif( get_theme_mod( 'regina_lite_site_layout', 'boxed' ) == 'full' ):
-            $container_class = 'container-fluid';
-        endif;
-        ?>
-        <div class="<?php echo $container_class; ?>">
+        <div class="container">
             <div class="row">
                 <div class="col-lg-3 col-sm-12">
                     <div id="logo">
@@ -39,7 +31,6 @@
                             <?php if( get_theme_mod( 'regina_lite_text_logo', __( 'Regina Lite', 'regina-lite' ) ) ): ?>
                                 <span class="logo-title"><?php echo esc_html( get_theme_mod( 'regina_lite_text_logo', __( 'Regina Lite', 'regina-lite' ) ) ); ?></span>
                             <?php endif; ?>
-
                         </a>
                     </div><!--#logo-->
                     <button class="mobile-nav-btn hidden-lg"><span class="nc-icon-glyph ui-2_menu-bold"></span></button>

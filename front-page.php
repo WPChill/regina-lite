@@ -117,7 +117,7 @@
         </section><!--#home-slider-->
     <?php endif; ?>
     <?php if( $subheader_features_show == 1 ): ?>
-        <div class="<?php echo $container_class; ?>">
+        <div class="container">
             <div class="row">
                 <?php if( $subheader_box_show == 1 ): ?>
                     <div class="col-lg-8 col-md-12 col-lg-offset-2">
@@ -243,7 +243,7 @@
         ?>
         <div class="clear"></div>
         <div class="bg-block">
-            <div class="<?php echo $container_class; ?>">
+            <div class="container">
                 <div class="row">
                     <div class="col-xs-12">
                         <div class="section-info">
@@ -501,7 +501,7 @@
         </section><!--#home-testimonials-->
     <?php endif; ?>
     <?php if( $speak_general_show == 1 ): ?>
-        <div class="<?php echo $container_class; ?>">
+        <div class="container">
             <div class="row">
                 <div class="col-xs-12">
                     <div class="section-info">
