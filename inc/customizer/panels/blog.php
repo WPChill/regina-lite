@@ -172,23 +172,6 @@
         )
     );
 
-
-    /* BreadCrumb Menu:  Prefix */
-    $wp_customize->add_setting($prefix.'_blog_breadcrumb_menu_prefix',
-        array(
-            'sanitize_callback' => 'sanitize_text_field',
-            'default' => ''
-        )
-    );
-    $wp_customize->add_control(
-        $prefix.'_blog_breadcrumb_menu_prefix',
-        array(
-            'label' => esc_html__('Text before the breadcrumbs menu', 'regina-lite'),
-            'description' => esc_html__('Recommended: You are here','regina-lite'),
-            'section' => $prefix.'_blog_breadcrumb_section',
-        )
-    );
-
     /* BreadCrumb Menu:  separator */
     $wp_customize->add_setting($prefix.'_blog_breadcrumb_menu_separator',
         array(
