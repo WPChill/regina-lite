@@ -365,29 +365,6 @@
 	    )
     );
 
-    /* Number of related posts to display at once  */
-    $wp_customize->add_setting( $prefix.'_howmany_blog_posts',
-        array(
-            'sanitize_callback' => 'absint',
-            'default' => 1
-        )
-    );
-    $wp_customize->add_control( new regina_lite_Controls_Slider_Control($wp_customize,
-        $prefix.'_howmany_blog_posts',
-            array(
-                'label' => esc_html__('How many blog posts to display in the carousel at once ?', 'regina-lite'),
-                'description' => esc_html__('No more than 4 posts at once;', 'regina-lite'),
-                'choices' => array(
-                    'min' => 1,
-                    'max' => 4,
-                    'step' => 1,
-                ),
-                'section' => $prefix.'_blog_related_section',
-                'default' => 3
-            )
-        )
-    );
-
     /* Display pagination ?  */
     $wp_customize->add_setting( $prefix.'_pagination_blog_posts',
         array(
