@@ -231,7 +231,7 @@
     $wp_customize->add_setting($prefix.'_sharing_bar_text',
         array(
             'sanitize_callback' => 'sanitize_text_field',
-            'default' => esc_html__('Share this article :', 'regina-lite'),
+            'default' => esc_html__( 'Share this article', 'regina-lite'),
         )
     );
     $wp_customize->add_control(

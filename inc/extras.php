@@ -120,10 +120,13 @@ if( !function_exists( 'regina_lite_social_share' ) ) {
 
     function regina_lite_social_share() {
         global $post;
+        $sharing_bar_text = get_theme_mod( 'regina_lite_sharing_bar_text', __( 'Share this article', 'regina-lite' ) );
         $featured_image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'regina-lite-blog' );
 
         $html = '<div id="share-post">';
-            $html .= '<p class="left"><strong>'. __( 'Share this article', 'regina-lite' ) .'</strong></p>';
+            if( $sharing_bar_text ) {
+                $html .= '<p class="left"><strong>'. esc_html( $sharing_bar_text ) .'</strong></p>';
+            }
             $html .= '<ul class="social">';
                 if( !empty( $featured_image[0] ) ) {
                     $html .= '<li class="facebook"><a href="http://www.facebook.com/sharer/sharer.php?s=100&p[url]='. esc_url( get_the_permalink() ) .'&p[images][0]='. esc_url( $featured_image[0] ) .'&p[title]='. esc_attr( get_the_title() ) .'&p[summary]='. get_the_excerpt() .'" title="'. __( 'Share on Facebook', 'regina-lite' ) .'" onclick="return !window.open(this.href, \'Facebook\', \'width=500, height=500\')" target="_blank"><span class="nc-icon-glyph socials-1_logo-facebook"></span></a></li>';
