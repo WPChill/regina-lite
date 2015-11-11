@@ -110,7 +110,14 @@ if ( ! function_exists( 'regina_lite_content_nav' ) ) {
  *  Social Share
  */
 if( !function_exists( 'regina_lite_social_share' ) ) {
-    add_action( 'mtl_single_after_content', 'regina_lite_social_share', 3 );
+    $social_sharing_position = get_theme_mod( 'regina_lite_social_sharing_position', 'after_content' );
+
+    if( $social_sharing_position == 'after_content' ) {
+        add_action( 'mtl_single_after_content', 'regina_lite_social_share', 3 );
+    } elseif( $social_sharing_position == 'before_content' ) {
+        add_action( 'mtl_single_before_content', 'regina_lite_social_share', 1 );
+    }
+
     function regina_lite_social_share() {
         global $post;
         $featured_image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'regina-lite-blog' );
