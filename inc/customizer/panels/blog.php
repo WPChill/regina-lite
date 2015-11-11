@@ -88,25 +88,6 @@
         )
     );
 
-    /* Post Comments on single blog posts */
-    $wp_customize->add_setting( $prefix.'_enable_post_comments_blog_posts',
-        array(
-            'sanitize_callback' => $prefix.'_sanitize_checkbox',
-            'default' => 0
-        )
-    );
-
-    $wp_customize->add_control(
-        $prefix.'_enable_post_comments_blog_posts',
-        array(
-            'type'	=> 'checkbox',
-            'label' => esc_html__('Coments meta on single blog post', 'regina-lite'),
-            'description' => esc_html__('This will disable the comments header zone.', 'regina-lite'),
-            'section' => $prefix.'_blog_global_section',
-        )
-    );
-
-
     /* Breadcrumbs on single blog posts */
     $wp_customize->add_setting( $prefix.'_enable_post_breadcrumbs',
         array(
