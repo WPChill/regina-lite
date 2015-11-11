@@ -172,29 +172,6 @@
         )
     );
 
-    /* BreadCrumb Menu:  separator */
-    $wp_customize->add_setting($prefix.'_blog_breadcrumb_menu_separator',
-        array(
-            'sanitize_callback' => $prefix.'_sanitize_radio_buttons',
-            'default' => 'rarr'
-        )
-    );
-    $wp_customize->add_control(
-        $prefix.'_blog_breadcrumb_menu_separator',
-        array(
-            'type' => 'select',
-            'choices' => array(
-                'rarr' => esc_html('&rarr;'),
-                'middot' => esc_html('&middot;'),
-                'diez' => esc_html('&#35;'),
-                'ampersand' => esc_html('&#38;'),
-            ),
-            'label' => esc_html__('Separator to be used between breadcrumb items', 'regina-lite'),
-            'description' => esc_html__('HTML accepted here', 'regina-lite'),
-            'section' => $prefix.'_blog_breadcrumb_section',
-        )
-    );
-
     /* BreadCrumb Menu:  post category */
     $wp_customize->add_setting($prefix.'_blog_breadcrumb_menu_post_category',
         array(
