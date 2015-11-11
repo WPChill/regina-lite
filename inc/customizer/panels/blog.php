@@ -333,7 +333,7 @@
     $wp_customize->add_setting( $prefix.'_enable_related_title_blog_posts',
         array(
             'sanitize_callback' => $prefix.'_sanitize_checkbox',
-            'default' => 0
+            'default' => 1
         )
     );
     $wp_customize->add_control( new regina_lite_Disabled_Custom_Control(
@@ -341,7 +341,7 @@
         $prefix.'_enable_related_title_blog_posts',
 	        array(
 	            'type'	=> 'checkbox',
-	            'label' => esc_html__('Show posts title in the carousel ?', 'regina-lite'),
+	            'label' => esc_html__('Show posts title?', 'regina-lite'),
 	            'section' => $prefix.'_blog_related_section',
 	        )
 	    )
@@ -351,7 +351,7 @@
     $wp_customize->add_setting( $prefix.'_enable_related_date_blog_posts',
         array(
             'sanitize_callback' => $prefix.'_sanitize_checkbox',
-            'default' => 0
+            'default' => 1
         )
     );
     $wp_customize->add_control( new regina_lite_Disabled_Custom_Control(
@@ -359,7 +359,7 @@
         $prefix.'_enable_related_date_blog_posts',
 	        array(
 	            'type'	=> 'checkbox',
-	            'label' => esc_html__('Show posts date  ?', 'regina-lite'),
+	            'label' => esc_html__('Show posts date ?', 'regina-lite'),
 	            'section' => $prefix.'_blog_related_section',
 	        )
 	    )
