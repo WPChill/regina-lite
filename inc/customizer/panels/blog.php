@@ -54,24 +54,6 @@
         )
     );
 
-
-    /* Estimated reading time single blog posts */
-    $wp_customize->add_setting( $prefix.'_enable_post_esrt_blog_posts',
-        array(
-            'sanitize_callback' => $prefix.'_sanitize_checkbox',
-            'default' => 1
-        )
-    );
-    $wp_customize->add_control(
-        $prefix.'_enable_post_esrt_blog_posts',
-        array(
-            'type'	=> 'checkbox',
-            'label' => esc_html__('Estimated reading time meta on single blog post', 'regina-lite'),
-            'description' => esc_html__('This will disable the estimated reading time zone.', 'regina-lite'),
-            'section' => $prefix.'_blog_global_section',
-        )
-    );
-
     /* Post Category on single blog posts */
     $wp_customize->add_setting( $prefix.'_enable_post_category_blog_posts',
         array(
