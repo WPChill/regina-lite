@@ -4,7 +4,7 @@
     $panel_id = 'regina_lite_panel_advanced';
 
     // Set prefix
-    $prefix = 'rl';
+    $prefix = 'regina_lite';
 
     /***********************************************/
     /************** Settings  ***************/

@@ -177,6 +177,7 @@ add_action( 'widgets_init', 'regina_lite_widgets_init' );
  * Enqueue scripts and styles.
  */
 function regina_lite_scripts() {
+	$enable_site_lazyload = get_theme_mod( 'regina_lite_enable_site_lazyload', 1 );
 
 	// Google Fonts
 	$google_fonts_args = array(
@@ -187,7 +188,7 @@ function regina_lite_scripts() {
 	wp_register_style( 'google-fonts', add_query_arg( $google_fonts_args, "//fonts.googleapis.com/css" ), array(), null );
 
 	// WP Enqueue Style
-	//wp_enqueue_style( 'bxSlider-css', get_template_directory_uri() . '/layout/css/bxSlider.css', array(), 'all' );
+	wp_enqueue_style( 'bxslider-css', get_template_directory_uri() . '/layout/css/bxslider.css', array(), 'all' );
     wp_enqueue_style( 'regina-lite-style', get_template_directory_uri() . '/style.css' );
 	wp_enqueue_style( 'regina-lite-bootstrap', get_template_directory_uri() . '/layout/css/bootstrap.css', array(), '', 'all' );
 	wp_enqueue_style( 'regina-lite-mobile', get_template_directory_uri() . '/layout/css/mobile.css', array(), '', 'all' );
@@ -195,7 +196,9 @@ function regina_lite_scripts() {
 
 	// WP Enqueue Script
 	wp_enqueue_script( 'regina-lite-jquery.bxslider.min', get_template_directory_uri() .'/layout/js/plugins/bxslider/jquery.min.js', array( 'jquery' ), '', true );
-	wp_enqueue_script( 'regina-lite-jquery.lazyload.min', get_template_directory_uri() . '/layout/js/plugins/lazyload/jquery.min.js', array( 'jquery' ), '', true );
+	if( $enable_site_lazyload == 1 ) {
+		wp_enqueue_script( 'regina-lite-jquery.lazyload.min', get_template_directory_uri() . '/layout/js/plugins/lazyload/jquery.min.js', array( 'jquery' ), '', true );
+	}
 	wp_enqueue_script( 'regina-lite-jquery.waypoints.min', get_template_directory_uri() . '/layout/js/plugins/waypoints/jquery.min.js', array( 'jquery' ), '', true );
 	wp_enqueue_script( 'regina-lite-navigation', get_template_directory_uri() . '/layout/js/plugins/navigation/navigation.js', array( 'jquery' ), '20120206', true );
 	wp_enqueue_script( 'regina-lite-skip-link-focus-fix', get_template_directory_uri() . '/layout/js/plugins/skip-link-focus-fix/skip-link-focus-fix.js', array( 'jquery' ), '20130115', true );

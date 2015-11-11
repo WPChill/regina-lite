@@ -261,7 +261,7 @@
                             <div class="<?php echo $team_member_class; ?>">
                                 <div class="team-member">
                                     <?php if( !empty( $ourteam_teammember1_image ) ): ?>
-                                        <img data-original="<?php echo esc_url( $ourteam_teammember1_image ); ?>" alt="<?php if( !empty( $ourteam_teammember1_name ) ): echo esc_attr( $ourteam_teammember1_name ); endif; ?>" title="<?php if( !empty( $ourteam_teammember1_name ) ): echo esc_attr( $ourteam_teammember1_name ); endif; ?>" class="lazy">
+                                        <img src="<?php echo esc_url( $ourteam_teammember1_image ); ?>" data-original="<?php echo esc_url( $ourteam_teammember1_image ); ?>" alt="<?php if( !empty( $ourteam_teammember1_name ) ): echo esc_attr( $ourteam_teammember1_name ); endif; ?>" title="<?php if( !empty( $ourteam_teammember1_name ) ): echo esc_attr( $ourteam_teammember1_name ); endif; ?>" class="lazy">
                                     <?php endif; ?>
                                     <?php if( !empty( $ourteam_teammember1_name ) || !empty( $ourteam_teammember1_position ) ): ?>
                                         <div class="inner">
@@ -294,7 +294,7 @@
                             <div class="<?php echo $team_member_class; ?>">
                                 <div class="team-member">
                                     <?php if( !empty( $ourteam_teammember2_image ) ): ?>
-                                        <img data-original="<?php echo esc_url( $ourteam_teammember2_image ); ?>" alt="<?php if( !empty( $ourteam_teammember2_name ) ): echo esc_attr( $ourteam_teammember2_name ); endif; ?>" title="<?php if( !empty( $ourteam_teammember2_name ) ): echo esc_attr( $ourteam_teammember2_name ); endif; ?>" class="lazy">
+                                        <img src="<?php echo esc_url( $ourteam_teammember2_image ); ?>" data-original="<?php echo esc_url( $ourteam_teammember2_image ); ?>" alt="<?php if( !empty( $ourteam_teammember2_name ) ): echo esc_attr( $ourteam_teammember2_name ); endif; ?>" title="<?php if( !empty( $ourteam_teammember2_name ) ): echo esc_attr( $ourteam_teammember2_name ); endif; ?>" class="lazy">
                                     <?php endif; ?>
                                     <?php if( !empty( $ourteam_teammember2_name ) || !empty( $ourteam_teammember2_position ) ): ?>
                                         <div class="inner">
@@ -327,7 +327,7 @@
                             <div class="<?php echo $team_member_class; ?>">
                                 <div class="team-member">
                                     <?php if( !empty( $ourteam_teammember3_image ) ): ?>
-                                        <img data-original="<?php echo esc_url( $ourteam_teammember3_image ); ?>" alt="<?php if( !empty( $ourteam_teammember3_name ) ): echo esc_attr( $ourteam_teammember3_name ); endif; ?>" title="<?php if( !empty( $ourteam_teammember3_name ) ): echo esc_attr( $ourteam_teammember3_name ); endif; ?>" class="lazy">
+                                        <img src="<?php echo esc_url( $ourteam_teammember3_image ); ?>" data-original="<?php echo esc_url( $ourteam_teammember3_image ); ?>" alt="<?php if( !empty( $ourteam_teammember3_name ) ): echo esc_attr( $ourteam_teammember3_name ); endif; ?>" title="<?php if( !empty( $ourteam_teammember3_name ) ): echo esc_attr( $ourteam_teammember3_name ); endif; ?>" class="lazy">
                                     <?php endif; ?>
                                     <?php if( !empty( $ourteam_teammember3_name ) || !empty( $ourteam_teammember3_position ) ): ?>
                                         <div class="inner">
@@ -360,7 +360,7 @@
                             <div class="<?php echo $team_member_class; ?>">
                                 <div class="team-member">
                                     <?php if( !empty( $ourteam_teammember4_image ) ): ?>
-                                        <img data-original="<?php echo esc_url( $ourteam_teammember4_image ); ?>" alt="<?php if( !empty( $ourteam_teammember4_name ) ): echo esc_attr( $ourteam_teammember4_name ); endif; ?>" title="<?php if( !empty( $ourteam_teammember4_name ) ): echo esc_attr( $ourteam_teammember4_name ); endif; ?>" class="lazy">
+                                        <img src="<?php echo esc_url( $ourteam_teammember4_image ); ?>" data-original="<?php echo esc_url( $ourteam_teammember4_image ); ?>" alt="<?php if( !empty( $ourteam_teammember4_name ) ): echo esc_attr( $ourteam_teammember4_name ); endif; ?>" title="<?php if( !empty( $ourteam_teammember4_name ) ): echo esc_attr( $ourteam_teammember4_name ); endif; ?>" class="lazy">
                                     <?php endif; ?>
                                     <?php if( !empty( $ourteam_teammember4_name ) || !empty( $ourteam_teammember4_position ) ): ?>
                                         <div class="inner">
@@ -485,16 +485,16 @@
             </div><!--.testimonials-->
             <ul class="images">
                 <?php if( !empty( $testimonials_general_image1 ) ): ?>
-                    <li><img data-original="<?php echo esc_url( $testimonials_general_image1 ); ?>" alt="<?php _e( 'Testimonials', 'regina-lite' ); ?>" title="<?php _e( 'Testimonials', 'regina-lite' ); ?>" class="lazy"></li>
+                    <li><img src="<?php echo esc_url( $testimonials_general_image1 ); ?>" data-original="<?php echo esc_url( $testimonials_general_image1 ); ?>" alt="<?php _e( 'Testimonials', 'regina-lite' ); ?>" title="<?php _e( 'Testimonials', 'regina-lite' ); ?>" class="lazy"></li>
                 <?php endif; ?>
                 <?php if( !empty( $testimonials_general_image2 ) ): ?>
-                    <li><img data-original="<?php echo esc_url( $testimonials_general_image2 ); ?>" alt="<?php _e( 'Testimonials', 'regina-lite' ); ?>" title="<?php _e( 'Testimonials', 'regina-lite' ); ?>" class="lazy"></li>
+                    <li><img src="<?php echo esc_url( $testimonials_general_image2 ); ?>" data-original="<?php echo esc_url( $testimonials_general_image2 ); ?>" alt="<?php _e( 'Testimonials', 'regina-lite' ); ?>" title="<?php _e( 'Testimonials', 'regina-lite' ); ?>" class="lazy"></li>
                 <?php endif; ?>
                 <?php if( !empty( $testimonials_general_image3 ) ): ?>
-                    <li><img data-original="<?php echo esc_url( $testimonials_general_image3 ); ?>" alt="<?php _e( 'Testimonials', 'regina-lite' ); ?>" title="<?php _e( 'Testimonials', 'regina-lite' ); ?>" class="lazy"></li>
+                    <li><img src="<?php echo esc_url( $testimonials_general_image3 ); ?>" data-original="<?php echo esc_url( $testimonials_general_image3 ); ?>" alt="<?php _e( 'Testimonials', 'regina-lite' ); ?>" title="<?php _e( 'Testimonials', 'regina-lite' ); ?>" class="lazy"></li>
                 <?php endif; ?>
                 <?php if( !empty( $testimonials_general_image4 ) ): ?>
-                    <li><img data-original="<?php echo esc_url( $testimonials_general_image4 ); ?>" alt="<?php _e( 'Testimonials', 'regina-lite' ); ?>" title="<?php _e( 'Testimonials', 'regina-lite' ); ?>" class="lazy"></li>
+                    <li><img src="<?php echo esc_url( $testimonials_general_image4 ); ?>" data-original="<?php echo esc_url( $testimonials_general_image4 ); ?>" alt="<?php _e( 'Testimonials', 'regina-lite' ); ?>" title="<?php _e( 'Testimonials', 'regina-lite' ); ?>" class="lazy"></li>
                 <?php endif; ?>
             </ul>
             <div class="clear"></div>
