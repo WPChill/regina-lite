@@ -52,6 +52,10 @@ This theme, like WordPress, is licensed under the GPL.
 
 #sidebar .widget.widget_search {}
 
+#sidebar .widget.widget_search .search-form {
+    display: block;
+}
+
 #sidebar .widget.widget_search input[type="text"] {
     float: left;
     padding-left: 20px;
@@ -372,4 +376,8 @@ This theme, like WordPress, is licensed under the GPL.
     font-size: 70px;
     font-weight: bold;
     color: #333333;
+}
+
+.search-form {
+    display: none;
 }
