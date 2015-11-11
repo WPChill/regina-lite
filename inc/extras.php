@@ -121,6 +121,7 @@ if( !function_exists( 'regina_lite_social_share' ) ) {
     function regina_lite_social_share() {
         global $post;
         $sharing_bar_text = get_theme_mod( 'regina_lite_sharing_bar_text', __( 'Share this article', 'regina-lite' ) );
+        $mail_visibility = get_theme_mod( 'regina_lite_mail_visibility', 1 );
         $featured_image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'regina-lite-blog' );
 
         $html = '<div id="share-post">';
@@ -135,7 +136,9 @@ if( !function_exists( 'regina_lite_social_share' ) ) {
                 }
                 $html .= '<li class="twitter"><a href="https://twitter.com/share?url='. esc_url( get_the_permalink() ) .'&amp;related='. esc_attr( get_the_author() ) .'&amp;text='. get_the_title() .'" title="'. __( 'Share on Twitter', 'regina-lite' ) .'" onclick="return !window.open(this.href, \'Facebook\', \'width=500, height=500\')" target="_blank"><span class="nc-icon-glyph socials-1_logo-twitter"></span></a></li>';
                 $html .= '<li class="linkedin"><a href="http://www.linkedin.com/shareArticle?mini=true&url='. esc_url( get_the_permalink() ) .'&title='. esc_attr( get_the_title() ) .'&source='. esc_attr( get_the_permalink() ) .'" title="'. __( 'Share on LinkedIn', 'regina-lite' ) .'" onclick="return !window.open(this.href, \'Facebook\', \'width=500, height=500\')" target="_blank"><span class="nc-icon-glyph socials-1_logo-linkedin"></span></a></li>';
-                $html .= '<li class="email"><a href="mailto:contact@machothemes.com" title="'. __( 'Share on E-mail', 'regina-lite' ) .'"><span class="nc-icon-glyph ui-1_email-83"></span></a></li>';
+                if( $mail_visibility == 1 ) {
+                    $html .= '<li class="email"><a href="mailto:contact@machothemes.com" title="'. __( 'Share on E-mail', 'regina-lite' ) .'"><span class="nc-icon-glyph ui-1_email-83"></span></a></li>';
+                }
             $html .= '</ul><!--/.social-->';
         $html .= '</div>';
 
