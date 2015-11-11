@@ -364,22 +364,3 @@
 	        )
 	    )
     );
-
-    /* Display pagination ?  */
-    $wp_customize->add_setting( $prefix.'_pagination_blog_posts',
-        array(
-            'sanitize_callback' => $prefix.'_sanitize_checkbox',
-            'default' => 1
-        )
-    );
-    $wp_customize->add_control( new regina_lite_Disabled_Custom_Control(
-	    $wp_customize,
-	        $prefix.'_pagination_blog_posts',
-	        array(
-	            'type'	=> 'checkbox',
-	            'label' => esc_html__('Display pagination controls ?', 'regina-lite'),
-	            'description' => esc_html__('Will be displayed as navigation bullets', 'regina-lite'),
-	            'section' => $prefix.'_blog_related_section',
-	        )
-	    )
-    );
