@@ -46,7 +46,7 @@
     <div class="container">
         <div class="row">
             <div class="col-xs-12">
-                <?php echo get_theme_mod('regina_lite_footer_copyright', sprintf('&copy; %s', __('Macho Themes 2015. All Rights Reserved', 'regina-lite') ) ); ?>
+                <?php echo get_theme_mod('regina_lite_footer_copyright', sprintf( '&copy; %s', __('Macho Themes 2015. All Rights Reserved', 'regina-lite') ) ); ?>
                 <ul class="link-list hidden-xs">
                     <?php
                     wp_nav_menu( array(

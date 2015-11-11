@@ -381,3 +381,8 @@ This theme, like WordPress, is licensed under the GPL.
 .search-form {
     display: none;
 }
+
+#header #logo a img {
+    max-width: 174px;
+    height: auto;
+}

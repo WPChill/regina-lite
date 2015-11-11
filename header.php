@@ -27,9 +27,15 @@
             <div class="row">
                 <div class="col-lg-3 col-sm-12">
                     <div id="logo">
-                        <a href="<?php echo esc_url( get_site_url() ); ?>" title="<?php bloginfo( 'name' ); ?>">
-                            <?php if( get_theme_mod( 'regina_lite_text_logo', __( 'Regina Lite', 'regina-lite' ) ) ): ?>
-                                <span class="logo-title"><?php echo esc_html( get_theme_mod( 'regina_lite_text_logo', __( 'Regina Lite', 'regina-lite' ) ) ); ?></span>
+                        <?php
+                        $img_logo = get_theme_mod( 'regina_lite_img_logo' );
+                        $text_logo = get_theme_mod( 'regina_lite_text_logo', __( 'Regina Lite', 'regina-lite' ) );
+                        ?>
+                        <a href="<?php echo esc_url( get_site_url() ); ?>" title="<?php echo esc_attr( $text_logo ); ?>">
+                            <?php if( $img_logo ): ?>
+                                <img src="<?php echo esc_url( $img_logo ); ?>" alt="<?php esc_attr( get_bloginfo( 'name' ) ); ?>" title="<?php esc_attr( get_bloginfo( 'name' ) ); ?>" />
+                            <?php else: ?>
+                                <span class="logo-title"><?php echo esc_html( $text_logo ); ?></span>
                             <?php endif; ?>
                         </a>
                     </div><!--#logo-->

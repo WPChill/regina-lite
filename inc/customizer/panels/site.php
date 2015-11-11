@@ -63,7 +63,6 @@
         )
     );
 
-
     /* Company text logo */
     $wp_customize->add_setting($prefix.'_text_logo',
         array(
@@ -82,7 +81,16 @@
         )
     );
 
+    /* Company Image Logo */
+    $wp_customize->add_setting( $prefix . '_img_logo', array( 'sanitize_callback' => 'esc_url_raw' ) );
+    $wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, $prefix . '_img_logo', array(
+        'label'    => __( 'Company Image Logo:', 'regina-lite' ),
+        'section'  => $prefix .'_general_section',
+        'settings' => $prefix . '_img_logo'
+    ) ) );
+
     /* Company image logo */
+    /*
     $wp_customize->add_setting($prefix.'_img_logo',
         array(
             'sanitize_callback' => $prefix.'_sanitize_file_url',
@@ -100,6 +108,7 @@
             )
         )
     );
+    */
 
 
     /***********************************************/
