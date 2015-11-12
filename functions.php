@@ -62,9 +62,9 @@ if ( ! function_exists( 'regina_lite_setup' ) ) :
 		 *	Custom Header
 		 */
 		$custom_header_args = array(
-			'default-image'	=> get_template_directory_uri() . '/layout/images/page-headers/blog.jpg',
-			'width'			=> '1682',
-			'height'		=> '562'
+			'default-image'	=> get_template_directory_uri() . '/layout/images/home/slide-1.jpg',
+			'width'			=> '1903',
+			'height'		=> '634'
 		);
 		add_theme_support( 'custom-header', $custom_header_args );
 

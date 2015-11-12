@@ -23,15 +23,11 @@
 <?php else: ?>
     <?php global $container_class; ?>
     <?php
-    // Get Theme Mod for Subheader Panel
-    $subheader_images_show = get_theme_mod( 'regina_lite_subheader_images_show', 1 );
-    $subheader_images_image1 = get_theme_mod( 'regina_lite_subheader_images_image1', get_template_directory_uri() . '/layout/images/home/slide-1.jpg' );
-    $subheader_box_show = get_theme_mod( 'regina_lite_subheader_box_show', 1 );
-    $subheader_box_title = get_theme_mod( 'regina_lite_subheader_box_title', __( 'We help people, like you.', 'regina-lite' ) );
-    $subheader_box_description = get_theme_mod( 'regina_lite_subheader_box_description', __( 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.', 'regina-lite' ) );
-    $subheader_box_bookappointmenturl = get_theme_mod( 'regina_lite_subheader_box_bookappointmenturl', '#' );
-
     // Get Theme Mod for Features Panel
+    $top_box_show = get_theme_mod( 'regina_lite_top_box_show', 1 );
+    $top_box_title = get_theme_mod( 'regina_lite_top_box_title', __( 'We help people, like you.', 'regina-lite' ) );
+    $top_box_description = get_theme_mod( 'regina_lite_top_box_description', __( 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.', 'regina-lite' ) );
+    $top_box_bookappointmenturl = get_theme_mod( 'regina_lite_top_box_bookappointmenturl', '#' );
     $subheader_features_show = get_theme_mod( 'regina_lite_subheader_features_show', 1 );
     $features_general_title = get_theme_mod( 'regina_lite_features_general_title', __( 'Why choose us?', 'regina-lite' ) );
     $features_general_description = get_theme_mod( 'regina_lite_features_general_description', __( 'We offer various services lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt.', 'regina-lite' ) );
@@ -106,36 +102,32 @@
     $speak_general_description = get_theme_mod( 'regina_lite_speak_general_description', __( 'We offer various services lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt.', 'regina-lite' ) );
     $speak_general_buttonurl = get_theme_mod( 'regina_lite_speak_general_buttonurl', '#' );
     ?>
-    <?php if( $subheader_images_show == 1 ): ?>
-        <section id="home-slider" class="clear">
-            <ul class="clear">
-                <?php if( !empty( $subheader_images_image1 ) ): ?>
-                    <li><img src="<?php echo esc_url( $subheader_images_image1 ); ?>" alt="<?php bloginfo( 'title' ); ?>" title="<?php bloginfo( 'title' ); ?>"></li>
-                <?php endif; ?>
-            </ul>
-            <div class="clear"></div>
-        </section><!--#home-slider-->
-    <?php endif; ?>
+    <section id="home-slider" class="clear">
+        <ul class="clear">
+            <li><img src="<?php echo esc_url( get_custom_header()->url ); ?>" alt="<?php echo esc_attr( get_bloginfo( 'name' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name' ) ); ?>"></li>
+        </ul>
+        <div class="clear"></div>
+    </section><!--#home-slider-->
     <?php if( $subheader_features_show == 1 ): ?>
         <div class="container">
             <div class="row">
-                <?php if( $subheader_box_show == 1 ): ?>
+                <?php if( $top_box_show == 1 ): ?>
                     <div class="col-lg-8 col-md-12 col-lg-offset-2">
                         <div id="call-out" class="clear">
-                            <?php if( !empty( $subheader_box_title ) ): ?>
-                                <h1><?php echo esc_html( $subheader_box_title ); ?></h1>
+                            <?php if( $top_box_title ): ?>
+                                <h1><?php echo esc_html( $top_box_title ); ?></h1>
                             <?php endif; ?>
-                            <?php if( !empty( $subheader_box_description ) ): ?>
-                                <p><?php echo esc_html( $subheader_box_description ); ?></p>
+                            <?php if( $top_box_description ): ?>
+                                <p><?php echo esc_html( $top_box_description ); ?></p>
                             <?php endif; ?>
-                            <br>
-                            <?php if( !empty( $subheader_box_bookappointmenturl ) ): ?>
-                                <a href="<?php echo esc_url( $subheader_box_bookappointmenturl ); ?>" class="button white outline" rel="appointment-modal"><?php _e( 'Book Appointment', 'regina-lite' ); ?> <span class="nc-icon-glyph arrows-1_bold-right"></span></a>
+                            <br />
+                            <?php if( $top_box_bookappointmenturl ): ?>
+                                <a href="<?php echo esc_url( $top_box_bookappointmenturl ); ?>" class="button white outline" rel="appointment-modal"><?php _e( 'Book Appointment', 'regina-lite' ); ?> <span class="nc-icon-glyph arrows-1_bold-right"></span></a>
                             <?php endif; ?>
                         </div><!--#call-out-->
                     </div><!--.col-md-8-->
                 <?php endif; ?>
-                <div class="col-xs-12">
+                <div class="col-xs-12" style="<?php if( $top_box_show != 1 ): echo 'margin-top: 100px;'; endif; ?>">
                     <div class="section-info">
                         <?php if( !empty( $features_general_title ) ): ?>
                             <h2><?php echo esc_html( $features_general_title ); ?></h2>

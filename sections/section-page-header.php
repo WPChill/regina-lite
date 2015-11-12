@@ -5,14 +5,7 @@
  *	@package regina-lite
  */
 ?>
-<?php
-if(  get_custom_header() ):
-    $background_image_url = get_custom_header()->url;
-else:
-    $background_image_url = get_template_directory_uri() . '/layout/images/page-headers/blog.jpg';
-endif;
-?>
-<header id="page-header" style="background-image:url('<?php echo esc_url( $background_image_url ); ?>');">
+<header id="page-header" style="background-image:url('<?php echo get_template_directory_uri(); ?>/layout/images/page-headers/blog.jpg');">
     <div class="container">
         <div class="row">
             <div class="col-xs-12">

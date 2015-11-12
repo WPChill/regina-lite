@@ -19,6 +19,83 @@ $wp_customize->add_panel( $panel_id,
 );
 
 /***********************************************/
+/**************** BOX **************************/
+/***********************************************/
+$wp_customize->add_section( $prefix . '_top_box' ,
+    array(
+        'title'       => esc_html__( 'Top Box', 'regina-lite' ),
+        'description' => esc_html__( 'Top Box Section description.', 'regina-lite' ),
+        'panel'       => $panel_id
+    )
+);
+
+/* Show this section? */
+$wp_customize->add_setting( $prefix . '_top_box_show',
+    array(
+        'sanitize_callback' => $prefix . '_sanitize_checkbox',
+        'default'           => 1
+    )
+);
+$wp_customize->add_control(
+    $prefix.'_top_box_show',
+    array(
+        'type'          => 'checkbox',
+        'label'         => esc_html__( 'Show this section?', 'regina-lite' ),
+        'description'   => esc_html__( 'Subheader Images Show description.', 'regina-lite' ),
+        'section'       => $prefix . '_top_box',
+    )
+);
+
+/* Title */
+$wp_customize->add_setting($prefix . '_top_box_title',
+    array(
+        'sanitize_callback' => 'sanitize_text_field',
+        'default'           => __( 'We help people, like you.', 'regina-lite' )
+    )
+);
+$wp_customize->add_control(
+    $prefix.'_top_box_title',
+    array(
+        'label'         => esc_html__('Title:', 'regina-lite'),
+        'description'   => esc_html__('Title description,','regina-lite'),
+        'section'       => $prefix.'_top_box',
+    )
+);
+
+/* Description */
+$wp_customize->add_setting($prefix.'_top_box_description',
+    array(
+        'sanitize_callback' => 'sanitize_text_field',
+        'default'           => __( 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.', 'regina-lite' )
+    )
+);
+$wp_customize->add_control(
+    $prefix.'_top_box_description',
+    array(
+        'label'         => esc_html__('Description:', 'regina-lite'),
+        'description'   => esc_html__('Description description,','regina-lite'),
+        'section'       => $prefix.'_top_box',
+        'type'          => 'textarea'
+    )
+);
+
+$wp_customize->add_setting( $prefix.'_top_box_bookappointmenturl',
+    array(
+        'sanitize_callback' => 'esc_url',
+        'default'           => esc_url('#')
+    )
+);
+
+$wp_customize->add_control( $prefix.'_top_box_bookappointmenturl',
+    array(
+        'label'         => esc_html__( 'Book Aappointment URL:', 'regina-lite' ),
+        'description'   => esc_html__('Book Aappointment URL description.', 'regina-lite'),
+        'section'       => $prefix.'_top_box',
+        'settings'      => $prefix.'_top_box_bookappointmenturl',
+    )
+);
+
+/***********************************************/
 /************ GENERAL SECTION ******************/
 /***********************************************/
 $wp_customize->add_section( $prefix.'_features_general' ,
