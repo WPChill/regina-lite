@@ -6,8 +6,6 @@
  */
 ?>
 <?php get_header(); ?>
-
-
 <?php
 if( 'page' == get_option( 'show_on_front' ) ):
     if( is_page_template( 'page-templates/blog-template.php' ) ):
