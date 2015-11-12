@@ -48,26 +48,6 @@
         )
     );
 
-    /* Enable SmothScroll */
-    $wp_customize->add_setting( $prefix.'_enable_site_smoothscroll',
-        array(
-            'sanitize_callback' => $prefix.'_sanitize_checkbox',
-            'default' => 1
-        )
-    );
-    $wp_customize->add_control( new regina_lite_Disabled_Custom_Control(
-	    $wp_customize,
-        $prefix.'_enable_site_smoothscroll',
-	        array(
-	            'type'	=> 'checkbox',
-	            'label' => esc_html__('Enable smoothscroll', 'regina-lite'),
-	            'description' => esc_html__('Initial status: enabled', 'regina-lite'),
-	            'section' => $prefix.'_advanced_section',
-	        )
-	    )
-    );
-
-
     /* Enable Image LazyLoad Behavior */
     $wp_customize->add_setting( $prefix.'_enable_site_lazyload',
         array(
