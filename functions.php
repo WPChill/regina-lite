@@ -192,8 +192,8 @@ function regina_lite_scripts() {
     wp_enqueue_style( 'regina-lite-style', get_template_directory_uri() . '/style.css' );
 	wp_enqueue_style( 'regina-lite-bootstrap', get_template_directory_uri() . '/layout/css/bootstrap.min.css', array(), '', 'all' );
 	wp_enqueue_style( 'regina-lite-mobile', get_template_directory_uri() . '/layout/css/mobile.min.css', array(), '', 'all' );
-	wp_enqueue_style( 'regina-lite-owl-carousel', get_template_directory_uri() . '/layout/js/plugins/owl-carousel/owl-carousel.css', array(), '', 'all' );
-	wp_enqueue_style( 'regina-lite-owl-theme', get_template_directory_uri() . '/layout/js/plugins/owl-carousel/owl-theme.css', array(), '', 'all' );
+	wp_enqueue_style( 'regina-lite-owl-carousel', get_template_directory_uri() . '/layout/css/owl-carousel.min.css', array(), '', 'all' );
+	wp_enqueue_style( 'regina-lite-owl-theme', get_template_directory_uri() . '/layout/css/owl-theme.min.css', array(), '', 'all' );
 	wp_enqueue_style( 'google-fonts' );
 
 	// WP Enqueue Script
@@ -204,7 +204,7 @@ function regina_lite_scripts() {
 	wp_enqueue_script( 'regina-lite-jquery.waypoints.min', get_template_directory_uri() . '/layout/js/plugins/waypoints/waypoints.min.js', array( 'jquery' ), '', true );
 	wp_enqueue_script( 'regina-lite-navigation', get_template_directory_uri() . '/layout/js/plugins/navigation/navigation.min.js', array( 'jquery' ), '20120206', true );
 	wp_enqueue_script( 'regina-lite-skip-link-focus-fix', get_template_directory_uri() . '/layout/js/plugins/skip-link-focus-fix/skip-link-focus-fix.js', array( 'jquery' ), '20130115', true );
-	wp_enqueue_script( 'regina-lite-owl-carousel', get_template_directory_uri() . '/layout/js/plugins/owl-carousel/owl-carousel.js', array( 'jquery' ), '', true );
+	wp_enqueue_script( 'regina-lite-owl-carousel', get_template_directory_uri() . '/layout/js/plugins/owl-carousel/owl-carousel.min.js', array( 'jquery' ), '', true );
 	wp_enqueue_script( 'regina-lite-custom', get_template_directory_uri() . '/layout/js/custom.min.js', array( 'jquery' ), '', true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
