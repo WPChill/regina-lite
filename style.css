@@ -390,3 +390,15 @@ body {
     max-width: 174px;
     height: auto;
 }
+
+#blog #related-posts {
+    margin-bottom: 50px;
+}
+
+#blog #related-posts .post {
+    margin-bottom: 0;
+}
+
+#blog #related-posts .owl-controls {
+    margin-top: 15px;
+}

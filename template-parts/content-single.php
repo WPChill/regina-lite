@@ -27,3 +27,4 @@
     </div>
     <?php do_action( 'mtl_single_after_content' ); ?>
 </article><!--.post-->
+<?php do_action( 'mtl_single_after_article' ); ?>

@@ -324,7 +324,7 @@
         array(
             'title'       => esc_html__( 'Related posts', 'regina-lite' ),
             'description' => esc_html__( 'Control various related posts settings from here. For a demo-like experience, we recommend you don\'t change these settings.', 'regina-lite'),
-            'panel' 	  => $panel_id
+            'panel'       => $panel_id
         )
     );
 
@@ -336,15 +336,15 @@
             'default' => 1
         )
     );
-    $wp_customize->add_control( new regina_lite_Disabled_Custom_Control(
-	    $wp_customize,
+    $wp_customize->add_control( new Regina_lite_Disabled_Custom_Control(
+        $wp_customize,
         $prefix.'_enable_related_title_blog_posts',
-	        array(
-	            'type'	=> 'checkbox',
-	            'label' => esc_html__('Show posts title?', 'regina-lite'),
-	            'section' => $prefix.'_blog_related_section',
-	        )
-	    )
+            array(
+                'type'  => 'checkbox',
+                'label' => esc_html__('Show posts title in the carousel?', 'regina-lite'),
+                'section' => $prefix.'_blog_related_section',
+            )
+        )
     );
 
     /*  related posts date */
@@ -354,13 +354,74 @@
             'default' => 1
         )
     );
-    $wp_customize->add_control( new regina_lite_Disabled_Custom_Control(
-	    $wp_customize,
+    $wp_customize->add_control( new Regina_lite_Disabled_Custom_Control(
+        $wp_customize,
         $prefix.'_enable_related_date_blog_posts',
-	        array(
-	            'type'	=> 'checkbox',
-	            'label' => esc_html__('Show posts date ?', 'regina-lite'),
-	            'section' => $prefix.'_blog_related_section',
-	        )
-	    )
+            array(
+                'type'  => 'checkbox',
+                'label' => esc_html__('Show posts date  ?', 'regina-lite'),
+                'section' => $prefix.'_blog_related_section',
+            )
+        )
+    );
+
+
+    /* Auto play carousel */
+    $wp_customize->add_setting( $prefix.'_autoplay_blog_posts',
+        array(
+            'sanitize_callback' => $prefix.'_sanitize_checkbox',
+            'default' => 1,
+        )
+    );
+    $wp_customize->add_control( new Regina_lite_Disabled_Custom_Control(
+        $wp_customize,
+        $prefix.'_autoplay_blog_posts',
+            array(
+                'type'  => 'checkbox',
+                'label' => esc_html__('Autoplay related carousel ?', 'regina-lite'),
+                'section' => $prefix.'_blog_related_section',
+            )
+        )
+    );
+
+    /* Number of related posts to display at once  */
+    $wp_customize->add_setting( $prefix.'_howmany_blog_posts',
+        array(
+            'sanitize_callback' => 'absint',
+            'default' => 1
+        )
+    );
+    $wp_customize->add_control( new Regina_lite_Controls_Slider_Control($wp_customize,
+        $prefix.'_howmany_blog_posts',
+            array(
+                'label' => esc_html__('How many blog posts to display in the carousel at once ?', 'regina-lite'),
+                'description' => esc_html__('No more than 4 posts at once;', 'regina-lite'),
+                'choices' => array(
+                    'min' => 1,
+                    'max' => 4,
+                    'step' => 1,
+                ),
+                'section' => $prefix.'_blog_related_section',
+                'default' => 3
+            )
+        )
+    );
+
+    /* Display pagination ?  */
+    $wp_customize->add_setting( $prefix.'_pagination_blog_posts',
+        array(
+            'sanitize_callback' => $prefix.'_sanitize_checkbox',
+            'default' => 0
+        )
+    );
+    $wp_customize->add_control( new Regina_lite_Disabled_Custom_Control(
+        $wp_customize,
+            $prefix.'_pagination_blog_posts',
+            array(
+                'type'  => 'checkbox',
+                'label' => esc_html__('Display pagination controls ?', 'regina-lite'),
+                'description' => esc_html__('Will be displayed as navigation bullets', 'regina-lite'),
+                'section' => $prefix.'_blog_related_section',
+            )
+        )
     );
