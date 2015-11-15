@@ -38,82 +38,82 @@ $testimonials_testimonial5_position = get_theme_mod( 'regina_lite_testimonials_t
         <span class="icon nc-icon-glyph ui-2_chat-round-content"></span>
         <div id="testimonials-slider">
             <ul class="bxslider">
-                <?php if( !empty( $testimonials_testimonial1_description ) || !empty( $testimonials_testimonial1_description ) || !empty( $testimonials_testimonial1_image ) || !empty( $testimonials_testimonial1_name ) || !empty( $testimonials_testimonial1_position ) ): ?>
+                <?php if( $testimonials_testimonial1_description || $testimonials_testimonial1_image || $testimonials_testimonial1_name || $testimonials_testimonial1_position ): ?>
                     <li>
-                        <?php if( !empty( $testimonials_testimonial1_description ) ): ?>
+                        <?php if( $testimonials_testimonial1_description ): ?>
                             <p class="quote"><?php echo esc_html( $testimonials_testimonial1_description ); ?></p>
                         <?php endif; ?>
-                        <?php if( !empty( $testimonials_testimonial1_image ) ): ?>
-                            <img src="<?php echo esc_url( $testimonials_testimonial1_image ); ?>" alt="<?php if( !empty( $testimonials_testimonial1_name ) ): echo esc_attr( $testimonials_testimonial1_name ); endif; ?>" title="<?php if( !empty( $testimonials_testimonial1_name ) ): echo esc_attr( $testimonials_testimonial1_name ); endif; ?>" width="90">
+                        <?php if( $testimonials_testimonial1_image ): ?>
+                            <img src="<?php echo esc_url( $testimonials_testimonial1_image ); ?>" alt="<?php if( $testimonials_testimonial1_name ): echo esc_attr( $testimonials_testimonial1_name ); endif; ?>" title="<?php if( $testimonials_testimonial1_name ): echo esc_attr( $testimonials_testimonial1_name ); endif; ?>" width="90">
                         <?php endif; ?>
-                        <?php if( !empty( $testimonials_testimonial1_name ) ): ?>
+                        <?php if( $testimonials_testimonial1_name ): ?>
                             <h5 class="name"><?php echo esc_html( $testimonials_testimonial1_name ); ?></h5>
                         <?php endif ?>
-                        <?php if( !empty( $testimonials_testimonial1_position ) ): ?>
+                        <?php if( $testimonials_testimonial1_position ): ?>
                             <p class="position"><?php echo esc_html( $testimonials_testimonial1_position ); ?></p>
                         <?php endif; ?>
                     </li>
                 <?php endif; ?>
-                <?php if( !empty( $testimonials_testimonial2_description ) || !empty( $testimonials_testimonial2_description ) || !empty( $testimonials_testimonial2_image ) || !empty( $testimonials_testimonial2_name ) || !empty( $testimonials_testimonial2_position ) ): ?>
+                <?php if( $testimonials_testimonial2_description || $testimonials_testimonial2_image || $testimonials_testimonial2_name || $testimonials_testimonial2_position ): ?>
                     <li>
-                        <?php if( !empty( $testimonials_testimonial2_description ) ): ?>
+                        <?php if( $testimonials_testimonial2_description ): ?>
                             <p class="quote"><?php echo esc_html( $testimonials_testimonial2_description ); ?></p>
                         <?php endif; ?>
-                        <?php if( !empty( $testimonials_testimonial2_image ) ): ?>
-                            <img src="<?php echo esc_url( $testimonials_testimonial2_image ); ?>" alt="<?php if( !empty( $testimonials_testimonial2_name ) ): echo esc_attr( $testimonials_testimonial2_name ); endif; ?>" title="<?php if( !empty( $testimonials_testimonial2_name ) ): echo esc_attr( $testimonials_testimonial2_name ); endif; ?>" width="90">
+                        <?php if( $testimonials_testimonial2_image ): ?>
+                            <img src="<?php echo esc_url( $testimonials_testimonial2_image ); ?>" alt="<?php if( $testimonials_testimonial2_name ): echo esc_attr( $testimonials_testimonial2_name ); endif; ?>" title="<?php if( $testimonials_testimonial2_name ): echo esc_attr( $testimonials_testimonial2_name ); endif; ?>" width="90">
                         <?php endif; ?>
-                        <?php if( !empty( $testimonials_testimonial2_name ) ): ?>
+                        <?php if( $testimonials_testimonial2_name ): ?>
                             <h5 class="name"><?php echo esc_html( $testimonials_testimonial2_name ); ?></h5>
                         <?php endif ?>
-                        <?php if( !empty( $testimonials_testimonial2_position ) ): ?>
+                        <?php if( $testimonials_testimonial2_position ): ?>
                             <p class="position"><?php echo esc_html( $testimonials_testimonial2_position ); ?></p>
                         <?php endif; ?>
                     </li>
                 <?php endif; ?>
-                <?php if( !empty( $testimonials_testimonial3_description ) || !empty( $testimonials_testimonial3_description ) || !empty( $testimonials_testimonial3_image ) || !empty( $testimonials_testimonial3_name ) || !empty( $testimonials_testimonial3_position ) ): ?>
+                <?php if( $testimonials_testimonial3_description || $testimonials_testimonial3_image || $testimonials_testimonial3_name || $testimonials_testimonial3_position ): ?>
                     <li>
-                        <?php if( !empty( $testimonials_testimonial3_description ) ): ?>
+                        <?php if( $testimonials_testimonial3_description ): ?>
                             <p class="quote"><?php echo esc_html( $testimonials_testimonial3_description ); ?></p>
                         <?php endif; ?>
-                        <?php if( !empty( $testimonials_testimonial3_image ) ): ?>
-                            <img src="<?php echo esc_url( $testimonials_testimonial3_image ); ?>" alt="<?php if( !empty( $testimonials_testimonial3_name ) ): echo esc_attr( $testimonials_testimonial3_name ); endif; ?>" title="<?php if( !empty( $testimonials_testimonial3_name ) ): echo esc_attr( $testimonials_testimonial3_name ); endif; ?>" width="90">
+                        <?php if( $testimonials_testimonial3_image ): ?>
+                            <img src="<?php echo esc_url( $testimonials_testimonial3_image ); ?>" alt="<?php if( $testimonials_testimonial3_name ): echo esc_attr( $testimonials_testimonial3_name ); endif; ?>" title="<?php if( $testimonials_testimonial3_name ): echo esc_attr( $testimonials_testimonial3_name ); endif; ?>" width="90">
                         <?php endif; ?>
-                        <?php if( !empty( $testimonials_testimonial3_name ) ): ?>
+                        <?php if( $testimonials_testimonial3_name ): ?>
                             <h5 class="name"><?php echo esc_html( $testimonials_testimonial3_name ); ?></h5>
                         <?php endif ?>
-                        <?php if( !empty( $testimonials_testimonial3_position ) ): ?>
+                        <?php if( $testimonials_testimonial3_position ): ?>
                             <p class="position"><?php echo esc_html( $testimonials_testimonial3_position ); ?></p>
                         <?php endif; ?>
                     </li>
                 <?php endif; ?>
-                <?php if( !empty( $testimonials_testimonial4_description ) || !empty( $testimonials_testimonial4_description ) || !empty( $testimonials_testimonial4_image ) || !empty( $testimonials_testimonial4_name ) || !empty( $testimonials_testimonial4_position ) ): ?>
+                <?php if( $testimonials_testimonial4_description || $testimonials_testimonial4_image || $testimonials_testimonial4_name || $testimonials_testimonial4_position ): ?>
                     <li>
-                        <?php if( !empty( $testimonials_testimonial4_description ) ): ?>
+                        <?php if( $testimonials_testimonial4_description ): ?>
                             <p class="quote"><?php echo esc_html( $testimonials_testimonial4_description ); ?></p>
                         <?php endif; ?>
-                        <?php if( !empty( $testimonials_testimonial4_image ) ): ?>
-                            <img src="<?php echo esc_url( $testimonials_testimonial4_image ); ?>" alt="<?php if( !empty( $testimonials_testimonial4_name ) ): echo esc_attr( $testimonials_testimonial4_name ); endif; ?>" title="<?php if( !empty( $testimonials_testimonial4_name ) ): echo esc_attr( $testimonials_testimonial4_name ); endif; ?>" width="90">
+                        <?php if( $testimonials_testimonial4_image ): ?>
+                            <img src="<?php echo esc_url( $testimonials_testimonial4_image ); ?>" alt="<?php if( $testimonials_testimonial4_name ): echo esc_attr( $testimonials_testimonial4_name ); endif; ?>" title="<?php if( $testimonials_testimonial4_name ): echo esc_attr( $testimonials_testimonial4_name ); endif; ?>" width="90">
                         <?php endif; ?>
-                        <?php if( !empty( $testimonials_testimonial4_name ) ): ?>
+                        <?php if( $testimonials_testimonial4_name ): ?>
                             <h5 class="name"><?php echo esc_html( $testimonials_testimonial4_name ); ?></h5>
                         <?php endif ?>
-                        <?php if( !empty( $testimonials_testimonial4_position ) ): ?>
+                        <?php if( $testimonials_testimonial4_position ): ?>
                             <p class="position"><?php echo esc_html( $testimonials_testimonial4_position ); ?></p>
                         <?php endif; ?>
                     </li>
                 <?php endif; ?>
-                <?php if( !empty( $testimonials_testimonial5_description ) || !empty( $testimonials_testimonial5_description ) || !empty( $testimonials_testimonial5_image ) || !empty( $testimonials_testimonial5_name ) || !empty( $testimonials_testimonial5_position ) ): ?>
+                <?php if( $testimonials_testimonial5_description || $testimonials_testimonial5_image || $testimonials_testimonial5_name || $testimonials_testimonial5_position ): ?>
                     <li>
-                        <?php if( !empty( $testimonials_testimonial5_description ) ): ?>
+                        <?php if( $testimonials_testimonial5_description ): ?>
                             <p class="quote"><?php echo esc_html( $testimonials_testimonial5_description ); ?></p>
                         <?php endif; ?>
-                        <?php if( !empty( $testimonials_testimonial5_image ) ): ?>
-                            <img src="<?php echo esc_url( $testimonials_testimonial5_image ); ?>" alt="<?php if( !empty( $testimonials_testimonial5_name ) ): echo esc_attr( $testimonials_testimonial5_name ); endif; ?>" title="<?php if( !empty( $testimonials_testimonial5_name ) ): echo esc_attr( $testimonials_testimonial5_name ); endif; ?>" width="90">
+                        <?php if( $testimonials_testimonial5_image ): ?>
+                            <img src="<?php echo esc_url( $testimonials_testimonial5_image ); ?>" alt="<?php if( $testimonials_testimonial5_name ): echo esc_attr( $testimonials_testimonial5_name ); endif; ?>" title="<?php if( $testimonials_testimonial5_name ): echo esc_attr( $testimonials_testimonial5_name ); endif; ?>" width="90">
                         <?php endif; ?>
-                        <?php if( !empty( $testimonials_testimonial5_name ) ): ?>
+                        <?php if( $testimonials_testimonial5_name ): ?>
                             <h5 class="name"><?php echo esc_html( $testimonials_testimonial5_name ); ?></h5>
                         <?php endif ?>
-                        <?php if( !empty( $testimonials_testimonial5_position ) ): ?>
+                        <?php if( $testimonials_testimonial5_position ): ?>
                             <p class="position"><?php echo esc_html( $testimonials_testimonial5_position ); ?></p>
                         <?php endif; ?>
                     </li>
@@ -122,16 +122,16 @@ $testimonials_testimonial5_position = get_theme_mod( 'regina_lite_testimonials_t
         </div><!--#testimonials-slider-->
     </div><!--.testimonials-->
     <ul class="images">
-        <?php if( !empty( $testimonials_general_image1 ) ): ?>
+        <?php if( $testimonials_general_image1 ): ?>
             <li><img src="<?php echo esc_url( $testimonials_general_image1 ); ?>" data-original="<?php echo esc_url( $testimonials_general_image1 ); ?>" alt="<?php _e( 'Testimonials', 'regina-lite' ); ?>" title="<?php _e( 'Testimonials', 'regina-lite' ); ?>" class="lazy"></li>
         <?php endif; ?>
-        <?php if( !empty( $testimonials_general_image2 ) ): ?>
+        <?php if( $testimonials_general_image2 ): ?>
             <li><img src="<?php echo esc_url( $testimonials_general_image2 ); ?>" data-original="<?php echo esc_url( $testimonials_general_image2 ); ?>" alt="<?php _e( 'Testimonials', 'regina-lite' ); ?>" title="<?php _e( 'Testimonials', 'regina-lite' ); ?>" class="lazy"></li>
         <?php endif; ?>
-        <?php if( !empty( $testimonials_general_image3 ) ): ?>
+        <?php if( $testimonials_general_image3 ): ?>
             <li><img src="<?php echo esc_url( $testimonials_general_image3 ); ?>" data-original="<?php echo esc_url( $testimonials_general_image3 ); ?>" alt="<?php _e( 'Testimonials', 'regina-lite' ); ?>" title="<?php _e( 'Testimonials', 'regina-lite' ); ?>" class="lazy"></li>
         <?php endif; ?>
-        <?php if( !empty( $testimonials_general_image4 ) ): ?>
+        <?php if( $testimonials_general_image4 ): ?>
             <li><img src="<?php echo esc_url( $testimonials_general_image4 ); ?>" data-original="<?php echo esc_url( $testimonials_general_image4 ); ?>" alt="<?php _e( 'Testimonials', 'regina-lite' ); ?>" title="<?php _e( 'Testimonials', 'regina-lite' ); ?>" class="lazy"></li>
         <?php endif; ?>
     </ul>

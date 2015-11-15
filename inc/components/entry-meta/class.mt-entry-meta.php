@@ -134,7 +134,7 @@ if( !class_exists( 'MTL_Entry_Meta_Output' ) ) {
                 # check if tags post meta is enabled
                 if ( $display_tags_post_meta == 1 ) {
                     $tags = get_tags();
-                    if( !empty( $tags ) ) {
+                    if( $tags ) {
                         echo '<ul class="post-tags">';
                             echo '<li><p>'. esc_html( 'Tags:', 'regina-lite' ) .'</p></li>';
                             foreach( $tags as $tag ) {

@@ -35,7 +35,7 @@ $ourteam_teammember4_buttonurl = get_theme_mod( 'regina_lite_ourteam_teammember4
 $ourteam_teammembers = array( $ourteam_teammember1_image, $ourteam_teammember2_image, $ourteam_teammember3_image, $ourteam_teammember4_image );
 
 foreach( $ourteam_teammembers as $key => $ourteam_teammember ):
-    if( !empty( $ourteam_teammember ) ):
+    if( $ourteam_teammember ):
         $ourteam_members[] = $ourteam_teammember;
     endif;
 endforeach;
@@ -56,11 +56,11 @@ endif;
         <div class="row">
             <div class="col-xs-12">
                 <div class="section-info">
-                    <?php if( !empty( $ourteam_general_title ) ): ?>
+                    <?php if( $ourteam_general_title ): ?>
                     <h2><?php echo esc_html( $ourteam_general_title ); ?></h2>
                     <hr>
                 <?php endif; ?>
-                <?php if( !empty( $ourteam_general_description ) ): ?>
+                <?php if( $ourteam_general_description ): ?>
                     <p><?php echo esc_html( $ourteam_general_description ); ?></p>
                 <?php endif; ?>
                 </div><!--.section-info-->
@@ -69,27 +69,27 @@ endif;
                 <?php if( $ourteam_teammember1_image ): ?>
                     <div class="<?php echo $team_member_class; ?>">
                         <div class="team-member">
-                            <?php if( !empty( $ourteam_teammember1_image ) ): ?>
-                                <img src="<?php echo esc_url( $ourteam_teammember1_image ); ?>" data-original="<?php echo esc_url( $ourteam_teammember1_image ); ?>" alt="<?php if( !empty( $ourteam_teammember1_name ) ): echo esc_attr( $ourteam_teammember1_name ); endif; ?>" title="<?php if( !empty( $ourteam_teammember1_name ) ): echo esc_attr( $ourteam_teammember1_name ); endif; ?>" class="lazy">
+                            <?php if( $ourteam_teammember1_image ): ?>
+                                <img src="<?php echo esc_url( $ourteam_teammember1_image ); ?>" data-original="<?php echo esc_url( $ourteam_teammember1_image ); ?>" alt="<?php if( $ourteam_teammember1_name ): echo esc_attr( $ourteam_teammember1_name ); endif; ?>" title="<?php if( $ourteam_teammember1_name ): echo esc_attr( $ourteam_teammember1_name ); endif; ?>" class="lazy">
                             <?php endif; ?>
-                            <?php if( !empty( $ourteam_teammember1_name ) || !empty( $ourteam_teammember1_position ) ): ?>
+                            <?php if( $ourteam_teammember1_name || $ourteam_teammember1_position ): ?>
                                 <div class="inner">
-                                    <?php if( !empty( $ourteam_teammember1_name ) ): ?>
+                                    <?php if( $ourteam_teammember1_name ): ?>
                                         <h4 class="name"><?php echo esc_html( $ourteam_teammember1_name ); ?></h4>
                                     <?php endif; ?>
-                                    <?php if( !empty( $ourteam_teammember1_position ) ): ?>
+                                    <?php if( $ourteam_teammember1_position ): ?>
                                         <p class="position"><small><?php echo esc_html( $ourteam_teammember1_position ); ?></small></p>
                                     <?php endif; ?>
                                 </div>
                             <?php endif; ?>
-                            <?php if( !empty( $ourteam_teammember1_description ) || !empty( $ourteam_teammember1_buttonurl ) ): ?>
+                            <?php if( $ourteam_teammember1_description || $ourteam_teammember1_buttonurl ): ?>
                                 <div class="hover">
-                                    <?php if( !empty( $ourteam_teammember1_description ) ): ?>
+                                    <?php if( $ourteam_teammember1_description ): ?>
                                         <div class="description">
                                             <p><?php echo esc_html( $ourteam_teammember1_description ); ?></p>
                                         </div>
                                     <?php endif; ?>
-                                    <?php if( !empty( $ourteam_teammember1_buttonurl ) ): ?>
+                                    <?php if( $ourteam_teammember1_buttonurl ): ?>
                                         <div class="read-more">
                                             <a href="<?php echo esc_url( $ourteam_teammember1_buttonurl ); ?>" class="button white outline"><?php _e( 'Read more', 'regina-lite' ); ?> <span class="nc-icon-glyph arrows-1_bold-right"></span></a>
                                         </div>
@@ -102,27 +102,27 @@ endif;
                 <?php if( $ourteam_teammember2_image ): ?>
                     <div class="<?php echo $team_member_class; ?>">
                         <div class="team-member">
-                            <?php if( !empty( $ourteam_teammember2_image ) ): ?>
-                                <img src="<?php echo esc_url( $ourteam_teammember2_image ); ?>" data-original="<?php echo esc_url( $ourteam_teammember2_image ); ?>" alt="<?php if( !empty( $ourteam_teammember2_name ) ): echo esc_attr( $ourteam_teammember2_name ); endif; ?>" title="<?php if( !empty( $ourteam_teammember2_name ) ): echo esc_attr( $ourteam_teammember2_name ); endif; ?>" class="lazy">
+                            <?php if( $ourteam_teammember2_image ): ?>
+                                <img src="<?php echo esc_url( $ourteam_teammember2_image ); ?>" data-original="<?php echo esc_url( $ourteam_teammember2_image ); ?>" alt="<?php if( $ourteam_teammember2_name ): echo esc_attr( $ourteam_teammember2_name ); endif; ?>" title="<?php if( $ourteam_teammember2_name ): echo esc_attr( $ourteam_teammember2_name ); endif; ?>" class="lazy">
                             <?php endif; ?>
-                            <?php if( !empty( $ourteam_teammember2_name ) || !empty( $ourteam_teammember2_position ) ): ?>
+                            <?php if( $ourteam_teammember2_name || $ourteam_teammember2_position ): ?>
                                 <div class="inner">
-                                    <?php if( !empty( $ourteam_teammember2_name ) ): ?>
+                                    <?php if( $ourteam_teammember2_name ): ?>
                                         <h4 class="name"><?php echo esc_html( $ourteam_teammember2_name ); ?></h4>
                                     <?php endif; ?>
-                                    <?php if( !empty( $ourteam_teammember2_position ) ): ?>
+                                    <?php if( $ourteam_teammember2_position ): ?>
                                         <p class="position"><small><?php echo esc_html( $ourteam_teammember2_position ); ?></small></p>
                                     <?php endif; ?>
                                 </div>
                             <?php endif; ?>
-                            <?php if( !empty( $ourteam_teammember2_description ) || !empty( $ourteam_teammember2_buttonurl ) ): ?>
+                            <?php if( $ourteam_teammember2_description || $ourteam_teammember2_buttonurl ): ?>
                                 <div class="hover">
-                                    <?php if( !empty( $ourteam_teammember2_description ) ): ?>
+                                    <?php if( $ourteam_teammember2_description ): ?>
                                         <div class="description">
                                             <p><?php echo esc_html( $ourteam_teammember2_description ); ?></p>
                                         </div>
                                     <?php endif; ?>
-                                    <?php if( !empty( $ourteam_teammember2_buttonurl ) ): ?>
+                                    <?php if( $ourteam_teammember2_buttonurl ): ?>
                                         <div class="read-more">
                                             <a href="<?php echo esc_url( $ourteam_teammember2_buttonurl ); ?>" class="button white outline"><?php _e( 'Read more', 'regina-lite' ); ?> <span class="nc-icon-glyph arrows-1_bold-right"></span></a>
                                         </div>
@@ -135,27 +135,27 @@ endif;
                 <?php if( $ourteam_teammember3_image ): ?>
                     <div class="<?php echo $team_member_class; ?>">
                         <div class="team-member">
-                            <?php if( !empty( $ourteam_teammember3_image ) ): ?>
-                                <img src="<?php echo esc_url( $ourteam_teammember3_image ); ?>" data-original="<?php echo esc_url( $ourteam_teammember3_image ); ?>" alt="<?php if( !empty( $ourteam_teammember3_name ) ): echo esc_attr( $ourteam_teammember3_name ); endif; ?>" title="<?php if( !empty( $ourteam_teammember3_name ) ): echo esc_attr( $ourteam_teammember3_name ); endif; ?>" class="lazy">
+                            <?php if( $ourteam_teammember3_image ): ?>
+                                <img src="<?php echo esc_url( $ourteam_teammember3_image ); ?>" data-original="<?php echo esc_url( $ourteam_teammember3_image ); ?>" alt="<?php if( $ourteam_teammember3_name ): echo esc_attr( $ourteam_teammember3_name ); endif; ?>" title="<?php if( $ourteam_teammember3_name ): echo esc_attr( $ourteam_teammember3_name ); endif; ?>" class="lazy">
                             <?php endif; ?>
-                            <?php if( !empty( $ourteam_teammember3_name ) || !empty( $ourteam_teammember3_position ) ): ?>
+                            <?php if( $ourteam_teammember3_name || $ourteam_teammember3_position ): ?>
                                 <div class="inner">
-                                    <?php if( !empty( $ourteam_teammember3_name ) ): ?>
+                                    <?php if( $ourteam_teammember3_name ): ?>
                                         <h4 class="name"><?php echo esc_html( $ourteam_teammember3_name ); ?></h4>
                                     <?php endif; ?>
-                                    <?php if( !empty( $ourteam_teammember3_position ) ): ?>
+                                    <?php if( $ourteam_teammember3_position ): ?>
                                         <p class="position"><small><?php echo esc_html( $ourteam_teammember3_position ); ?></small></p>
                                     <?php endif; ?>
                                 </div>
                             <?php endif; ?>
-                            <?php if( !empty( $ourteam_teammember3_description ) || !empty( $ourteam_teammember3_buttonurl ) ): ?>
+                            <?php if( $ourteam_teammember3_description || $ourteam_teammember3_buttonurl ): ?>
                                 <div class="hover">
-                                    <?php if( !empty( $ourteam_teammember3_description ) ): ?>
+                                    <?php if( $ourteam_teammember3_description ): ?>
                                         <div class="description">
                                             <p><?php echo esc_html( $ourteam_teammember3_description ); ?></p>
                                         </div>
                                     <?php endif; ?>
-                                    <?php if( !empty( $ourteam_teammember3_buttonurl ) ): ?>
+                                    <?php if( $ourteam_teammember3_buttonurl ): ?>
                                         <div class="read-more">
                                             <a href="<?php echo esc_url( $ourteam_teammember3_buttonurl ); ?>" class="button white outline"><?php _e( 'Read more', 'regina-lite' ); ?> <span class="nc-icon-glyph arrows-1_bold-right"></span></a>
                                         </div>
@@ -168,27 +168,27 @@ endif;
                 <?php if( $ourteam_teammember4_image ): ?>
                     <div class="<?php echo $team_member_class; ?>">
                         <div class="team-member">
-                            <?php if( !empty( $ourteam_teammember4_image ) ): ?>
-                                <img src="<?php echo esc_url( $ourteam_teammember4_image ); ?>" data-original="<?php echo esc_url( $ourteam_teammember4_image ); ?>" alt="<?php if( !empty( $ourteam_teammember4_name ) ): echo esc_attr( $ourteam_teammember4_name ); endif; ?>" title="<?php if( !empty( $ourteam_teammember4_name ) ): echo esc_attr( $ourteam_teammember4_name ); endif; ?>" class="lazy">
+                            <?php if( $ourteam_teammember4_image ): ?>
+                                <img src="<?php echo esc_url( $ourteam_teammember4_image ); ?>" data-original="<?php echo esc_url( $ourteam_teammember4_image ); ?>" alt="<?php if( $ourteam_teammember4_name ): echo esc_attr( $ourteam_teammember4_name ); endif; ?>" title="<?php if( $ourteam_teammember4_name ): echo esc_attr( $ourteam_teammember4_name ); endif; ?>" class="lazy">
                             <?php endif; ?>
-                            <?php if( !empty( $ourteam_teammember4_name ) || !empty( $ourteam_teammember4_position ) ): ?>
+                            <?php if( $ourteam_teammember4_name || $ourteam_teammember4_position ): ?>
                                 <div class="inner">
-                                    <?php if( !empty( $ourteam_teammember4_name ) ): ?>
+                                    <?php if( $ourteam_teammember4_name ): ?>
                                         <h4 class="name"><?php echo esc_html( $ourteam_teammember4_name ); ?></h4>
                                     <?php endif; ?>
-                                    <?php if( !empty( $ourteam_teammember4_position ) ): ?>
+                                    <?php if( $ourteam_teammember4_position ): ?>
                                         <p class="position"><small><?php echo esc_html( $ourteam_teammember4_position ); ?></small></p>
                                     <?php endif; ?>
                                 </div>
                             <?php endif; ?>
-                            <?php if( !empty( $ourteam_teammember4_description ) || !empty( $ourteam_teammember4_buttonurl ) ): ?>
+                            <?php if( $ourteam_teammember4_description || $ourteam_teammember4_buttonurl ): ?>
                                 <div class="hover">
-                                    <?php if( !empty( $ourteam_teammember4_description ) ): ?>
+                                    <?php if( $ourteam_teammember4_description ): ?>
                                         <div class="description">
                                             <p><?php echo esc_html( $ourteam_teammember4_description ); ?></p>
                                         </div>
                                     <?php endif; ?>
-                                    <?php if( !empty( $ourteam_teammember4_buttonurl ) ): ?>
+                                    <?php if( $ourteam_teammember4_buttonurl ): ?>
                                         <div class="read-more">
                                             <a href="<?php echo esc_url( $ourteam_teammember4_buttonurl ); ?>" class="button white outline"><?php _e( 'Read more', 'regina-lite' ); ?> <span class="nc-icon-glyph arrows-1_bold-right"></span></a>
                                         </div>

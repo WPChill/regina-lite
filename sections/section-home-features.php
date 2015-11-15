@@ -47,11 +47,11 @@ $features_feature4_buttonurl = get_theme_mod( 'regina_lite_features_feature4_but
         <?php endif; ?>
         <div class="col-xs-12" style="<?php if( $top_box_show != 1 ): echo 'margin-top: 100px;'; endif; ?>">
             <div class="section-info">
-                <?php if( !empty( $features_general_title ) ): ?>
+                <?php if( $features_general_title ): ?>
                     <h2><?php echo esc_html( $features_general_title ); ?></h2>
                     <hr>
                 <?php endif; ?>
-                <?php if( !empty( $features_general_description ) ): ?>
+                <?php if( $features_general_description ): ?>
                     <p><?php echo esc_html( $features_general_description ); ?></p>
                 <?php endif; ?>
             </div><!--.section-info-->
@@ -63,14 +63,14 @@ $features_feature4_buttonurl = get_theme_mod( 'regina_lite_features_feature4_but
                     <div class="icon">
                         <span class="nc-icon-outline health_heartbeat-16"></span>
                     </div>
-                    <?php if( !empty( $features_feature1_title ) ): ?>
+                    <?php if( $features_feature1_title ): ?>
                         <h3><?php echo esc_html( $features_feature1_title ); ?></h3>
                     <?php endif; ?>
-                    <?php if( !empty( $features_feature1_description ) ): ?>
+                    <?php if( $features_feature1_description ): ?>
                         <p><?php echo esc_html( $features_feature1_description ); ?></p>
                     <?php endif; ?>
                     <br>
-                    <?php if( !empty( $features_feature1_buttonurl ) ): ?>
+                    <?php if( $features_feature1_buttonurl ): ?>
                         <a href="<?php echo esc_url( $features_feature1_buttonurl ); ?>" class="link small"><?php _e( 'Read more', 'regina-lite' ); ?> <span class="nc-icon-glyph arrows-1_bold-right"></span></a>
                     <?php endif; ?>
                 </div><!--.service-->
@@ -80,14 +80,14 @@ $features_feature4_buttonurl = get_theme_mod( 'regina_lite_features_feature4_but
                     <div class="icon">
                         <span class="nc-icon-outline food_apple"></span>
                     </div>
-                    <?php if( !empty( $features_feature2_title ) ): ?>
+                    <?php if( $features_feature2_title ): ?>
                         <h3><?php echo esc_html( $features_feature2_title ); ?></h3>
                     <?php endif; ?>
-                    <?php if( !empty( $features_feature2_description ) ): ?>
+                    <?php if( $features_feature2_description ): ?>
                         <p><?php echo esc_html( $features_feature2_description ); ?></p>
                     <?php endif; ?>
                     <br>
-                    <?php if( !empty( $features_feature2_buttonurl ) ): ?>
+                    <?php if( $features_feature2_buttonurl ): ?>
                         <a href="<?php echo esc_url( $features_feature2_buttonurl ); ?>" class="link small"><?php _e( 'Read more', 'regina-lite' ); ?> <span class="nc-icon-glyph arrows-1_bold-right"></span></a>
                     <?php endif; ?>
                 </div><!--.service-->
@@ -97,14 +97,14 @@ $features_feature4_buttonurl = get_theme_mod( 'regina_lite_features_feature4_but
                     <div class="icon">
                         <span class="nc-icon-outline health_hospital-32"></span>
                     </div>
-                    <?php if( !empty( $features_feature3_title ) ): ?>
+                    <?php if( $features_feature3_title ): ?>
                         <h3><?php echo esc_html( $features_feature3_title ); ?></h3>
                     <?php endif; ?>
-                    <?php if( !empty( $features_feature3_description ) ): ?>
+                    <?php if( $features_feature3_description ): ?>
                         <p><?php echo esc_html( $features_feature3_description ); ?></p>
                     <?php endif; ?>
                     <br>
-                    <?php if( !empty( $features_feature3_buttonurl ) ): ?>
+                    <?php if( $features_feature3_buttonurl ): ?>
                         <a href="<?php echo esc_url( $features_feature3_buttonurl ); ?>" class="link small"><?php _e( 'Read more', 'regina-lite' ); ?> <span class="nc-icon-glyph arrows-1_bold-right"></span></a>
                     <?php endif; ?>
                 </div><!--.service-->
@@ -114,14 +114,14 @@ $features_feature4_buttonurl = get_theme_mod( 'regina_lite_features_feature4_but
                     <div class="icon">
                         <span class="nc-icon-outline health_brain"></span>
                     </div>
-                    <?php if( !empty( $features_feature4_title ) ): ?>
+                    <?php if( $features_feature4_title ): ?>
                         <h3><?php echo esc_html( $features_feature4_title ); ?></h3>
                     <?php endif; ?>
-                    <?php if( !empty( $features_feature4_description ) ): ?>
+                    <?php if( $features_feature4_description ): ?>
                         <p><?php echo esc_html( $features_feature4_description ); ?></p>
                     <?php endif; ?>
                     <br>
-                    <?php if( !empty( $features_feature4_buttonurl ) ): ?>
+                    <?php if( $features_feature4_buttonurl ): ?>
                         <a href="<?php echo esc_url( $features_feature4_buttonurl ); ?>" class="link small"><?php _e( 'Read more', 'regina-lite' ); ?> <span class="nc-icon-glyph arrows-1_bold-right"></span></a>
                     <?php endif; ?>
                 </div><!--.service-->

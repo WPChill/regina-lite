@@ -58,24 +58,24 @@ if( !class_exists( 'MTL_Contact_Bar_Output' ) ) {
                 echo '<div class="container">';
                     echo '<div class="row">';
                         echo '<div class="col-xs-12">';
-                            if( !empty( $this->phone_number ) ) {
+                            if( $this->phone_number ) {
                                 echo '<p><span class="nc-icon-glyph tech_mobile-button"></span>&nbsp;&nbsp; '. esc_html( $this->phone_number ) .'</p>';
                             }
-                            if( !empty( $this->email_addr ) ) {
+                            if( $this->email_addr ) {
                                 echo '<p><span class="nc-icon-glyph ui-1_email-83"></span>&nbsp;&nbsp; '. esc_html( $this->email_addr ) .'</p>';
                             }
-                            if( !empty( $this->facebook_url ) || !empty( $this->twitter_url ) || !empty( $this->linkedin_url ) || !empty( $this->youtube_url ) ) {
+                            if( $this->facebook_url || $this->twitter_url || $this->linkedin_url || $this->youtube_url ) {
                                 echo '<ul class="social-link-list">';
-                                    if( !empty( $this->facebook_url ) ) {
+                                    if( $this->facebook_url ) {
                                         echo '<li><a href="'. esc_url( $this->facebook_url ) .'" title="'. __( 'Facebook', 'regina-lite' ) .'"><span class="nc-icon-glyph socials-1_logo-facebook"></span></a></li>';
                                     }
-                                    if( !empty( $this->twitter_url ) ) {
+                                    if( $this->twitter_url ) {
                                         echo '<li><a href="'. esc_url( $this->twitter_url ) .'" title="'. __( 'Twitter', 'regina-lite' ) .'"><span class="nc-icon-glyph socials-1_logo-twitter"></span></a></li>';
                                     }
-                                    if( !empty( $this->linkedin_url ) ) {
+                                    if( $this->linkedin_url ) {
                                         echo '<li><a href="'. esc_url( $this->linkedin_url ) .'" title="'. __( 'LinkedIn', 'regina-lite' ) .'"><span class="nc-icon-glyph socials-1_logo-linkedin"></span></a></li>';
                                     }
-                                    if( !empty( $this->youtube_url ) ) {
+                                    if( $this->youtube_url ) {
                                         echo '<li><a href="'. esc_url( $this->youtube_url ) .'" title="'. __( 'YouTube', 'regina-lite' ) .'"><span class="nc-icon-glyph socials-1_logo-youtube"></span></a></li>';
                                     }
                                 echo '</ul>';

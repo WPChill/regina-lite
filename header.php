@@ -59,7 +59,7 @@
                             ) );
                             ?>
                             <?php $bookappointmenturl = get_theme_mod( 'regina_lite_contact_bar_bookappointmenturl', 'regina-lite' ); ?>
-                            <?php if( !empty( $bookappointmenturl ) ): ?>
+                            <?php if( $bookappointmenturl ): ?>
                                 <li class="hide-mobile"><a href="<?php echo esc_url( $bookappointmenturl ); ?>" title="<?php _e( 'Book Appointment', 'regina-lite' ); ?>" rel="appointment-modal"><span class="nc-icon-glyph ui-1_bell-53"></span> <?php _e( 'Book Appointment', 'regina-lite' ); ?></a></li>
                             <?php endif; ?>
                             <li class="hide-mobile"><a href="#" title="<?php _e( 'Search', 'regina-lite' ); ?>" class="nav-search"><span class="nc-icon-outline ui-1_zoom"></span></a></li>
