@@ -166,7 +166,7 @@ if( !class_exists( 'MTL_Related_Posts_Output' ) ) {
                 /*
                  * Heading
                  */
-                echo '<h3>' . __('Related posts: ', 'riba-pro') . '</h3>';
+                echo '<h3>' . __('Related posts: ', 'regina-lite') . '</h3>';
                 echo sprintf('<div class="owlCarousel" data-slider-id="%s" id="owlCarousel-%s" data-slider-items="%s" data-slider-speed="400" data-slider-auto-play="%s" data-slider-navigation="false" data-slider-pagination="%s">', get_the_ID(), get_the_ID(), $limit, $auto_play, $pagination);
                     while ($related_posts->have_posts()) {
                         $related_posts->the_post();
