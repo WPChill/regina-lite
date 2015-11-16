@@ -55,20 +55,22 @@ class Riba_Breadcrumbs {
 		$this->post    = ( isset( $GLOBALS['post'] ) ? $GLOBALS['post'] : null );
 		// Setup default array for changeable variables
 		$defaults = array(
-			 'home_prefix'   			=> get_theme_mod('regina_lite_blog_breadcrumb_menu_prefix', __('You Are Here', 'regina-lite') ),
-			 'separator' 				=> get_theme_mod('regina_lite_blog_breadcrumb_menu_separator', 'rarr'),
-			 'show_post_type_archive'	=> '1',
-			 'show_terms'  				=> get_theme_mod('regina_lite_blog_breadcrumb_menu_post_category', 1),
-			 'home_label'      			=> esc_html__( 'Home', 'regina-lite' ),
-			 'tag_archive_prefix'   	=> esc_html__( 'Tag:', 'regina-lite' ),
-			 'search_prefix'        	=> esc_html__( 'Search:', 'regina-lite' ),
-			 'error_prefix' 			=> esc_html__( '404 - Page not Found', 'regina-lite' ),
+			'home_prefix'				=> get_theme_mod('regina_lite_blog_breadcrumb_menu_prefix', __('You Are Here', 'regina-lite') ),
+			'separator'					=> get_theme_mod('regina_lite_blog_breadcrumb_menu_separator', 'rarr'),
+			'enable_post_breadcrumbs'	=> get_theme_mod( 'regina_lite_enable_post_breadcrumbs', 1 ),
+			'show_post_type_archive'	=> '1',
+			'show_terms'				=> get_theme_mod('regina_lite_blog_breadcrumb_menu_post_category', 1),
+			'home_label'				=> esc_html__( 'Home', 'regina-lite' ),
+			'tag_archive_prefix'		=> esc_html__( 'Tag:', 'regina-lite' ),
+			'search_prefix'				=> esc_html__( 'Search:', 'regina-lite' ),
+			'error_prefix'				=> esc_html__( '404 - Page not Found', 'regina-lite' ),
 		);
 		// Setup a filter for changeable variables and meger it with the defaults
 		$args = apply_filters( 'riba_breadcrumbs_defaults', $defaults );
 		$defaults =  wp_parse_args( $args, $defaults );
-		$this->home_prefix 				= $defaults['home_prefix'];
-		$this->separator				= $defaults['separator'];
+		$this->home_prefix				= $defaults['home_prefix'];
+		$this->separator 				= $defaults['separator'];
+		$this->enable_post_breadcrumbs 	= $defaults['enable_post_breadcrumbs'];
 		$this->show_post_type_archive	= $defaults['show_post_type_archive'];
 		$this->show_terms				= $defaults['show_terms'];
 		$this->home_label				= $defaults['home_label'];
@@ -127,7 +129,13 @@ class Riba_Breadcrumbs {
 		*/
 
 		// Add the "Home" link
-		$this->html_markup .= sprintf( '<li><a href="%s" title="%s">%s</a></li>', esc_html( get_site_url() ), __( 'Home', 'regina-lite' ), __( 'Home', 'regina-lite' ) );
+		if( is_singular() ) {
+			if( $this->enable_post_breadcrumbs == 1 ) {
+				$this->html_markup .= sprintf( '<li><a href="%s" title="%s">%s</a></li>', esc_html( get_site_url() ), __( 'Home', 'regina-lite' ), __( 'Home', 'regina-lite' ) );
+			}
+		} else {
+			$this->html_markup .= sprintf( '<li><a href="%s" title="%s">%s</a></li>', esc_html( get_site_url() ), __( 'Home', 'regina-lite' ), __( 'Home', 'regina-lite' ) );
+		}
 
 		// Woocommerce path prefix (e.g "Shop" )
 		if ( class_exists( 'WooCommerce' ) &&
@@ -144,23 +152,25 @@ class Riba_Breadcrumbs {
 		}
 		// Single Posts and Pages (of all post types)
 		if ( is_singular() ) {
-			// If the post type of the current post has an archive link, display the archive breadcrumb
-			if ( isset( $this->post->post_type ) &&
-				get_post_type_archive_link( $this->post->post_type ) &&
-				$this->show_post_type_archive
-			) {
-				$this->html_markup .= $this->get_post_type_archive();
+			if( $this->enable_post_breadcrumbs == 1 ) {
+				// If the post type of the current post has an archive link, display the archive breadcrumb
+				if ( isset( $this->post->post_type ) &&
+					get_post_type_archive_link( $this->post->post_type ) &&
+					$this->show_post_type_archive
+				) {
+					$this->html_markup .= $this->get_post_type_archive();
+				}
+				// If the post doesn't have parents
+				if ( isset( $this->post->post_parent ) &&
+					 $this->post->post_parent == 0
+				) {
+					$this->html_markup .= $this->get_post_terms();
+				// If there are parents; mostly for pages
+				} else {
+					$this->html_markup .= $this->get_post_ancestors();
+				}
+				$this->html_markup .= $this->get_breadcrumb_leaf_markup();
 			}
-			// If the post doesn't have parents
-			if ( isset( $this->post->post_parent ) &&
-				 $this->post->post_parent == 0
-			) {
-				$this->html_markup .= $this->get_post_terms();
-			// If there are parents; mostly for pages
-			} else {
-				$this->html_markup .= $this->get_post_ancestors();
-			}
-			$this->html_markup .= $this->get_breadcrumb_leaf_markup();
 		} else {
 			// Custom post types archives
 			if ( is_post_type_archive() ) {

@@ -23,23 +23,20 @@
     <body <?php body_class(); ?>>
     <?php do_action( 'mtl_before_header' ); ?>
     <header id="header">
-        <?php
-        global $container_class;
-        if( get_theme_mod( 'regina_lite_site_layout', 'boxed' ) == 'boxed' ):
-            $container_class = 'container';
-        elseif( get_theme_mod( 'regina_lite_site_layout', 'boxed' ) == 'full' ):
-            $container_class = 'container-fluid';
-        endif;
-        ?>
-        <div class="<?php echo $container_class; ?>">
+        <div class="container">
             <div class="row">
                 <div class="col-lg-3 col-sm-12">
                     <div id="logo">
-                        <a href="<?php echo esc_url( get_site_url() ); ?>" title="<?php bloginfo( 'name' ); ?>">
-                            <?php if( get_theme_mod( 'regina_lite_text_logo', __( 'Regina Lite', 'regina-lite' ) ) ): ?>
-                                <span class="logo-title"><?php echo esc_html( get_theme_mod( 'regina_lite_text_logo', __( 'Regina Lite', 'regina-lite' ) ) ); ?></span>
+                        <?php
+                        $img_logo = get_theme_mod( 'regina_lite_img_logo' );
+                        $text_logo = get_theme_mod( 'regina_lite_text_logo', __( 'Regina Lite', 'regina-lite' ) );
+                        ?>
+                        <a href="<?php echo esc_url( get_site_url() ); ?>" title="<?php echo esc_attr( $text_logo ); ?>">
+                            <?php if( $img_logo ): ?>
+                                <img src="<?php echo esc_url( $img_logo ); ?>" alt="<?php esc_attr( get_bloginfo( 'name' ) ); ?>" title="<?php esc_attr( get_bloginfo( 'name' ) ); ?>" />
+                            <?php else: ?>
+                                <span class="logo-title"><?php echo esc_html( $text_logo ); ?></span>
                             <?php endif; ?>
-
                         </a>
                     </div><!--#logo-->
                     <button class="mobile-nav-btn hidden-lg"><span class="nc-icon-glyph ui-2_menu-bold"></span></button>
@@ -62,7 +59,7 @@
                             ) );
                             ?>
                             <?php $bookappointmenturl = get_theme_mod( 'regina_lite_contact_bar_bookappointmenturl', 'regina-lite' ); ?>
-                            <?php if( !empty( $bookappointmenturl ) ): ?>
+                            <?php if( $bookappointmenturl ): ?>
                                 <li class="hide-mobile"><a href="<?php echo esc_url( $bookappointmenturl ); ?>" title="<?php _e( 'Book Appointment', 'regina-lite' ); ?>" rel="appointment-modal"><span class="nc-icon-glyph ui-1_bell-53"></span> <?php _e( 'Book Appointment', 'regina-lite' ); ?></a></li>
                             <?php endif; ?>
                             <li class="hide-mobile"><a href="#" title="<?php _e( 'Search', 'regina-lite' ); ?>" class="nav-search"><span class="nc-icon-outline ui-1_zoom"></span></a></li>

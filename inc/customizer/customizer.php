@@ -27,9 +27,6 @@ function regina_lite_customize_register( $wp_customize ) {
     /* Advanced Panel */
     require_once get_template_directory() . '/inc/customizer/panels/advanced.php';
 
-    /* Subheader Panel */
-    require_once get_template_directory() . '/inc/customizer/panels/subheader.php';
-
     /* Features Panel */
     require_once get_template_directory() . '/inc/customizer/panels/features.php';
 

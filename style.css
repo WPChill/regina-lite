@@ -16,6 +16,10 @@ This theme, like WordPress, is licensed under the GPL.
 
 @import 'layout/css/styles.min.css';
 
+body {
+    background-color: #fff;
+}
+
 .wp-caption,
 .wp-caption-text,
 .sticky,
@@ -51,6 +55,10 @@ This theme, like WordPress, is licensed under the GPL.
 #sidebar .widget {}
 
 #sidebar .widget.widget_search {}
+
+#sidebar .widget.widget_search .search-form {
+    display: block;
+}
 
 #sidebar .widget.widget_search input[type="text"] {
     float: left;
@@ -372,4 +380,25 @@ This theme, like WordPress, is licensed under the GPL.
     font-size: 70px;
     font-weight: bold;
     color: #333333;
+}
+
+.search-form {
+    display: none;
+}
+
+#header #logo a img {
+    max-width: 174px;
+    height: auto;
+}
+
+#blog #related-posts {
+    margin-bottom: 50px;
+}
+
+#blog #related-posts .post {
+    margin-bottom: 0;
+}
+
+#blog #related-posts .owl-controls {
+    margin-top: 15px;
 }

@@ -1,0 +1,16 @@
+### v1.0.4:
+	- Has been deleted "empty()" function.
+	- Has been added OWL Carousel for Related Posts section.
+	- Issues fixed from BitBucket: #1, #2, #3, #4, #5, #6, #7, #8, #9, #10, #11, #12, #13, #14, #15, #16, #17, #18, #19, #20, #21, #22, #23, #24, #25, #26.
+
+### v1.0.3:
+	- WordPress Review 4.
+
+### v1.0.2:
+	- WordPress Review 2.
+
+### v1.0.1:
+	- WordPress Review 1.
+
+### v1.0.0:
+	- Initial Release.

@@ -54,24 +54,6 @@
         )
     );
 
-
-    /* Estimated reading time single blog posts */
-    $wp_customize->add_setting( $prefix.'_enable_post_esrt_blog_posts',
-        array(
-            'sanitize_callback' => $prefix.'_sanitize_checkbox',
-            'default' => 1
-        )
-    );
-    $wp_customize->add_control(
-        $prefix.'_enable_post_esrt_blog_posts',
-        array(
-            'type'	=> 'checkbox',
-            'label' => esc_html__('Estimated reading time meta on single blog post', 'regina-lite'),
-            'description' => esc_html__('This will disable the estimated reading time zone.', 'regina-lite'),
-            'section' => $prefix.'_blog_global_section',
-        )
-    );
-
     /* Post Category on single blog posts */
     $wp_customize->add_setting( $prefix.'_enable_post_category_blog_posts',
         array(
@@ -105,25 +87,6 @@
             'section' => $prefix.'_blog_global_section',
         )
     );
-
-    /* Post Comments on single blog posts */
-    $wp_customize->add_setting( $prefix.'_enable_post_comments_blog_posts',
-        array(
-            'sanitize_callback' => $prefix.'_sanitize_checkbox',
-            'default' => 0
-        )
-    );
-
-    $wp_customize->add_control(
-        $prefix.'_enable_post_comments_blog_posts',
-        array(
-            'type'	=> 'checkbox',
-            'label' => esc_html__('Coments meta on single blog post', 'regina-lite'),
-            'description' => esc_html__('This will disable the comments header zone.', 'regina-lite'),
-            'section' => $prefix.'_blog_global_section',
-        )
-    );
-
 
     /* Breadcrumbs on single blog posts */
     $wp_customize->add_setting( $prefix.'_enable_post_breadcrumbs',
@@ -209,46 +172,6 @@
         )
     );
 
-
-    /* BreadCrumb Menu:  Prefix */
-    $wp_customize->add_setting($prefix.'_blog_breadcrumb_menu_prefix',
-        array(
-            'sanitize_callback' => 'sanitize_text_field',
-            'default' => ''
-        )
-    );
-    $wp_customize->add_control(
-        $prefix.'_blog_breadcrumb_menu_prefix',
-        array(
-            'label' => esc_html__('Text before the breadcrumbs menu', 'regina-lite'),
-            'description' => esc_html__('Recommended: You are here','regina-lite'),
-            'section' => $prefix.'_blog_breadcrumb_section',
-        )
-    );
-
-    /* BreadCrumb Menu:  separator */
-    $wp_customize->add_setting($prefix.'_blog_breadcrumb_menu_separator',
-        array(
-            'sanitize_callback' => $prefix.'_sanitize_radio_buttons',
-            'default' => 'rarr'
-        )
-    );
-    $wp_customize->add_control(
-        $prefix.'_blog_breadcrumb_menu_separator',
-        array(
-            'type' => 'select',
-            'choices' => array(
-                'rarr' => esc_html('&rarr;'),
-                'middot' => esc_html('&middot;'),
-                'diez' => esc_html('&#35;'),
-                'ampersand' => esc_html('&#38;'),
-            ),
-            'label' => esc_html__('Separator to be used between breadcrumb items', 'regina-lite'),
-            'description' => esc_html__('HTML accepted here', 'regina-lite'),
-            'section' => $prefix.'_blog_breadcrumb_section',
-        )
-    );
-
     /* BreadCrumb Menu:  post category */
     $wp_customize->add_setting($prefix.'_blog_breadcrumb_menu_post_category',
         array(
@@ -308,7 +231,7 @@
     $wp_customize->add_setting($prefix.'_sharing_bar_text',
         array(
             'sanitize_callback' => 'sanitize_text_field',
-            'default' => esc_html__('Share this article :', 'regina-lite'),
+            'default' => esc_html__( 'Share this article', 'regina-lite'),
         )
     );
     $wp_customize->add_control(
@@ -375,93 +298,6 @@
 	    )
     );
 
-    /* Reddit visibility */
-    $wp_customize->add_setting($prefix.'_reddit_visibility',
-        array(
-            'sanitize_callback' => $prefix.'_sanitize_checkbox',
-            'default' => 1
-        )
-    );
-    $wp_customize->add_control( new regina_lite_Disabled_Custom_Control(
-	    $wp_customize,
-        $prefix.'_reddit_visibility',
-	        array(
-	            'type'	=> 'checkbox',
-	            'label' => esc_html__('Display share on Reddit?', 'regina-lite'),
-	            'section' => $prefix.'_blog_social_section',
-	        )
-	    )
-    );
-
-    /* Tumblr visibility */
-    $wp_customize->add_setting($prefix.'_tumblr_visibility',
-        array(
-            'sanitize_callback' => $prefix.'_sanitize_checkbox',
-            'default' => 1
-        )
-    );
-    $wp_customize->add_control(
-        $prefix.'_tumblr_visibility',
-        array(
-            'type'	=> 'checkbox',
-            'label' => esc_html__('Display share on Tumblr ?', 'regina-lite'),
-            'section' => $prefix.'_blog_social_section',
-        )
-    );
-
-    /* Google+ visibility */
-    $wp_customize->add_setting($prefix.'_googlep_visibility',
-        array(
-            'sanitize_callback' => $prefix.'_sanitize_checkbox',
-            'default' => 1
-        )
-    );
-    $wp_customize->add_control( new regina_lite_Disabled_Custom_Control(
-	    $wp_customize,
-        $prefix.'_googlep_visibility',
-	        array(
-	            'type'	=> 'checkbox',
-	            'label' => esc_html__('Display share on Google+ ?', 'regina-lite'),
-	            'section' => $prefix.'_blog_social_section',
-	        )
-	    )
-    );
-
-    /* Pinterest visibility */
-    $wp_customize->add_setting($prefix.'_pinterest_visibility',
-        array(
-            'sanitize_callback' => $prefix.'_sanitize_checkbox',
-            'default' => 1
-        )
-    );
-    $wp_customize->add_control( new regina_lite_Disabled_Custom_Control(
-	    $wp_customize,
-        $prefix.'_pinterest_visibility',
-	        array(
-	            'type'	=> 'checkbox',
-	            'label' => esc_html__('Display share on Pinterest ?', 'regina-lite'),
-	            'section' => $prefix.'_blog_social_section',
-	        )
-	    )
-    );
-
-    /* VK visibility */
-    $wp_customize->add_setting($prefix.'_vk_visibility',
-        array(
-            'sanitize_callback' => $prefix.'_sanitize_checkbox',
-            'default' => 1
-        )
-    );
-    $wp_customize->add_control(
-        $prefix.'_vk_visibility',
-        array(
-            'type'	=> 'checkbox',
-            'label' => esc_html__('Display share on VK ?', 'regina-lite'),
-            'section' => $prefix.'_blog_social_section',
-        )
-    );
-
-
     /* Mail visibility */
     $wp_customize->add_setting($prefix.'_mail_visibility',
         array(
@@ -488,7 +324,7 @@
         array(
             'title'       => esc_html__( 'Related posts', 'regina-lite' ),
             'description' => esc_html__( 'Control various related posts settings from here. For a demo-like experience, we recommend you don\'t change these settings.', 'regina-lite'),
-            'panel' 	  => $panel_id
+            'panel'       => $panel_id
         )
     );
 
@@ -497,36 +333,36 @@
     $wp_customize->add_setting( $prefix.'_enable_related_title_blog_posts',
         array(
             'sanitize_callback' => $prefix.'_sanitize_checkbox',
-            'default' => 0
+            'default' => 1
         )
     );
-    $wp_customize->add_control( new regina_lite_Disabled_Custom_Control(
-	    $wp_customize,
+    $wp_customize->add_control( new Regina_lite_Disabled_Custom_Control(
+        $wp_customize,
         $prefix.'_enable_related_title_blog_posts',
-	        array(
-	            'type'	=> 'checkbox',
-	            'label' => esc_html__('Show posts title in the carousel ?', 'regina-lite'),
-	            'section' => $prefix.'_blog_related_section',
-	        )
-	    )
+            array(
+                'type'  => 'checkbox',
+                'label' => esc_html__('Show posts title in the carousel?', 'regina-lite'),
+                'section' => $prefix.'_blog_related_section',
+            )
+        )
     );
 
     /*  related posts date */
     $wp_customize->add_setting( $prefix.'_enable_related_date_blog_posts',
         array(
             'sanitize_callback' => $prefix.'_sanitize_checkbox',
-            'default' => 0
+            'default' => 1
         )
     );
-    $wp_customize->add_control( new regina_lite_Disabled_Custom_Control(
-	    $wp_customize,
+    $wp_customize->add_control( new Regina_lite_Disabled_Custom_Control(
+        $wp_customize,
         $prefix.'_enable_related_date_blog_posts',
-	        array(
-	            'type'	=> 'checkbox',
-	            'label' => esc_html__('Show posts date  ?', 'regina-lite'),
-	            'section' => $prefix.'_blog_related_section',
-	        )
-	    )
+            array(
+                'type'  => 'checkbox',
+                'label' => esc_html__('Show posts date  ?', 'regina-lite'),
+                'section' => $prefix.'_blog_related_section',
+            )
+        )
     );
 
 
@@ -537,15 +373,15 @@
             'default' => 1,
         )
     );
-    $wp_customize->add_control( new regina_lite_Disabled_Custom_Control(
-	    $wp_customize,
+    $wp_customize->add_control( new Regina_lite_Disabled_Custom_Control(
+        $wp_customize,
         $prefix.'_autoplay_blog_posts',
-	        array(
-	            'type'	=> 'checkbox',
-	            'label' => esc_html__('Autoplay related carousel ?', 'regina-lite'),
-	            'section' => $prefix.'_blog_related_section',
-	        )
-	    )
+            array(
+                'type'  => 'checkbox',
+                'label' => esc_html__('Autoplay related carousel ?', 'regina-lite'),
+                'section' => $prefix.'_blog_related_section',
+            )
+        )
     );
 
     /* Number of related posts to display at once  */
@@ -555,7 +391,7 @@
             'default' => 1
         )
     );
-    $wp_customize->add_control( new regina_lite_Controls_Slider_Control($wp_customize,
+    $wp_customize->add_control( new Regina_lite_Controls_Slider_Control($wp_customize,
         $prefix.'_howmany_blog_posts',
             array(
                 'label' => esc_html__('How many blog posts to display in the carousel at once ?', 'regina-lite'),
@@ -575,17 +411,17 @@
     $wp_customize->add_setting( $prefix.'_pagination_blog_posts',
         array(
             'sanitize_callback' => $prefix.'_sanitize_checkbox',
-            'default' => 1
+            'default' => 0
         )
     );
-    $wp_customize->add_control( new regina_lite_Disabled_Custom_Control(
-	    $wp_customize,
-	        $prefix.'_pagination_blog_posts',
-	        array(
-	            'type'	=> 'checkbox',
-	            'label' => esc_html__('Display pagination controls ?', 'regina-lite'),
-	            'description' => esc_html__('Will be displayed as navigation bullets', 'regina-lite'),
-	            'section' => $prefix.'_blog_related_section',
-	        )
-	    )
+    $wp_customize->add_control( new Regina_lite_Disabled_Custom_Control(
+        $wp_customize,
+            $prefix.'_pagination_blog_posts',
+            array(
+                'type'  => 'checkbox',
+                'label' => esc_html__('Display pagination controls ?', 'regina-lite'),
+                'description' => esc_html__('Will be displayed as navigation bullets', 'regina-lite'),
+                'section' => $prefix.'_blog_related_section',
+            )
+        )
     );

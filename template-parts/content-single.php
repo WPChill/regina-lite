@@ -8,6 +8,7 @@
  */
 ?>
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+    <?php do_action( 'mtl_single_before_content' ); ?>
     <?php if( has_post_thumbnail() ): ?>
         <div class="image">
             <?php the_post_thumbnail( 'regina-lite-blog' ); ?>
@@ -26,3 +27,4 @@
     </div>
     <?php do_action( 'mtl_single_after_content' ); ?>
 </article><!--.post-->
+<?php do_action( 'mtl_single_after_article' ); ?>
