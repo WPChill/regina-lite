@@ -10,11 +10,6 @@ function regina_lite_customize_register( $wp_customize ) {
 	/*************** INIT ************************/
 	/**********************************************/
 
-    /* Preloader Site Panel */
-    /*
-    require_once get_template_directory() . '/inc/customizer/panels/preloader.php';
-    */
-
     /* General Site Panel */
     require_once get_template_directory() . '/inc/customizer/panels/site.php';
 
