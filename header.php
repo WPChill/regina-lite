@@ -62,7 +62,10 @@
                             <?php if( $bookappointmenturl ): ?>
                                 <li class="hide-mobile"><a href="<?php echo esc_url( $bookappointmenturl ); ?>" title="<?php _e( 'Book Appointment', 'regina-lite' ); ?>" rel="appointment-modal"><span class="nc-icon-glyph ui-1_bell-53"></span> <?php _e( 'Book Appointment', 'regina-lite' ); ?></a></li>
                             <?php endif; ?>
-                            <li class="hide-mobile"><a href="#" title="<?php _e( 'Search', 'regina-lite' ); ?>" class="nav-search"><span class="nc-icon-outline ui-1_zoom"></span></a></li>
+                            <?php $enable_site_search_icon = get_theme_mod( 'regina_lite_enable_site_search_icon', 1 ); ?>
+                            <?php if( $enable_site_search_icon == 1 ): ?>
+                                <li class="hide-mobile"><a href="#" title="<?php _e( 'Search', 'regina-lite' ); ?>" class="nav-search"><span class="nc-icon-outline ui-1_zoom"></span></a></li>
+                            <?php endif; ?>
                         </ul>
                         <div class="nav-search-box hidden-lg">
                             <input type="text" placeholder="<?php _e( 'Search', 'regina-lite' ); ?>">

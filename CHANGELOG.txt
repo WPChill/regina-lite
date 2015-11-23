@@ -1,3 +1,7 @@
+### v1.0.5:
+	- Has been deleted preloader.php file from customizer.
+	- Has been added the option in customizer to enable or disable the search icon in header.
+
 ### v1.0.4:
 	- Has been deleted "empty()" function.
 	- Has been added OWL Carousel for Related Posts section.

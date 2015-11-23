@@ -25,7 +25,6 @@
     $site_title        = $wp_customize->get_section( 'static_front_page' );
     $site_title->panel = $panel_id;
 
-
     // Change priority for Site Title
     $site_title           = $wp_customize->get_control( 'blogname' );
     $site_title->priority = 15;

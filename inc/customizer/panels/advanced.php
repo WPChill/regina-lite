@@ -65,3 +65,21 @@
             'section' => $prefix.'_advanced_section',
         )
     );
+
+    // Enable Search Icon in Header
+    $wp_customize->add_setting( $prefix . '_enable_site_search_icon',
+        array(
+            'sanitize_callback' => $prefix . '_sanitize_checkbox',
+            'default'           => 1
+        )
+    );
+
+    $wp_customize->add_control(
+        $prefix . '_enable_site_search_icon',
+        array(
+            'type'          => 'checkbox',
+            'label'         => esc_html__( 'Enabel search icon in header?', 'regina-lite' ),
+            'description'   => esc_html__( 'Initial status: enabled. If you don\'t like the fact that search icon show in header, uncheck this.', 'regina-lite' ),
+            'section'       => $prefix . '_advanced_section',
+        )
+    );
