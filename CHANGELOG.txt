@@ -1,6 +1,8 @@
 ### v1.0.5:
 	- Has been deleted preloader.php file from customizer.
 	- Has been added the option in customizer to enable or disable the search icon in header.
+	- Has been removed "rel" tag from "Book Appointment" buttons.
+	- Has been added "max-height" to logo.
 
 ### v1.0.4:
 	- Has been deleted "empty()" function.
