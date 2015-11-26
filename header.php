@@ -60,7 +60,7 @@
                             ?>
                             <?php $bookappointmenturl = get_theme_mod( 'regina_lite_contact_bar_bookappointmenturl', 'regina-lite' ); ?>
                             <?php if( $bookappointmenturl ): ?>
-                                <li class="hide-mobile"><a href="<?php echo esc_url( $bookappointmenturl ); ?>" title="<?php _e( 'Book Appointment', 'regina-lite' ); ?>" rel="appointment-modal"><span class="nc-icon-glyph ui-1_bell-53"></span> <?php _e( 'Book Appointment', 'regina-lite' ); ?></a></li>
+                                <li class="hide-mobile"><a href="<?php echo esc_url( $bookappointmenturl ); ?>" title="<?php _e( 'Book Appointment', 'regina-lite' ); ?>"><span class="nc-icon-glyph ui-1_bell-53"></span> <?php _e( 'Book Appointment', 'regina-lite' ); ?></a></li>
                             <?php endif; ?>
                             <?php $enable_site_search_icon = get_theme_mod( 'regina_lite_enable_site_search_icon', 1 ); ?>
                             <?php if( $enable_site_search_icon == 1 ): ?>

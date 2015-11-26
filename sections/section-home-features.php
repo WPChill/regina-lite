@@ -40,7 +40,7 @@ $features_feature4_buttonurl = get_theme_mod( 'regina_lite_features_feature4_but
                     <?php endif; ?>
                     <br />
                     <?php if( $top_box_bookappointmenturl ): ?>
-                        <a href="<?php echo esc_url( $top_box_bookappointmenturl ); ?>" class="button white outline" rel="appointment-modal"><?php _e( 'Book Appointment', 'regina-lite' ); ?> <span class="nc-icon-glyph arrows-1_bold-right"></span></a>
+                        <a href="<?php echo esc_url( $top_box_bookappointmenturl ); ?>" class="button white outline" title="<?php _e( 'Book Appointment', 'regina-lite' ); ?>"><?php _e( 'Book Appointment', 'regina-lite' ); ?> <span class="nc-icon-glyph arrows-1_bold-right"></span></a>
                     <?php endif; ?>
                 </div><!--#call-out-->
             </div><!--.col-md-8-->
