@@ -387,8 +387,8 @@ body {
 }
 
 #header #logo a img {
-    max-width: 174px;
-    height: auto;
+    width: auto;
+    max-height: 80px;
 }
 
 #blog #related-posts {
