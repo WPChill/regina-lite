@@ -125,50 +125,50 @@ function regina_lite_widgets_init() {
 	register_sidebar( array(
 		'name'			=> esc_html__( 'Blog Sidebar', 'regina-lite' ),
 		'id'			=> 'blog-sidebar',
-		'before_widget'	=> '<div id="%1$s" class="widget %2$s">',
-		'after_widget'	=> '</div>',
-		'before_title'	=> '<h3>',
-		'after_title'	=> '</h3>'
+		'before_widget'         => '<div id="%1$s" class="widget %2$s">',
+		'after_widget'          => '</div>',
+		'before_title'          => '<h3>',
+		'after_title'           => '</h3>'
 	) );
 
 	// Footer Sidebar 1
 	register_sidebar( array(
 		'name'			=> esc_html__( 'Footer Sidebar 1', 'regina-lite' ),
 		'id'			=> 'footer-sidebar-1',
-		'before_widget'	=> '<div id="%1$s" class="block %2$s">',
-		'after_widget'	=> '</div>',
-		'before_title'	=> '<h6><small>',
-		'after_title'	=> '</small></h6>'
+		'before_widget'         => '<div id="%1$s" class="block %2$s">',
+		'after_widget'          => '</div>',
+		'before_title'          => '<h6 class="widgettitle"><small>',
+		'after_title'           => '</small></h6>'
 	) );
 
 	// Footer Sidebar 2
 	register_sidebar( array(
 		'name'			=> esc_html__( 'Footer Sidebar 2', 'regina-lite' ),
 		'id'			=> 'footer-sidebar-2',
-		'before_widget'	=> '<div id="%1$s" class="block %2$s">',
-		'after_widget'	=> '</div>',
-		'before_title'	=> '<h6><small>',
-		'after_title'	=> '</small></h6>'
+		'before_widget'         => '<div id="%1$s" class="block %2$s">',
+		'after_widget'          => '</div>',
+		'before_title'          => '<h6 class="widgettitle"><small>',
+		'after_title'           => '</small></h6>'
 	) );
 
 	// Footer Sidebar 3
 	register_sidebar( array(
 		'name'			=> esc_html__( 'Footer Sidebar 3', 'regina-lite' ),
 		'id'			=> 'footer-sidebar-3',
-		'before_widget'	=> '<div id="%1$s" class="block %2$s">',
-		'after_widget'	=> '</div>',
-		'before_title'	=> '<h6><small>',
-		'after_title'	=> '</small></h6>'
+		'before_widget'         => '<div id="%1$s" class="block %2$s">',
+		'after_widget'          => '</div>',
+		'before_title'          => '<h6 class="widgettitle"><small>',
+		'after_title'           => '</small></h6>'
 	) );
 
 	// Footer Sidebar 4
 	register_sidebar( array(
 		'name'			=> esc_html__( 'Footer Sidebar 4', 'regina-lite' ),
 		'id'			=> 'footer-sidebar-4',
-		'before_widget'	=> '<div id="%1$s" class="block %2$s">',
-		'after_widget'	=> '</div>',
-		'before_title'	=> '<h6><small>',
-		'after_title'	=> '</small></h6>'
+		'before_widget'         => '<div id="%1$s" class="block %2$s">',
+		'after_widget'          => '</div>',
+		'before_title'          => '<h6 class="widgettitle"><small>',
+		'after_title'           => '</small></h6>'
 	) );
 }
 add_action( 'widgets_init', 'regina_lite_widgets_init' );
@@ -189,14 +189,15 @@ function regina_lite_scripts() {
 
 	// WP Enqueue Style
 	wp_enqueue_style( 'bxslider-css', get_template_directory_uri() . '/layout/css/bxslider.min.css', array(), 'all' );
-    wp_enqueue_style( 'regina-lite-style', get_template_directory_uri() . '/style.css' );
+        wp_enqueue_style( 'regina-lite-style', get_template_directory_uri() . '/style.css' );
 	wp_enqueue_style( 'regina-lite-bootstrap', get_template_directory_uri() . '/layout/css/bootstrap.min.css', array(), '', 'all' );
 	wp_enqueue_style( 'regina-lite-mobile', get_template_directory_uri() . '/layout/css/mobile.min.css', array(), '', 'all' );
-	wp_enqueue_style( 'regina-lite-owl-carousel', get_template_directory_uri() . '/layout/css/owl-carousel.min.css', array(), '', 'all' );
-	wp_enqueue_style( 'regina-lite-owl-theme', get_template_directory_uri() . '/layout/css/owl-theme.min.css', array(), '', 'all' );
+
 	wp_enqueue_style( 'google-fonts' );
 
 	// WP Enqueue Script
+        wp_enqueue_script('pace-min-js', get_template_directory_uri() . '/layout/js/plugins/pace/pace.min.js', array('jquery'), '', false);
+        wp_enqueue_script('regina-lite-preloader', get_template_directory_uri() . '/layout/js/preloader.min.js', array('jquery', 'pace-min-js'), '', false);
 	wp_enqueue_script( 'regina-lite-jquery.bxslider.min', get_template_directory_uri() .'/layout/js/plugins/bxslider/bxslider.min.js', array( 'jquery' ), '', true );
 	if( $enable_site_lazyload == 1 ) {
 		wp_enqueue_script( 'regina-lite-jquery.lazyload.min', get_template_directory_uri() . '/layout/js/plugins/lazyload/lazyload.min.js', array( 'jquery' ), '', true );
@@ -204,7 +205,6 @@ function regina_lite_scripts() {
 	wp_enqueue_script( 'regina-lite-jquery.waypoints.min', get_template_directory_uri() . '/layout/js/plugins/waypoints/waypoints.min.js', array( 'jquery' ), '', true );
 	wp_enqueue_script( 'regina-lite-navigation', get_template_directory_uri() . '/layout/js/plugins/navigation/navigation.min.js', array( 'jquery' ), '20120206', true );
 	wp_enqueue_script( 'regina-lite-skip-link-focus-fix', get_template_directory_uri() . '/layout/js/plugins/skip-link-focus-fix/skip-link-focus-fix.js', array( 'jquery' ), '20130115', true );
-	wp_enqueue_script( 'regina-lite-owl-carousel', get_template_directory_uri() . '/layout/js/plugins/owl-carousel/owl-carousel.min.js', array( 'jquery' ), '', true );
 	wp_enqueue_script( 'regina-lite-custom', get_template_directory_uri() . '/layout/js/custom.min.js', array( 'jquery' ), '', true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {

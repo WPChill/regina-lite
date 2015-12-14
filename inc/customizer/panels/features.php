@@ -24,7 +24,6 @@ $wp_customize->add_panel( $panel_id,
 $wp_customize->add_section( $prefix . '_top_box' ,
     array(
         'title'       => esc_html__( 'Top Box', 'regina-lite' ),
-        'description' => esc_html__( 'Top Box Section description.', 'regina-lite' ),
         'panel'       => $panel_id
     )
 );
@@ -41,7 +40,6 @@ $wp_customize->add_control(
     array(
         'type'          => 'checkbox',
         'label'         => esc_html__( 'Show this section?', 'regina-lite' ),
-        'description'   => esc_html__( 'Subheader Images Show description.', 'regina-lite' ),
         'section'       => $prefix . '_top_box',
     )
 );
@@ -57,7 +55,6 @@ $wp_customize->add_control(
     $prefix.'_top_box_title',
     array(
         'label'         => esc_html__('Title:', 'regina-lite'),
-        'description'   => esc_html__('Title description,','regina-lite'),
         'section'       => $prefix.'_top_box',
     )
 );
@@ -73,7 +70,6 @@ $wp_customize->add_control(
     $prefix.'_top_box_description',
     array(
         'label'         => esc_html__('Description:', 'regina-lite'),
-        'description'   => esc_html__('Description description,','regina-lite'),
         'section'       => $prefix.'_top_box',
         'type'          => 'textarea'
     )
@@ -89,7 +85,6 @@ $wp_customize->add_setting( $prefix.'_top_box_bookappointmenturl',
 $wp_customize->add_control( $prefix.'_top_box_bookappointmenturl',
     array(
         'label'         => esc_html__( 'Book Aappointment URL:', 'regina-lite' ),
-        'description'   => esc_html__('Book Aappointment URL description.', 'regina-lite'),
         'section'       => $prefix.'_top_box',
         'settings'      => $prefix.'_top_box_bookappointmenturl',
     )
@@ -101,7 +96,6 @@ $wp_customize->add_control( $prefix.'_top_box_bookappointmenturl',
 $wp_customize->add_section( $prefix.'_features_general' ,
     array(
         'title'       => esc_html__( 'General', 'regina-lite' ),
-        'description' => esc_html__( 'General Section description.', 'regina-lite' ),
         'panel'       => $panel_id
     )
 );
@@ -118,7 +112,6 @@ $wp_customize->add_control(
     array(
         'type'          => 'checkbox',
         'label'         => esc_html__('Show this section?', 'regina-lite'),
-        'description'   => esc_html__('Features Show description.', 'regina-lite'),
         'section'       => $prefix.'_features_general',
     )
 );
@@ -134,7 +127,6 @@ $wp_customize->add_control(
     $prefix.'_features_general_title',
     array(
         'label'         => esc_html__('Title:', 'regina-lite'),
-        'description'   => esc_html__('Title description.','regina-lite'),
         'section'       => $prefix.'_features_general',
     )
 );
@@ -150,7 +142,6 @@ $wp_customize->add_control(
     $prefix.'_features_general_description',
     array(
         'label'         => esc_html__('Description:', 'regina-lite'),
-        'description'   => esc_html__('Description description.','regina-lite'),
         'section'       => $prefix.'_features_general',
         'type'          => 'textarea'
     )
@@ -162,7 +153,6 @@ $wp_customize->add_control(
 $wp_customize->add_section( $prefix.'_features_feature1' ,
     array(
         'title'       => esc_html__( 'Feature #1', 'regina-lite' ),
-        'description' => esc_html__( 'Feature #1 Section description.', 'regina-lite' ),
         'panel'       => $panel_id
     )
 );
@@ -178,7 +168,6 @@ $wp_customize->add_control(
     $prefix.'_features_feature1_title',
     array(
         'label'         => esc_html__('Title:', 'regina-lite'),
-        'description'   => esc_html__('Title description.','regina-lite'),
         'section'       => $prefix.'_features_feature1',
     )
 );
@@ -194,7 +183,6 @@ $wp_customize->add_control(
     $prefix.'_features_feature1_description',
     array(
         'label'         => esc_html__('Description:', 'regina-lite'),
-        'description'   => esc_html__('Description description.','regina-lite'),
         'section'       => $prefix.'_features_feature1',
         'type'          => 'textarea'
     )
@@ -209,7 +197,6 @@ $wp_customize->add_setting( $prefix.'_features_feature1_buttonurl',
 $wp_customize->add_control( $prefix.'_features_feature1_buttonurl',
     array(
         'label'         => esc_html__( 'Button URL:', 'regina-lite' ),
-        'description'   => esc_html__('Button URL description.', 'regina-lite'),
         'section'       => $prefix.'_features_feature1',
         'settings'      => $prefix.'_features_feature1_buttonurl',
     )
@@ -221,7 +208,6 @@ $wp_customize->add_control( $prefix.'_features_feature1_buttonurl',
 $wp_customize->add_section( $prefix.'_features_feature2' ,
     array(
         'title'       => esc_html__( 'Feature #2', 'regina-lite' ),
-        'description' => esc_html__( 'Feature #2 Section description.', 'regina-lite' ),
         'panel'       => $panel_id
     )
 );
@@ -237,7 +223,6 @@ $wp_customize->add_control(
     $prefix.'_features_feature2_title',
     array(
         'label'         => esc_html__('Title:', 'regina-lite'),
-        'description'   => esc_html__('Title description.','regina-lite'),
         'section'       => $prefix.'_features_feature2',
     )
 );
@@ -253,7 +238,6 @@ $wp_customize->add_control(
     $prefix.'_features_feature2_description',
     array(
         'label'         => esc_html__('Description:', 'regina-lite'),
-        'description'   => esc_html__('Description description.','regina-lite'),
         'section'       => $prefix.'_features_feature2',
         'type'          => 'textarea'
     )
@@ -268,7 +252,6 @@ $wp_customize->add_setting( $prefix.'_features_feature2_buttonurl',
 $wp_customize->add_control( $prefix.'_features_feature2_buttonurl',
     array(
         'label'         => esc_html__( 'Button URL:', 'regina-lite' ),
-        'description'   => esc_html__('Button URL description.', 'regina-lite'),
         'section'       => $prefix.'_features_feature2',
         'settings'      => $prefix.'_features_feature2_buttonurl',
     )
@@ -280,7 +263,6 @@ $wp_customize->add_control( $prefix.'_features_feature2_buttonurl',
 $wp_customize->add_section( $prefix.'_features_feature3' ,
     array(
         'title'       => esc_html__( 'Feature #3', 'regina-lite' ),
-        'description' => esc_html__( 'Feature #3 Section description.', 'regina-lite' ),
         'panel'       => $panel_id
     )
 );
@@ -296,7 +278,6 @@ $wp_customize->add_control(
     $prefix.'_features_feature3_title',
     array(
         'label'         => esc_html__('Title:', 'regina-lite'),
-        'description'   => esc_html__('Title description.','regina-lite'),
         'section'       => $prefix.'_features_feature3',
     )
 );
@@ -312,7 +293,6 @@ $wp_customize->add_control(
     $prefix.'_features_feature3_description',
     array(
         'label'         => esc_html__('Description:', 'regina-lite'),
-        'description'   => esc_html__('Description description.','regina-lite'),
         'section'       => $prefix.'_features_feature3',
         'type'          => 'textarea'
     )
@@ -327,7 +307,6 @@ $wp_customize->add_setting( $prefix.'_features_feature3_buttonurl',
 $wp_customize->add_control( $prefix.'_features_feature3_buttonurl',
     array(
         'label'         => esc_html__( 'Button URL:', 'regina-lite' ),
-        'description'   => esc_html__('Button URL description.', 'regina-lite'),
         'section'       => $prefix.'_features_feature3',
         'settings'      => $prefix.'_features_feature3_buttonurl',
     )
@@ -339,7 +318,6 @@ $wp_customize->add_control( $prefix.'_features_feature3_buttonurl',
 $wp_customize->add_section( $prefix.'_features_feature4' ,
     array(
         'title'       => esc_html__( 'Feature #4', 'regina-lite' ),
-        'description' => esc_html__( 'Feature #4 Section description.', 'regina-lite' ),
         'panel'       => $panel_id
     )
 );
@@ -355,7 +333,6 @@ $wp_customize->add_control(
     $prefix.'_features_feature4_title',
     array(
         'label'         => esc_html__('Title:', 'regina-lite'),
-        'description'   => esc_html__('Title description.','regina-lite'),
         'section'       => $prefix.'_features_feature4',
     )
 );
@@ -371,7 +348,6 @@ $wp_customize->add_control(
     $prefix.'_features_feature4_description',
     array(
         'label'         => esc_html__('Description:', 'regina-lite'),
-        'description'   => esc_html__('Description description.','regina-lite'),
         'section'       => $prefix.'_features_feature4',
         'type'          => 'textarea'
     )
@@ -386,9 +362,7 @@ $wp_customize->add_setting( $prefix.'_features_feature4_buttonurl',
 $wp_customize->add_control( $prefix.'_features_feature4_buttonurl',
     array(
         'label'         => esc_html__( 'Button URL:', 'regina-lite' ),
-        'description'   => esc_html__('Button URL description.', 'regina-lite'),
         'section'       => $prefix.'_features_feature4',
         'settings'      => $prefix.'_features_feature4_buttonurl',
     )
 );
-?>

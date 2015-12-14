@@ -56,13 +56,15 @@
         )
     );
 
-    $wp_customize->add_control(
+    $wp_customize->add_control( new regina_lite_Disabled_Custom_Control (
+        $wp_customize,
         $prefix.'_enable_site_lazyload',
-        array(
-            'type'	=> 'checkbox',
-            'label' => esc_html__('Enable Lazy Load behavior for images ?', 'regina-lite'),
-            'description' => esc_html__('Initial status: enabled. If you don\'t like the fact that images are being loaded as you scroll them into view, uncheck this.', 'regina-lite'),
-            'section' => $prefix.'_advanced_section',
+            array(
+                'type'          => 'checkbox',
+                'label'         => esc_html__('Enable Lazy Load for images ?', 'regina-lite'),
+                'description'   => esc_html__('Initial status: enabled. If you don\'t like the fact that images are being loaded as you scroll them into view, uncheck this.', 'regina-lite'),
+                'section'       => $prefix.'_advanced_section',
+            )
         )
     );
 
@@ -74,12 +76,14 @@
         )
     );
 
-    $wp_customize->add_control(
+    $wp_customize->add_control( new regina_lite_Disabled_Custom_Control (
+        $wp_customize,
         $prefix . '_enable_site_search_icon',
-        array(
-            'type'          => 'checkbox',
-            'label'         => esc_html__( 'Enabel search icon in header?', 'regina-lite' ),
-            'description'   => esc_html__( 'Initial status: enabled. If you don\'t like the fact that search icon show in header, uncheck this.', 'regina-lite' ),
-            'section'       => $prefix . '_advanced_section',
+            array(
+                'type'          => 'checkbox',
+                'label'         => esc_html__( 'Enabel search icon in header?', 'regina-lite' ),
+                'description'   => esc_html__( 'Initial status: enabled. If you don\'t like the fact that search icon show in header, uncheck this.', 'regina-lite' ),
+                'section'       => $prefix . '_advanced_section',
+            )
         )
     );

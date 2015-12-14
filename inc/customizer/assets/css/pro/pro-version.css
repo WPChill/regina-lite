@@ -144,6 +144,7 @@
 }
 
 /* Add dotted lines on PRO sections */
+/*
 #accordion-panel-regina_lite_panel_advanced .accordion-section-title,
 #accordion-panel-regina_lite_panel_general .accordion-section-title,
 #accordion-panel-regina_lite_panel_preloader .accordion-section-title,
@@ -155,6 +156,15 @@
     background-repeat: repeat;
 }
 
+
+#accordion-panel-regina_lite_panel_advanced .accordion-section-title:after,
+#accordion-panel-regina_lite_panel_general .accordion-section-title:after,
+#accordion-panel-regina_lite_panel_preloader .accordion-section-title:after,
+#accordion-panel-regina_lite_panel_blog .accordion-section-title:after,
+#accordion-panel-regina_lite_panel_formats .accordion-section-title:after { 
+    content: '\f160';
+}
+*/
 
 #accordion-section-pixova_lite_pro_section .accordion-section-title {
     background-color: #e25136;
@@ -187,5 +197,5 @@
 
 }
 .checkbox-pro-feature .pro-badge {
-    padding: 13px 7.5px;
+    padding: 15px 7.5px;
 }

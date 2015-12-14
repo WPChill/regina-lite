@@ -14,7 +14,7 @@ $wp_customize->add_panel( $panel_id,
         'capability'        => 'edit_theme_options',
         'theme_supports'    => '',
         'title'             => esc_html__( 'Testimonials Panel', 'regina-lite' ),
-        'description'       => esc_html__( 'Testimonials Panel description.', 'regina-lite' ),
+        //'description'       => esc_html__( 'Testimonials Panel description.', 'regina-lite' ),
     )
 );
 
@@ -24,7 +24,7 @@ $wp_customize->add_panel( $panel_id,
 $wp_customize->add_section( $prefix.'_testimonials_general' ,
     array(
         'title'       => esc_html__( 'General', 'regina-lite' ),
-        'description' => esc_html__( 'General Section description.', 'regina-lite' ),
+        //'description' => esc_html__( 'General Section description.', 'regina-lite' ),
         'panel'       => $panel_id
     )
 );
@@ -41,18 +41,29 @@ $wp_customize->add_control(
     array(
         'type'          => 'checkbox',
         'label'         => esc_html__('Show this section?', 'regina-lite'),
-        'description'   => esc_html__('Testimonials Show description.', 'regina-lite'),
+        //'description'   => esc_html__('Testimonials Show description.', 'regina-lite'),
         'section'       => $prefix.'_testimonials_general',
     )
 );
 
 /* Image #1 */
-$wp_customize->add_setting( $prefix . '_testimonials_general_image1', array( 'default' => get_template_directory_uri() . '/layout/images/home/testimonial-1.jpg', 'sanitize_callback' => 'esc_url_raw' ) );
-$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, $prefix . '_testimonials_general_image1', array(
-    'label'    => __( 'Image #1:', 'regina-lite' ),
-    'section'  => $prefix.'_testimonials_general',
-    'settings' => $prefix . '_testimonials_general_image1',
-) ) );
+$wp_customize->add_setting( 
+        $prefix . '_testimonials_general_image1', 
+        array( 
+            'default' => get_template_directory_uri() . '/layout/images/home/testimonial-1.jpg', 
+            'sanitize_callback' => 'esc_url_raw' 
+            ) 
+        );
+
+$wp_customize->add_control( new WP_Customize_Image_Control( 
+    $wp_customize, $prefix . '_testimonials_general_image1', 
+        array(
+            'label'    => __( 'Image #1:', 'regina-lite' ),
+            'section'  => $prefix.'_testimonials_general',
+            'settings' => $prefix . '_testimonials_general_image1',
+        ) 
+    ) 
+);
 
 /* Image #2 */
 $wp_customize->add_setting( $prefix . '_testimonials_general_image2', array( 'default' => get_template_directory_uri() . '/layout/images/home/testimonial-2.jpg', 'sanitize_callback' => 'esc_url_raw' ) );
@@ -100,7 +111,7 @@ $wp_customize->add_control(
     $prefix.'_testimonials_testimonial1_description',
     array(
         'label'         => esc_html__('Description:', 'regina-lite'),
-        'description'   => esc_html__('Description description.','regina-lite'),
+        //'description'   => esc_html__('Description description.','regina-lite'),
         'section'       => $prefix.'_testimonials_testimonial1',
         'type'			=> 'textarea'
     )
@@ -125,7 +136,7 @@ $wp_customize->add_control(
     $prefix.'_testimonials_testimonial1_name',
     array(
         'label'         => esc_html__('Name:', 'regina-lite'),
-        'description'   => esc_html__('Name description.','regina-lite'),
+        //'description'   => esc_html__('Name description.','regina-lite'),
         'section'       => $prefix.'_testimonials_testimonial1'
     )
 );
@@ -141,7 +152,7 @@ $wp_customize->add_control(
     $prefix.'_testimonials_testimonial1_position',
     array(
         'label'         => esc_html__('Position:', 'regina-lite'),
-        'description'   => esc_html__('Position description.','regina-lite'),
+        //'description'   => esc_html__('Position description.','regina-lite'),
         'section'       => $prefix.'_testimonials_testimonial1'
     )
 );
@@ -152,7 +163,7 @@ $wp_customize->add_control(
 $wp_customize->add_section( $prefix.'_testimonials_testimonial2' ,
     array(
         'title'       => esc_html__( 'Testimonial #2', 'regina-lite' ),
-        'description' => esc_html__( 'Testimonial #2 Section description.', 'regina-lite' ),
+        //'description' => esc_html__( 'Testimonial #2 Section description.', 'regina-lite' ),
         'panel'       => $panel_id
     )
 );
@@ -168,7 +179,7 @@ $wp_customize->add_control(
     $prefix.'_testimonials_testimonial2_description',
     array(
         'label'         => esc_html__('Description:', 'regina-lite'),
-        'description'   => esc_html__('Description description.','regina-lite'),
+        //'description'   => esc_html__('Description description.','regina-lite'),
         'section'       => $prefix.'_testimonials_testimonial2',
         'type'			=> 'textarea'
     )
@@ -193,7 +204,7 @@ $wp_customize->add_control(
     $prefix.'_testimonials_testimonial2_name',
     array(
         'label'         => esc_html__('Name:', 'regina-lite'),
-        'description'   => esc_html__('Name description.','regina-lite'),
+        //'description'   => esc_html__('Name description.','regina-lite'),
         'section'       => $prefix.'_testimonials_testimonial2'
     )
 );
@@ -209,7 +220,7 @@ $wp_customize->add_control(
     $prefix.'_testimonials_testimonial2_position',
     array(
         'label'         => esc_html__('Position:', 'regina-lite'),
-        'description'   => esc_html__('Position description.','regina-lite'),
+        //'description'   => esc_html__('Position description.','regina-lite'),
         'section'       => $prefix.'_testimonials_testimonial2'
     )
 );
@@ -220,7 +231,7 @@ $wp_customize->add_control(
 $wp_customize->add_section( $prefix.'_testimonials_testimonial3' ,
     array(
         'title'       => esc_html__( 'Testimonial #3', 'regina-lite' ),
-        'description' => esc_html__( 'Testimonial #3 Section description.', 'regina-lite' ),
+        //'description' => esc_html__( 'Testimonial #3 Section description.', 'regina-lite' ),
         'panel'       => $panel_id
     )
 );
@@ -236,7 +247,7 @@ $wp_customize->add_control(
     $prefix.'_testimonials_testimonial3_description',
     array(
         'label'         => esc_html__('Description:', 'regina-lite'),
-        'description'   => esc_html__('Description description.','regina-lite'),
+        //'description'   => esc_html__('Description description.','regina-lite'),
         'section'       => $prefix.'_testimonials_testimonial3',
         'type'          => 'textarea'
     )
@@ -261,7 +272,7 @@ $wp_customize->add_control(
     $prefix.'_testimonials_testimonial3_name',
     array(
         'label'         => esc_html__('Name:', 'regina-lite'),
-        'description'   => esc_html__('Name description.','regina-lite'),
+        //'description'   => esc_html__('Name description.','regina-lite'),
         'section'       => $prefix.'_testimonials_testimonial3'
     )
 );
@@ -277,7 +288,7 @@ $wp_customize->add_control(
     $prefix.'_testimonials_testimonial3_position',
     array(
         'label'         => esc_html__('Position:', 'regina-lite'),
-        'description'   => esc_html__('Position description.','regina-lite'),
+        //'description'   => esc_html__('Position description.','regina-lite'),
         'section'       => $prefix.'_testimonials_testimonial3'
     )
 );
@@ -288,7 +299,7 @@ $wp_customize->add_control(
 $wp_customize->add_section( $prefix.'_testimonials_testimonial4' ,
     array(
         'title'       => esc_html__( 'Testimonial #4', 'regina-lite' ),
-        'description' => esc_html__( 'Testimonial #4 Section description.', 'regina-lite' ),
+        //'description' => esc_html__( 'Testimonial #4 Section description.', 'regina-lite' ),
         'panel'       => $panel_id
     )
 );
@@ -304,7 +315,7 @@ $wp_customize->add_control(
     $prefix.'_testimonials_testimonial4_description',
     array(
         'label'         => esc_html__('Description:', 'regina-lite'),
-        'description'   => esc_html__('Description description.','regina-lite'),
+        //'description'   => esc_html__('Description description.','regina-lite'),
         'section'       => $prefix.'_testimonials_testimonial4',
         'type'          => 'textarea'
     )
@@ -329,7 +340,7 @@ $wp_customize->add_control(
     $prefix.'_testimonials_testimonial4_name',
     array(
         'label'         => esc_html__('Name:', 'regina-lite'),
-        'description'   => esc_html__('Name description.','regina-lite'),
+        //'description'   => esc_html__('Name description.','regina-lite'),
         'section'       => $prefix.'_testimonials_testimonial4'
     )
 );
@@ -345,7 +356,7 @@ $wp_customize->add_control(
     $prefix.'_testimonials_testimonial4_position',
     array(
         'label'         => esc_html__('Position:', 'regina-lite'),
-        'description'   => esc_html__('Position description.','regina-lite'),
+        //'description'   => esc_html__('Position description.','regina-lite'),
         'section'       => $prefix.'_testimonials_testimonial4'
     )
 );
@@ -356,7 +367,7 @@ $wp_customize->add_control(
 $wp_customize->add_section( $prefix.'_testimonials_testimonial5' ,
     array(
         'title'       => esc_html__( 'Testimonial #5', 'regina-lite' ),
-        'description' => esc_html__( 'Testimonial #5 Section description.', 'regina-lite' ),
+        //'description' => esc_html__( 'Testimonial #5 Section description.', 'regina-lite' ),
         'panel'       => $panel_id
     )
 );
@@ -372,7 +383,7 @@ $wp_customize->add_control(
     $prefix.'_testimonials_testimonial5_description',
     array(
         'label'         => esc_html__('Description:', 'regina-lite'),
-        'description'   => esc_html__('Description description.','regina-lite'),
+        //'description'   => esc_html__('Description description.','regina-lite'),
         'section'       => $prefix.'_testimonials_testimonial5',
         'type'          => 'textarea'
     )
@@ -397,7 +408,7 @@ $wp_customize->add_control(
     $prefix.'_testimonials_testimonial5_name',
     array(
         'label'         => esc_html__('Name:', 'regina-lite'),
-        'description'   => esc_html__('Name description.','regina-lite'),
+        //'description'   => esc_html__('Name description.','regina-lite'),
         'section'       => $prefix.'_testimonials_testimonial5'
     )
 );
@@ -413,8 +424,7 @@ $wp_customize->add_control(
     $prefix.'_testimonials_testimonial5_position',
     array(
         'label'         => esc_html__('Position:', 'regina-lite'),
-        'description'   => esc_html__('Position description.','regina-lite'),
+        //'description'   => esc_html__('Position description.','regina-lite'),
         'section'       => $prefix.'_testimonials_testimonial5'
     )
 );
-?>

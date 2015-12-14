@@ -4,11 +4,11 @@
     require get_template_directory() . '/inc/customizer/custom-controls/radio-img-selector.php';
     require get_template_directory() . '/inc/customizer/custom-controls/pro-controls-selector.php';
 
-    // Set Panel ID
-    $panel_id = 'regina_lite_panel_general';
-
     // Set prefix
     $prefix = 'regina_lite';
+    
+    // Set Panel ID
+    $panel_id = $prefix.'_panel_general';
 
     // Change panel for Site Title & Tagline Section
     $site_title        = $wp_customize->get_section( 'title_tagline' );
@@ -18,20 +18,20 @@
     $wp_customize->remove_section('colors');
 
     // Change panel for Background Image
-    $site_title        = $wp_customize->get_section( 'background_image' );
-    $site_title->panel = $panel_id;
+    $site_title2        = $wp_customize->get_section( 'background_image' );
+    $site_title2->panel = $panel_id;
 
     // Change panel for Static Front Page
-    $site_title        = $wp_customize->get_section( 'static_front_page' );
-    $site_title->panel = $panel_id;
+    $site_title3        = $wp_customize->get_section( 'static_front_page' );
+    $site_title3->panel = $panel_id;
 
     // Change priority for Site Title
-    $site_title           = $wp_customize->get_control( 'blogname' );
-    $site_title->priority = 15;
+    $site_title4           = $wp_customize->get_control( 'blogname' );
+    $site_title4->priority = 15;
 
     // Change priority for Site Tagline
-    $site_title           = $wp_customize->get_control( 'blogdescription' );
-    $site_title->priority = 17;
+    $site_title5           = $wp_customize->get_control( 'blogdescription' );
+    $site_title5->priority = 17;
 
 
     /***********************************************/

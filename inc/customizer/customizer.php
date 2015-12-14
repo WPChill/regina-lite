@@ -144,7 +144,6 @@ if( !function_exists( 'regina_lite_customizer_css_load' ) ) {
      * Function to load CSS into the customizer
      */
     function regina_lite_customizer_css_load() {
-        wp_enqueue_style(   'rl-general-customizer-css', get_template_directory_uri() . '/inc/customizer/assets/css/riba-lite.css');
         wp_enqueue_style('mt-customizer-css', get_template_directory_uri() .'/inc/customizer/assets/css/pro/pro-version.css');
 
     }

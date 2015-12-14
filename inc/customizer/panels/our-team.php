@@ -14,7 +14,7 @@ $wp_customize->add_panel( $panel_id,
         'capability'        => 'edit_theme_options',
         'theme_supports'    => '',
         'title'             => esc_html__( 'Our Team Panel', 'regina-lite' ),
-        'description'       => esc_html__( 'Our Team Panel description.', 'regina-lite' ),
+        //'description'       => esc_html__( 'Our Team Panel description.', 'regina-lite' ),
     )
 );
 
@@ -24,7 +24,7 @@ $wp_customize->add_panel( $panel_id,
 $wp_customize->add_section( $prefix.'_ourteam_general' ,
     array(
         'title'       => esc_html__( 'General', 'regina-lite' ),
-        'description' => esc_html__( 'General Section description.', 'regina-lite' ),
+        //'description' => esc_html__( 'General Section description.', 'regina-lite' ),
         'panel'       => $panel_id
     )
 );
@@ -41,7 +41,7 @@ $wp_customize->add_control(
     array(
         'type'          => 'checkbox',
         'label'         => esc_html__('Show this section?', 'regina-lite'),
-        'description'   => esc_html__('Our Team Show description.', 'regina-lite'),
+        //'description'   => esc_html__('Our Team Show description.', 'regina-lite'),
         'section'       => $prefix.'_ourteam_general',
     )
 );
@@ -57,7 +57,7 @@ $wp_customize->add_control(
     $prefix.'_ourteam_general_title',
     array(
         'label'         => esc_html__('Title:', 'regina-lite'),
-        'description'   => esc_html__('Title description.','regina-lite'),
+        //'description'   => esc_html__('Title description.','regina-lite'),
         'section'       => $prefix.'_ourteam_general',
     )
 );
@@ -73,7 +73,7 @@ $wp_customize->add_control(
     $prefix.'_ourteam_general_description',
     array(
         'label'         => esc_html__('Description:', 'regina-lite'),
-        'description'   => esc_html__('Description description.','regina-lite'),
+        //'description'   => esc_html__('Description description.','regina-lite'),
         'section'       => $prefix.'_ourteam_general',
         'type'          => 'textarea'
     )
@@ -85,7 +85,7 @@ $wp_customize->add_control(
 $wp_customize->add_section( $prefix.'_ourteam_teammember1' ,
     array(
         'title'       => esc_html__( 'Team Member #1', 'regina-lite' ),
-        'description' => esc_html__( 'Team Member #1 Section description.', 'regina-lite' ),
+        //'description' => esc_html__( 'Team Member #1 Section description.', 'regina-lite' ),
         'panel'       => $panel_id
     )
 );
@@ -109,7 +109,7 @@ $wp_customize->add_control(
     $prefix.'_ourteam_teammember1_name',
     array(
         'label'         => esc_html__('Name:', 'regina-lite'),
-        'description'   => esc_html__('Name description.','regina-lite'),
+        //'description'   => esc_html__('Name description.','regina-lite'),
         'section'       => $prefix.'_ourteam_teammember1',
     )
 );
@@ -125,7 +125,7 @@ $wp_customize->add_control(
     $prefix.'_ourteam_teammember1_position',
     array(
         'label'         => esc_html__('Position:', 'regina-lite'),
-        'description'   => esc_html__('Position description.','regina-lite'),
+        //'description'   => esc_html__('Position description.','regina-lite'),
         'section'       => $prefix.'_ourteam_teammember1',
     )
 );
@@ -141,7 +141,7 @@ $wp_customize->add_control(
     $prefix.'_ourteam_teammember1_description',
     array(
         'label'         => esc_html__('Description:', 'regina-lite'),
-        'description'   => esc_html__('Description description.','regina-lite'),
+        //'description'   => esc_html__('Description description.','regina-lite'),
         'section'       => $prefix.'_ourteam_teammember1',
         'type'			=> 'textarea'
     )
@@ -157,7 +157,7 @@ $wp_customize->add_setting( $prefix.'_ourteam_teammember1_buttonurl',
 $wp_customize->add_control( $prefix.'_ourteam_teammember1_buttonurl',
     array(
         'label'         => esc_html__( 'Button URL:', 'regina-lite' ),
-        'description'   => esc_html__('Button URL description.', 'regina-lite'),
+        //'description'   => esc_html__('Button URL description.', 'regina-lite'),
         'section'       => $prefix.'_ourteam_teammember1',
         'settings'      => $prefix.'_ourteam_teammember1_buttonurl',
     )
@@ -169,7 +169,7 @@ $wp_customize->add_control( $prefix.'_ourteam_teammember1_buttonurl',
 $wp_customize->add_section( $prefix.'_ourteam_teammember2' ,
     array(
         'title'       => esc_html__( 'Team Member #2', 'regina-lite' ),
-        'description' => esc_html__( 'Team Member #2 Section description.', 'regina-lite' ),
+        //'description' => esc_html__( 'Team Member #2 Section description.', 'regina-lite' ),
         'panel'       => $panel_id
     )
 );
@@ -193,7 +193,7 @@ $wp_customize->add_control(
     $prefix.'_ourteam_teammember2_name',
     array(
         'label'         => esc_html__('Name:', 'regina-lite'),
-        'description'   => esc_html__('Name description.','regina-lite'),
+        //'description'   => esc_html__('Name description.','regina-lite'),
         'section'       => $prefix.'_ourteam_teammember2',
     )
 );
@@ -209,7 +209,7 @@ $wp_customize->add_control(
     $prefix.'_ourteam_teammember2_position',
     array(
         'label'         => esc_html__('Position:', 'regina-lite'),
-        'description'   => esc_html__('Position description.','regina-lite'),
+        //'description'   => esc_html__('Position description.','regina-lite'),
         'section'       => $prefix.'_ourteam_teammember2',
     )
 );
@@ -225,7 +225,7 @@ $wp_customize->add_control(
     $prefix.'_ourteam_teammember2_description',
     array(
         'label'         => esc_html__('Description:', 'regina-lite'),
-        'description'   => esc_html__('Description description.','regina-lite'),
+        //'description'   => esc_html__('Description description.','regina-lite'),
         'section'       => $prefix.'_ourteam_teammember2',
         'type'			=> 'textarea'
     )
@@ -241,7 +241,7 @@ $wp_customize->add_setting( $prefix.'_ourteam_teammember2_buttonurl',
 $wp_customize->add_control( $prefix.'_ourteam_teammember2_buttonurl',
     array(
         'label'         => esc_html__( 'Button URL:', 'regina-lite' ),
-        'description'   => esc_html__('Button URL description.', 'regina-lite'),
+        //'description'   => esc_html__('Button URL description.', 'regina-lite'),
         'section'       => $prefix.'_ourteam_teammember2',
         'settings'      => $prefix.'_ourteam_teammember2_buttonurl',
     )
@@ -253,7 +253,7 @@ $wp_customize->add_control( $prefix.'_ourteam_teammember2_buttonurl',
 $wp_customize->add_section( $prefix.'_ourteam_teammember3' ,
     array(
         'title'       => esc_html__( 'Team Member #3', 'regina-lite' ),
-        'description' => esc_html__( 'Team Member #3 Section description.', 'regina-lite' ),
+        //'description' => esc_html__( 'Team Member #3 Section description.', 'regina-lite' ),
         'panel'       => $panel_id
     )
 );
@@ -277,7 +277,7 @@ $wp_customize->add_control(
     $prefix.'_ourteam_teammember3_name',
     array(
         'label'         => esc_html__('Name:', 'regina-lite'),
-        'description'   => esc_html__('Name description.','regina-lite'),
+        //'description'   => esc_html__('Name description.','regina-lite'),
         'section'       => $prefix.'_ourteam_teammember3',
     )
 );
@@ -293,7 +293,7 @@ $wp_customize->add_control(
     $prefix.'_ourteam_teammember3_position',
     array(
         'label'         => esc_html__('Position:', 'regina-lite'),
-        'description'   => esc_html__('Position description.','regina-lite'),
+        //'description'   => esc_html__('Position description.','regina-lite'),
         'section'       => $prefix.'_ourteam_teammember3',
     )
 );
@@ -309,7 +309,7 @@ $wp_customize->add_control(
     $prefix.'_ourteam_teammember3_description',
     array(
         'label'         => esc_html__('Description:', 'regina-lite'),
-        'description'   => esc_html__('Description description.','regina-lite'),
+        //'description'   => esc_html__('Description description.','regina-lite'),
         'section'       => $prefix.'_ourteam_teammember3',
         'type'          => 'textarea'
     )
@@ -325,7 +325,7 @@ $wp_customize->add_setting( $prefix.'_ourteam_teammember3_buttonurl',
 $wp_customize->add_control( $prefix.'_ourteam_teammember3_buttonurl',
     array(
         'label'         => esc_html__( 'Button URL:', 'regina-lite' ),
-        'description'   => esc_html__('Button URL description.', 'regina-lite'),
+        //'description'   => esc_html__('Button URL description.', 'regina-lite'),
         'section'       => $prefix.'_ourteam_teammember3',
         'settings'      => $prefix.'_ourteam_teammember3_buttonurl',
     )
@@ -337,7 +337,7 @@ $wp_customize->add_control( $prefix.'_ourteam_teammember3_buttonurl',
 $wp_customize->add_section( $prefix.'_ourteam_teammember4' ,
     array(
         'title'       => esc_html__( 'Team Member #4', 'regina-lite' ),
-        'description' => esc_html__( 'Team Member #4 Section description.', 'regina-lite' ),
+        //'description' => esc_html__( 'Team Member #4 Section description.', 'regina-lite' ),
         'panel'       => $panel_id
     )
 );
@@ -361,7 +361,7 @@ $wp_customize->add_control(
     $prefix.'_ourteam_teammember4_name',
     array(
         'label'         => esc_html__('Name:', 'regina-lite'),
-        'description'   => esc_html__('Name description.','regina-lite'),
+        //'description'   => esc_html__('Name description.','regina-lite'),
         'section'       => $prefix.'_ourteam_teammember4',
     )
 );
@@ -377,7 +377,7 @@ $wp_customize->add_control(
     $prefix.'_ourteam_teammember4_position',
     array(
         'label'         => esc_html__('Position:', 'regina-lite'),
-        'description'   => esc_html__('Position description.','regina-lite'),
+        //'description'   => esc_html__('Position description.','regina-lite'),
         'section'       => $prefix.'_ourteam_teammember4',
     )
 );
@@ -393,7 +393,7 @@ $wp_customize->add_control(
     $prefix.'_ourteam_teammember4_description',
     array(
         'label'         => esc_html__('Description:', 'regina-lite'),
-        'description'   => esc_html__('Description description.','regina-lite'),
+        //'description'   => esc_html__('Description description.','regina-lite'),
         'section'       => $prefix.'_ourteam_teammember4',
         'type'          => 'textarea'
     )
@@ -409,9 +409,8 @@ $wp_customize->add_setting( $prefix.'_ourteam_teammember4_buttonurl',
 $wp_customize->add_control( $prefix.'_ourteam_teammember4_buttonurl',
     array(
         'label'         => esc_html__( 'Button URL:', 'regina-lite' ),
-        'description'   => esc_html__('Button URL description.', 'regina-lite'),
+        //'description'   => esc_html__('Button URL description.', 'regina-lite'),
         'section'       => $prefix.'_ourteam_teammember4',
         'settings'      => $prefix.'_ourteam_teammember4_buttonurl',
     )
 );
-?>

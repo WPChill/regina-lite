@@ -1,14 +1,3 @@
-<?php
-/**
- * The header for our theme.
- *
- * This is the template that displays all of the <head> section and everything up until <div id="content">
- *
- * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
- *
- * @package regina-lite
- */
-?>
 <!DOCTYPE html>
 <html <?php language_attributes(); ?>>
     <head>
@@ -59,13 +48,13 @@
                             ) );
                             ?>
                             <?php $bookappointmenturl = get_theme_mod( 'regina_lite_contact_bar_bookappointmenturl', 'regina-lite' ); ?>
-                            <?php if( $bookappointmenturl ): ?>
+                            <?php if( $bookappointmenturl ){  ?>
                                 <li class="hide-mobile"><a href="<?php echo esc_url( $bookappointmenturl ); ?>" title="<?php _e( 'Book Appointment', 'regina-lite' ); ?>"><span class="nc-icon-glyph ui-1_bell-53"></span> <?php _e( 'Book Appointment', 'regina-lite' ); ?></a></li>
-                            <?php endif; ?>
+                            <?php }  ?>
                             <?php $enable_site_search_icon = get_theme_mod( 'regina_lite_enable_site_search_icon', 1 ); ?>
-                            <?php if( $enable_site_search_icon == 1 ): ?>
+                            <?php if( $enable_site_search_icon == 1 ) { ?>
                                 <li class="hide-mobile"><a href="#" title="<?php _e( 'Search', 'regina-lite' ); ?>" class="nav-search"><span class="nc-icon-outline ui-1_zoom"></span></a></li>
-                            <?php endif; ?>
+                            <?php } ?>
                         </ul>
                         <div class="nav-search-box hidden-lg">
                             <input type="text" placeholder="<?php _e( 'Search', 'regina-lite' ); ?>">
@@ -76,3 +65,11 @@
             </div><!--.row-->
         </div><!--.container-->
     </header><!--#header-->
+    
+    <!-- Site Preloader -->
+    <div id="page-loader">
+        <div class="page-loader-inner">
+            <div class="loader"></div>
+        </div>
+    </div>
+    <!-- END Site Preloader -->

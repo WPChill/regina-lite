@@ -219,10 +219,6 @@ if( !function_exists( 'regina_lite_prefix_upsell_notice' ) ) {
                 # Documentation URLs
                 'prefixDocURL' => esc_url('http://docs.machothemes.com/regina-lite/'),
                 'prefixDocLabel' => __('Theme Documentation', 'regina-lite'),
-
-                # Rate US URL
-                'prefixRateURL' => esc_url('https://wordpress.org/support/view/theme-reviews/regina-lite#postform'),
-                'prefixRateLabel' => __('If you like it, rate it !', 'regina-lite'),
             )
         );
 

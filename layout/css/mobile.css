@@ -10,7 +10,9 @@
   #navigation {
     display: none;
     float: left;
-    width: 100%; }
+    width: 100%; 
+    background-color: #FFF;
+  }
     #navigation .hide-mobile {
       display: none; }
     #navigation ul {

@@ -1,15 +1,6 @@
 {
   "name": "regina-lite",
   "main": "Gruntfile.js",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/cristianraiber/regina-lite"
-  },
-  "keywords": [
-    "responsive",
-    "onepage",
-    "light"
-  ],
   "author": "Macho Themes",
   "license": "GPL v3",
   "devDependencies": {
