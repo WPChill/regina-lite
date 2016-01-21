@@ -1,8 +1,12 @@
 <?php
-$widget_args = array(
-    'before_title'  => '<h6><small>',
-    'after_title'   => '</small></h6>'
-);
+    $widget_args = array(
+        'before_title'  => '<h6><small>',
+        'after_title'   => '</small></h6>'
+    );
+
+    $check_footer_theme_copyright_enable = get_theme_mod('regina_lite_footer_theme_copyright_enable', 1);
+    $text_footer_theme_copyright_message = get_theme_mod('regina_lite_footer_copyright', esc_html__( 'Made with love by Macho Themes &copy; Copyright 2016. All Rights Reserved.', 'regina-lite' ) )
+
 ?>
 <footer id="footer">
     <div class="container">
@@ -55,7 +59,14 @@ $widget_args = array(
     <div class="container">
         <div class="row">
             <div class="col-xs-12">
-                <?php echo get_theme_mod('regina_lite_footer_copyright', sprintf( '&copy; %s', __('Macho Themes 2015. All Rights Reserved', 'regina-lite') ) ); ?>
+                <?php
+                    if( $check_footer_theme_copyright_enable == 1 ) {
+                        echo sprintf( 'Theme: <a href="%s" target="_blank" rel="nofollow" title="Regina Lite">Regina Lite</a>', esc_url( 'http://www.machothemes.com/themes/regina-lite/' ) ) . ' &middot; ';
+                    }
+                    if( $text_footer_theme_copyright_message ) {
+                        echo $text_footer_theme_copyright_message;
+                    }
+                ?>
             </div>
         </div><!--.row-->
     </div><!--.container-->

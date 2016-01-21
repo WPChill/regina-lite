@@ -36,7 +36,7 @@ if( !class_exists( 'MTL_Contact_Bar_Output' ) ) {
             $this->youtube_url = get_theme_mod('regina_lite_contact_bar_youtube_url', '#');
             $this->pinterest_url = get_theme_mod('regina_lite_contact_bar_pinterest_url', '#');
             $this->linkedin_url = get_theme_mod('regina_lite_contact_bar_linkedin_url', '#');
-            $this->email_addr = get_theme_mod('regina_lite_email', 'contact@site.com');
+            $this->email_addr = get_theme_mod('regina_lite_email', __( 'contact@site.com', 'regina-lite' ) );
             $this->phone_number = get_theme_mod('regina_lite_phone', '+0 332 548 954');
             // add the action hook to generate the HTML output
             add_action( 'mtl_before_header', array( $this, 'contact_bar_output' ), 1 );

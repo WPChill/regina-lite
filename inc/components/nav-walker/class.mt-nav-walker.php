@@ -102,6 +102,8 @@ if(!class_exists('MTL_Extended_Menu_Walker') ) {
          */
         public static function fallback( $args = array() ) {
 
+            $fb_output = $container = $menu_id = $menu_class = '';
+
             if ( current_user_can( 'manage_options' ) ) {
 
                 extract( $args );
@@ -115,14 +117,38 @@ if(!class_exists('MTL_Extended_Menu_Walker') ) {
                         $fb_output .= ' class="' . $container_class . '"';
                     $fb_output .= '>';
                 }
-                $fb_output .= '<ul';
+                // $fb_output .= '<ul';
                 if ( $menu_id )
                     $fb_output .= ' id="' . $menu_id . '"';
                 if ( $menu_class )
                     $fb_output .= ' class="' . $menu_class . '"';
-                $fb_output .= '>';
+                // $fb_output .= '>';
                 $fb_output .= '<li><a href="' . admin_url( 'nav-menus.php' ) . '">'. __('Add a menu', 'regina-lite'). '</a></li>';
-                $fb_output .= '</ul>';
+               //  $fb_output .= '</ul>';
+                if ( $container )
+                    $fb_output .= '</' . $container . '>';
+                echo $fb_output;
+            } else {
+                if ( $container ) {
+                    $fb_output = '<' . $container;
+                    if ( $container_id )
+                        $fb_output .= ' id="' . $container_id . '"';
+                    if ( $container_class )
+                        $fb_output .= ' class="' . $container_class . '"';
+                    $fb_output .= '>';
+                }
+                // $fb_output .= '<ul';
+                if ( $menu_id )
+                    $fb_output .= ' id="' . $menu_id . '"';
+                if ( $menu_class )
+                    $fb_output .= ' class="' . $menu_class . '"';
+                // $fb_output .= '>';
+                    $fb_output .= '<li><a href="'. esc_url( home_url() ) .'" title="'. __( 'Home', 'regina-lite' ) .'">'. __( 'Home', 'regina-lite' ) .'</a></li>';
+                    $fb_output .= '<li><a href="#services-title-block" title="'. __( 'Services', 'regina-lite' ) .'">'. __( 'Services', 'regina-lite' ) .'</a></li>';
+                    $fb_output .= '<li><a href="#team-section-block" title="'. __( 'About', 'regina-lite' ) .'">'. __( 'About', 'regina-lite' ) .'</a></li>';
+                    $fb_output .= '<li><a href="#home-testimonials" title="'. __( 'Testimonials', 'regina-lite' ) .'">'. __( 'Testimonials', 'regina-lite' ) .'</a></li>';
+                    $fb_output .= '<li><a href="#footer" title="'. __( 'Contact', 'regina-lite' ) .'">'. __( 'Contact', 'regina-lite' ) .'</a></li>';
+                // $fb_output .= '</ul>';
                 if ( $container )
                     $fb_output .= '</' . $container . '>';
                 echo $fb_output;

@@ -147,6 +147,36 @@ $wp_customize->add_control(
     )
 );
 
+/* Button Text */
+$wp_customize->add_setting($prefix.'_features_general_button_text',
+    array(
+        'sanitize_callback' => 'sanitize_text_field',
+        'default'           => __( 'Our Services', 'regina-lite' )
+    )
+);
+$wp_customize->add_control(
+    $prefix.'_features_general_button_text',
+    array(
+        'label'         => esc_html__('Button Text:', 'regina-lite'),
+        'section'       => $prefix.'_features_general',
+    )
+);
+
+/* Button URL */
+$wp_customize->add_setting( $prefix.'_features_general_button_url',
+    array(
+        'sanitize_callback' => 'esc_url_raw',
+        'default'           => esc_url( '#' )
+    )
+);
+$wp_customize->add_control( $prefix.'_features_general_button_url',
+    array(
+        'label'         => esc_html__( 'Button URL:', 'regina-lite' ),
+        'section'       => $prefix.'_features_general',
+        'settings'      => $prefix.'_features_general_button_url',
+    )
+);
+
 /***********************************************/
 /************ FEATURE 1 SECTION ****************/
 /***********************************************/

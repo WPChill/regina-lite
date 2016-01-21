@@ -41,7 +41,7 @@
                                 'container_class'   => '',
                                 'container_id'      => '',
                                 'menu_class'        => '',
-                                'menu_id'           => '', 
+                                'menu_id'           => '',
                                 'items_wrap'        => '%3$s',
                                 'walker'            => new MTL_Extended_Menu_Walker(),
                                 'fallback_cb'       => 'MTL_Extended_Menu_Walker::fallback'
@@ -65,7 +65,13 @@
             </div><!--.row-->
         </div><!--.container-->
     </header><!--#header-->
-    
+
+    <?php
+    global $wp_customize;
+    $preloader_enabled = get_theme_mod('regina_lite_enable_site_preloader', 1);
+
+    if( !isset( $wp_customize ) && $preloader_enabled == 1 ) { ?>
+
     <!-- Site Preloader -->
     <div id="page-loader">
         <div class="page-loader-inner">
@@ -73,3 +79,4 @@
         </div>
     </div>
     <!-- END Site Preloader -->
+    <?php } ?>

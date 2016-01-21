@@ -13,7 +13,7 @@
     <div class="row">
         <?php get_template_part( 'sections/section', 'breadcrumb' ); ?>
         <?php get_sidebar(); ?>
-        <section id="blog" class="single">
+        <div id="blog" class="single">
             <div class="col-md-8">
                 <?php
                 if( have_posts() ):
@@ -29,7 +29,7 @@
                 endif;
                 ?>
             </div><!--.col-lg-8-->
-        </section><!--#blog.archive-->
+        </div><!--#blog.archive-->
     </div><!--.row-->
 </div><!--.container-->
 <?php get_footer(); ?>

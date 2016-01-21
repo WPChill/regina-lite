@@ -51,7 +51,7 @@ elseif ( count( $ourteam_members ) == 4 ):
 endif;
 ?>
 <div class="clear"></div>
-<div class="bg-block">
+<div id="team-section-block" class="bg-block">
     <div class="container">
         <div class="row">
             <div class="col-xs-12">

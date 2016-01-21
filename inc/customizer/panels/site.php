@@ -1,12 +1,8 @@
 <?php
 
-    // Include Custom Controls
-    require get_template_directory() . '/inc/customizer/custom-controls/radio-img-selector.php';
-    require get_template_directory() . '/inc/customizer/custom-controls/pro-controls-selector.php';
-
     // Set prefix
     $prefix = 'regina_lite';
-    
+
     // Set Panel ID
     $panel_id = $prefix.'_panel_general';
 
@@ -200,7 +196,7 @@
     $wp_customize->add_setting( $prefix.'_email',
         array(
             'sanitize_callback' => 'sanitize_email',
-            'default' => 'contact@site.com'
+            'default' => __( 'contact@site.com', 'regina-lite' )
         )
     );
 
@@ -263,16 +259,35 @@
         )
     );
 
-    /* Footer Copyright */
-    $wp_customize->add_setting( $prefix.'_footer_copyright',
+    # Footer Copyright: Checkbox
+    $wp_customize->add_setting( $prefix.'_footer_theme_copyright_enable',
         array(
-            'sanitize_callback' => 'sanitize_text_field',
-            'default' => sprintf('&copy; %s', esc_html__('Macho Themes 2015. All Rights Reserved', 'regina-lite') )
+            'sanitize_callback' => $prefix.'_sanitize_checkbox',
+            'default' => 1
         )
     );
 
-    $wp_customize->add_control( new regina_lite_Disabled_Custom_Control(
-	    $wp_customize,
+    $wp_customize->add_control(
+        $prefix.'_footer_theme_copyright_enable',
+        array(
+            'type' => 'checkbox',
+            'label' => esc_html__( 'Enable footer theme copyright message ?', 'regina-lite' ),
+            'description' => esc_html__( 'This will display the theme name with a backlink to the site of the theme developers. Leave it if you wish to give credit where it\'s due', 'regina-lite' ),
+            'section'   => $prefix.'_general_footer_section',
+            'settings'   => $prefix.'_footer_theme_copyright_enable',
+            'priority' => 10
+        )
+    );
+
+    # Footer Copyrigt: Message
+    $wp_customize->add_setting( $prefix.'_footer_copyright',
+        array(
+            'sanitize_callback' => 'sanitize_text_field',
+            'default'           => esc_html__( 'Made with love by Macho Themes &copy; Copyright 2016. All Rights Reserved.', 'regina-lite' )
+        )
+    );
+
+    $wp_customize->add_control(
 	    $prefix.'_footer_copyright',
 	        array(
 	            'type'  => 'textarea',
@@ -282,6 +297,4 @@
 	            'settings'   => $prefix.'_footer_copyright',
 	            'priority' => 11
 	        )
-	    )
     );
-

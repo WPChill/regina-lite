@@ -1,6 +1,10 @@
 <?php
 
+
+
 function regina_lite_customize_register( $wp_customize ) {
+
+    $prefix = 'regina_lite';
 
 	$wp_customize->get_setting( 'blogname' )->transport         = 'postMessage';
 	$wp_customize->get_setting( 'blogdescription' )->transport  = 'postMessage';
@@ -10,20 +14,92 @@ function regina_lite_customize_register( $wp_customize ) {
 	/*************** INIT ************************/
 	/**********************************************/
 
+  # Include Custom Controls
+  require get_template_directory() . '/inc/customizer/custom-controls/pro-controls-selector.php';
+  require get_template_directory() . '/inc/customizer/custom-controls/radio-img-selector.php';
+  require get_template_directory() . '/inc/customizer/custom-controls/slider-selector.php';
+
+    #
+    # Up sell features
+    #
+
+    $wp_customize->add_section( $prefix.'_order_section' , array(
+            'title'       => __( 'Section order', 'regina-lite' ),
+            'priority'    => 26
+    ));
+
+    $wp_customize->add_setting(
+            $prefix.'_order_section',
+            array(
+              'sanitize_callback' => $prefix.'_sanitize_pro_version'
+            )
+    );
+
+    $wp_customize->add_control( new Regina_Lite_Theme_Support(
+    $wp_customize,
+        $prefix.'_order_section',
+          array(
+              'section' => $prefix.'_order_section',
+         )
+      )
+    );
+
+      $wp_customize->add_section( $prefix.'_pricing_section' , array(
+          'title'       => __( 'Pricing tables', 'regina-lite' ),
+          'priority'    => 38
+      ));
+
+      $wp_customize->add_setting( $prefix.'_pricing_section',
+          array(
+              'sanitize_callback' => $prefix.'_sanitize_pro_version'
+          )
+      );
+
+      $wp_customize->add_control( new Regina_Lite_Theme_Support_Pricing(
+      $wp_customize,
+      $prefix.'_pricing_section',
+          array(
+              'section' => $prefix.'_pricing_section',
+          )
+      )
+  );
+
+    $wp_customize->add_section( $prefix.'_maps_section' , array(
+            'title'       => __( 'Google Maps', 'regina-lite' ),
+            'priority'    => 55
+    ));
+
+    $wp_customize->add_setting(
+            $prefix.'_maps_section',
+            array(
+              'sanitize_callback' => $prefix.'_sanitize_pro_version'
+            )
+    );
+
+    $wp_customize->add_control( new Regina_Lite_Theme_Support_Googlemap(
+    $wp_customize,
+    $prefix.'_maps_section',
+          array(
+              'section' => $prefix.'_maps_section',
+         )
+      )
+    );
+
+    #
+    # END Up Sell Features
+    #
+
     /* General Site Panel */
     require_once get_template_directory() . '/inc/customizer/panels/site.php';
+
+    /* Features Panel */
+    require_once get_template_directory() . '/inc/customizer/panels/features.php';
 
     /* Blog Panel */
     require_once get_template_directory() . '/inc/customizer/panels/blog.php';
 
-    /* Post Formats Panel */
-    require_once get_template_directory() . '/inc/customizer/panels/post-formats.php';
-
     /* Advanced Panel */
     require_once get_template_directory() . '/inc/customizer/panels/advanced.php';
-
-    /* Features Panel */
-    require_once get_template_directory() . '/inc/customizer/panels/features.php';
 
     /* Our Team Panel */
     require_once get_template_directory() . '/inc/customizer/panels/our-team.php';
@@ -110,6 +186,14 @@ if( !function_exists( 'regina_lite_sanitize_checkbox' ) ) {
         }
     }
 }
+
+if( !function_exists( 'regina_lite_sanitize_pro_version' ) ) {
+
+    function regina_lite_sanitize_pro_version( $input ) {
+        return force_balance_tags( $input );
+    }
+}
+
 if( !function_exists( 'regina_lite_customizer_js_load' ) ) {
     /**
      * Function to load JS into the customizer

@@ -144,12 +144,9 @@
 }
 
 /* Add dotted lines on PRO sections */
-/*
-#accordion-panel-regina_lite_panel_advanced .accordion-section-title,
-#accordion-panel-regina_lite_panel_general .accordion-section-title,
-#accordion-panel-regina_lite_panel_preloader .accordion-section-title,
-#accordion-panel-regina_lite_panel_blog .accordion-section-title,
-#accordion-panel-regina_lite_panel_formats .accordion-section-title {
+#accordion-section-regina_lite_maps_section .accordion-section-title,
+#accordion-section-regina_lite_pricing_section .accordion-section-title,
+#accordion-section-regina_lite_order_section .accordion-section-title {
     background-image: url('../../images/gray-lines.png');
     background-size: cover;
     background-position: center center;
@@ -157,14 +154,12 @@
 }
 
 
-#accordion-panel-regina_lite_panel_advanced .accordion-section-title:after,
-#accordion-panel-regina_lite_panel_general .accordion-section-title:after,
-#accordion-panel-regina_lite_panel_preloader .accordion-section-title:after,
-#accordion-panel-regina_lite_panel_blog .accordion-section-title:after,
-#accordion-panel-regina_lite_panel_formats .accordion-section-title:after { 
+#accordion-section-regina_lite_maps_section .accordion-section-title:after,
+#accordion-section-regina_lite_pricing_section .accordion-section-title:after,
+#accordion-section-regina_lite_order_section .accordion-section-title:after {
     content: '\f160';
 }
-*/
+
 
 #accordion-section-pixova_lite_pro_section .accordion-section-title {
     background-color: #e25136;
@@ -197,5 +192,12 @@
 
 }
 .checkbox-pro-feature .pro-badge {
-    padding: 15px 7.5px;
+    padding: 14px 7.5px;
+}
+
+.customize-control-checkbox label,
+.customize-control-nav_menu_auto_add label,
+.customize-control-radio label {
+    display: inline;
+    line-height: 30px;
 }

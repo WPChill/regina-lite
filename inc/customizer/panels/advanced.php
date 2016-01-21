@@ -13,7 +13,7 @@
 
     $wp_customize->add_panel( $panel_id,
         array(
-            'priority' => 35,
+            'priority' => 58,
             'capability' => 'edit_theme_options',
             'theme_supports' => '',
             'title' => esc_html__( 'Advanced Options', 'regina-lite' )
@@ -36,37 +36,16 @@
             'default' => 1
         )
     );
-    $wp_customize->add_control( new regina_lite_Disabled_Custom_Control(
-        $wp_customize,
+    $wp_customize->add_control(
         $prefix.'_enable_site_preloader',
             array(
                 'type'	=> 'checkbox',
                 'label' => esc_html__('Enable site preloader', 'regina-lite'),
                 'description' => esc_html__('Initial status: enabled', 'regina-lite'),
-                'section' => $prefix.'_advanced_section',
+                'section' => $prefix.'_advanced_section'
             )
-        )
     );
 
-    /* Enable Image LazyLoad Behavior */
-    $wp_customize->add_setting( $prefix.'_enable_site_lazyload',
-        array(
-            'sanitize_callback' => $prefix.'_sanitize_checkbox',
-            'default' => 1
-        )
-    );
-
-    $wp_customize->add_control( new regina_lite_Disabled_Custom_Control (
-        $wp_customize,
-        $prefix.'_enable_site_lazyload',
-            array(
-                'type'          => 'checkbox',
-                'label'         => esc_html__('Enable Lazy Load for images ?', 'regina-lite'),
-                'description'   => esc_html__('Initial status: enabled. If you don\'t like the fact that images are being loaded as you scroll them into view, uncheck this.', 'regina-lite'),
-                'section'       => $prefix.'_advanced_section',
-            )
-        )
-    );
 
     // Enable Search Icon in Header
     $wp_customize->add_setting( $prefix . '_enable_site_search_icon',
@@ -76,14 +55,12 @@
         )
     );
 
-    $wp_customize->add_control( new regina_lite_Disabled_Custom_Control (
-        $wp_customize,
+    $wp_customize->add_control(
         $prefix . '_enable_site_search_icon',
             array(
                 'type'          => 'checkbox',
-                'label'         => esc_html__( 'Enabel search icon in header?', 'regina-lite' ),
+                'label'         => esc_html__( 'Enable search icon in header?', 'regina-lite' ),
                 'description'   => esc_html__( 'Initial status: enabled. If you don\'t like the fact that search icon show in header, uncheck this.', 'regina-lite' ),
-                'section'       => $prefix . '_advanced_section',
+                'section'       => $prefix . '_advanced_section'
             )
-        )
     );

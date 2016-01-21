@@ -14,6 +14,8 @@ $top_box_description = get_theme_mod( 'regina_lite_top_box_description', __( 'Lo
 $top_box_bookappointmenturl = get_theme_mod( 'regina_lite_top_box_bookappointmenturl', '#' );
 $features_general_title = get_theme_mod( 'regina_lite_features_general_title', __( 'Why choose us?', 'regina-lite' ) );
 $features_general_description = get_theme_mod( 'regina_lite_features_general_description', __( 'We offer various services lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt.', 'regina-lite' ) );
+$features_general_button_text = get_theme_mod( 'regina_lite_features_general_button_text', __( 'Our Services', 'regina-lite' ) );
+$features_general_button_url = get_theme_mod( 'regina_lite_features_general_button_url', esc_url( '#' ) );
 $features_feature1_title = get_theme_mod( 'regina_lite_features_feature1_title', __( 'Free Support', 'regina-lite' ) );
 $features_feature1_description = get_theme_mod( 'regina_lite_features_feature1_description', __( 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt.', 'regina-lite' ) );
 $features_feature1_buttonurl = get_theme_mod( 'regina_lite_features_feature1_buttonurl', '#' );
@@ -45,7 +47,7 @@ $features_feature4_buttonurl = get_theme_mod( 'regina_lite_features_feature4_but
                 </div><!--#call-out-->
             </div><!--.col-md-8-->
         <?php endif; ?>
-        <div class="col-xs-12" style="<?php if( $top_box_show != 1 ): echo 'margin-top: 100px;'; endif; ?>">
+        <div id="services-title-block" class="col-xs-12" style="<?php if( $top_box_show != 1 ): echo 'margin-top: 100px;'; endif; ?>">
             <div class="section-info">
                 <?php if( $features_general_title ): ?>
                     <h2><?php echo esc_html( $features_general_title ); ?></h2>
@@ -126,6 +128,11 @@ $features_feature4_buttonurl = get_theme_mod( 'regina_lite_features_feature4_but
                     <?php endif; ?>
                 </div><!--.service-->
             </div><!--.col-lg-3-->
+            <?php if( $features_general_button_text && $features_general_button_url ): ?>
+                <div class="col-xs-12 text-center">
+                    <a href="<?php echo esc_url( $features_general_button_url ); ?>" class="button dark outline" title="<?php echo esc_attr( $features_general_button_text ); ?>"><?php echo esc_html( $features_general_button_text ); ?> <span class="nc-icon-glyph arrows-1_bold-right"></span></a>
+                </div>
+            <?php endif; ?>
             <div class="clear"></div>
         </section><!--#services-block-->
     </div><!--.row-->

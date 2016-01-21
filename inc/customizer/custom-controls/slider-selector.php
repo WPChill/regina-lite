@@ -12,7 +12,7 @@ if ( class_exists( 'regina_lite_Controls_Slider_Control' ) ) {
 
 class regina_lite_Controls_Slider_Control extends WP_Customize_Control {
 
-    public $type = 'slider';
+    public $type = 'slider-selector';
 
     public function enqueue() {
 

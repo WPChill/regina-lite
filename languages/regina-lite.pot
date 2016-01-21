@@ -1,14 +1,14 @@
-# Copyright (C) 2015 Macho Themes
+# Copyright (C) 2016 Macho Themes
 # This file is distributed under the GNU General Public License v3 or later.
 msgid ""
 msgstr ""
-"Project-Id-Version: Regina Lite 1.0.6\n"
+"Project-Id-Version: Regina Lite 1.0.9.1\n"
 "Report-Msgid-Bugs-To: http://www.machothemes.com/\n"
-"POT-Creation-Date: 2015-12-14 14:09:37+00:00\n"
+"POT-Creation-Date: 2016-01-21 14:34:25+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2015-MO-DA HO:MI+ZONE\n"
+"PO-Revision-Date: 2016-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Macho Themes <support@machothemes.com>\n"
 "Language-Team: Macho Themes <support@machothemes.com>\n"
 "X-Generator: grunt-wp-i18n 0.5.3\n"
@@ -56,8 +56,8 @@ msgstr ""
 msgid "Leave a comment to %s"
 msgstr ""
 
-#: footer.php:58 inc/customizer/panels/site.php:270
-msgid "Macho Themes 2015. All Rights Reserved"
+#: footer.php:8 inc/customizer/panels/site.php:286
+msgid "Made with love by Macho Themes &copy; Copyright 2016. All Rights Reserved."
 msgstr ""
 
 #: functions.php:80
@@ -88,35 +88,35 @@ msgstr ""
 msgid "Footer Sidebar 4"
 msgstr ""
 
-#: functions.php:236 functions.php:237
+#: functions.php:250 functions.php:251
 msgid "More Themes"
 msgstr ""
 
-#: functions.php:270
+#: functions.php:294
 msgid "Simple. Powerful. Flexible. That's how we at"
 msgstr ""
 
-#: functions.php:270
+#: functions.php:294
 msgid " Macho Themes"
 msgstr ""
 
-#: functions.php:270
+#: functions.php:294
 msgid " build all of our themes."
 msgstr ""
 
-#: functions.php:308
+#: functions.php:332
 msgid " Current theme"
 msgstr ""
 
-#: functions.php:310
+#: functions.php:334
 msgid "Customize"
 msgstr ""
 
-#: functions.php:370
+#: functions.php:394
 msgid "Install Now"
 msgstr ""
 
-#: functions.php:375
+#: functions.php:399
 msgid "Live Preview"
 msgstr ""
 
@@ -124,7 +124,7 @@ msgstr ""
 msgid "Regina Lite"
 msgstr ""
 
-#: header.php:52 sections/section-home-features.php:43
+#: header.php:52 sections/section-home-features.php:45
 msgid "Book Appointment"
 msgstr ""
 
@@ -139,6 +139,7 @@ msgstr ""
 #: inc/components/breadcrumb/class.mt-breadcrumb.php:63
 #: inc/components/breadcrumb/class.mt-breadcrumb.php:134
 #: inc/components/breadcrumb/class.mt-breadcrumb.php:137
+#: inc/components/nav-walker/class.mt-nav-walker.php:146
 msgid "Home"
 msgstr ""
 
@@ -152,6 +153,11 @@ msgstr ""
 
 #: inc/components/breadcrumb/class.mt-breadcrumb.php:66
 msgid "404 - Page not Found"
+msgstr ""
+
+#: inc/components/contact-bar/class.mt-contact-bar.php:39
+#: inc/customizer/panels/site.php:199 inc/extras.php:160
+msgid "contact@site.com"
 msgstr ""
 
 #: inc/components/contact-bar/class.mt-contact-bar.php:70
@@ -182,12 +188,83 @@ msgstr ""
 msgid "1 min. read"
 msgstr ""
 
-#: inc/components/nav-walker/class.mt-nav-walker.php:124
+#: inc/components/nav-walker/class.mt-nav-walker.php:126
 msgid "Add a menu"
+msgstr ""
+
+#: inc/components/nav-walker/class.mt-nav-walker.php:147
+msgid "Services"
+msgstr ""
+
+#: inc/components/nav-walker/class.mt-nav-walker.php:148
+msgid "About"
+msgstr ""
+
+#: inc/components/nav-walker/class.mt-nav-walker.php:149
+#: sections/section-home-testimonials.php:126
+#: sections/section-home-testimonials.php:129
+#: sections/section-home-testimonials.php:132
+#: sections/section-home-testimonials.php:135
+msgid "Testimonials"
+msgstr ""
+
+#: inc/components/nav-walker/class.mt-nav-walker.php:150
+msgid "Contact"
 msgstr ""
 
 #: inc/components/related-posts/class.mt-related-posts.php:169
 msgid "Related posts: "
+msgstr ""
+
+#: inc/customizer/custom-controls/pro-controls-selector.php:85
+msgid ""
+"In order to be able to add pricing tables, you need to upgrade to the PRO "
+"version."
+msgstr ""
+
+#: inc/customizer/custom-controls/pro-controls-selector.php:89
+#: inc/customizer/custom-controls/pro-controls-selector.php:111
+#: inc/customizer/custom-controls/pro-controls-selector.php:133
+#: inc/customizer/custom-controls/pro-controls-selector.php:175
+#: inc/extras.php:239
+msgid "View PRO version"
+msgstr ""
+
+#: inc/customizer/custom-controls/pro-controls-selector.php:107
+msgid ""
+"In order to be able to change the section order, you need to upgrade to the "
+"PRO version."
+msgstr ""
+
+#: inc/customizer/custom-controls/pro-controls-selector.php:129
+msgid ""
+"In order to be able to add Google Maps, you need to upgrade to the PRO "
+"version."
+msgstr ""
+
+#: inc/customizer/custom-controls/pro-controls-selector.php:153
+#: inc/extras.php:243
+msgid "Theme Documentation"
+msgstr ""
+
+#: inc/customizer/custom-controls/pro-controls-selector.php:157
+msgid ""
+"By upgrading to the PRO version you are unlocking the full potential of "
+"this theme. You will get: unlimited sliders / carousels, unlimited Google "
+"Maps, Unlimited Team Members, Section Ordering, Control over theme "
+"typography and colors. Upgrade NOW!"
+msgstr ""
+
+#: inc/customizer/customizer.php:27
+msgid "Section order"
+msgstr ""
+
+#: inc/customizer/customizer.php:48
+msgid "Pricing tables"
+msgstr ""
+
+#: inc/customizer/customizer.php:68
+msgid "Google Maps"
 msgstr ""
 
 #: inc/customizer/panels/advanced.php:19
@@ -198,221 +275,210 @@ msgstr ""
 msgid "Settings"
 msgstr ""
 
-#: inc/customizer/panels/advanced.php:44
+#: inc/customizer/panels/advanced.php:43
 msgid "Enable site preloader"
 msgstr ""
 
-#: inc/customizer/panels/advanced.php:45
-#: inc/customizer/panels/post-formats.php:51
+#: inc/customizer/panels/advanced.php:44
 msgid "Initial status: enabled"
 msgstr ""
 
-#: inc/customizer/panels/advanced.php:64
-msgid "Enable Lazy Load for images ?"
+#: inc/customizer/panels/advanced.php:62
+msgid "Enable search icon in header?"
 msgstr ""
 
-#: inc/customizer/panels/advanced.php:65
-msgid ""
-"Initial status: enabled. If you don't like the fact that images are being "
-"loaded as you scroll them into view, uncheck this."
-msgstr ""
-
-#: inc/customizer/panels/advanced.php:84
-msgid "Enabel search icon in header?"
-msgstr ""
-
-#: inc/customizer/panels/advanced.php:85
+#: inc/customizer/panels/advanced.php:63
 msgid ""
 "Initial status: enabled. If you don't like the fact that search icon show "
 "in header, uncheck this."
 msgstr ""
 
-#: inc/customizer/panels/blog.php:23
+#: inc/customizer/panels/blog.php:19
 msgid "Single Post Options"
 msgstr ""
 
-#: inc/customizer/panels/blog.php:24
+#: inc/customizer/panels/blog.php:20
 msgid ""
 "Control various blog options from here. Most of the options from this panel "
 "refer to the blog single page view. If you're not familiar with that term, "
 "please perform a Google search."
 msgstr ""
 
-#: inc/customizer/panels/blog.php:34
+#: inc/customizer/panels/blog.php:30
 msgid "Global"
 msgstr ""
 
-#: inc/customizer/panels/blog.php:35
+#: inc/customizer/panels/blog.php:31
 msgid ""
 "This section allows you to control how certain elements are displayed on "
 "the blog single page."
 msgstr ""
 
-#: inc/customizer/panels/blog.php:51
+#: inc/customizer/panels/blog.php:47
 msgid "Posted on meta on single blog post"
 msgstr ""
 
-#: inc/customizer/panels/blog.php:52
+#: inc/customizer/panels/blog.php:48
 msgid "This will disable the posted on zone as well as the author name"
 msgstr ""
 
-#: inc/customizer/panels/blog.php:68
+#: inc/customizer/panels/blog.php:64
 msgid "Category meta on single blog post"
 msgstr ""
 
-#: inc/customizer/panels/blog.php:69
+#: inc/customizer/panels/blog.php:65
 msgid "This will disable the posted in zone."
 msgstr ""
 
-#: inc/customizer/panels/blog.php:85
+#: inc/customizer/panels/blog.php:81
 msgid "Tags meta on single blog post"
 msgstr ""
 
-#: inc/customizer/panels/blog.php:86
+#: inc/customizer/panels/blog.php:82
 msgid "This will disable the tagged with zone."
 msgstr ""
 
-#: inc/customizer/panels/blog.php:103
+#: inc/customizer/panels/blog.php:99
 msgid "Breadcrumbs on single blog posts"
 msgstr ""
 
-#: inc/customizer/panels/blog.php:104
+#: inc/customizer/panels/blog.php:100
 msgid "This will disable the breadcrumbs"
 msgstr ""
 
-#: inc/customizer/panels/blog.php:121
+#: inc/customizer/panels/blog.php:116
 msgid "Social sharing ?"
 msgstr ""
 
-#: inc/customizer/panels/blog.php:122
-msgid "Displayed right under the post title"
+#: inc/customizer/panels/blog.php:117
+msgid "Displayed right after the post"
 msgstr ""
 
-#: inc/customizer/panels/blog.php:140
+#: inc/customizer/panels/blog.php:134
 msgid "Author info box on single blog post"
 msgstr ""
 
-#: inc/customizer/panels/blog.php:141
+#: inc/customizer/panels/blog.php:135
 msgid "Displayed right at the end of the post"
 msgstr ""
 
-#: inc/customizer/panels/blog.php:157
+#: inc/customizer/panels/blog.php:151
 msgid "Related posts carousel ?"
 msgstr ""
 
-#: inc/customizer/panels/blog.php:158
+#: inc/customizer/panels/blog.php:152
 msgid "Displayed after the author box"
 msgstr ""
 
-#: inc/customizer/panels/blog.php:169
+#: inc/customizer/panels/blog.php:163
 msgid "Breadcrumbs"
 msgstr ""
 
-#: inc/customizer/panels/blog.php:170
+#: inc/customizer/panels/blog.php:164
 msgid ""
 "Various breadcrumb related settings, like: breadcrumb prefix, breadcrumb "
 "item separator & breadcrumb menu post category visibility setting."
 msgstr ""
 
-#: inc/customizer/panels/blog.php:187
+#: inc/customizer/panels/blog.php:180
 msgid "Show post category ?"
 msgstr ""
 
-#: inc/customizer/panels/blog.php:188
+#: inc/customizer/panels/blog.php:181
 msgid "Show the post category in the breadcrumb ?"
 msgstr ""
 
-#: inc/customizer/panels/blog.php:202
+#: inc/customizer/panels/blog.php:194
 msgid "Social Sharing"
 msgstr ""
 
-#: inc/customizer/panels/blog.php:203
+#: inc/customizer/panels/blog.php:195
 msgid ""
 "Control visibility of various social sharing networks. The changes made "
 "here will reflect on the blog single post view."
 msgstr ""
 
-#: inc/customizer/panels/blog.php:221
+#: inc/customizer/panels/blog.php:213
 msgid "After content"
 msgstr ""
 
-#: inc/customizer/panels/blog.php:222
+#: inc/customizer/panels/blog.php:214
 msgid "Before Content"
 msgstr ""
 
-#: inc/customizer/panels/blog.php:224
+#: inc/customizer/panels/blog.php:216
 msgid "Sharing Bar Postion: After / Before Content"
 msgstr ""
 
-#: inc/customizer/panels/blog.php:225
+#: inc/customizer/panels/blog.php:217
 msgid "Initial position: after content"
 msgstr ""
 
-#: inc/customizer/panels/blog.php:234 inc/extras.php:123
+#: inc/customizer/panels/blog.php:226 inc/extras.php:126
 msgid "Share this article"
 msgstr ""
 
-#: inc/customizer/panels/blog.php:241
+#: inc/customizer/panels/blog.php:233
 msgid "Text to display above icons"
 msgstr ""
 
-#: inc/customizer/panels/blog.php:242
+#: inc/customizer/panels/blog.php:234
 msgid ""
 "This is the text that will be displayed above the icons. Change this to "
 "whatever you feel like"
 msgstr ""
 
-#: inc/customizer/panels/blog.php:259
+#: inc/customizer/panels/blog.php:250
 msgid "Display share on Facebook ?"
 msgstr ""
 
-#: inc/customizer/panels/blog.php:277
+#: inc/customizer/panels/blog.php:266
 msgid "Display share on Twitter ?"
 msgstr ""
 
-#: inc/customizer/panels/blog.php:295
+#: inc/customizer/panels/blog.php:282
 msgid "Display share on LinkedIN ?"
 msgstr ""
 
-#: inc/customizer/panels/blog.php:312
+#: inc/customizer/panels/blog.php:298
 msgid "Display share on mail ?"
 msgstr ""
 
-#: inc/customizer/panels/blog.php:325
+#: inc/customizer/panels/blog.php:311
 msgid "Related posts"
 msgstr ""
 
-#: inc/customizer/panels/blog.php:326
+#: inc/customizer/panels/blog.php:312
 msgid ""
 "Control various related posts settings from here. For a demo-like "
 "experience, we recommend you don't change these settings."
 msgstr ""
 
-#: inc/customizer/panels/blog.php:344
+#: inc/customizer/panels/blog.php:329
 msgid "Show posts title in the carousel?"
 msgstr ""
 
-#: inc/customizer/panels/blog.php:362
+#: inc/customizer/panels/blog.php:345
 msgid "Show posts date  ?"
 msgstr ""
 
-#: inc/customizer/panels/blog.php:381
+#: inc/customizer/panels/blog.php:362
 msgid "Autoplay related carousel ?"
 msgstr ""
 
-#: inc/customizer/panels/blog.php:397
+#: inc/customizer/panels/blog.php:378
 msgid "How many blog posts to display in the carousel at once ?"
 msgstr ""
 
-#: inc/customizer/panels/blog.php:398
+#: inc/customizer/panels/blog.php:379
 msgid "No more than 4 posts at once;"
 msgstr ""
 
-#: inc/customizer/panels/blog.php:422
+#: inc/customizer/panels/blog.php:402
 msgid "Display pagination controls ?"
 msgstr ""
 
-#: inc/customizer/panels/blog.php:423
+#: inc/customizer/panels/blog.php:403
 msgid "Will be displayed as navigation bullets"
 msgstr ""
 
@@ -439,10 +505,10 @@ msgid "We help people, like you."
 msgstr ""
 
 #: inc/customizer/panels/features.php:57 inc/customizer/panels/features.php:129
-#: inc/customizer/panels/features.php:170
-#: inc/customizer/panels/features.php:225
-#: inc/customizer/panels/features.php:280
-#: inc/customizer/panels/features.php:335 inc/customizer/panels/our-team.php:59
+#: inc/customizer/panels/features.php:200
+#: inc/customizer/panels/features.php:255
+#: inc/customizer/panels/features.php:310
+#: inc/customizer/panels/features.php:365 inc/customizer/panels/our-team.php:59
 #: inc/customizer/panels/speak.php:59 widgets/widget-address.php:49
 #: widgets/widget-categories.php:49 widgets/widget-contact.php:74
 #: widgets/widget-recent-comments.php:51 widgets/widget-recent-posts.php:70
@@ -456,10 +522,10 @@ msgid ""
 msgstr ""
 
 #: inc/customizer/panels/features.php:72 inc/customizer/panels/features.php:144
-#: inc/customizer/panels/features.php:185
-#: inc/customizer/panels/features.php:240
-#: inc/customizer/panels/features.php:295
-#: inc/customizer/panels/features.php:350 inc/customizer/panels/our-team.php:75
+#: inc/customizer/panels/features.php:215
+#: inc/customizer/panels/features.php:270
+#: inc/customizer/panels/features.php:325
+#: inc/customizer/panels/features.php:380 inc/customizer/panels/our-team.php:75
 #: inc/customizer/panels/our-team.php:143
 #: inc/customizer/panels/our-team.php:227
 #: inc/customizer/panels/our-team.php:311
@@ -493,29 +559,19 @@ msgid ""
 "adipisicing elit, sed do eiusmod tempor incididunt."
 msgstr ""
 
-#: inc/customizer/panels/features.php:155
-msgid "Feature #1"
+#: inc/customizer/panels/features.php:154 sections/section-home-features.php:17
+msgid "Our Services"
 msgstr ""
 
-#: inc/customizer/panels/features.php:164 sections/section-home-features.php:17
-msgid "Free Support"
+#: inc/customizer/panels/features.php:160
+msgid "Button Text:"
 msgstr ""
 
-#: inc/customizer/panels/features.php:179
-#: inc/customizer/panels/features.php:234
-#: inc/customizer/panels/features.php:289
-#: inc/customizer/panels/features.php:344 sections/section-home-features.php:18
-#: sections/section-home-features.php:21 sections/section-home-features.php:24
-#: sections/section-home-features.php:27
-msgid ""
-"Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod "
-"tempor incididunt."
-msgstr ""
-
-#: inc/customizer/panels/features.php:199
-#: inc/customizer/panels/features.php:254
-#: inc/customizer/panels/features.php:309
-#: inc/customizer/panels/features.php:364
+#: inc/customizer/panels/features.php:174
+#: inc/customizer/panels/features.php:229
+#: inc/customizer/panels/features.php:284
+#: inc/customizer/panels/features.php:339
+#: inc/customizer/panels/features.php:394
 #: inc/customizer/panels/our-team.php:159
 #: inc/customizer/panels/our-team.php:243
 #: inc/customizer/panels/our-team.php:327
@@ -523,27 +579,46 @@ msgstr ""
 msgid "Button URL:"
 msgstr ""
 
-#: inc/customizer/panels/features.php:210
+#: inc/customizer/panels/features.php:185
+msgid "Feature #1"
+msgstr ""
+
+#: inc/customizer/panels/features.php:194 sections/section-home-features.php:19
+msgid "Free Support"
+msgstr ""
+
+#: inc/customizer/panels/features.php:209
+#: inc/customizer/panels/features.php:264
+#: inc/customizer/panels/features.php:319
+#: inc/customizer/panels/features.php:374 sections/section-home-features.php:20
+#: sections/section-home-features.php:23 sections/section-home-features.php:26
+#: sections/section-home-features.php:29
+msgid ""
+"Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod "
+"tempor incididunt."
+msgstr ""
+
+#: inc/customizer/panels/features.php:240
 msgid "Feature #2"
 msgstr ""
 
-#: inc/customizer/panels/features.php:219 sections/section-home-features.php:20
+#: inc/customizer/panels/features.php:249 sections/section-home-features.php:22
 msgid "Medical Care"
 msgstr ""
 
-#: inc/customizer/panels/features.php:265
+#: inc/customizer/panels/features.php:295
 msgid "Feature #3"
 msgstr ""
 
-#: inc/customizer/panels/features.php:274 sections/section-home-features.php:23
+#: inc/customizer/panels/features.php:304 sections/section-home-features.php:25
 msgid "Life Care"
 msgstr ""
 
-#: inc/customizer/panels/features.php:320
+#: inc/customizer/panels/features.php:350
 msgid "Feature #4"
 msgstr ""
 
-#: inc/customizer/panels/features.php:329 sections/section-home-features.php:26
+#: inc/customizer/panels/features.php:359 sections/section-home-features.php:28
 msgid "Nervous System"
 msgstr ""
 
@@ -655,119 +730,106 @@ msgid ""
 "Science degree in Chemistry from the University of Houston and a..."
 msgstr ""
 
-#: inc/customizer/panels/post-formats.php:19
-msgid "Archive Blog Post Settings"
-msgstr ""
-
-#: inc/customizer/panels/post-formats.php:20
-msgid ""
-"This section allows you to control various settings specific to each "
-"post-format. Making changes in these sections will be reflected on the "
-"homepage."
-msgstr ""
-
-#: inc/customizer/panels/post-formats.php:31
-msgid "Standard"
-msgstr ""
-
-#: inc/customizer/panels/post-formats.php:32
-msgid "Post format: Standard (or default) settings"
-msgstr ""
-
-#: inc/customizer/panels/post-formats.php:50
-msgid "Enable Author"
-msgstr ""
-
-#: inc/customizer/panels/site.php:47
+#: inc/customizer/panels/site.php:43
 msgid "General Options"
 msgstr ""
 
-#: inc/customizer/panels/site.php:48
+#: inc/customizer/panels/site.php:44
 msgid ""
 "You can change the site layout in this area as well as your contact details "
 "(the ones displayed in the header & footer) "
 msgstr ""
 
-#: inc/customizer/panels/site.php:59
+#: inc/customizer/panels/site.php:55
 msgid "Logo"
 msgstr ""
 
-#: inc/customizer/panels/site.php:76
+#: inc/customizer/panels/site.php:72
 msgid "Enter company name"
 msgstr ""
 
-#: inc/customizer/panels/site.php:77
+#: inc/customizer/panels/site.php:73
 msgid "This field is best used when you don't have a professional image logo"
 msgstr ""
 
-#: inc/customizer/panels/site.php:86
+#: inc/customizer/panels/site.php:82
 msgid "Company Image Logo:"
 msgstr ""
 
-#: inc/customizer/panels/site.php:119
+#: inc/customizer/panels/site.php:115
 msgid "Contact Details"
 msgstr ""
 
-#: inc/customizer/panels/site.php:120
+#: inc/customizer/panels/site.php:116
 msgid ""
 "These are the contact details displayed in the header & footer of the "
 "website."
 msgstr ""
 
-#: inc/customizer/panels/site.php:136
+#: inc/customizer/panels/site.php:132
 msgid "Facebook URL"
 msgstr ""
 
-#: inc/customizer/panels/site.php:137 inc/customizer/panels/site.php:155
-#: inc/customizer/panels/site.php:173 inc/customizer/panels/site.php:191
+#: inc/customizer/panels/site.php:133 inc/customizer/panels/site.php:151
+#: inc/customizer/panels/site.php:169 inc/customizer/panels/site.php:187
 msgid "Will be displayed in the contact bar ( Header )"
 msgstr ""
 
-#: inc/customizer/panels/site.php:154
+#: inc/customizer/panels/site.php:150
 msgid "Twitter URL"
 msgstr ""
 
-#: inc/customizer/panels/site.php:172
+#: inc/customizer/panels/site.php:168
 msgid "YouTube URL"
 msgstr ""
 
-#: inc/customizer/panels/site.php:190
+#: inc/customizer/panels/site.php:186
 msgid "LinkedIN URL"
 msgstr ""
 
-#: inc/customizer/panels/site.php:209
+#: inc/customizer/panels/site.php:205
 msgid "Email addr."
 msgstr ""
 
-#: inc/customizer/panels/site.php:210 inc/customizer/panels/site.php:229
+#: inc/customizer/panels/site.php:206 inc/customizer/panels/site.php:225
 msgid "Will be displayed in the header & footer"
 msgstr ""
 
-#: inc/customizer/panels/site.php:228
+#: inc/customizer/panels/site.php:224
 msgid "Phone number"
 msgstr ""
 
-#: inc/customizer/panels/site.php:246
+#: inc/customizer/panels/site.php:242
 msgid "Book Appointment URL:"
 msgstr ""
 
-#: inc/customizer/panels/site.php:247
+#: inc/customizer/panels/site.php:243
 msgid "Book Appointment URL description."
 msgstr ""
 
-#: inc/customizer/panels/site.php:259
+#: inc/customizer/panels/site.php:255
 msgid "Footer Details"
 msgstr ""
 
-#: inc/customizer/panels/site.php:260
+#: inc/customizer/panels/site.php:256
 msgid "Change the footer copyright message from here. Note: no HTML allowed."
 msgstr ""
 
-#: inc/customizer/panels/site.php:279
+#: inc/customizer/panels/site.php:274
+msgid "Enable footer theme copyright message ?"
+msgstr ""
+
+#: inc/customizer/panels/site.php:275
+msgid ""
+"This will display the theme name with a backlink to the site of the theme "
+"developers. Leave it if you wish to give credit where it's due"
+msgstr ""
+
+#: inc/customizer/panels/site.php:294
 msgid "Footer Copyright."
 msgstr ""
 
-#: inc/customizer/panels/site.php:280
+#: inc/customizer/panels/site.php:295
 msgid "Will be displayed in the footer"
 msgstr ""
 
@@ -893,48 +955,40 @@ msgstr ""
 msgid "Newer posts <span class=\"meta-nav\">&rarr;</span>"
 msgstr ""
 
-#: inc/extras.php:133 inc/extras.php:135
+#: inc/extras.php:145 inc/extras.php:147
 msgid "Share on Facebook"
 msgstr ""
 
-#: inc/extras.php:137
+#: inc/extras.php:152
 msgid "Share on Twitter"
 msgstr ""
 
-#: inc/extras.php:138
+#: inc/extras.php:156
 msgid "Share on LinkedIn"
 msgstr ""
 
-#: inc/extras.php:140
+#: inc/extras.php:160
 msgid "Share on E-mail"
 msgstr ""
 
-#: inc/extras.php:159
+#: inc/extras.php:181
 msgid "Pingback:"
 msgstr ""
 
-#: inc/extras.php:159
+#: inc/extras.php:181
 msgid "(Edit)"
 msgstr ""
 
-#: inc/extras.php:172
+#: inc/extras.php:194
 msgid "%s"
 msgstr ""
 
-#: inc/extras.php:173
+#: inc/extras.php:195
 msgid "%1$s at %2$s"
 msgstr ""
 
-#: inc/extras.php:177
+#: inc/extras.php:199
 msgid "Your comment is awaiting moderation."
-msgstr ""
-
-#: inc/extras.php:217
-msgid "View PRO version"
-msgstr ""
-
-#: inc/extras.php:221
-msgid "Theme Documentation"
 msgstr ""
 
 #: inc/template-tags.php:50 inc/template-tags.php:56
@@ -963,9 +1017,9 @@ msgstr ""
 msgid "Search for "
 msgstr ""
 
-#: sections/section-home-features.php:74 sections/section-home-features.php:91
-#: sections/section-home-features.php:108
-#: sections/section-home-features.php:125 sections/section-home-our-team.php:94
+#: sections/section-home-features.php:76 sections/section-home-features.php:93
+#: sections/section-home-features.php:110
+#: sections/section-home-features.php:127 sections/section-home-our-team.php:94
 #: sections/section-home-our-team.php:127
 #: sections/section-home-our-team.php:160
 #: sections/section-home-our-team.php:193 template-parts/content-search.php:23
@@ -975,13 +1029,6 @@ msgstr ""
 
 #: sections/section-home-speak.php:20
 msgid "Book appointment"
-msgstr ""
-
-#: sections/section-home-testimonials.php:126
-#: sections/section-home-testimonials.php:129
-#: sections/section-home-testimonials.php:132
-#: sections/section-home-testimonials.php:135
-msgid "Testimonials"
 msgstr ""
 
 #: sections/section-page-header.php:18
@@ -1114,7 +1161,7 @@ msgstr ""
 #. Description of the plugin/theme
 msgid ""
 "Regina Lite is a medical wordpress theme, suitable for medical clinics, "
-"dentistry websites, medical research facilities and more. It features a"
+"dentistry websites, medical research facilities and more."
 msgstr ""
 
 #. Author of the plugin/theme

@@ -13,18 +13,18 @@ jQuery(document).ready(function($){
 	/* ---------------------------------------------------------------------- */
 
 	$('.nav-search').click(function(){
-		$('#morphsearch').addClass('open');
+		$('.morphsearch').addClass('open');
 
 		return false;
 	});
 
 	$('.morphsearch-close').click(function(){
-		$('#morphsearch').removeClass('open');
+		$('.morphsearch').removeClass('open');
 
 		return false;
 	});
 
-	
+
 
 	/* ---------------------------------------------------------------------- */
 	/*  Sliders
@@ -57,6 +57,27 @@ jQuery(document).ready(function($){
 		$('#footer').waypoint(function(){
 			$('.back-to-top').fadeIn(1000);
 		}, { offset: '50%' });
+
+		/* ---------------------------------------------------------------------- */
+		/*  Smooth Scrolling
+		/* ---------------------------------------------------------------------- */
+
+
+      $('a[href*="#"]:not([href="#"])').on('click', function() {
+
+
+          if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
+              var target = $(this.hash);
+              target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+              if (target.length) {
+                  $('html,body').animate({
+                      scrollTop: target.offset().top
+                  }, 1000);
+                  return false;
+              }
+          }
+      });
+
 
 
 	/* ---------------------------------------------------------------------- */

@@ -13,7 +13,6 @@ if ( class_exists( 'regina_lite_Layout_Picker_Custom_Control' ) ) {
 
 class regina_lite_Layout_Picker_Custom_Control extends WP_Customize_Control {
 
-    public $type = 'radio-image';
 
     public function enqueue() {
         wp_enqueue_script( 'jquery-ui-button' );
