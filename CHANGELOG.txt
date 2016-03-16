@@ -1,3 +1,6 @@
+= 1.0.10 =
+* Has been fixed responsive navigation menu for iOS.
+
 = 1.0.9.1=
 * Made the 'related posts' functionality actually work
 * Fixed the comment form mark-up problem (oops)
