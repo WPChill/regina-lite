@@ -401,3 +401,8 @@ body {
 #blog #related-posts .owl-controls {
     margin-top: 15px;
 }
+
+#navigation {
+    position: relative;
+    z-index: 1;
+}
