@@ -203,7 +203,7 @@ module.exports = function(grunt){
 
     // Build task
     grunt.registerTask( 'build-archive', [
-        'makepot',
+        // 'makepot',
         'allmin',
         'clean:init',
         'copy',

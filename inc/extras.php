@@ -239,7 +239,7 @@ if( !function_exists( 'regina_lite_prefix_upsell_notice' ) ) {
                 'prefixUpsellLabel' => __('View PRO version', 'regina-lite'),
 
                 # Documentation URLs
-                'prefixDocURL' => esc_url('http://docs.machothemes.com/collection/58-regina-lite'),
+                'prefixDocURL' => esc_url('http://docs.machothemes.com/category/108-regina-lite'),
                 'prefixDocLabel' => __('Theme Documentation', 'regina-lite'),
             )
         );
