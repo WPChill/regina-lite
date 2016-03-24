@@ -1,3 +1,6 @@
+= 1.0.11 =
+* Has been updated Theme Documentation link from customizer.
+
 = 1.0.10 =
 * Has been fixed responsive navigation menu for iOS.
 
