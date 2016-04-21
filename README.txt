@@ -2,8 +2,8 @@
 Contributors: cristianraiber-1
 Tags: light, black,blue, silver, dark, fixed-layout, fluid-layout, responsive-layout, one-column, two-columns, three-columns, four-columns, left-sidebar, right-sidebar, custom-background, custom-colors, custom-header, custom-menu, editor-style, featured-image-header, featured-images, flexible-header, full-width-template, microformats, rtl-language-support, sticky-post, threaded-comments, translation-ready
 Requires at least: 4.0
-Tested up to: 4.3
-Stable tag: 1.0.11
+Tested up to: 4.5
+Stable tag: 1.0.12
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -15,6 +15,9 @@ Regina Lite is a medical wordpress theme, suitable for medical clinics, dentistr
 * Implement Live change events for all fields in the Customizer
 
 == Changelog ==
+
+= 1.0.12 =
+* Has been fixed the markup format for links, lists and images alignment on single and page.
 
 = 1.0.11 =
 * Has been updated Theme Documentation link from customizer.

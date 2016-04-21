@@ -4,7 +4,7 @@ Theme URI: http://www.machothemes.com/themes/regina-lite/
 Author: Macho Themes
 Author URI: http://www.machothemes.com/
 Description: Regina Lite is a medical wordpress theme, suitable for medical clinics, dentistry websites, medical research facilities and more.
-Version: 1.0.11
+Version: 1.0.12
 License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 Text Domain: regina-lite
@@ -405,4 +405,165 @@ body {
 #navigation {
     position: relative;
     z-index: 1;
+}
+
+.markup-format ul,
+.markup-format ol {
+    margin: 0;
+    padding: 0;
+    display: block;
+    list-style-position: inside;
+    float: none;
+}
+
+.markup-format ul li,
+.markup-format ol li {
+    margin: 0;
+    padding: 0;
+    float: none;
+}
+
+.markup-format ul {
+    list-style-type: disc;
+}
+
+.markup-format ul li {}
+
+.markup-format ul li ul {
+    margin-left: 20px;
+}
+
+.markup-format ol {}
+
+.markup-format ol li {}
+
+.markup-format ol li ol {
+    margin-left: 20px;
+}
+
+.markup-format img.alignright {
+    float: right;
+    margin: 0 0 1em 1em;
+}
+
+.markup-format img.alignleft {
+    float: left;
+    margin: 0 1em 1em 0;
+}
+
+.markup-format img.aligncenter {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.markup-format .alignright {
+    float: right;
+}
+
+.markup-format .alignleft {
+    float: left;
+}
+
+.markup-format .aligncenter {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.markup-format .alignnone {
+    max-width: 100% !important;
+    height: auto;
+}
+
+.markup-format img {
+    max-width: 100%;
+    height: auto;
+}
+
+.markup-format table {
+    width: 100%;
+}
+
+.markup-format table caption {
+    color: #808080;
+    margin-bottom: 10px;
+    font-weight: 700;
+}
+
+.markup-format table thead {
+    color: #808080;
+}
+
+.markup-format table thead th {
+    padding-bottom: 5px;
+    border-right: 1px solid #eee;
+    border-bottom: 1px solid #eee;
+    text-align: center;
+}
+
+.markup-format table thead th:last-child {
+    border-right: none;
+}
+
+.markup-format table tbody {
+    color: #808080;
+    text-align: center;
+    font-size: 12px;
+    font-weight: 300;
+}
+
+.markup-format table tbody a {
+    font-weight: 700;
+}
+
+.markup-format table tbody tr {
+    border-bottom: 1px solid #eee;
+}
+
+.markup-format table tbody tr:last-child {
+    border-bottom: none;
+}
+
+.markup-format table tbody tr td {
+    border-right: 1px solid #eee;
+    padding: 7px;
+}
+
+.markup-format table tbody tr td:last-child {
+    border-right: none;
+}
+
+.markup-format table tfoot {
+    font-size: 14px;
+    color: #808080;
+}
+
+.markup-format table tfoot #next {
+    text-align: right;
+}
+
+.markup-format table a {
+    color: #808080;
+    text-decoration: underline;
+}
+
+.markup-format table a:hover {
+    text-decoration: none;
+}
+
+.markup-format table td#prev {
+    padding-top: 10px;
+}
+
+.markup-format table td#prev a {
+    color: #808080;
+}
+
+.markup-format table td#next {
+    padding-top: 10px;
+}
+
+.markup-format table td#next a {
+    color: #808080;
 }

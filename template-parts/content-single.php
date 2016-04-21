@@ -16,7 +16,7 @@
     <?php endif; ?>
     <h2 class="title"><?php the_title(); ?></h2>
     <?php do_action( 'mtl_entry_meta' ); ?>
-    <div class="body">
+    <div class="body markup-format">
         <?php the_content(); ?>
         <?php
         wp_link_pages( array(
@@ -24,7 +24,7 @@
             'after'     => '</div><!--/.link-pages-->'
         ) );
         ?>
-    </div>
+    </div><!--/.markup-format-->
     <?php do_action( 'mtl_single_after_content' ); ?>
 </article><!--.post-->
 <?php do_action( 'mtl_single_after_article' ); ?>
