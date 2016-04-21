@@ -1,3 +1,6 @@
+= 1.0.12 =
+* Has been fixed the markup format for links, lists and images alignment on single and page.
+
 = 1.0.11 =
 * Has been updated Theme Documentation link from customizer.
 
