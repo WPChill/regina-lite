@@ -62,7 +62,7 @@ if( !class_exists( 'MTL_Contact_Bar_Output' ) ) {
                                 echo '<p><span class="nc-icon-glyph tech_mobile-button"></span>&nbsp;&nbsp; '. esc_html( $this->phone_number ) .'</p>';
                             }
                             if( $this->email_addr ) {
-                                echo '<p><span class="nc-icon-glyph ui-1_email-83"></span>&nbsp;&nbsp; '. esc_html( $this->email_addr ) .'</p>';
+                                echo '<p><span class="nc-icon-glyph ui-1_email-83"></span>&nbsp;&nbsp; <a href="mailto: '. sanitize_email( $this->email_addr ) .'" title="'. sanitize_email( $this->email_addr ) .'">'. sanitize_email( $this->email_addr ) .'</a></p>';
                             }
                             if( $this->facebook_url || $this->twitter_url || $this->linkedin_url || $this->youtube_url ) {
                                 echo '<ul class="social-link-list">';

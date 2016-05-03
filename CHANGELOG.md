@@ -1,3 +1,6 @@
+= 1.0.13 =
+* Has been added link on e-mail address from header and footer.
+
 = 1.0.12 =
 * Has been fixed the markup format for links, lists and images alignment on single and page.
 
