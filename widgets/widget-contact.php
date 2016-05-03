@@ -28,7 +28,7 @@ class Regina_Lite_Widget_Contact extends WP_Widget {
         }
 
         if( !empty( $instance['email'] ) ) {
-            echo '<p><span class="nc-icon-glyph ui-1_email-83 white"></span>&nbsp;&nbsp; '. esc_html( $instance['email'] ) .'</p>';
+            echo '<p><span class="nc-icon-glyph ui-1_email-83 white"></span>&nbsp;&nbsp; <a href="mailto: '. sanitize_email( $instance['email'] ) .'" title="'. sanitize_email( $instance['email'] ) .'">'. sanitize_email( $instance['email'] ) .'</a></p>';
         }
 
         if( !empty( $instance['facebook_link'] ) || !empty( $instance['twitter_link'] ) || !empty( $instance['linkedin_link'] ) || !empty( $instance['youtube_link'] ) ) {

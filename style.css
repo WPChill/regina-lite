@@ -35,6 +35,14 @@ body {
 	display: none;
 }
 
+#sub-header a {
+    color: #333;
+}
+
+#sub-header a:hover {
+    color: #08cae8;
+}
+
 #blog-navigation li span.page-numbers.current {
 	display: block;
     width: 45px;
