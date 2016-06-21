@@ -10122,6 +10122,11 @@ hr {
   padding: 110px 0 100px;
   background: #f2f2f2; }
 
+  .bg-block-white {
+    padding: 110px 0 100px;
+    background: #FFF;
+  }
+
 .content-block {
   display: inline-block;
   width: 100%;
@@ -10618,6 +10623,7 @@ ol {
 
 #call-out {
   float: left;
+  border-radius: 5px;
   width: 100%;
   margin: -175px 0 100px;
   padding: 40px;
@@ -10724,7 +10730,6 @@ ol {
         vertical-align: middle; }
 
 #home-testimonials {
-  margin: 0 0 100px;
   background: #08cae8; }
   #home-testimonials .testimonials {
     float: left;
@@ -11465,5 +11470,23 @@ ol {
         content: "\e660"; }
     .accordion ul li .inner {
       padding: 20px; }
+
+/* ---------------------------------------------------------------------- */
+/*  Blog Posts Wrapper
+/* ---------------------------------------------------------------------- */
+    .mt-blogpost-wrapper h4 {
+      font-weight: 400;
+    }
+
+    .mt-blogpost-wrapper.owl-theme .owl-controls .owl-buttons div {
+      background-color: #08cae8;
+      color: #FFF;
+      padding: 5px 25px;
+      opacity: 1;
+      font-size: 14px;
+    }
+
+      .mt-blogpost-wrapper.owl-theme .owl-controls .owl-buttons div:hover {opacity:  .5}
+      .mt-blogpost-wrapper .nc-icon-glyph {margin-left: 5px;}
 
 /*# sourceMappingURL=styles.css.map */

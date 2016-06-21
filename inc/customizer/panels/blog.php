@@ -202,7 +202,7 @@
     $wp_customize->add_setting($prefix.'_social_sharing_position',
         array(
             'sanitize_callback' => $prefix.'_sanitize_radio_buttons',
-            'default' => '§'
+            'default' => ''
         )
     );
     $wp_customize->add_control(
@@ -283,6 +283,8 @@
 	            'section' => $prefix.'_blog_social_section',
 	        )
     );
+
+
 
     /* Mail visibility */
     $wp_customize->add_setting($prefix.'_mail_visibility',

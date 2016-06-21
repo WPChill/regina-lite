@@ -209,6 +209,42 @@ function regina_lite_comment( $comment, $args, $depth ) {
     endswitch;
 }
 
+#
+#   Get the page ID of the page using the blog template
+#
+#   We can't rely on the name, maybe they'll name it something other than 'Blog' ?
+#
+if ( ! function_exists( 'regina_lite_get_page_id_by_template' ) ) {
+    function regina_lite_get_page_id_by_template( $page_template = null ) {
+
+        # default args array
+        # page template defaults to blog-template.php
+        $args = array(
+            'post_type'  => 'page',
+            'fields'     => 'ids',
+            'nopaging'   => true,
+            'meta_key'   => '_wp_page_template',
+            'meta_value' => 'page-templates/blog-template.php',
+        );
+
+        $pages                    = get_posts( $args );
+        $pages_which_use_template = '';
+
+        if ( is_array( $pages ) ) {
+            foreach ( $pages as $page ) {
+                $pages_which_use_template[] = $page;
+            }
+        } else if ( ! is_array( $pages ) ) {
+            $pages_which_use_template = $pages;
+        } else {
+            $pages_which_use_template = '';
+        }
+
+        return $pages_which_use_template;
+
+    }
+}
+
 /**
  *  Upsell
  */
@@ -239,8 +275,8 @@ if( !function_exists( 'regina_lite_prefix_upsell_notice' ) ) {
                 'prefixUpsellLabel' => __('View PRO version', 'regina-lite'),
 
                 # Documentation URLs
-                'prefixDocURL' => esc_url('http://docs.machothemes.com/category/108-regina-lite'),
-                'prefixDocLabel' => __('Theme Documentation', 'regina-lite'),
+                //'prefixDocURL' => esc_url('http://docs.machothemes.com/article/42-theme-customizer'),
+                //'prefixDocLabel' => __('Theme Documentation', 'regina-lite'),
             )
         );
 
@@ -248,3 +284,29 @@ if( !function_exists( 'regina_lite_prefix_upsell_notice' ) ) {
 
     add_action('customize_controls_enqueue_scripts', 'regina_lite_prefix_upsell_notice');
 }
+
+#
+# Custom Excerpt Length
+#
+function regina_lite_excerpt_length( $length ) {
+	return 25;
+}
+
+add_filter( 'excerpt_length', 'regina_lite_excerpt_length', 999 );
+
+#
+# Custom Read More
+#
+function regina_lite_excerpt_more( $more ) {
+
+	$return_string = '<div class="read-more-wrapper">';
+	$return_string .= '<a class="link small" href="' . esc_url( get_the_permalink() ) . '" role="button">' . __( 'Read more', 'regina-lite' ) . '<span class="nc-icon-glyph arrows-1_bold-right"></span></a>';
+	$return_string .= '</div>';
+
+
+
+	return $return_string;
+
+}
+
+add_filter( 'excerpt_more', 'regina_lite_excerpt_more' );

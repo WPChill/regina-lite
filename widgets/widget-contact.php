@@ -48,6 +48,11 @@ class Regina_Lite_Widget_Contact extends WP_Widget {
                 if( !empty( $instance['youtube_link'] ) ) {
                     echo '<li><a href="'. esc_url( $instance['youtube_link'] ) .'" title="'. __( 'YouTube', 'regina-lite' ) .'" target="_blank"><span class="nc-icon-glyph socials-1_logo-youtube"></span></a></li>';
                 }
+
+            if( !empty( $instance['instagram_link'] ) ) {
+                echo '<li><a href="'. esc_url( $instance['instagram_link'] ) .'" title="'. __( 'Instagram', 'regina-lite' ) .'" target="_blank"><span class="nc-icon-glyph socials-1_logo-instagram"></span></a></li>';
+            }
+
             echo '</ul>';
         }
 
@@ -69,6 +74,8 @@ class Regina_Lite_Widget_Contact extends WP_Widget {
         $twitter_link = !empty( $instance['twitter_link'] ) ? $instance['twitter_link'] : __( '#', 'regina-lite' );
         $linkedin_link = !empty( $instance['linkedin_link'] ) ? $instance['linkedin_link'] : __( '#', 'regina-lite' );
         $youtube_link = !empty( $instance['youtube_link'] ) ? $instance['youtube_link'] : __( '#', 'regina-lite' );
+        $instagram_link = !empty( $instance['instagram_link'] ) ? $instance['instagram_link'] : __( '#', 'regina-lite' );
+
         ?>
         <p>
             <label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php _e( 'Title:', 'regina-lite' ); ?></label>
@@ -104,6 +111,13 @@ class Regina_Lite_Widget_Contact extends WP_Widget {
             <label for="<?php echo $this->get_field_id( 'youtube_link' ); ?>"><?php _e( 'YouTube Link:', 'regina-lite' ); ?></label>
             <input class="widefat" id="<?php echo $this->get_field_id( 'youtube_link' ); ?>" name="<?php echo $this->get_field_name( 'youtube_link' ); ?>" type="text" value="<?php echo esc_attr( $youtube_link ); ?>">
         </p>
+
+
+        <p>
+            <label for="<?php echo $this->get_field_id( 'instagram_link' ); ?>"><?php _e( 'Instagram Link:', 'regina-lite' ); ?></label>
+            <input class="widefat" id="<?php echo $this->get_field_id( 'instagram_link' ); ?>" name="<?php echo $this->get_field_name( 'instagram_link' ); ?>" type="text" value="<?php echo esc_attr( $instagram_link ); ?>">
+        </p>
+
         <?php
     }
 
@@ -126,6 +140,8 @@ class Regina_Lite_Widget_Contact extends WP_Widget {
         $instance['twitter_link'] = ( !empty( $new_instance['twitter_link'] ) ? $new_instance['twitter_link'] : '' );
         $instance['linkedin_link'] = ( !empty( $new_instance['linkedin_link'] ) ? $new_instance['linkedin_link'] : '' );
         $instance['youtube_link'] = ( !empty( $new_instance['youtube_link'] ) ? $new_instance['youtube_link'] : '' );
+        $instance['instagram_link'] = ( !empty( $new_instance['instagram_link'] ) ? $new_instance['instagram_link'] : '' );
+
 
         return $instance;
     }

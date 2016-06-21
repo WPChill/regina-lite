@@ -1,3 +1,17 @@
+= 1.0.15 =
+* Added TGMPA to recommend Kiwi + Uber reCaptcha
+* Updated description in readme.txt
+* Removed Appearance -> More themes
+* Updated theme documentation URL
+* Added blog component
+* Updated MT Contact Widget to include Instagram Icon
+* Updated MT Contact Bar to include Instagram Icon
+* Small CSS Tweaks
+
+= 1.0.14 =
+* Updated theme screenshot
+* Updated footer link
+
 = 1.0.13 =
 * Has been added link on e-mail address from header and footer.
 

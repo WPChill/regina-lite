@@ -74,6 +74,16 @@
 
         } // end
 
+        if( $( '.mt-blogpost-wrapper' ).length ) {
+            var slides = $( '.mt-blogpost-wrapper' ).data('slider-items');
+            $( '.mt-blogpost-wrapper' ).owlCarousel({
+                items: slides,
+                lazyLoad: true,
+                navigation: true,
+                pagination: false
+            });
+        }
+
 
 
         /* ==========================================================================

@@ -1,7 +1,7 @@
 <?php
 
     // Set Panel ID
-    $panel_id = 'regina_lite_panel_advanced';
+    $panel_id = $prefix.'_panel_general';
 
     // Set prefix
     $prefix = 'regina_lite';
@@ -11,19 +11,10 @@
     /***********************************************/
 
 
-    $wp_customize->add_panel( $panel_id,
-        array(
-            'priority' => 58,
-            'capability' => 'edit_theme_options',
-            'theme_supports' => '',
-            'title' => esc_html__( 'Advanced Options', 'regina-lite' )
-        )
-    );
-
     /* Advanced */
     $wp_customize->add_section( $prefix.'_advanced_section' ,
         array(
-            'title'       => esc_html__( 'Settings', 'regina-lite' ),
+            'title'       => esc_html__( 'Advanced Settings', 'regina-lite' ),
             'panel' 	  => $panel_id
         )
     );

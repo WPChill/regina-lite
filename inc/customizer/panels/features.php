@@ -13,8 +13,7 @@ $wp_customize->add_panel( $panel_id,
         'priority'          => 51,
         'capability'        => 'edit_theme_options',
         'theme_supports'    => '',
-        'title'             => esc_html__( 'Features Panel', 'regina-lite' ),
-        'description'       => esc_html__( 'Features Panel description.', 'regina-lite' ),
+        'title'             => esc_html__( 'Why Choose Us', 'regina-lite' )
     )
 );
 
@@ -23,7 +22,7 @@ $wp_customize->add_panel( $panel_id,
 /***********************************************/
 $wp_customize->add_section( $prefix . '_top_box' ,
     array(
-        'title'       => esc_html__( 'Top Box', 'regina-lite' ),
+        'title'       => esc_html__( 'Blue Box on Hero Image', 'regina-lite' ),
         'panel'       => $panel_id
     )
 );

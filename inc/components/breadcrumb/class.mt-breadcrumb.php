@@ -427,7 +427,7 @@ class Riba_Breadcrumbs {
 	 */
 	private function get_post_type_archive( $linked = TRUE ) {
 		global $wp_query;
-		$post_type = $wp_query->query_vars['post_type'];
+		$post_type = $wp_query->queried_object->post_type;
 		$post_type_object = get_post_type_object( $post_type );
 		$link = '';
 		// Check if we have a post type object

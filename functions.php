@@ -2,22 +2,22 @@
 /**
  * regina-lite functions and definitions.
  *
- * @link https://developer.wordpress.org/themes/basics/theme-functions/
+ * @link    https://developer.wordpress.org/themes/basics/theme-functions/
  *
  * @package regina-lite
  */
 
 if ( ! function_exists( 'regina_lite_setup' ) ) :
-/**
- * Sets up theme defaults and registers support for various WordPress features.
- *
- * Note that this function is hooked into the after_setup_theme hook, which
- * runs before the init hook. The init hook is too late for some features, such
- * as indicating support for post thumbnails.
- */
+	/**
+	 * Sets up theme defaults and registers support for various WordPress features.
+	 *
+	 * Note that this function is hooked into the after_setup_theme hook, which
+	 * runs before the init hook. The init hook is too late for some features, such
+	 * as indicating support for post thumbnails.
+	 */
 	function regina_lite_setup() {
 		/**
-		 *	Require Once
+		 *    Require Once
 		 */
 		require_once( 'inc/components/nav-walker/class.mt-nav-walker.php' );
 		require_once( 'inc/components/pagination/class.mt-pagination.php' );
@@ -39,6 +39,9 @@ if ( ! function_exists( 'regina_lite_setup' ) ) :
 		require_once( 'widgets/widget-contact.php' );
 		require_once( 'widgets/widget-address.php' );
 
+		// TGMPA
+		require_once( 'inc/tgmpa/tgm-plugin-activation.php' );
+
 		/*
 		 * Make theme available for translation.
 		 * Translations can be filed in the /languages/ directory.
@@ -59,12 +62,12 @@ if ( ! function_exists( 'regina_lite_setup' ) ) :
 		add_theme_support( 'title-tag' );
 
 		/**
-		 *	Custom Header
+		 *    Custom Header
 		 */
 		$custom_header_args = array(
-			'default-image'	=> get_template_directory_uri() . '/layout/images/home/slide-1.jpg',
-			'width'			=> '1903',
-			'height'		=> '634'
+			'default-image' => get_template_directory_uri() . '/layout/images/home/slide-1.jpg',
+			'width'         => '1903',
+			'height'        => '634',
 		);
 		add_theme_support( 'custom-header', $custom_header_args );
 
@@ -77,8 +80,8 @@ if ( ! function_exists( 'regina_lite_setup' ) ) :
 
 		// This theme uses wp_nav_menu() in one location.
 		register_nav_menus( array(
-			'primary'	=> esc_html__( 'Primary Menu', 'regina-lite' ),
-			'secondary'	=> esc_html__( 'Secondary Menu', 'regina-lite' )
+			'primary'   => esc_html__( 'Primary Menu', 'regina-lite' ),
+			'secondary' => esc_html__( 'Secondary Menu', 'regina-lite' ),
 		) );
 
 		/*
@@ -99,7 +102,9 @@ if ( ! function_exists( 'regina_lite_setup' ) ) :
 		 */
 		add_image_size( 'regina-lite-blog', 750, 419, true );
 		add_image_size( 'regina-lite-related-posts', 230, 231, true );
+		add_image_size( 'regina-lite-homepage-blog-posts', 250, 250, true );
 	}
+
 	add_action( 'after_setup_theme', 'regina_lite_setup' );
 endif; // regina_lite_setup
 
@@ -113,6 +118,7 @@ endif; // regina_lite_setup
 function regina_lite_content_width() {
 	$GLOBALS['content_width'] = apply_filters( 'regina_lite_content_width', 750 );
 }
+
 add_action( 'after_setup_theme', 'regina_lite_content_width', 0 );
 
 /**
@@ -123,54 +129,55 @@ add_action( 'after_setup_theme', 'regina_lite_content_width', 0 );
 function regina_lite_widgets_init() {
 	// Blog Sidebar
 	register_sidebar( array(
-		'name'			=> esc_html__( 'Blog Sidebar', 'regina-lite' ),
-		'id'			=> 'blog-sidebar',
-		'before_widget'         => '<div id="%1$s" class="widget %2$s">',
-		'after_widget'          => '</div>',
-		'before_title'          => '<h3>',
-		'after_title'           => '</h3>'
+		'name'          => esc_html__( 'Blog Sidebar', 'regina-lite' ),
+		'id'            => 'blog-sidebar',
+		'before_widget' => '<div id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</div>',
+		'before_title'  => '<h3>',
+		'after_title'   => '</h3>',
 	) );
 
 	// Footer Sidebar 1
 	register_sidebar( array(
-		'name'			=> esc_html__( 'Footer Sidebar 1', 'regina-lite' ),
-		'id'			=> 'footer-sidebar-1',
-		'before_widget'         => '<div id="%1$s" class="block %2$s">',
-		'after_widget'          => '</div>',
-		'before_title'          => '<h6 class="widgettitle"><small>',
-		'after_title'           => '</small></h6>'
+		'name'          => esc_html__( 'Footer Sidebar 1', 'regina-lite' ),
+		'id'            => 'footer-sidebar-1',
+		'before_widget' => '<div id="%1$s" class="block %2$s">',
+		'after_widget'  => '</div>',
+		'before_title'  => '<h6 class="widgettitle"><small>',
+		'after_title'   => '</small></h6>',
 	) );
 
 	// Footer Sidebar 2
 	register_sidebar( array(
-		'name'			=> esc_html__( 'Footer Sidebar 2', 'regina-lite' ),
-		'id'			=> 'footer-sidebar-2',
-		'before_widget'         => '<div id="%1$s" class="block %2$s">',
-		'after_widget'          => '</div>',
-		'before_title'          => '<h6 class="widgettitle"><small>',
-		'after_title'           => '</small></h6>'
+		'name'          => esc_html__( 'Footer Sidebar 2', 'regina-lite' ),
+		'id'            => 'footer-sidebar-2',
+		'before_widget' => '<div id="%1$s" class="block %2$s">',
+		'after_widget'  => '</div>',
+		'before_title'  => '<h6 class="widgettitle"><small>',
+		'after_title'   => '</small></h6>',
 	) );
 
 	// Footer Sidebar 3
 	register_sidebar( array(
-		'name'			=> esc_html__( 'Footer Sidebar 3', 'regina-lite' ),
-		'id'			=> 'footer-sidebar-3',
-		'before_widget'         => '<div id="%1$s" class="block %2$s">',
-		'after_widget'          => '</div>',
-		'before_title'          => '<h6 class="widgettitle"><small>',
-		'after_title'           => '</small></h6>'
+		'name'          => esc_html__( 'Footer Sidebar 3', 'regina-lite' ),
+		'id'            => 'footer-sidebar-3',
+		'before_widget' => '<div id="%1$s" class="block %2$s">',
+		'after_widget'  => '</div>',
+		'before_title'  => '<h6 class="widgettitle"><small>',
+		'after_title'   => '</small></h6>',
 	) );
 
 	// Footer Sidebar 4
 	register_sidebar( array(
-		'name'			=> esc_html__( 'Footer Sidebar 4', 'regina-lite' ),
-		'id'			=> 'footer-sidebar-4',
-		'before_widget'         => '<div id="%1$s" class="block %2$s">',
-		'after_widget'          => '</div>',
-		'before_title'          => '<h6 class="widgettitle"><small>',
-		'after_title'           => '</small></h6>'
+		'name'          => esc_html__( 'Footer Sidebar 4', 'regina-lite' ),
+		'id'            => 'footer-sidebar-4',
+		'before_widget' => '<div id="%1$s" class="block %2$s">',
+		'after_widget'  => '</div>',
+		'before_title'  => '<h6 class="widgettitle"><small>',
+		'after_title'   => '</small></h6>',
 	) );
 }
+
 add_action( 'widgets_init', 'regina_lite_widgets_init' );
 
 /**
@@ -179,11 +186,11 @@ add_action( 'widgets_init', 'regina_lite_widgets_init' );
 function regina_lite_scripts() {
 
 	$enable_site_lazyload = get_theme_mod( 'regina_lite_enable_site_lazyload', 1 );
-  $preloader_enabled = get_theme_mod('regina_lite_enable_site_preloader', 1);
+	$preloader_enabled    = get_theme_mod( 'regina_lite_enable_site_preloader', 1 );
 
 	// Google Fonts
 	$google_fonts_args = array(
-		'family'	=> 'Lato:400,700%7CMontserrat:400,700'
+		'family' => 'Lato:400,700%7CMontserrat:400,700',
 	);
 
 	// WP Register Style
@@ -191,7 +198,7 @@ function regina_lite_scripts() {
 
 	// WP Enqueue Style
 	wp_enqueue_style( 'bxslider-css', get_template_directory_uri() . '/layout/css/bxslider.min.css', array(), 'all' );
-  wp_enqueue_style( 'regina-lite-style', get_template_directory_uri() . '/style.css' );
+	wp_enqueue_style( 'regina-lite-style', get_template_directory_uri() . '/style.css' );
 	wp_enqueue_style( 'regina-lite-bootstrap', get_template_directory_uri() . '/layout/css/bootstrap.min.css', array(), '', 'all' );
 	wp_enqueue_style( 'regina-lite-mobile', get_template_directory_uri() . '/layout/css/mobile.min.css', array(), '', 'all' );
 
@@ -201,18 +208,24 @@ function regina_lite_scripts() {
 	wp_enqueue_style( 'google-fonts' );
 
 	// WP Enqueue Script
-	if( $preloader_enabled == 1 ) {
-	  wp_enqueue_script( 'pace-min-js', get_template_directory_uri() . '/layout/js/plugins/pace/pace.min.js', array('jquery'), '', false );
-	  wp_enqueue_script( 'regina-lite-preloader', get_template_directory_uri() . '/layout/js/preloader.min.js', array('jquery', 'pace-min-js'), '', false );
+	if ( $preloader_enabled == 1 ) {
+		wp_enqueue_script( 'pace-min-js', get_template_directory_uri() . '/layout/js/plugins/pace/pace.min.js', array( 'jquery' ), '', false );
+		wp_enqueue_script( 'regina-lite-preloader', get_template_directory_uri() . '/layout/js/preloader.min.js', array(
+			'jquery',
+			'pace-min-js',
+		), '', false );
 		wp_enqueue_style( 'regina-lite-pace', get_template_directory_uri() . '/layout/css/pace.min.css', array(), '', 'all' );
 	}
 
 
-	wp_enqueue_script( 'regina-lite-jquery.bxslider.min', get_template_directory_uri() .'/layout/js/plugins/bxslider/bxslider.min.js', array( 'jquery' ), '', true );
-	wp_enqueue_script( 'regina-lite-owl-carousel-min', get_template_directory_uri() . '/layout/js/plugins/owl-carousel/owl-carousel.min.js', array('jquery'), '', true );
-	wp_enqueue_script( 'regina-lite-scripts', get_template_directory_uri() . '/layout/js/plugins.js', array('jquery', 'regina-lite-owl-carousel-min') , '', true );
+	wp_enqueue_script( 'regina-lite-jquery.bxslider.min', get_template_directory_uri() . '/layout/js/plugins/bxslider/bxslider.min.js', array( 'jquery' ), '', true );
+	wp_enqueue_script( 'regina-lite-owl-carousel-min', get_template_directory_uri() . '/layout/js/plugins/owl-carousel/owl-carousel.min.js', array( 'jquery' ), '', true );
+	wp_enqueue_script( 'regina-lite-scripts', get_template_directory_uri() . '/layout/js/plugins.js', array(
+		'jquery',
+		'regina-lite-owl-carousel-min',
+	), '', true );
 
-	if( $enable_site_lazyload == 1 ) {
+	if ( $enable_site_lazyload == 1 ) {
 		wp_enqueue_script( 'regina-lite-jquery.lazyload.min', get_template_directory_uri() . '/layout/js/plugins/lazyload/lazyload.min.js', array( 'jquery' ), '', true );
 	}
 
@@ -225,227 +238,17 @@ function regina_lite_scripts() {
 		wp_enqueue_script( 'comment-reply' );
 	}
 }
+
 add_action( 'wp_enqueue_scripts', 'regina_lite_scripts' );
-
-#
-# More Themes Functionality
-#
-if( !function_exists( 'regina_lite_more_themes_styles' ) ) {
-    /**
-     *
-     */
-    function regina_lite_more_themes_styles() {
-        wp_enqueue_style('more-theme-style', get_template_directory_uri() . '/layout/css/more-themes.min.css');
-    }
-}
-
-# Add upsell page to the menu.
-if( !function_exists( 'regina_lite_add_upsell' ) ) {
-    /**
-     *
-     */
-    function regina_lite_lite_add_upsell() {
-
-        $page = add_theme_page(
-            __( 'More Themes', 'regina-lite' ),
-            __( 'More Themes', 'regina-lite' ),
-            'administrator',
-            'macho-themes',
-            'regina_lite_display_upsell'
-        );
-
-        add_action( 'admin_print_styles-' . $page, 'regina_lite_more_themes_styles' );
-    }
-
-    add_action( 'admin_menu', 'regina_lite_lite_add_upsell', 11 );
-}
 
 #
 #  Move comment field to bottom
 #
 add_filter( 'comment_form_fields', 'regina_lite_move_comment_field_to_bottom' );
 function regina_lite_move_comment_field_to_bottom( $fields ) {
-    $comment_field = $fields['comment'];
-    unset( $fields['comment'] );
-    $fields['comment'] = $comment_field;
-    return $fields;
-}
+	$comment_field = $fields['comment'];
+	unset( $fields['comment'] );
+	$fields['comment'] = $comment_field;
 
-# Define markup for the upsell page.
-if( !function_exists( 'regina_lite_display_upsell' ) ) {
-    function regina_lite_display_upsell() {
-
-        // Set template directory uri
-        $directory_uri = get_template_directory_uri();
-        ?>
-        <div class="wrap">
-            <div class="container-fluid">
-                <div id="upsell_container">
-                    <div class="row">
-                        <div id="upsell_header" class="col-md-12">
-
-                            <a href="http://www.machothemes.com/" target="_blank">
-                                <img
-                                    src="<?php echo get_template_directory_uri(); ?>/layout/images/upsell/macho-themes-logo.png"/>
-                            </a>
-
-
-
-                            <h3><?php echo __( 'Simple. Powerful. Flexible. That\'s how we at', 'regina-lite'). sprintf('<a href="%s" target=="_blank" rel="nofollow">', 'http://www.machothemes.com'). __(' Macho Themes', 'regina-lite'). '</a>'. __(' build all of our themes.', 'regina-lite' ); ?></h3>
-
-                        </div>
-                    </div>
-                    <div id="upsell_themes" class="row">
-                        <?php
-
-                        // Set the argument array with author name.
-                        $args = array(
-                            'author' => 'cristianraiber-1',
-                        );
-
-                        // Set the $request array.
-                        $request = array(
-                            'body' => array(
-                                'action'  => 'query_themes',
-                                'request' => serialize( (object) $args )
-                            )
-                        );
-
-                        $themes       = regina_lite_get_themes( $request );
-                        $active_theme = wp_get_theme()->get( 'Name' );
-                        $counter      = 1;
-
-                        // For currently active theme.
-                        foreach ( $themes->themes as $theme ) {
-                            if ( $active_theme == $theme->name ) { ?>
-
-                                <div id="<?php echo $theme->slug; ?>" class="theme-container col-md-6 col-lg-4">
-                                    <div class="image-container">
-                                        <img class="theme-screenshot" src="<?php echo $theme->screenshot_url ?>"/>
-
-                                        <div class="theme-description">
-                                            <p><?php echo $theme->description; ?></p>
-                                        </div>
-                                    </div>
-                                    <div class="theme-details active">
-											<span
-                                                class="theme-name"><?php echo $theme->name . ':' . __( ' Current theme', 'regina-lite' ); ?></span>
-                                        <a class="button button-secondary customize right" target="_blank"
-                                           href="<?php echo get_site_url() . '/wp-admin/customize.php' ?>"><?php _e( 'Customize', 'regina-lite' ); ?></a>
-                                    </div>
-                                </div>
-
-                                <?php
-                                $counter ++;
-                                break;
-                            }
-                        }
-
-                        // For all other themes.
-                        foreach ( $themes->themes as $theme ) {
-                            if ( $active_theme != $theme->name ) {
-
-                                // Set the argument array with author name.
-                                $args = array(
-                                    'slug' => $theme->slug,
-                                );
-
-                                // Set the $request array.
-                                $request = array(
-                                    'body' => array(
-                                        'action'  => 'theme_information',
-                                        'request' => serialize( (object) $args )
-                                    )
-                                );
-
-                                $theme_details = regina_lite_get_themes( $request );
-                                ?>
-
-                                <div id="<?php echo $theme->slug; ?>"
-                                     class="theme-container col-md-6 col-lg-4 <?php echo $counter % 3 == 1 ? 'no-left-megin' : ""; ?>">
-                                    <div class="image-container">
-                                        <img class="theme-screenshot" src="<?php echo $theme->screenshot_url ?>"/>
-
-                                        <div class="theme-description">
-                                            <p><?php echo $theme->description; ?></p>
-                                        </div>
-                                    </div>
-                                    <div class="theme-details">
-                                        <span class="theme-name"><?php echo $theme->name; ?></span>
-
-                                        <!-- Check if the theme is installed -->
-                                        <?php if ( wp_get_theme( $theme->slug )->exists() ) { ?>
-
-                                            <!-- Activate Button -->
-                                            <a class="button button-primary activate right"
-                                               href="<?php echo wp_nonce_url( admin_url( 'themes.php?action=activate&amp;stylesheet=' . urlencode( $theme->slug ) ), 'switch-theme_' . $theme->slug ); ?>">Activate</a>
-                                        <?php } else {
-
-                                            // Set the install url for the theme.
-                                            $install_url = add_query_arg( array(
-                                                'action' => 'install-theme',
-                                                'theme'  => $theme->slug,
-                                            ), self_admin_url( 'update.php' ) );
-                                            ?>
-                                            <!-- Install Button -->
-                                            <a data-toggle="tooltip" data-placement="bottom"
-                                               title="<?php echo 'Downloaded ' . number_format( $theme_details->downloaded ) . ' times'; ?>"
-                                               class="button button-primary install right"
-                                               href="<?php echo esc_url( wp_nonce_url( $install_url, 'install-theme_' . $theme->slug ) ); ?>"><?php _e( 'Install Now', 'regina-lite' ); ?></a>
-                                        <?php } ?>
-
-                                        <!-- Preview button -->
-                                        <a class="button button-secondary preview right" target="_blank"
-                                           href="<?php echo $theme->preview_url; ?>"><?php _e( 'Live Preview', 'regina-lite' ); ?></a>
-                                    </div>
-                                </div>
-                                <?php
-                                $counter ++;
-                            }
-                        } ?>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-
-        <?php
-    }
-}
-
-# Get all Macho Themes themes by using WP API.
-if( !function_exists( 'regina_lite_get_themes' ) ) {
-    function regina_lite_get_themes( $request ) {
-
-        // Generate a cache key that would hold the response for this request:
-        $key = 'riba-lite_' . md5( serialize( $request ) );
-
-        // Check transient. If it's there - use that, if not re fetch the theme
-        if ( false === ( $themes = get_transient( $key ) ) ) {
-
-            // Transient expired/does not exist. Send request to the API.
-            $response = wp_remote_post( 'http://api.wordpress.org/themes/info/1.0/', $request );
-
-            // Check for the error.
-            if ( ! is_wp_error( $response ) ) {
-
-                $themes = unserialize( wp_remote_retrieve_body( $response ) );
-
-
-                if ( ! is_object( $themes ) && ! is_array( $themes ) ) {
-
-                    // Response body does not contain an object/array
-                    return new WP_Error( 'theme_api_error', 'An unexpected error has occurred' );
-                }
-
-                // Set transient for next time... keep it for 24 hours should be good
-                set_transient( $key, $themes, 60 * 60 * 24 );
-            } else {
-                // Error object returned
-                return $response;
-            }
-        }
-
-        return $themes;
-    }
+	return $fields;
 }

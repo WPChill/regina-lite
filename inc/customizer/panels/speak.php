@@ -13,8 +13,7 @@ $wp_customize->add_panel( $panel_id,
         'priority'          => 54,
         'capability'        => 'edit_theme_options',
         'theme_supports'    => '',
-        'title'             => esc_html__( 'Speak Panel', 'regina-lite' ),
-        'description'       => esc_html__( 'Speak Panel description.', 'regina-lite' ),
+        'title'             => esc_html__( 'CTA Below Testimonials', 'regina-lite' )
     )
 );
 
@@ -24,7 +23,6 @@ $wp_customize->add_panel( $panel_id,
 $wp_customize->add_section( $prefix.'_speak_general' ,
     array(
         'title'       => esc_html__( 'General', 'regina-lite' ),
-        //'description' => esc_html__( 'General Section description.', 'regina-lite' ),
         'panel'       => $panel_id
     )
 );

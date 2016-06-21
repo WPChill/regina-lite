@@ -37,7 +37,7 @@
                 </div><!--.col-lg-3-->
             <?php } else { ?>
                 <div class="col-sm-3">
-                    <?php the_widget( 'Regina_Lite_Widget_Contact', 'title=Contact&phone=(650) 652-8500&email=contact@mediplus.com&facebook_link=#&twitter_link=#&linkedin_link=#&youtube_link=#', $widget_args ); ?>
+                    <?php the_widget( 'Regina_Lite_Widget_Contact', 'title=Contact&phone=(650) 652-8500&email=contact@mediplus.com&facebook_link=#&twitter_link=#&linkedin_link=#&youtube_link=#&instagram_link=#', $widget_args ); ?>
                 </div><!--.col-lg-3-->
             <?php } ?>
 
@@ -62,6 +62,7 @@
                 <?php
                     if( $check_footer_theme_copyright_enable == 1 ) {
                         echo sprintf( 'Theme: <a href="%s" target="_blank" rel="nofollow" title="Regina Lite">Regina Lite</a>', esc_url( 'http://www.machothemes.com/themes/regina-lite/' ) ) . ' &middot; ';
+                        echo 'Built by: <a href="https://www.machothemes.com/" rel="dofollow" title="Professional Responsive WordPress Themes">Macho Themes</a> ';
                     }
                     if( $text_footer_theme_copyright_message ) {
                         echo $text_footer_theme_copyright_message;

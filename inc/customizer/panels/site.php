@@ -17,6 +17,10 @@
     $site_title2        = $wp_customize->get_section( 'background_image' );
     $site_title2->panel = $panel_id;
 
+	// Change panel for Header Image
+	$site_title2        = $wp_customize->get_section( 'header_image' );
+	$site_title2->panel = $panel_id;
+
     // Change panel for Static Front Page
     $site_title3        = $wp_customize->get_section( 'static_front_page' );
     $site_title3->panel = $panel_id;
@@ -191,6 +195,24 @@
 		)
 	);
 
+	/* Instagram URL */
+	$wp_customize->add_setting( $prefix.'_contact_bar_instagram_url',
+		array(
+			'sanitize_callback' => 'esc_url',
+			'default' => esc_html('#')
+		)
+	);
+
+	$wp_customize->add_control( $prefix.'_contact_bar_instagram_url',
+		array(
+			'label'   => esc_html__( 'Instagram URL', 'regina-lite' ),
+			'description' => esc_html__('Will be displayed in the contact bar ( Header )', 'regina-lite'),
+			'section' => $prefix.'_general_contact_section',
+			'settings'   => $prefix.'_contact_bar_instagram_url',
+			'priority' => 10
+		)
+	);
+
 
 	/* email */
     $wp_customize->add_setting( $prefix.'_email',
@@ -283,7 +305,7 @@
     $wp_customize->add_setting( $prefix.'_footer_copyright',
         array(
             'sanitize_callback' => 'sanitize_text_field',
-            'default'           => esc_html__( 'Made with love by Macho Themes &copy; Copyright 2016. All Rights Reserved.', 'regina-lite' )
+            'default'           => esc_html__( '&copy; Copyright 2016. All Rights Reserved.', 'regina-lite' )
         )
     );
 
