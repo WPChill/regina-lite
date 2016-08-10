@@ -55,14 +55,14 @@ $wp_customize->add_setting( 'regina_lite_news_section_no_posts_per_slide', array
 $wp_customize->add_control( 'regina_lite_news_section_no_posts_per_slide', array(
 		'label'   => esc_html__( 'Number of post per slide', 'regina-lite' ),
 		'section' => 'regina_lite_news_general',
-		'default' => esc_html( '2' ),
+		'default' => esc_html( 4 ),
 	) );
 $wp_customize->add_control( 'regina_lite_news_section_no_posts_per_slide', array(
 		'type'    => 'select',
 		'choices' => array(
-			'1' => esc_html( '1' ),
-			'2' => esc_html( '2' ),
-			'4' => esc_html( '4' ),
+			'1' => esc_html( 1 ),
+			'2' => esc_html( 2 ),
+			'4' => esc_html( 4 ),
 		),
 		'label'   => esc_html__( 'Number of post per slide', 'regina-lite' ),
 		'section' => 'regina_lite_news_general',

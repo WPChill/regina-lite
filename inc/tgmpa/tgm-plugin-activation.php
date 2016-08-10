@@ -44,7 +44,7 @@ function decode_register_required_plugins() {
 	 */
 	$plugins = array(
 
-		
+		/*
 		array(
 			'name' => 'Simple Social Share Icons', // The plugin name.
 			'slug' => 'kiwi-social-share', // The plugin slug (typically the folder name).
@@ -55,6 +55,7 @@ function decode_register_required_plugins() {
 			'force_deactivation' => false, // If true, plugin is deactivated upon theme switch, useful for theme-specific plugins.
 			'external_url' => '', // If set, overrides default API URL and points to an external URL.
 		),
+		*/
 		array(
 			'name' => 'reCaptcha Security', // The plugin name.
 			'slug' => 'uber-nocaptcha-recaptcha', // The plugin slug (typically the folder name).
