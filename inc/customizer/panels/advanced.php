@@ -50,8 +50,8 @@
         $prefix . '_enable_site_search_icon',
             array(
                 'type'          => 'checkbox',
-                'label'         => esc_html__( 'Enable search icon in header?', 'regina-lite' ),
-                'description'   => esc_html__( 'Initial status: enabled. If you don\'t like the fact that search icon show in header, uncheck this.', 'regina-lite' ),
+                'label'         => esc_html__( 'Enable search box in header?', 'regina-lite' ),
+                'description'   => esc_html__( 'Initial status: enabled. If you don\'t like the fact that the search form is shown in the header, un-check this.', 'regina-lite' ),
                 'section'       => $prefix . '_advanced_section'
             )
     );

@@ -141,9 +141,9 @@ function regina_lite_widgets_init() {
 	register_sidebar( array(
 		'name'          => esc_html__( 'Footer Sidebar 1', 'regina-lite' ),
 		'id'            => 'footer-sidebar-1',
-		'before_widget' => '<div id="%1$s" class="block %2$s">',
+		'before_widget' => '<div id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</div>',
-		'before_title'  => '<h6 class="widgettitle"><small>',
+		'before_title'  => '<h6><small>',
 		'after_title'   => '</small></h6>',
 	) );
 
@@ -151,9 +151,9 @@ function regina_lite_widgets_init() {
 	register_sidebar( array(
 		'name'          => esc_html__( 'Footer Sidebar 2', 'regina-lite' ),
 		'id'            => 'footer-sidebar-2',
-		'before_widget' => '<div id="%1$s" class="block %2$s">',
+		'before_widget' => '<div id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</div>',
-		'before_title'  => '<h6 class="widgettitle"><small>',
+		'before_title'  => '<h6><small>',
 		'after_title'   => '</small></h6>',
 	) );
 
@@ -161,9 +161,9 @@ function regina_lite_widgets_init() {
 	register_sidebar( array(
 		'name'          => esc_html__( 'Footer Sidebar 3', 'regina-lite' ),
 		'id'            => 'footer-sidebar-3',
-		'before_widget' => '<div id="%1$s" class="block %2$s">',
+		'before_widget' => '<div id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</div>',
-		'before_title'  => '<h6 class="widgettitle"><small>',
+		'before_title'  => '<h6><small>',
 		'after_title'   => '</small></h6>',
 	) );
 
@@ -171,9 +171,9 @@ function regina_lite_widgets_init() {
 	register_sidebar( array(
 		'name'          => esc_html__( 'Footer Sidebar 4', 'regina-lite' ),
 		'id'            => 'footer-sidebar-4',
-		'before_widget' => '<div id="%1$s" class="block %2$s">',
+		'before_widget' => '<div id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</div>',
-		'before_title'  => '<h6 class="widgettitle"><small>',
+		'before_title'  => '<h6><small>',
 		'after_title'   => '</small></h6>',
 	) );
 }
