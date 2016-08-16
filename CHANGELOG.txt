@@ -1,3 +1,9 @@
+= 1.0.19 =
+* Removed search form from footer
+* Fixed search form appearance in header
+* Removed @import from style.css & made sure all CSS files are now enqueued
+* #18, #14, #15
+
 = 1.0.18 =
 * Header improvements - added search form
 * Footer improvements - center aligned the copyright message and removed some words

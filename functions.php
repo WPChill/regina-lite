@@ -199,6 +199,7 @@ function regina_lite_scripts() {
 	// WP Enqueue Style
 	wp_enqueue_style( 'bxslider-css', get_template_directory_uri() . '/layout/css/bxslider.min.css', array(), 'all' );
 	wp_enqueue_style( 'regina-lite-style', get_template_directory_uri() . '/style.css' );
+	wp_enqueue_style( 'regina-lite-main-css', get_template_directory_uri() . '/layout/css/styles.min.css', array(), '', 'all' );
 	wp_enqueue_style( 'regina-lite-bootstrap', get_template_directory_uri() . '/layout/css/bootstrap.min.css', array(), '', 'all' );
 	wp_enqueue_style( 'regina-lite-mobile', get_template_directory_uri() . '/layout/css/mobile.min.css', array(), '', 'all' );
 

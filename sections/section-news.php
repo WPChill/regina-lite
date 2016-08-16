@@ -1,15 +1,11 @@
 <?php
 
-if ( current_user_can( 'edit_theme_options' ) ) {
-	$regina_lite_section_title     = get_theme_mod( 'regina_lite_news_section_title', __( 'Latest news', 'regina-lite' ) );
-	$regina_lite_section_sub_title = get_theme_mod( 'regina_lite_news_section_sub_title', __( 'Straight from our blog', 'regina-lite' ) );
-} else {
-	$regina_lite_section_title     = get_theme_mod( 'regina_lite_news_section_title' );
-	$regina_lite_section_sub_title = get_theme_mod( 'regina_lite_news_section_sub_title' );
-}
 
-$regina_lite_news_button_text                = get_theme_mod( 'regina_lite_news_section_button_text' );
-$regina_lite_news_section_no_posts_per_slide = get_theme_mod( 'regina_lite_news_section_no_posts_per_slide', 2 );
+$regina_lite_section_title     = get_theme_mod( 'regina_lite_news_section_title', __( 'Latest News', 'regina-lite' ) );
+$regina_lite_section_sub_title = get_theme_mod( 'regina_lite_news_section_sub_title', __( 'Straight from our blog', 'regina-lite' ) );
+
+$regina_lite_news_button_text                = get_theme_mod( 'regina_lite_news_section_button_text', __('See our blog', 'regina-lite') );
+$regina_lite_news_section_no_posts_per_slide = get_theme_mod( 'regina_lite_news_section_no_posts_per_slide', 4 );
 
 // section args
 $regina_lite_limit = get_option( 'posts_per_page', 4 );
