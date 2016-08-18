@@ -47,10 +47,22 @@
 							'fallback_cb'     => 'MTL_Extended_Menu_Walker::fallback',
 						) );
 						?>
+<<<<<<< Updated upstream
 						<?php $bookappointmenturl = get_theme_mod( 'regina_lite_contact_bar_bookappointmenturl', 'regina-lite' ); ?>
 						<?php if ( $bookappointmenturl ) { ?>
 							<li class="hide-mobile">
 								<a href="<?php echo esc_url( $bookappointmenturl ); ?>" title="<?php _e( 'Book Appointment', 'regina-lite' ); ?>"><span class="nc-icon-glyph ui-1_bell-53"></span> <?php _e( 'Book Appointment', 'regina-lite' ); ?>
+=======
+						<?php
+						$book_appointment_button_label = get_theme_mod( 'regina_lite_book_appointment_button_label', __( 'Book Appointment', 'regina-lite' ) );
+						$book_appointment_url          = get_theme_mod( 'regina_lite_contact_bar_bookappointmenturl', '#' );
+						?>
+						<?php if ( ! empty( $book_appointment_url ) ) { ?>
+							<li class="hide-mobile">
+								<a href="<?php echo $book_appointment_url; ?>" title="<?php echo esc_attr( $book_appointment_button_label ) ?>">
+									<span class="nc-icon-glyph ui-1_bell-53"></span>
+									<?php echo esc_attr( $book_appointment_button_label ); ?>
+>>>>>>> Stashed changes
 								</a></li>
 						<?php } ?>
 					</ul>

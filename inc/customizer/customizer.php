@@ -19,47 +19,85 @@ function regina_lite_customize_register( $wp_customize ) {
 	require get_template_directory() . '/inc/customizer/custom-controls/slider-selector.php';
 
 	#
-	# Up sell features
+	# Main Upsell features
 	#
 
-	$wp_customize->add_section( $prefix . '_order_section', array(
-		'title'    => __( 'Section order', 'regina-lite' ),
-		'priority' => 26,
+	$wp_customize->add_section( $prefix . '_premium_support', array(
+		'title'    => __( 'Dedicated Support', 'regina-lite' ),
+		'priority' => 200,
 	) );
 
-	$wp_customize->add_setting( $prefix . '_order_section', array(
-			'sanitize_callback' => $prefix . '_sanitize_pro_version',
-		) );
-
-	$wp_customize->add_control( new Regina_Lite_Theme_Support( $wp_customize, $prefix . '_order_section', array(
-				'section' => $prefix . '_order_section',
-			) ) );
-
-	$wp_customize->add_section( $prefix . '_pricing_section', array(
-		'title'    => __( 'Pricing tables', 'regina-lite' ),
-		'priority' => 38,
+	$wp_customize->add_setting( $prefix . '_premium_support', array(
+		'sanitize_callback' => $prefix . '_sanitize_pro_version',
 	) );
 
-	$wp_customize->add_setting( $prefix . '_pricing_section', array(
-			'sanitize_callback' => $prefix . '_sanitize_pro_version',
-		) );
+	$wp_customize->add_control( new Regina_Lite_Upsell_Render_Panel(
+			$wp_customize,
+			$prefix . '_premium_support',
+			array(
+				'section' => $prefix . '_premium_support',
+				'choices' => array(
+					'title' => __( 'Get 1 year updates & premium support with the purchase of Regina PRO. Max. 48h response time for support tickets.', 'regina-lite'),
+					'show_demo_button' => true,
+					'show_pro_button' => true
+				),
+			)
+		)
+	);
 
-	$wp_customize->add_control( new Regina_Lite_Theme_Support_Pricing( $wp_customize, $prefix . '_pricing_section', array(
-				'section' => $prefix . '_pricing_section',
-			) ) );
-
-	$wp_customize->add_section( $prefix . '_maps_section', array(
-		'title'    => __( 'Google Maps', 'regina-lite' ),
-		'priority' => 55,
+	$wp_customize->add_section( $prefix . '_color_controls', array(
+		'title'    => __( 'Color Controls', 'regina-lite' ),
+		'priority' => 202,
 	) );
 
-	$wp_customize->add_setting( $prefix . '_maps_section', array(
-			'sanitize_callback' => $prefix . '_sanitize_pro_version',
-		) );
+	$wp_customize->add_setting( $prefix . '_color_controls', array(
+		'sanitize_callback' => $prefix . '_sanitize_pro_version',
+	) );
 
-	$wp_customize->add_control( new Regina_Lite_Theme_Support_Googlemap( $wp_customize, $prefix . '_maps_section', array(
-				'section' => $prefix . '_maps_section',
-			) ) );
+	$wp_customize->add_control( new Regina_Lite_Upsell_Render_Panel(
+			$wp_customize,
+			$prefix . '_color_controls',
+			array(
+				'section' => $prefix . '_color_controls',
+				'choices' => array(
+					'title' => __( 'Color controls are available in the PRO version of Regina. Make it look the way you want to.', 'regina-lite'),
+					'show_demo_button' => true,
+					'show_pro_button' => true
+				),
+			)
+		)
+	);
+
+
+
+	$wp_customize->add_section( $prefix . '_dropdown_menus', array(
+		'title'    => __( 'Dropdown Menus', 'regina-lite' ),
+		'priority' => 202,
+	) );
+
+	$wp_customize->add_setting( $prefix . '_dropdown_menus', array(
+		'sanitize_callback' => $prefix . '_sanitize_pro_version',
+	) );
+
+	$wp_customize->add_control( new Regina_Lite_Upsell_Render_Panel(
+			$wp_customize,
+			$prefix . '_dropdown_menus',
+			array(
+				'section' => $prefix . '_dropdown_menus',
+				'choices' => array(
+					'title' => __( 'Regina PRO supports 3rd level drop-down menus. It also comes bundled with 3 different header layouts.', 'regina-lite'),
+					'show_demo_button' => true,
+					'show_pro_button' => true
+				),
+			)
+		)
+	);
+
+
+
+
+
+
 
 	#
 	# END Up Sell Features

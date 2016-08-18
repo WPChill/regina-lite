@@ -5,18 +5,29 @@
 /************** Latest News  ***************/
 /***********************************************/
 
-$wp_customize->add_panel( 'regina_lite_panel_news', array(
-		'priority'       => 56,
-		'capability'     => 'edit_theme_options',
-		'theme_supports' => '',
-		'title'          => esc_html__( 'Latest News Section', 'regina-lite' ),
-	) );
 
 $wp_customize->add_section( 'regina_lite_news_general', array(
-		'title'    => esc_html__( 'Section Options', 'regina-lite' ),
-		'priority' => 1,
-		'panel'    => 'regina_lite_panel_news',
+		'title'    => esc_html__( 'Latest News', 'regina-lite' ),
+		'description' => esc_html__( 'Latest News Section is displayed as a slider on the homepage. Controls from this section are applied to that slider.', 'regina-lite'),
+		'priority' => 56,
+
 	) );
+
+/* Show this section? */
+$wp_customize->add_setting( $prefix.'_latest_news_show',
+	array(
+		'sanitize_callback' => $prefix.'_sanitize_checkbox',
+		'default'           => 1
+	)
+);
+$wp_customize->add_control(
+	$prefix.'_latest_news_show',
+	array(
+		'type'          => 'checkbox',
+		'label'         => esc_html__('Show this section?', 'regina-lite'),
+		'section'       => 'regina_lite_news_general',
+	)
+);
 
 
 /* Section Title */
@@ -29,7 +40,6 @@ $wp_customize->add_setting( 'regina_lite_news_section_title', array(
 $wp_customize->add_control( 'regina_lite_news_section_title', array(
 		'label'    => esc_html__( 'Section title', 'regina-lite' ),
 		'section'  => 'regina_lite_news_general',
-		'priority' => 1,
 	) );
 
 /* Section Sub-Title */
@@ -42,7 +52,6 @@ $wp_customize->add_setting( 'regina_lite_news_section_sub_title', array(
 $wp_customize->add_control( 'regina_lite_news_section_sub_title', array(
 		'label'    => esc_html__( 'Section sub-title', 'regina-lite' ),
 		'section'  => 'regina_lite_news_general',
-		'priority' => 2,
 	) );
 
 /* Number of post per slide */

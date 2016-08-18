@@ -33,9 +33,6 @@ if ( ! function_exists( 'regina_lite_setup' ) ) :
 		require_once( 'inc/customizer/customizer.php' );
 		require_once( 'inc/jetpack.php' );
 
-		require_once( 'widgets/widget-recent-posts.php' );
-		require_once( 'widgets/widget-categories.php' );
-		require_once( 'widgets/widget-recent-comments.php' );
 		require_once( 'widgets/widget-contact.php' );
 		require_once( 'widgets/widget-address.php' );
 
@@ -66,8 +63,8 @@ if ( ! function_exists( 'regina_lite_setup' ) ) :
 		 */
 		$custom_header_args = array(
 			'default-image' => get_template_directory_uri() . '/layout/images/home/slide-1.jpg',
-			'width'         => '1903',
-			'height'        => '634',
+			'width'         => '1920',
+			'height'        => '560',
 		);
 		add_theme_support( 'custom-header', $custom_header_args );
 
@@ -103,6 +100,7 @@ if ( ! function_exists( 'regina_lite_setup' ) ) :
 		add_image_size( 'regina-lite-blog', 750, 419, true );
 		add_image_size( 'regina-lite-related-posts', 230, 231, true );
 		add_image_size( 'regina-lite-homepage-blog-posts', 250, 250, true );
+		add_image_size( 'regina-lite-slider-image-sizes', 1682, 560, true );
 	}
 
 	add_action( 'after_setup_theme', 'regina_lite_setup' );

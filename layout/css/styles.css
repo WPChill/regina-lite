@@ -10100,6 +10100,8 @@ input[type="text"] {
 /*  Form Inputs & Elements
 /* ---------------------------------------------------------------------- */
 input[type="text"],
+input[type="email"],
+input[type="date"]
 textarea {
 	width: 100%;
 	padding-left: 20px;
@@ -10265,6 +10267,11 @@ ol li {
 #sub-header p [class^="nc-icon"] {
 	font-size: 12px;
 	margin-right: 5px;
+<<<<<<< Updated upstream
+=======
+	top: 0 !important;
+	left: 0 !important;
+>>>>>>> Stashed changes
 }
 
 #header {
@@ -10373,7 +10380,13 @@ ol li {
 	width: 100%;
 	background: no-repeat fixed center;
 	background-size: cover;
+<<<<<<< Updated upstream
 	text-align: center; }
+=======
+	text-align: center;
+	background-color: #222;
+}
+>>>>>>> Stashed changes
 
 #page-header * {
 	color: #fff; }
@@ -10393,14 +10406,22 @@ ol li {
 
 #breadcrumb ul li {
 	float: left;
+<<<<<<< Updated upstream
 	margin-left: 20px;
+=======
+	margin-left: 5px;
+>>>>>>> Stashed changes
 	font-size: 14px;
 	font-weight: normal;
 	color: #333; }
 
 #breadcrumb ul li:before {
 	content: "\ea93";
+<<<<<<< Updated upstream
 	padding-right: 20px;
+=======
+	padding-right: 5px;
+>>>>>>> Stashed changes
 	font-family: 'Nucleo Glyph';
 	font-size: 10px; }
 
@@ -10439,6 +10460,7 @@ ol li {
 	margin-bottom: 15px;
 	padding-bottom: 5px;
 }
+<<<<<<< Updated upstream
 
 #footer .widget a:hover {
 	color: #08cae8;
@@ -10462,6 +10484,33 @@ ol li {
 #footer .link-list a:hover {
 	color: #08cae8; }
 
+=======
+
+#footer .widget a:hover {
+	color: #08cae8;
+}
+
+
+#footer .widget a,
+#footer .widget p {
+	color: #fff; }
+
+#footer a a:hover {
+	color: #08cae8; }
+
+#footer .block {
+	margin: 0 0 50px;
+	padding: 30px 0 0;
+	border-top: 2px solid #383e3f; }
+
+#footer .link-list {
+	text-transform: uppercase;
+	font-size: 12px; }
+
+#footer .link-list a:hover {
+	color: #08cae8; }
+
+>>>>>>> Stashed changes
 #footer .social-link-list li {
 	float: left;
 	margin-right: 15px; }
@@ -10717,6 +10766,14 @@ ol li {
 	float: left;
 	width: 100%; }
 
+<<<<<<< Updated upstream
+=======
+#home-slider li {
+	max-height: 560px;
+	overflow: hidden;
+}
+
+>>>>>>> Stashed changes
 #home-slider li img {
 	width: 100%;
 }
@@ -10855,7 +10912,13 @@ ol li {
 
 #team-block .team-member .hover .description p {
 	display: table-cell;
+<<<<<<< Updated upstream
 	vertical-align: middle; }
+=======
+	vertical-align: middle;
+	color: #FFF;
+}
+>>>>>>> Stashed changes
 
 #team-block .team-member .hover .read-more {
 	position: absolute;
@@ -11033,7 +11096,11 @@ ol li {
 #blog .post {
 	display: inline-block;
 	width: 100%;
+<<<<<<< Updated upstream
 	margin: 0 0 100px; }
+=======
+	margin: 0 0 30px; }
+>>>>>>> Stashed changes
 
 #blog .post .image {
 	margin: 0 0 10px; }
@@ -11252,7 +11319,12 @@ ol li {
 #sidebar .widget {
 	float: left;
 	width: 100%;
+<<<<<<< Updated upstream
 	margin: 0 0 50px; }
+=======
+	margin: 0 0 30px;
+}
+>>>>>>> Stashed changes
 
 #sidebar .search.widget input[type="text"] {
 	float: left;
@@ -11375,9 +11447,17 @@ ol li {
 
 #respond .comment-form textarea {
 	display: block;
+<<<<<<< Updated upstream
 	height: 170px;
 	margin: 0 0 30px;
 	padding-top: 20px; }
+=======
+	height: 340px;
+	width: 100%;
+	margin: 0 0 30px;
+	padding-top: 20px;
+}
+>>>>>>> Stashed changes
 
 /* ---------------------------------------------------------------------- */
 /*  Datepicker / Calendar
@@ -11934,7 +12014,11 @@ ol li {
 
 .nav-menu-search input#search {
 	-webkit-appearance: none;
+<<<<<<< Updated upstream
 	width: 100%;
+=======
+	width: 80%;
+>>>>>>> Stashed changes
 	height: 40px;
 	background: #fff;
 	font-size: 10pt;
@@ -11966,17 +12050,25 @@ ol li {
 }
 
 .nav-menu-search button.icon {
+<<<<<<< Updated upstream
 	-webkit-border-top-right-radius: 5px;
 	-webkit-border-bottom-right-radius: 5px;
 	-moz-border-radius-topright: 5px;
 	-moz-border-radius-bottomright: 5px;
 	border-top-right-radius: 5px;
 	border-bottom-right-radius: 5px;
+=======
+	border-radius: 5px;
+>>>>>>> Stashed changes
 	border: none;
 	height: 40px;
 	position: relative;
 	top: -1px;
+<<<<<<< Updated upstream
 	left: -40px;
+=======
+	left: -42px;
+>>>>>>> Stashed changes
 	line-height: 35px;
 	width: 40px;
 	color: #fff;
@@ -11989,6 +12081,11 @@ ol li {
 	background-color: #08cae8;
 }
 
+<<<<<<< Updated upstream
+=======
+#sidebar .nav-menu-search button.icon {left: -45px; }
+
+>>>>>>> Stashed changes
 .nav-menu-search:hover button.icon:hover {
 	opacity: .5;
 }
@@ -12013,6 +12110,11 @@ body {
 	margin: 0;
 }
 
+<<<<<<< Updated upstream
+=======
+	.screen-reader-text {display: none;}
+
+>>>>>>> Stashed changes
 #ui-datepicker-div {
 	display: none;
 }
@@ -12204,7 +12306,11 @@ body {
 #sidebar .widget ul {}
 
 #sidebar .widget ul li {
+<<<<<<< Updated upstream
 	line-height: 40px;
+=======
+	line-height: 30px;
+>>>>>>> Stashed changes
 }
 
 #sidebar .widget.widget_regina_lite_recent_posts li:before,
@@ -12264,11 +12370,18 @@ body {
 	height: 40px;
 	margin: 0 0 30px;
 	width: 100%;
+<<<<<<< Updated upstream
 	padding-left: 20px;
 	font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
 	font-size: 16px;
 	background: none;
 	border: 2px solid #ebebeb;
+=======
+	font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-size: 16px;
+	background: none;
+	border: 1px solid #EEE;
+>>>>>>> Stashed changes
 	outline: none;
 	resize: none;
 	-webkit-transition: all 0.3s linear;
@@ -12277,14 +12390,38 @@ body {
 	-o-transition: all 0.3s linear;
 	transition: all 0.3s linear;
 	-webkit-appearance: none;
+<<<<<<< Updated upstream
 	appearance: none;
 }
+=======
+}
+
+#respond .comment-form input[type="url"] {
+	text-indent: 20px;
+}
+
+>>>>>>> Stashed changes
 #respond .comment-form textarea {
 	display: block;
 	margin: 0 0 30px;
 	padding-top: 20px;
+<<<<<<< Updated upstream
 }
 
+=======
+	border: 1px solid #EEE;
+	text-indent: 20px;
+}
+
+#respond .comment-form input[type="text"]:focus,
+#respond .comment-form input[type="email"]:focus,
+#respond .comment-form input[type="url"]:focus,
+#respond .comment-form textarea:focus {
+	border: 1px solid #08cae8;
+}
+
+
+>>>>>>> Stashed changes
 #respond #button {
 	display: inline-block;
 	padding: 12px 35px;
@@ -12390,7 +12527,11 @@ body {
 
 #navigation {
 	position: relative;
+<<<<<<< Updated upstream
 	z-index: 1;
+=======
+	z-index: 2;
+>>>>>>> Stashed changes
 }
 
 .markup-format ul,

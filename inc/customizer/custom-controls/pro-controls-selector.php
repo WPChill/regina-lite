@@ -1,180 +1,45 @@
 <?php
 
 /**
- * Customize for disabled HTML elements, extend the WP customizer
- *
- * @since Riba Lite 1.0.3
+ * Class used to render "PRO panels"
  */
-if( !class_exists('Regina_Lite_Disabled_Custom_Control') ) {
-	class Regina_Lite_Disabled_Custom_Control extends WP_Customize_Control
-	{
+if ( ! class_exists( 'Regina_Lite_Upsell_Render_Panel' ) ) {
 
-		public function render_content()
-		{
+	class Regina_Lite_Upsell_Render_Panel extends WP_Customize_Control {
 
-			switch($this->type) {
+		public function render_content() {
 
-				case 'textarea':
-					echo '<div class="'.$this->type.'-pro-feature">';
-					echo '<span class="pro-badge">PRO</span>';
-					?>
-					<label>
-						<span class="customize-control-title"><?php echo esc_html($this->label); ?></span>
-		                  <textarea class="large-text" cols="20" rows="5" <?php $this->link(); ?> disabled >
-		                    <?php echo esc_textarea($this->value()); ?>
-		                  </textarea>
-					</label>
-					<?php echo '</div><!--/pro-feature-->';
-				break;
+			if ( $this->choices ) {
 
-				case 'text':
-					echo '<div class="'.$this->type.'-pro-feature">';
-					echo '<span class="pro-badge">PRO</span>';
-					?>
-					<label>
-						<span class="customize-control-title"><?php echo esc_html( $this->label ); ?></span>
-						<input type="text" value="<?php echo esc_html( $this->value() ); ?>" class="large-text" <?php $this->link(); ?> disabled >
-					</label>
+				echo '<div class="text-center">';
 
+				foreach ( $this->choices as $key => $value ) {
 
-					<?php echo '</div><!--/pro-feature-->';
-				break;
+					switch ( $key ) {
 
-				case 'checkbox':
-					echo '<div class="'.$this->type.'-pro-feature">';
-					echo '<span class="pro-badge">PRO</span>';
-					?>
-					<label>
-						<input type="checkbox" value="<?php echo esc_html( $this->value() ); ?>" <?php $this->link(); ?> disabled >
-						<?php echo esc_html( $this->label ); ?>
-					</label>
+						case 'title':
+							echo '<div class="pro-version-text">' . esc_attr( $value ) . '</div>';
+							echo '<hr />';
+						break;
 
+						case 'show_pro_button':
+							if ( $value == true ) {
+								echo '<a href="https://www.machothemes.com/themes/regina-pro/" target="_blank" class="button button-primary regina-lite-upgrade">' . __( 'Get Pro', 'regina-lite' ) . '</a>';
+							}
+							break;
 
-					<?php echo '</div><!--/pro-feature-->';
-				break;
+						case 'show_demo_button':
+							if ( $value == true ) {
+								echo '<a href="http://www.machothemes.com/demo/#Regina" target="_blank" class="button button-secondary regina-lite-upgrade">' . __( 'See live demo', 'regina-lite' ) . '</a>';
+							}
+						break;
+					}
 
-				case 'radio':
-					echo '<div class="'.$this->type.'-pro-feature">';
-					echo '<span class="pro-badge">PRO</span>';
-					?>
-					<label>
-						<input type="radio" value="<?php echo esc_html( $this->value() ); ?>" <?php $this->link(); ?> disabled >
-						<div><?php echo esc_html( $this->label ); ?></div>
-					</label>
+				} // foreach
 
+				echo '</div><!--/.text-center-->';
 
-					<?php echo '</div><!--/pro-feature-->';
-				break;
-
-			} // end SWITCH statement
-		}
-	}
-}
-
-/**
-* Customize for premium features, extend the WP Customizer
-*
-*/
-if( !class_exists('Regina_Lite_Theme_Support_Pricing') ) {
-    class Regina_Lite_Theme_Support_Pricing extends WP_Customize_Control
-    {
-        public function render_content()
-        { ?>
-
-            <div class="pro-version">
-                <?php _e('In order to be able to add pricing tables, you need to upgrade to the PRO version.', 'regina-lite'); ?>
-            </div>
-
-            <div class="pro-box">
-                <a href="<?php echo esc_url('http://www.machothemes.com/themes/regina-pro/');?>" target="_blank" class="upgrade" id="review_pro"><?php _e( 'View PRO version','regina-lite' ); ?></a>
-            </div>
-
-       <?php }
-    }
-}
-
-/**
- * Customize for premium features, extend the WP Customizer
- *
- */
-if( !class_exists( 'Regina_Lite_Theme_Support' ) ) {
-    class Regina_Lite_Theme_Support extends WP_Customize_Control
-    {
-        public function render_content()
-        { ?>
-
-            <div class="pro-version">
-                <?php _e('In order to be able to change the section order, you need to upgrade to the PRO version.', 'regina-lite'); ?>
-            </div>
-
-            <div class="pro-box">
-                <a href="<?php echo esc_url('http://www.machothemes.com/themes/regina-pro/');?>" target="_blank" class="upgrade" id="review_pro"><?php _e( 'View PRO version','regina-lite' ); ?></a>
-            </div>
-
-       <?php }
-    }
-}
-
-/**
- * Customize for premium features, extend the WP Customizer
- *
- */
-if( !class_exists( 'Regina_Lite_Theme_Support_Googlemap' ) ) {
-    class Regina_Lite_Theme_Support_Googlemap extends WP_Customize_Control
-    {
-         public function render_content()
-        { ?>
-
-            <div class="pro-version">
-                <?php _e('In order to be able to add Google Maps, you need to upgrade to the PRO version.', 'regina-lite'); ?>
-            </div>
-
-            <div class="pro-box">
-                <a href="<?php echo esc_url('http://www.machothemes.com/themes/regina-pro/');?>" target="_blank" class="upgrade" id="review_pro"><?php _e( 'View PRO version','regina-lite' ); ?></a>
-            </div>
-
-       <?php }
-    }
-}
-
-/**
- * Customize for premium features, extend the WP Customizer
- *
- */
-if( !class_exists( 'Regina_Lite_WP_Document_Customizer_Control') ) {
-    class Regina_Lite_WP_Document_Customize_Control extends WP_Customize_Control
-    {
-
-        //Render the control's content
-        public function render_content()
-        {
-            ?>
-            <div class="pro-box">
-            <a href="<?php echo esc_url('http://www.machothemes.com/themes/regina-pro/');?>" target="_blank" class="document" id="review_pro"><?php _e('Theme Documentation', 'regina-lite'); ?></a>
-
-            <div>
-            <div class="pro-version">
-                <?php _e('By upgrading to the PRO version you are unlocking the full potential of this theme. You will get: unlimited sliders / carousels, unlimited Google Maps, Unlimited Team Members, Section Ordering, Control over theme typography and colors. Upgrade NOW!', 'regina-lite'); ?>
-            </div>
-            <?php
-        }
-    }
-}
-
-/**
- * Customize for premium features, extend the WP Customizer
- *
- */
-if( !class_exists( 'Regina_Lite_WP_Pro_Customize_Control' ) ) {
-    class Regina_Lite_WP_Pro_Customize_Control extends WP_Customize_Control {
-
-        //Render the control's content.
-        public function render_content() {
-            ?>
-            <div class="pro-box">
-                <a href="<?php echo esc_url('http://www.machothemes.com/themes/regina-pro/');?>" target="_blank" class="upgrade" id="review_pro"><?php _e( 'View PRO version','regina-lite' ); ?></a>
-            </div>
-            <?php
-        }
-    }
-}
+			} // $this->choices
+		} // function
+	} // class
+} // class exists
