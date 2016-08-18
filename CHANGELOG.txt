@@ -1,12 +1,9 @@
-<<<<<<< Updated upstream
-=======
 = 1.0.20 =
 * Made all upsell links go to the https:// version of our site
 * Completely re-worked the upsell styling
 * Created a new custom control to handle upsells
-* #28, #27, #26, #25, #24, #23
+* #29, #28, #27, #26, #25, #24, #23
 
->>>>>>> Stashed changes
 = 1.0.19 =
 * Removed search form from footer
 * Fixed search form appearance in header
