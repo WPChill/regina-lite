@@ -19,30 +19,6 @@ $wp_customize->add_panel( $panel_id,
 );
 
 
-$wp_customize->add_section( $prefix . '_custom_icons', array(
-	'title'    => __( 'Custom Icons', 'regina-lite' ),
-	'priority' => 202,
-	'panel' => $panel_id
-) );
-
-$wp_customize->add_setting( $prefix . '_custom_icons', array(
-	'sanitize_callback' => $prefix . '_sanitize_pro_version',
-) );
-
-$wp_customize->add_control( new Regina_Lite_Upsell_Render_Panel(
-		$wp_customize,
-		$prefix . '_custom_icons',
-		array(
-			'section' => $prefix . '_custom_icons',
-			'choices' => array(
-				'title' => __( 'Regina PRO comes bundled with over 700 premium icons. You can also upload your own custom icons.', 'regina-lite'),
-				'show_demo_button' => true,
-				'show_pro_button' => true
-			),
-		)
-	)
-);
-
 /***********************************************/
 /**************** BOX **************************/
 /***********************************************/

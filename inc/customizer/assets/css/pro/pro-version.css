@@ -85,7 +85,8 @@ li#accordion-panel-widgets.accordion-section.control-section.control-panel.contr
 
 #accordion-section-regina_lite_order_section h3.accordion-section-title,
 #accordion-section-regina_lite_maps_section h3.accordion-section-title,
-#accordion-section-regina_lite_custom_icons h3.accordion-section-title {
+#accordion-section-regina_lite_custom_icons h3.accordion-section-title,
+#accordion-section-regina_lite_color_controls h3.accordion-section-title {
 	padding-right: 15px !important;
 }
 

@@ -22,22 +22,23 @@ function regina_lite_customize_register( $wp_customize ) {
 	# Main Upsell features
 	#
 
-	$wp_customize->add_section( $prefix . '_premium_support', array(
-		'title'    => __( 'Dedicated Support', 'regina-lite' ),
-		'priority' => 200,
+	$wp_customize->add_section( $prefix . '_custom_icons', array(
+		'title'    => __( 'Custom Icons', 'regina-lite' ),
+		'priority' => 202,
+		'panel' => 'regina_lite_features_panel'
 	) );
 
-	$wp_customize->add_setting( $prefix . '_premium_support', array(
+	$wp_customize->add_setting( $prefix . '_custom_icons', array(
 		'sanitize_callback' => $prefix . '_sanitize_pro_version',
 	) );
 
 	$wp_customize->add_control( new Regina_Lite_Upsell_Render_Panel(
 			$wp_customize,
-			$prefix . '_premium_support',
+			$prefix . '_custom_icons',
 			array(
-				'section' => $prefix . '_premium_support',
+				'section' => $prefix . '_custom_icons',
 				'choices' => array(
-					'title' => __( 'Get 1 year updates & premium support with the purchase of Regina PRO. Max. 48h response time for support tickets.', 'regina-lite'),
+					'title' => __( 'Regina PRO comes bundled with over 700 premium icons. You can also upload your own custom icons.', 'regina-lite'),
 					'show_demo_button' => true,
 					'show_pro_button' => true
 				),
@@ -45,9 +46,11 @@ function regina_lite_customize_register( $wp_customize ) {
 		)
 	);
 
+
 	$wp_customize->add_section( $prefix . '_color_controls', array(
 		'title'    => __( 'Color Controls', 'regina-lite' ),
-		'priority' => 202,
+		'priority' => 0,
+		'panel' => 'regina_lite_panel_general'
 	) );
 
 	$wp_customize->add_setting( $prefix . '_color_controls', array(
@@ -73,6 +76,7 @@ function regina_lite_customize_register( $wp_customize ) {
 	$wp_customize->add_section( $prefix . '_dropdown_menus', array(
 		'title'    => __( 'Dropdown Menus', 'regina-lite' ),
 		'priority' => 202,
+		'panel' => 'nav_menus'
 	) );
 
 	$wp_customize->add_setting( $prefix . '_dropdown_menus', array(
