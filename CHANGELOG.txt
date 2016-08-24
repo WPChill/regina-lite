@@ -2,7 +2,7 @@
 * Made all upsell links go to the https:// version of our site
 * Completely re-worked the upsell styling
 * Created a new custom control to handle upsells
-* #29, #28, #27, #26, #25, #24, #23
+* #29, #28, #27, #26, #25, #24, #23, #22, #19
 
 = 1.0.19 =
 * Removed search form from footer

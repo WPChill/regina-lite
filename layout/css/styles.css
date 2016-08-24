@@ -10491,8 +10491,14 @@ ol li {
 	-moz-border-radius: 200px;
 	border-radius: 200px; }
 
+	.back-to-top .nc-icon-glyph {
+		position: static !important;
+	}
+
 #footer .back-to-top:hover {
-	opacity: 0.6; }
+	opacity: 0.6;
+	color: #FFF !important;
+}
 
 #sub-footer {
 	padding: 21px 0;
@@ -12161,8 +12167,8 @@ body {
 }
 
 #sidebar .widget #wp-calendar tbody tr td {
-	width: 44px;
-	line-height: 50px;
+	width: 36px;
+	line-height: 36px;
 	text-align: center;
 	font-family: Lato, 'Helvetica Neue', Helvetica, Arial, sans-serif;
 	font-weight: 700;

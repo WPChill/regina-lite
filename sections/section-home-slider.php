@@ -13,7 +13,7 @@ $image_meta = get_post_meta( $image_id );
 <div id="home-slider" class="clear">
 	<ul class="clear">
 		<li>
-			<img src="<?php echo esc_url( $image ); ?>" alt="<?php echo esc_attr( $image_meta['_wp_attachment_image_alt']['0'] ); ?>">">
+			<img src="<?php echo esc_url( get_custom_header()->url ); ?>" alt="<?php echo esc_attr( $image_meta['_wp_attachment_image_alt']['0'] ); ?>">
 		</li>
 	</ul>
 	<div class="clear"></div>
