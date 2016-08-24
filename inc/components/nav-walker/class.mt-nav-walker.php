@@ -145,8 +145,9 @@ if(!class_exists('MTL_Extended_Menu_Walker') ) {
                 // $fb_output .= '>';
                     $fb_output .= '<li><a href="'. esc_url( home_url() ) .'" title="'. __( 'Home', 'regina-lite' ) .'">'. __( 'Home', 'regina-lite' ) .'</a></li>';
                     $fb_output .= '<li><a href="#services-title-block" title="'. __( 'Services', 'regina-lite' ) .'">'. __( 'Services', 'regina-lite' ) .'</a></li>';
-                    $fb_output .= '<li><a href="#team-section-block" title="'. __( 'About', 'regina-lite' ) .'">'. __( 'About', 'regina-lite' ) .'</a></li>';
+                    $fb_output .= '<li><a href="#team-section-block" title="'. __( 'Team', 'regina-lite' ) .'">'. __( 'Team', 'regina-lite' ) .'</a></li>';
                     $fb_output .= '<li><a href="#home-testimonials" title="'. __( 'Testimonials', 'regina-lite' ) .'">'. __( 'Testimonials', 'regina-lite' ) .'</a></li>';
+	                $fb_output .= '<li><a href="#section-news" title="'. __( 'News', 'regina-lite' ) .'">'. __( 'News', 'regina-lite' ) .'</a></li>';
                     $fb_output .= '<li><a href="#footer" title="'. __( 'Contact', 'regina-lite' ) .'">'. __( 'Contact', 'regina-lite' ) .'</a></li>';
                 // $fb_output .= '</ul>';
                 if ( $container )

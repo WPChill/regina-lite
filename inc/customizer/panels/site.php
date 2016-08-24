@@ -44,7 +44,7 @@
             'priority' => 29,
             'capability' => 'edit_theme_options',
             'theme_supports' => '',
-            'title' => esc_html__( 'General Options', 'regina-lite' ),
+            'title' => esc_html__( 'Theme Options', 'regina-lite' ),
             'description' => esc_html__('You can change the site layout in this area as well as your contact details (the ones displayed in the header & footer) ', 'regina-lite'),
         )
     );
@@ -52,6 +52,55 @@
     /***********************************************/
     /************** General Site Settings  ***************/
     /***********************************************/
+
+
+    // upsell - section order
+	$wp_customize->add_section( $prefix . '_order_section', array(
+		'title'    => __( 'Section order', 'regina-lite' ),
+		'priority' => 1,
+		'panel' => $panel_id
+	) );
+
+	$wp_customize->add_setting( $prefix . '_order_section', array(
+		'sanitize_callback' => $prefix . '_sanitize_pro_version',
+	) );
+
+	$wp_customize->add_control( new Regina_Lite_Upsell_Render_Panel(
+		$wp_customize,
+		$prefix . '_order_section',
+		array(
+		'section' => $prefix . '_order_section',
+		'choices' => array(
+			'title' => __( 'Drag & Drop section re-ordering is available in the PRO version of Regina.', 'regina-lite'),
+			'show_demo_button' => true,
+			'show_pro_button' => true
+			),
+	) ) );
+
+
+	// upsell - google maps
+	$wp_customize->add_section( $prefix . '_maps_section', array(
+		'title'    => __( 'Google Maps', 'regina-lite' ),
+		'priority' => 11,
+		'panel' => $panel_id
+	) );
+
+	$wp_customize->add_setting( $prefix . '_maps_section', array(
+		'sanitize_callback' => $prefix . '_sanitize_pro_version',
+	) );
+
+	$wp_customize->add_control( new Regina_Lite_Upsell_Render_Panel(
+		$wp_customize,
+		$prefix . '_maps_section',
+		array(
+		'section' => $prefix . '_maps_section',
+		'choices' => array(
+			'title' => __( 'Unlimited Google Maps are available in the PRO version of Regina. ', 'regina-lite'),
+			'show_demo_button' => true,
+			'show_pro_button' => true
+		),
+	) ) );
+
 
     /* Logo */
     $wp_customize->add_section( $prefix.'_general_section' ,
@@ -88,28 +137,6 @@
         'settings' => $prefix . '_img_logo'
     ) ) );
 
-    /* Company image logo */
-    /*
-    $wp_customize->add_setting($prefix.'_img_logo',
-        array(
-            'sanitize_callback' => $prefix.'_sanitize_file_url',
-            'default' => __('Your site IMAGE logo HERE', 'regina-lite'),
-        )
-    );
-    $wp_customize->add_control( new regina_lite_Disabled_Custom_Control(
-            $wp_customize,
-            $prefix.'_img_logo',
-            array(
-	            'type'          => 'text',
-                'label'         => esc_html__('Image Site Logo', 'regina-lite'),
-                'section'       => $prefix.'_general_section',
-                'priority'      => 2
-            )
-        )
-    );
-    */
-
-
     /***********************************************/
     /************** Contact Details  ***************/
     /***********************************************/
@@ -117,7 +144,7 @@
     $wp_customize->add_section( $prefix.'_general_contact_section' ,
         array(
             'title'       => esc_html__( 'Contact Details', 'regina-lite' ),
-            'description' => esc_html__( 'These are the contact details displayed in the header & footer of the website.', 'regina-lite' ),
+            //'description' => esc_html__( 'These are the contact details displayed in the header & footer of the website.', 'regina-lite' ),
             'priority'    => 3,
             'panel' => $panel_id
         )
@@ -134,7 +161,7 @@
 	$wp_customize->add_control( $prefix.'_contact_bar_facebook_url',
 		array(
 			'label'   => esc_html__( 'Facebook URL', 'regina-lite' ),
-			'description' => esc_html__('Will be displayed in the contact bar ( Header )', 'regina-lite'),
+			'description' => esc_html__('Will be displayed in the header contact bar.', 'regina-lite'),
 			'section' => $prefix.'_general_contact_section',
 			'settings'   => $prefix.'_contact_bar_facebook_url',
 			'priority' => 10
@@ -152,7 +179,7 @@
 	$wp_customize->add_control( $prefix.'_contact_bar_twitter_url',
 		array(
 			'label'   => esc_html__( 'Twitter URL', 'regina-lite' ),
-			'description' => esc_html__('Will be displayed in the contact bar ( Header )', 'regina-lite'),
+			'description' => esc_html__('Will be displayed in the header contact bar.', 'regina-lite'),
 			'section' => $prefix.'_general_contact_section',
 			'settings'   => $prefix.'_contact_bar_twitter_url',
 			'priority' => 10
@@ -170,7 +197,7 @@
 	$wp_customize->add_control( $prefix.'_contact_bar_youtube_url',
 		array(
 			'label'   => esc_html__( 'YouTube URL', 'regina-lite' ),
-			'description' => esc_html__('Will be displayed in the contact bar ( Header )', 'regina-lite'),
+			'description' => esc_html__('Will be displayed in the header contact bar.', 'regina-lite'),
 			'section' => $prefix.'_general_contact_section',
 			'settings'   => $prefix.'_contact_bar_youtube_url',
 			'priority' => 10
@@ -188,7 +215,7 @@
 	$wp_customize->add_control( $prefix.'_contact_bar_linkedin_url',
 		array(
 			'label'   => esc_html__( 'LinkedIN URL', 'regina-lite' ),
-			'description' => esc_html__('Will be displayed in the contact bar ( Header )', 'regina-lite'),
+			'description' => esc_html__('Will be displayed in the header contact bar.', 'regina-lite'),
 			'section' => $prefix.'_general_contact_section',
 			'settings'   => $prefix.'_contact_bar_linkedin_url',
 			'priority' => 10
@@ -206,7 +233,7 @@
 	$wp_customize->add_control( $prefix.'_contact_bar_instagram_url',
 		array(
 			'label'   => esc_html__( 'Instagram URL', 'regina-lite' ),
-			'description' => esc_html__('Will be displayed in the contact bar ( Header )', 'regina-lite'),
+			'description' => esc_html__('Will be displayed in the header contact bar.', 'regina-lite'),
 			'section' => $prefix.'_general_contact_section',
 			'settings'   => $prefix.'_contact_bar_instagram_url',
 			'priority' => 10
@@ -224,8 +251,8 @@
 
     $wp_customize->add_control( $prefix.'_email',
         array(
-            'label'   => esc_html__( 'Email addr.', 'regina-lite' ),
-            'description' => esc_html__('Will be displayed in the header & footer', 'regina-lite'),
+            'label'   => esc_html__( 'Email address', 'regina-lite' ),
+            'description' => esc_html__('Will be displayed in the header & footer contact widget.', 'regina-lite'),
             'section' => $prefix.'_general_contact_section',
             'settings'   => $prefix.'_email',
             'priority' => 10
@@ -244,7 +271,7 @@
     $wp_customize->add_control( $prefix.'_phone',
         array(
             'label'   => esc_html__( 'Phone number', 'regina-lite' ),
-            'description' => esc_html__('Will be displayed in the header & footer', 'regina-lite'),
+            'description' => esc_html__('Will be displayed in the header & footer contact widget.', 'regina-lite'),
             'section' => $prefix.'_general_contact_section',
             'settings'   => $prefix.'_phone',
             'priority' => 12
@@ -254,15 +281,15 @@
     /* Book Appointment URL */
     $wp_customize->add_setting( $prefix.'_contact_bar_bookappointmenturl',
         array(
-            'sanitize_callback' => 'esc_url',
-            'default' => esc_url('#')
+            'sanitize_callback' => '',
+            'default' => '#'
         )
     );
 
     $wp_customize->add_control( $prefix.'_contact_bar_bookappointmenturl',
         array(
             'label'   => esc_html__( 'Book Appointment URL:', 'regina-lite' ),
-            'description' => esc_html__('Book Appointment URL description.', 'regina-lite'),
+            'description' => esc_html__('Enter the URL you want to use for the book appointment button.', 'regina-lite'),
             'section' => $prefix.'_general_contact_section',
             'settings'   => $prefix.'_contact_bar_bookappointmenturl',
             'priority' => 13
@@ -293,8 +320,8 @@
         $prefix.'_footer_theme_copyright_enable',
         array(
             'type' => 'checkbox',
-            'label' => esc_html__( 'Enable footer theme copyright message ?', 'regina-lite' ),
-            'description' => esc_html__( 'This will display the theme name with a backlink to the site of the theme developers. Leave it if you wish to give credit where it\'s due', 'regina-lite' ),
+            'label' => esc_html__( 'Enable footer theme copyright message', 'regina-lite' ),
+            'description' => esc_html__( 'This will display the theme name with a back-link to the site of the theme developers. Leave it if you wish to give credit where it\'s due', 'regina-lite' ),
             'section'   => $prefix.'_general_footer_section',
             'settings'   => $prefix.'_footer_theme_copyright_enable',
             'priority' => 10

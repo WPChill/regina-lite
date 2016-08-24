@@ -5,25 +5,15 @@ $panel_id = 'regina_lite_speak_panel';
 // Set Prefix
 $prefix = 'regina_lite';
 
-/***********************************************/
-/****************** OUR TEAM *******************/
-/***********************************************/
-$wp_customize->add_panel( $panel_id,
-    array(
-        'priority'          => 54,
-        'capability'        => 'edit_theme_options',
-        'theme_supports'    => '',
-        'title'             => esc_html__( 'CTA Below Testimonials', 'regina-lite' )
-    )
-);
 
 /***********************************************/
 /************ GENERAL SECTION *******************/
 /***********************************************/
 $wp_customize->add_section( $prefix.'_speak_general' ,
     array(
-        'title'       => esc_html__( 'General', 'regina-lite' ),
-        'panel'       => $panel_id
+        'title'       => esc_html__( 'Speak With Our Doctors', 'regina-lite' ),
+        'description' => esc_html__( 'This section is mostly used as a final call-to-action. Be mindful of the text you enter here and make sure they\'re phrased in such a way that they draw attention.', 'regina-lite'),
+        'priority' => 54,
     )
 );
 

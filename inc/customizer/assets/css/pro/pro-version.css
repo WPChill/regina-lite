@@ -1,203 +1,203 @@
+/*
+==================================================
+= Background color for control description
+==================================================
+*/
 #customize-controls .description {
-    background-color: #E8E8E8;
-    padding: 6px;
-    border-radius: 4px;
-    font-size: 11px !important;
-    font-weight: 300;
+	background-color: #fff;
+	border: 1px solid #08cae8;
+	border-radius: 3px;
+	font-size: 12px !important;
+	padding: 10px;
+	font-style: normal;
 }
 
-.text-center {
-    text-align: center;
+/*
+==================================================
+= Get the Pro version button
+==================================================
+*/
+.pro-box, .text-center { text-align: center; }
+.pro-version-text { margin-bottom: 15px; }
+.regina-lite-upgrade { margin: 10px 5px !important; }
+
+/*
+==================================================
+= Upsell links in main panel
+==================================================
+*/
+
+.accordion-section.upsell-links { border-bottom: 0; }
+
+.upsell-link {
+	display: block;
+	padding: 10px 0 10px 10px;
+	letter-spacing: 1px;
+	line-height: 1.5;
+	border: none;
+	font-size: 14px;
+	margin: 10px auto;
 }
 
-.dotted-below {
-    border-bottom: 1px dotted;
-    padding-bottom: 3px;
+.upsell-link:before {
+	content: '\f132';
+	color: #fff;
+	font-size: 14px;
+	font-family: 'Dashicons';
+	position: relative;
+	top: 3px;
+	margin-right: 8px;
 }
 
-.dotted-above {
-    padding-top: 3px;
-    border-top: 1px dotted;
-}
-
-/* PRO Version CSS below */
-#accordion-section-pixova_lite_pro_section .accordion-section-content {
-    padding: 10px;
-}
-
-.upgrade,
-.review,
-.document {
-    color: #777 !important;
-    cursor: pointer;
-    display: inline-block;
-    margin-bottom: 0;
-    font-size: 13px;
-    padding: 15px 10px;
-    text-transform: uppercase;
-    width: 90%;
-    border-radius: 4px;
-    font-weight: 600;
-}
-.upgrade {
-    border: 1px solid rgb(226, 81, 54);
-}
-.upgrade:hover {
-    background-color: rgb(226, 81, 54);
-    color: #FFF !important;
-}
-
-.document {
-    border: 1px solid #2ecc71;
-}
-
-.document:hover {
-    background-color: #2ecc71;
-    color: #FFF !important;
-}
-
-.review {
-    border: 1px solid #298cba;
-}
-.review:hover {
-    background-color: #298cba !important;
-    color: #FFF !important;
-}
-
-.pro-box {
-    text-align:center;
-}
-
-.control-section-themes .accordion-section-title {
-    margin              : 0;
-}
-
-
-/* Upsell link */
-.upsell-link,
-.doc-link,
-.review-link {
-    display: block;
-    width: 90%;
-    padding: 10px 0;
-    letter-spacing: 1px;
-    line-height: 1.5;
-    border: none;
-    text-align: center;
-    font-size: 14px;
-    margin: 10px auto;
-
-}
-
-.upsell-link:hover,
-.review-link:hover,
-.doc-link:hover {
-    cursor: pointer;
+.upsell-link:after {
+	content: '\f345';
+	font-family: 'Dashicons';
+	color: #fff;
+	position: relative;
+	top: 2px;
+	right: -110px;
 }
 
 .upsell-link {
-    background-color: #e25136;
-    color: #fff;
-    border: 1px solid #e25136;
+	background-color: #e14d43;
+	color: #fff;
+	border: 1px solid #e14d43;
 }
 
 .upsell-link:hover {
-    color: #e25136;
-    border: 1px solid #e25136;
-    background-color: transparent;
+	color: #e14d43;
+	border: 1px solid #e14d43;
+	background-color: transparent;
 }
 
-.review-link {
-    color: #2ecc71;
-    border: 1px solid #2ecc71;
-    background-color: transparent;
-}
-.review-link:hover {
-    background-color: #2ecc71;
-    color: #FFF;
-    border: 1px solid #2ecc71;
+.upsell-link:hover:before,
+.upsell-link:hover:after {
+	color: #e14d43;
 }
 
-.doc-link {
-    background-color: transparent;
-    color: #298cba;
-    border: 1px solid #298cba;
-}
-.doc-link:hover {
-    background-color: #298cba;
-    border: 1px solid #298cba;
-    color: #FFF;
-}
+/*
+==================================================
+= Last panel always has 15px margin bottom
+==================================================
+*/
 
+li#accordion-panel-widgets.accordion-section.control-section.control-panel.control-panel-widgets { margin-bottom: 15px; }
 
-.pro-box {
-    text-align          :center;
-}
-
-.pro-version {
-    text-align          : center;
-    margin              : 15px auto;
+#accordion-section-regina_lite_order_section h3.accordion-section-title,
+#accordion-section-regina_lite_maps_section h3.accordion-section-title,
+#accordion-section-regina_lite_custom_icons h3.accordion-section-title,
+#accordion-section-regina_lite_color_controls h3.accordion-section-title {
+	padding-right: 15px !important;
 }
 
-.pro-version p{
-    line-height         : 1.5;
+#accordion-section-regina_lite_maps_section .accordion-section-title:before,
+#accordion-section-regina_lite_premium_support .accordion-section-title:before,
+#accordion-section-regina_lite_order_section .accordion-section-title:before,
+#accordion-section-regina_lite_color_controls .accordion-section-title:before,
+#accordion-section-regina_lite_custom_icons .accordion-section-title:before,
+#accordion-section-regina_lite_dropdown_menus .accordion-section-title:before {
+	content: '\f160';
+	font-family: 'Dashicons';
+	position: relative;
+	color: #e14d43;
+	margin-right: 8px;
 }
-
-/* Add dotted lines on PRO sections */
-#accordion-section-regina_lite_maps_section .accordion-section-title,
-#accordion-section-regina_lite_pricing_section .accordion-section-title,
-#accordion-section-regina_lite_order_section .accordion-section-title {
-    background-image: url('../../images/gray-lines.png');
-    background-size: cover;
-    background-position: center center;
-    background-repeat: repeat;
-}
-
 
 #accordion-section-regina_lite_maps_section .accordion-section-title:after,
-#accordion-section-regina_lite_pricing_section .accordion-section-title:after,
-#accordion-section-regina_lite_order_section .accordion-section-title:after {
-    content: '\f160';
+#accordion-section-regina_lite_premium_support .accordion-section-title:after,
+#accordion-section-regina_lite_order_section .accordion-section-title:after,
+#accordion-section-regina_lite_color_controls .accordion-section-title:after,
+#accordion-section-regina_lite_custom_icons .accordion-section-title:after,
+#accordion-section-regina_lite_dropdown_menus .accordion-section-title:after {
+	content: 'PRO';
+	color: #fff;
+	background-color: #e14d43;
+	font-size: 14px;
+	padding: 5px 10px;
+	font: menu;
+	position: relative;
+	top: -2px;
+	right: 0;
 }
 
-
-#accordion-section-pixova_lite_pro_section .accordion-section-title {
-    background-color: #e25136;
-    color: #FFF;
-    border-bottom: 1px solid transparent;
+#accordion-section-regina_lite_maps_section .accordion-section-title:hover:after,
+#accordion-section-regina_lite_premium_support .accordion-section-title:hover:after,
+#accordion-section-regina_lite_order_section .accordion-section-title:hover:after,
+#accordion-section-regina_lite_color_controls .accordion-section-title:hover:after,
+#accordion-section-regina_lite_custom_icons .accordion-section-title:hover:after,
+#accordion-section-regina_lite_dropdown_menus .accordion-section-title:hover:after {
+	color: #e14d43 !important;
+	border: 1px solid #e14d43;
+	background-color: transparent;
 }
 
-/* PRO disabled fields */
-.textarea-pro-feature,
-.text-pro-feature,
-.checkbox-pro-feature,
-.radio-pro-feature {
-    border: 1px solid #e25136;
-    border-top-right-radius: 4px;
-    padding: 7.5px;
-    position: relative;
+/*
+==================================================
+= Panel Icons
+==================================================
+*/
+
+.accordion-section h3::before {
+	font-family: 'Dashicons';
+	content: '\f109';
+	margin-right: 8px;
+	color: #555;
+	float: left;
+	margin-top: 1px;
 }
 
-.textarea-pro-feature .pro-badge,
-.text-pro-feature .pro-badge,
-.checkbox-pro-feature .pro-badge,
-.radio-pro-feature .pro-badge {
-    position: absolute;
-    top: 0;
-    right: 0;
-    padding: 7.5px;
-    background: #e25136;
-    color: #FFF;
-    border-bottom-left-radius: 4px;
-
-}
-.checkbox-pro-feature .pro-badge {
-    padding: 14px 7.5px;
+#accordion-section-regina_lite_news_general h3:before {
+	content: '\f130';
 }
 
-.customize-control-checkbox label,
-.customize-control-nav_menu_auto_add label,
-.customize-control-radio label {
-    display: inline;
-    line-height: 30px;
+#accordion-section-regina_lite_speak_general h3:before {
+	content: '\f125';
+}
+
+#accordion-panel-regina_lite_testimonials_panel h3:before {
+	content: '\f122';
+}
+
+#accordion-panel-regina_lite_ourteam_panel h3:before {
+	content: '\f110';
+}
+
+#accordion-panel-regina_lite_panel_general h3:before {
+	content: '\f111';
+}
+
+#accordion-panel-regina_lite_features_panel h3:before {
+	content: '\f319';
+}
+
+#accordion-section-title_tagline h3:before {
+	content: '\f115';
+}
+
+#accordion-section-header_image h3:before {
+	content: '\f128';
+}
+
+#accordion-section-colors h3:before {
+	content: '\f042';
+}
+
+#accordion-section-background_image h3:before {
+	content: '\f03e';
+}
+
+#accordion-panel-nav_menus h3:before {
+	content: '\f333';
+}
+
+#accordion-panel-widgets h3:before {
+	content: '\f100';
+}
+
+#accordion-section-static_front_page h3:before {
+	content: '\f123';
+}
+
+#accordion-section-blog_options h3:before {
+	content: '\f040';
 }

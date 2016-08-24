@@ -13,8 +13,8 @@ $wp_customize->add_panel( $panel_id,
         'priority'          => 53,
         'capability'        => 'edit_theme_options',
         'theme_supports'    => '',
-        'title'             => esc_html__( 'Testimonials Panel', 'regina-lite' ),
-        //'description'       => esc_html__( 'Testimonials Panel description.', 'regina-lite' ),
+        'title'             => esc_html__( 'Testimonials', 'regina-lite' ),
+        'description'       => esc_html__( 'Control all the Testimonial Section settings from this panel. Adding more testimonials is possible only in the PRO version of Regina.', 'regina-lite' ),
     )
 );
 
@@ -24,8 +24,9 @@ $wp_customize->add_panel( $panel_id,
 $wp_customize->add_section( $prefix.'_testimonials_general' ,
     array(
         'title'       => esc_html__( 'General', 'regina-lite' ),
+        'panel' => $panel_id,
         //'description' => esc_html__( 'General Section description.', 'regina-lite' ),
-        'panel'       => $panel_id
+
     )
 );
 

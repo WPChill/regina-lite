@@ -1,20 +1,11 @@
-<?php
-/**
- *	The template for displaying the Search Form.
- *
- *	@package regina-lite
- */
-?>
-<form method="get" class="search-form" action="<?php echo esc_url( home_url( '/' ) ); ?>">
-	<label>
-		<input type="text" class="search-field" placeholder="<?php _e( 'Search', 'regina-lite' ); ?>" value="<?php echo get_search_query() ?>" name="s" title="<php _e( 'Search for:', 'regina-lite' ); ?>" />
-	</label>
-	<button class="search-btn" type="submit"><span class="nc-icon-outline ui-1_zoom"></span></button>
-</form>
-<?php $enable_site_search_icon = get_theme_mod( 'regina_lite_enable_site_search_icon', 1 ); ?>
-<?php if( $enable_site_search_icon == 1 ): ?>
-	<form method="get" class="morphsearch" action="<?php echo esc_url( home_url( '/' ) ); ?>">
-	    <input type="text" placeholder="<?php _e( 'Search', 'regina-lite' ); ?>" value="<?php echo get_search_query() ?>" name="s" title="<?php _e( 'Search for ', 'regina-lite' ); ?>" />
-	    <div class="morphsearch-close"><span class="nc-icon-glyph ui-1_bold-remove"></span></div>
+<div class="nav-menu-search">
+	<form role="search" method="get" class="search-form" action="<?php echo esc_url( home_url( '/' ) ); ?>">
+
+		<span class="screen-reader-text"><?php echo _x( 'Search for:', 'label', 'regina-lite' ); ?></span>
+		<input id="search" type="search" class="search-field" placeholder="<?php echo esc_attr_x( 'Search &hellip;', 'placeholder', 'regina-lite' ); ?>" value="<?php echo get_search_query(); ?>" name="s" />
+		<button type="submit" class="icon">
+			<?php _e('Go', 'regina-lite'); ?>
+			<span class="screen-reader-text"><?php echo _x( 'Search', 'submit button', 'regina-lite' ); ?></span>
+		</button>
 	</form>
-<?php endif; ?>
+</div>

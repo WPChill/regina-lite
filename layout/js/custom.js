@@ -9,24 +9,6 @@ jQuery(document).ready(function($){
 
 
 	/* ---------------------------------------------------------------------- */
-	/*  Morph Search
-	/* ---------------------------------------------------------------------- */
-
-	$('.nav-search').click(function(){
-		$('.morphsearch').addClass('open');
-
-		return false;
-	});
-
-	$('.morphsearch-close').click(function(){
-		$('.morphsearch').removeClass('open');
-
-		return false;
-	});
-
-
-
-	/* ---------------------------------------------------------------------- */
 	/*  Sliders
 	/* ---------------------------------------------------------------------- */
 	if( typeof $.fn.bxSlider !== 'undefined' ) {

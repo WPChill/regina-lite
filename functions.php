@@ -33,9 +33,6 @@ if ( ! function_exists( 'regina_lite_setup' ) ) :
 		require_once( 'inc/customizer/customizer.php' );
 		require_once( 'inc/jetpack.php' );
 
-		require_once( 'widgets/widget-recent-posts.php' );
-		require_once( 'widgets/widget-categories.php' );
-		require_once( 'widgets/widget-recent-comments.php' );
 		require_once( 'widgets/widget-contact.php' );
 		require_once( 'widgets/widget-address.php' );
 
@@ -66,8 +63,8 @@ if ( ! function_exists( 'regina_lite_setup' ) ) :
 		 */
 		$custom_header_args = array(
 			'default-image' => get_template_directory_uri() . '/layout/images/home/slide-1.jpg',
-			'width'         => '1903',
-			'height'        => '634',
+			'width'         => '1920',
+			'height'        => '560',
 		);
 		add_theme_support( 'custom-header', $custom_header_args );
 
@@ -103,6 +100,7 @@ if ( ! function_exists( 'regina_lite_setup' ) ) :
 		add_image_size( 'regina-lite-blog', 750, 419, true );
 		add_image_size( 'regina-lite-related-posts', 230, 231, true );
 		add_image_size( 'regina-lite-homepage-blog-posts', 250, 250, true );
+		add_image_size( 'regina-lite-slider-image-sizes', 1682, 560, true );
 	}
 
 	add_action( 'after_setup_theme', 'regina_lite_setup' );
@@ -141,9 +139,9 @@ function regina_lite_widgets_init() {
 	register_sidebar( array(
 		'name'          => esc_html__( 'Footer Sidebar 1', 'regina-lite' ),
 		'id'            => 'footer-sidebar-1',
-		'before_widget' => '<div id="%1$s" class="block %2$s">',
+		'before_widget' => '<div id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</div>',
-		'before_title'  => '<h6 class="widgettitle"><small>',
+		'before_title'  => '<h6><small>',
 		'after_title'   => '</small></h6>',
 	) );
 
@@ -151,9 +149,9 @@ function regina_lite_widgets_init() {
 	register_sidebar( array(
 		'name'          => esc_html__( 'Footer Sidebar 2', 'regina-lite' ),
 		'id'            => 'footer-sidebar-2',
-		'before_widget' => '<div id="%1$s" class="block %2$s">',
+		'before_widget' => '<div id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</div>',
-		'before_title'  => '<h6 class="widgettitle"><small>',
+		'before_title'  => '<h6><small>',
 		'after_title'   => '</small></h6>',
 	) );
 
@@ -161,9 +159,9 @@ function regina_lite_widgets_init() {
 	register_sidebar( array(
 		'name'          => esc_html__( 'Footer Sidebar 3', 'regina-lite' ),
 		'id'            => 'footer-sidebar-3',
-		'before_widget' => '<div id="%1$s" class="block %2$s">',
+		'before_widget' => '<div id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</div>',
-		'before_title'  => '<h6 class="widgettitle"><small>',
+		'before_title'  => '<h6><small>',
 		'after_title'   => '</small></h6>',
 	) );
 
@@ -171,9 +169,9 @@ function regina_lite_widgets_init() {
 	register_sidebar( array(
 		'name'          => esc_html__( 'Footer Sidebar 4', 'regina-lite' ),
 		'id'            => 'footer-sidebar-4',
-		'before_widget' => '<div id="%1$s" class="block %2$s">',
+		'before_widget' => '<div id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</div>',
-		'before_title'  => '<h6 class="widgettitle"><small>',
+		'before_title'  => '<h6><small>',
 		'after_title'   => '</small></h6>',
 	) );
 }
@@ -199,6 +197,7 @@ function regina_lite_scripts() {
 	// WP Enqueue Style
 	wp_enqueue_style( 'bxslider-css', get_template_directory_uri() . '/layout/css/bxslider.min.css', array(), 'all' );
 	wp_enqueue_style( 'regina-lite-style', get_template_directory_uri() . '/style.css' );
+	wp_enqueue_style( 'regina-lite-main-css', get_template_directory_uri() . '/layout/css/styles.min.css', array(), '', 'all' );
 	wp_enqueue_style( 'regina-lite-bootstrap', get_template_directory_uri() . '/layout/css/bootstrap.min.css', array(), '', 'all' );
 	wp_enqueue_style( 'regina-lite-mobile', get_template_directory_uri() . '/layout/css/mobile.min.css', array(), '', 'all' );
 

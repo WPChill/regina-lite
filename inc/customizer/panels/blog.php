@@ -102,23 +102,6 @@
         )
     );
 
-    /* Social Sharing on single blog posts */
-    $wp_customize->add_setting( $prefix.'_enable_social_sharing_blog_posts',
-        array(
-            'sanitize_callback' => $prefix.'_sanitize_checkbox',
-            'default' => 1
-        )
-    );
-    $wp_customize->add_control(
-        $prefix.'_enable_social_sharing_blog_posts',
-	        array(
-	            'type'	=> 'checkbox',
-	            'label' => esc_html__('Social sharing ?', 'regina-lite'),
-	            'description' => esc_html__('Displayed right after the post', 'regina-lite'),
-	            'section' => $prefix.'_blog_global_section',
-	        )
-    );
-
 
     /* Author Info Box on single blog posts */
     $wp_customize->add_setting( $prefix.'_enable_author_box_blog_posts',
@@ -170,7 +153,7 @@
     $wp_customize->add_setting($prefix.'_blog_breadcrumb_menu_post_category',
         array(
             'sanitize_callback' => $prefix.'_sanitize_checkbox',
-            'default' => 1
+            'default' => 0
         )
     );
     $wp_customize->add_control(
@@ -182,126 +165,6 @@
 	            'section' => $prefix.'_blog_breadcrumb_section',
 	        )
     );
-
-
-    /***********************************************/
-    /************** Social Blog Settings  ***************/
-    /***********************************************/
-
-
-    $wp_customize->add_section( $prefix.'_blog_social_section' ,
-        array(
-            'title'       => esc_html__( 'Social Sharing', 'regina-lite' ),
-            'description' => esc_html__( 'Control visibility of various social sharing networks. The changes made here will reflect on the blog single post view.', 'regina-lite' ),
-            'panel' 	  => $panel_id
-        )
-    );
-
-
-    /* Sharing Bar Position */
-    $wp_customize->add_setting($prefix.'_social_sharing_position',
-        array(
-            'sanitize_callback' => $prefix.'_sanitize_radio_buttons',
-            'default' => '§'
-        )
-    );
-    $wp_customize->add_control(
-        $prefix.'_social_sharing_position',
-        array(
-            'type'	=> 'radio',
-            'choices' => array(
-                'after_content' => esc_html__('After content', 'regina-lite'),
-                'before_content' => esc_html__('Before Content', 'regina-lite'),
-            ),
-            'label' => esc_html__('Sharing Bar Postion: After / Before Content', 'regina-lite'),
-            'description' => esc_html__('Initial position: after content', 'regina-lite'),
-            'section' => $prefix.'_blog_social_section',
-        )
-    );
-
-    /* Sharing Bar "Share this" content */
-    $wp_customize->add_setting($prefix.'_sharing_bar_text',
-        array(
-            'sanitize_callback' => 'sanitize_text_field',
-            'default' => esc_html__( 'Share this article', 'regina-lite'),
-        )
-    );
-    $wp_customize->add_control(
-        $prefix.'_sharing_bar_text',
-        array(
-            'type'	=> 'text',
-            'label' => esc_html__('Text to display above icons', 'regina-lite'),
-            'description' => esc_html__('This is the text that will be displayed above the icons. Change this to whatever you feel like', 'regina-lite'),
-            'section' => $prefix.'_blog_social_section',
-        )
-    );
-
-    /* Facebook visibility */
-    $wp_customize->add_setting($prefix.'_facebook_visibility',
-        array(
-            'sanitize_callback' => $prefix.'_sanitize_checkbox',
-            'default' => 1
-        )
-    );
-    $wp_customize->add_control(
-        $prefix.'_facebook_visibility',
-	        array(
-	            'type'	=> 'checkbox',
-	            'label' => esc_html__('Display share on Facebook ?', 'regina-lite'),
-	            'section' => $prefix.'_blog_social_section',
-	        )
-    );
-
-    /* Twitter visibility */
-    $wp_customize->add_setting($prefix.'_twitter_visibility',
-        array(
-            'sanitize_callback' => $prefix.'_sanitize_checkbox',
-            'default' => 1
-        )
-    );
-    $wp_customize->add_control(
-        $prefix.'_twitter_visibility',
-            array(
-                'type'	=> 'checkbox',
-                'label' => esc_html__('Display share on Twitter ?', 'regina-lite'),
-                'section' => $prefix.'_blog_social_section',
-            )
-    );
-
-    /* LinkedIN visibility */
-    $wp_customize->add_setting($prefix.'_linkein_visibility',
-        array(
-            'sanitize_callback' => $prefix.'_sanitize_checkbox',
-            'default' => 1
-        )
-    );
-    $wp_customize->add_control(
-        $prefix.'_linkein_visibility',
-	        array(
-	            'type'	=> 'checkbox',
-	            'label' => esc_html__('Display share on LinkedIN ?', 'regina-lite'),
-	            'section' => $prefix.'_blog_social_section',
-	        )
-    );
-
-
-
-    /* Mail visibility */
-    $wp_customize->add_setting($prefix.'_mail_visibility',
-        array(
-            'sanitize_callback' => $prefix.'_sanitize_checkbox',
-            'default' => 1
-        )
-    );
-    $wp_customize->add_control(
-        $prefix.'_mail_visibility',
-        array(
-            'type'	=> 'checkbox',
-            'label' => esc_html__('Display share on mail ?', 'regina-lite'),
-            'section' => $prefix.'_blog_social_section',
-        )
-    );
-
 
 
     /***********************************************/

@@ -1,3 +1,20 @@
+= 1.0.20 =
+* Made all upsell links go to the https:// version of our site
+* Completely re-worked the upsell styling
+* Created a new custom control to handle upsells
+* #29, #28, #27, #26, #25, #24, #23, #22, #19
+
+= 1.0.19 =
+* Removed search form from footer
+* Fixed search form appearance in header
+* Removed @import from style.css & made sure all CSS files are now enqueued
+* #18, #14, #15
+
+= 1.0.18 =
+* Header improvements - added search form
+* Footer improvements - center aligned the copyright message and removed some words
+
+
 = 1.0.17 =
 * Removed Kiwi
 
