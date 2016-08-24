@@ -281,7 +281,7 @@
     /* Book Appointment URL */
     $wp_customize->add_setting( $prefix.'_contact_bar_bookappointmenturl',
         array(
-            'sanitize_callback' => '',
+            'sanitize_callback' => 'esc_url',
             'default' => '#'
         )
     );
