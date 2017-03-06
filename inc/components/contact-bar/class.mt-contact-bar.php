@@ -110,7 +110,7 @@ if ( ! class_exists( 'MTL_Contact_Bar_Output' ) ) {
 				if ( $this->show_search_in_header ) {
 					echo '<div class="col-sm-5">';
 					echo '<div class="nav-menu-search">';
-					echo '<form role="search" method="get" class="search-form" action = "<?php echo esc_url( home_url() ); ?>" > ';
+					echo '<form role="search" method="get" class="search-form" action = "'.esc_url( home_url() ).'" > ';
 					echo '<input type = "search" class="search-field" id = "search" placeholder = "Search..." name = "s" />';
 					echo '<button class="icon">' . __( 'Go', 'regina-lite' ) . '</button>';
 					echo '</form>';
