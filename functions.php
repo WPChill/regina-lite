@@ -36,9 +36,6 @@ if ( ! function_exists( 'regina_lite_setup' ) ) :
 		require_once( 'widgets/widget-contact.php' );
 		require_once( 'widgets/widget-address.php' );
 
-		// TGMPA
-		require_once( 'inc/tgmpa/tgm-plugin-activation.php' );
-
 		/*
 		 * Make theme available for translation.
 		 * Translations can be filed in the /languages/ directory.
