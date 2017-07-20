@@ -17,10 +17,6 @@
     $site_title2        = $wp_customize->get_section( 'background_image' );
     $site_title2->panel = $panel_id;
 
-	// Change panel for Header Image
-	$site_title2        = $wp_customize->get_section( 'header_image' );
-	$site_title2->panel = $panel_id;
-
     // Change panel for Static Front Page
     $site_title3        = $wp_customize->get_section( 'static_front_page' );
     $site_title3->panel = $panel_id;
@@ -79,34 +75,6 @@
         'second_button_text' => esc_html__( 'Get PRO now!', 'regina-lite' ),
         'separator' => '- or -'
     ) ) );
-
-
-	// upsell - google maps
-	$wp_customize->add_section( $prefix . '_maps_section', array(
-		'title'    => __( 'Google Maps', 'regina-lite' ),
-		'priority' => 11,
-		'panel' => $panel_id
-	) );
-
-	$wp_customize->add_setting( $prefix . '_maps_section', array(
-		'sanitize_callback' => $prefix . '_sanitize_pro_version',
-	) );
-    $wp_customize->add_control( new Epsilon_Control_Upsell( $wp_customize, $prefix . '_maps_section', array(
-        'section'      => $prefix . '_maps_section',
-        'priority'     => 0,
-        'options'      => array(
-            esc_html__( 'Google Map Sections', 'regina-lite' ),
-        ),
-        'requirements' => array(
-            esc_html__( 'Unlimited Google Maps are available in the PRO version of Regina.', 'regina-lite' ),
-        ),
-        'button_url'   => esc_url_raw( get_admin_url() . 'themes.php?page=regina-lite-welcome&tab=features' ),
-        'button_text'  => esc_html__( 'See PRO vs Lite', 'regina-lite' ),
-        'second_button_url'  => esc_url_raw( 'https://www.machothemes.com/theme/regina-pro/?utm_source=worg&utm_medium=customizer&utm_campaign=upsell' ),
-        'second_button_text' => esc_html__( 'Get PRO now!', 'regina-lite' ),
-        'separator' => '- or -'
-    ) ) );
-
 
     /* Logo */
     $wp_customize->add_section( $prefix.'_general_section' ,

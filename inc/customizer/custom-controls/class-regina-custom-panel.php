@@ -8,15 +8,15 @@ if ( ! class_exists( 'WP_Customize_Control' ) ) {
 	return null;
 }
 
-if ( ! class_exists( 'Pixova_Custom_Panel' ) ) {
-	class Pixova_Custom_Panel extends WP_Customize_Panel {
+if ( ! class_exists( 'Regina_Custom_Panel' ) ) {
+	class Regina_Custom_Panel extends WP_Customize_Panel {
 
 		public $panel;
-		public $type = 'pixova_panel';
+		public $type = 'regina_panel';
 
 		public function __construct( WP_Customize_Manager $manager, $id, array $args = array() ) {
 			parent::__construct( $manager, $id, $args );
-			$manager->register_panel_type( 'Pixova_Custom_Panel' );
+			$manager->register_panel_type( 'Regina_Custom_Panel' );
 		}
 
 		public function json() {

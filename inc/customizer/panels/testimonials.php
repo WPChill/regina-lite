@@ -8,15 +8,14 @@ $prefix = 'regina_lite';
 /***********************************************/
 /****************** OUR TEAM *******************/
 /***********************************************/
-$wp_customize->add_panel( $panel_id,
-    array(
-        'priority'          => 53,
-        'capability'        => 'edit_theme_options',
-        'theme_supports'    => '',
-        'title'             => esc_html__( 'Testimonials', 'regina-lite' ),
-        'description'       => esc_html__( 'Control all the Testimonial Section settings from this panel. Adding more testimonials is possible only in the PRO version of Regina.', 'regina-lite' ),
-    )
-);
+$wp_customize->add_panel( new Regina_Custom_Panel( $wp_customize, $panel_id, array(
+    'priority'          => 30,
+    'capability'        => 'edit_theme_options',
+    'theme_supports'    => '',
+    'title'             => esc_html__( 'Testimonials', 'regina-lite' ),
+    'description'       => esc_html__( 'Control all the Testimonial Section settings from this panel. Adding more testimonials is possible only in the PRO version of Regina.', 'regina-lite' ),
+    'panel' => 'regina_lite_frontpage_sections',
+) ) );
 
 /***********************************************/
 /************ GENERAL SECTION *******************/

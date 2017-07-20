@@ -9,8 +9,8 @@
 $wp_customize->add_section( 'regina_lite_news_general', array(
 		'title'    => esc_html__( 'Latest News', 'regina-lite' ),
 		'description' => esc_html__( 'Latest News Section is displayed as a slider on the homepage. Controls from this section are applied to that slider.', 'regina-lite'),
-		'priority' => 56,
-
+		'priority' => 50,
+		'panel' => 'regina_lite_frontpage_sections',
 	) );
 
 /* Show this section? */

@@ -8,15 +8,14 @@ $prefix = 'regina_lite';
 /***********************************************/
 /************** FEATURES ***********************/
 /***********************************************/
-$wp_customize->add_panel( $panel_id,
-    array(
-        'priority'          => 51,
-        'capability'        => 'edit_theme_options',
-        'theme_supports'    => '',
-        'title'             => esc_html__( 'Our Services', 'regina-lite' ),
-        'description'       => esc_html__( 'Control everything related to the Services section from this panel. Custom Colors & Icons are a PRO feature only.', 'regina-lite')
-     )
-);
+$wp_customize->add_panel( new Regina_Custom_Panel( $wp_customize, $panel_id, array(
+    'priority'          => 10,
+    'capability'        => 'edit_theme_options',
+    'theme_supports'    => '',
+    'title'             => esc_html__( 'Our Services', 'regina-lite' ),
+    'description'       => esc_html__( 'Control everything related to the Services section from this panel. Custom Colors & Icons are a PRO feature only.', 'regina-lite'),
+    'panel' => 'regina_lite_frontpage_sections',
+ ) ) );
 
 
 /***********************************************/

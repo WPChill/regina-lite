@@ -8,15 +8,14 @@ $prefix = 'regina_lite';
 /***********************************************/
 /****************** OUR TEAM *******************/
 /***********************************************/
-$wp_customize->add_panel( $panel_id,
-    array(
-        'priority'          => 52,
-        'capability'        => 'edit_theme_options',
-        'theme_supports'    => '',
-        'title'             => esc_html__( 'Our Team', 'regina-lite' ),
-        'description'       => esc_html__( 'Control all the Team Section settings from this panel. Adding more members to the team is a PRO feature only.', 'regina-lite' ),
-    )
-);
+$wp_customize->add_panel( new Regina_Custom_Panel( $wp_customize, $panel_id, array(
+    'priority'          => 20,
+    'capability'        => 'edit_theme_options',
+    'theme_supports'    => '',
+    'title'             => esc_html__( 'Our Team', 'regina-lite' ),
+    'description'       => esc_html__( 'Control all the Team Section settings from this panel. Adding more members to the team is a PRO feature only.', 'regina-lite' ),
+    'panel' => 'regina_lite_frontpage_sections',
+) ) );
 
 /***********************************************/
 /************ GENERAL SECTION ******************/

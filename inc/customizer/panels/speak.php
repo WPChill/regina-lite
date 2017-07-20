@@ -13,7 +13,8 @@ $wp_customize->add_section( $prefix.'_speak_general' ,
     array(
         'title'       => esc_html__( 'Speak With Our Doctors', 'regina-lite' ),
         'description' => esc_html__( 'This section is mostly used as a final call-to-action. Be mindful of the text you enter here and make sure they\'re phrased in such a way that they draw attention.', 'regina-lite'),
-        'priority' => 54,
+        'priority' => 40,
+        'panel' => 'regina_lite_frontpage_sections',
     )
 );
 
