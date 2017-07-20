@@ -37,14 +37,11 @@ $wp_customize->add_setting( $prefix.'_ourteam_general_show',
         'default'           => 1
     )
 );
-$wp_customize->add_control(
-    $prefix.'_ourteam_general_show',
-    array(
-        'type'          => 'checkbox',
-        'label'         => esc_html__('Show this section?', 'regina-lite'),
-        'section'       => $prefix.'_ourteam_general',
-    )
-);
+$wp_customize->add_control( new Epsilon_Control_Toggle( $wp_customize, $prefix.'_ourteam_general_show', array(
+    'type'          => 'epsilon-toggle',
+    'label'         => esc_html__('Show this section?', 'regina-lite'),
+    'section'       => $prefix.'_ourteam_general',
+) ) );
 
 /* Title */
 $wp_customize->add_setting($prefix.'_ourteam_general_title',

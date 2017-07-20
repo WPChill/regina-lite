@@ -22,31 +22,6 @@ function regina_lite_customize_register( $wp_customize ) {
 	# Main Upsell features
 	#
 
-	$wp_customize->add_section( $prefix . '_custom_icons', array(
-		'title'    => __( 'Custom Icons', 'regina-lite' ),
-		'priority' => 202,
-		'panel' => 'regina_lite_features_panel'
-	) );
-
-	$wp_customize->add_setting( $prefix . '_custom_icons', array(
-		'sanitize_callback' => $prefix . '_sanitize_pro_version',
-	) );
-
-	$wp_customize->add_control( new Regina_Lite_Upsell_Render_Panel(
-			$wp_customize,
-			$prefix . '_custom_icons',
-			array(
-				'section' => $prefix . '_custom_icons',
-				'choices' => array(
-					'title' => __( 'Regina PRO comes bundled with over 700 premium icons. You can also upload your own custom icons.', 'regina-lite'),
-					'show_demo_button' => true,
-					'show_pro_button' => true
-				),
-			)
-		)
-	);
-
-
 	$wp_customize->add_section( $prefix . '_color_controls', array(
 		'title'    => __( 'Color Controls', 'regina-lite' ),
 		'priority' => 0,
@@ -57,19 +32,21 @@ function regina_lite_customize_register( $wp_customize ) {
 		'sanitize_callback' => $prefix . '_sanitize_pro_version',
 	) );
 
-	$wp_customize->add_control( new Regina_Lite_Upsell_Render_Panel(
-			$wp_customize,
-			$prefix . '_color_controls',
-			array(
-				'section' => $prefix . '_color_controls',
-				'choices' => array(
-					'title' => __( 'Color controls are available in the PRO version of Regina. Make it look the way you want to.', 'regina-lite'),
-					'show_demo_button' => true,
-					'show_pro_button' => true
-				),
-			)
-		)
-	);
+	$wp_customize->add_control( new Epsilon_Control_Upsell( $wp_customize, $prefix . '_color_controls', array(
+        'section'      => $prefix . '_color_controls',
+        'priority'     => 0,
+        'options'      => array(
+            esc_html__( 'More Color Options', 'regina-lite' ),
+        ),
+        'requirements' => array(
+            esc_html__( 'The PRO version of Regina allows for a greater degree of customisability. Get multiple professionally designed color schemes with the purchase of the PRO version. ', 'regina-lite' ),
+        ),
+        'button_url'   => esc_url_raw( get_admin_url() . 'themes.php?page=regina-lite-welcome&tab=features' ),
+        'button_text'  => esc_html__( 'See PRO vs Lite', 'regina-lite' ),
+        'second_button_url'  => esc_url_raw( 'https://www.machothemes.com/theme/regina-pro/?utm_source=worg&utm_medium=customizer&utm_campaign=upsell' ),
+        'second_button_text' => esc_html__( 'Get PRO now!', 'regina-lite' ),
+        'separator' => '- or -'
+    ) ) );
 
 
 
@@ -241,7 +218,7 @@ if ( ! function_exists( 'regina_lite_customizer_preview_js' ) ) {
 	function regina_lite_customizer_preview_js() {
 		// Customizer preview JS
 		wp_enqueue_script( 'rl-customizer-script', get_template_directory_uri() . '/inc/customizer/assets/js/customizer.js', array( 'customize-preview' ), '1.0', true );
-		wp_enqueue_script( 'regina-lite-upsell', get_template_directory_uri() . '/inc/customizer/assets/js/upsell/upsell.js', array( 'jquery' ), '1.0', true );
+		// wp_enqueue_script( 'regina-lite-upsell', get_template_directory_uri() . '/inc/customizer/assets/js/upsell/upsell.js', array( 'jquery' ), '1.0', true );
 	}
 
 	add_action( 'customize_preview_init', 'regina_lite_customizer_preview_js' );
@@ -257,5 +234,5 @@ if ( ! function_exists( 'regina_lite_customizer_css_load' ) ) {
 
 	}
 
-	add_action( 'customize_controls_print_styles', 'regina_lite_customizer_css_load' );
+	// add_action( 'customize_controls_print_styles', 'regina_lite_customizer_css_load' );
 }

@@ -37,14 +37,11 @@ $wp_customize->add_setting( $prefix . '_top_box_show',
         'default'           => 1
     )
 );
-$wp_customize->add_control(
-    $prefix.'_top_box_show',
-    array(
-        'type'          => 'checkbox',
-        'label'         => esc_html__( 'Show the blue box?', 'regina-lite' ),
-        'section'       => $prefix . '_top_box',
-    )
-);
+$wp_customize->add_control( new Epsilon_Control_Toggle( $wp_customize, $prefix.'_top_box_show', array(
+    'type'          => 'epsilon-toggle',
+    'label'         => esc_html__( 'Show the blue box?', 'regina-lite' ),
+    'section'       => $prefix . '_top_box',
+) ) );
 
 /* Title */
 $wp_customize->add_setting($prefix . '_top_box_title',
@@ -113,14 +110,11 @@ $wp_customize->add_setting( $prefix.'_subheader_features_show',
         'default'           => 1
     )
 );
-$wp_customize->add_control(
-    $prefix.'_subheader_features_show',
-    array(
-        'type'          => 'checkbox',
-        'label'         => esc_html__('Show this section?', 'regina-lite'),
-        'section'       => $prefix.'_features_general',
-    )
-);
+$wp_customize->add_control( new Epsilon_Control_Toggle( $wp_customize, $prefix.'_subheader_features_show', array(
+    'type'          => 'epsilon-toggle',
+    'label'         => esc_html__('Show this section?', 'regina-lite'),
+    'section'       => $prefix.'_features_general',
+) ) );
 
 /* Title */
 $wp_customize->add_setting($prefix.'_features_general_title',
@@ -238,6 +232,24 @@ $wp_customize->add_control( $prefix.'_features_feature1_buttonurl',
     )
 );
 
+$wp_customize->add_setting( $prefix . '_feature_1_pro', array(
+    'sanitize_callback' => $prefix . '_sanitize_pro_version',
+) );
+$wp_customize->add_control( new Epsilon_Control_Upsell( $wp_customize, $prefix . '_feature_1_pro', array(
+    'section'      => $prefix . '_features_feature1',
+    'options'      => array(
+        esc_html__( 'Custom Icons', 'regina-lite' ),
+    ),
+    'requirements' => array(
+        esc_html__( 'Regina PRO comes bundled with over 700 premium icons. You can also upload your own custom icons.', 'regina-lite' ),
+    ),
+    'button_url'   => esc_url_raw( get_admin_url() . 'themes.php?page=regina-lite-welcome&tab=features' ),
+    'button_text'  => esc_html__( 'See PRO vs Lite', 'regina-lite' ),
+    'second_button_url'  => esc_url_raw( 'https://www.machothemes.com/theme/regina-pro/?utm_source=worg&utm_medium=customizer&utm_campaign=upsell' ),
+    'second_button_text' => esc_html__( 'Get PRO now!', 'regina-lite' ),
+    'separator' => '- or -'
+) ) );
+
 /***********************************************/
 /************ FEATURE 2 SECTION ****************/
 /***********************************************/
@@ -292,6 +304,24 @@ $wp_customize->add_control( $prefix.'_features_feature2_buttonurl',
         'settings'      => $prefix.'_features_feature2_buttonurl',
     )
 );
+
+$wp_customize->add_setting( $prefix . '_feature_2_pro', array(
+    'sanitize_callback' => $prefix . '_sanitize_pro_version',
+) );
+$wp_customize->add_control( new Epsilon_Control_Upsell( $wp_customize, $prefix . '_feature_2_pro', array(
+    'section'      => $prefix . '_features_feature2',
+    'options'      => array(
+        esc_html__( 'Custom Icons', 'regina-lite' ),
+    ),
+    'requirements' => array(
+        esc_html__( 'Regina PRO comes bundled with over 700 premium icons. You can also upload your own custom icons.', 'regina-lite' ),
+    ),
+    'button_url'   => esc_url_raw( get_admin_url() . 'themes.php?page=regina-lite-welcome&tab=features' ),
+    'button_text'  => esc_html__( 'See PRO vs Lite', 'regina-lite' ),
+    'second_button_url'  => esc_url_raw( 'https://www.machothemes.com/theme/regina-pro/?utm_source=worg&utm_medium=customizer&utm_campaign=upsell' ),
+    'second_button_text' => esc_html__( 'Get PRO now!', 'regina-lite' ),
+    'separator' => '- or -'
+) ) );
 
 /***********************************************/
 /************ FEATURE 3 SECTION ****************/
@@ -348,6 +378,24 @@ $wp_customize->add_control( $prefix.'_features_feature3_buttonurl',
     )
 );
 
+$wp_customize->add_setting( $prefix . '_feature_3_pro', array(
+    'sanitize_callback' => $prefix . '_sanitize_pro_version',
+) );
+$wp_customize->add_control( new Epsilon_Control_Upsell( $wp_customize, $prefix . '_feature_3_pro', array(
+    'section'      => $prefix . '_features_feature3',
+    'options'      => array(
+        esc_html__( 'Custom Icons', 'regina-lite' ),
+    ),
+    'requirements' => array(
+        esc_html__( 'Regina PRO comes bundled with over 700 premium icons. You can also upload your own custom icons.', 'regina-lite' ),
+    ),
+    'button_url'   => esc_url_raw( get_admin_url() . 'themes.php?page=regina-lite-welcome&tab=features' ),
+    'button_text'  => esc_html__( 'See PRO vs Lite', 'regina-lite' ),
+    'second_button_url'  => esc_url_raw( 'https://www.machothemes.com/theme/regina-pro/?utm_source=worg&utm_medium=customizer&utm_campaign=upsell' ),
+    'second_button_text' => esc_html__( 'Get PRO now!', 'regina-lite' ),
+    'separator' => '- or -'
+) ) );
+
 /***********************************************/
 /************ FEATURE 4 SECTION ****************/
 /***********************************************/
@@ -402,3 +450,21 @@ $wp_customize->add_control( $prefix.'_features_feature4_buttonurl',
         'settings'      => $prefix.'_features_feature4_buttonurl',
     )
 );
+
+$wp_customize->add_setting( $prefix . '_feature_4_pro', array(
+    'sanitize_callback' => $prefix . '_sanitize_pro_version',
+) );
+$wp_customize->add_control( new Epsilon_Control_Upsell( $wp_customize, $prefix . '_feature_4_pro', array(
+    'section'      => $prefix . '_features_feature4',
+    'options'      => array(
+        esc_html__( 'Custom Icons', 'regina-lite' ),
+    ),
+    'requirements' => array(
+        esc_html__( 'Regina PRO comes bundled with over 700 premium icons. You can also upload your own custom icons.', 'regina-lite' ),
+    ),
+    'button_url'   => esc_url_raw( get_admin_url() . 'themes.php?page=regina-lite-welcome&tab=features' ),
+    'button_text'  => esc_html__( 'See PRO vs Lite', 'regina-lite' ),
+    'second_button_url'  => esc_url_raw( 'https://www.machothemes.com/theme/regina-pro/?utm_source=worg&utm_medium=customizer&utm_campaign=upsell' ),
+    'second_button_text' => esc_html__( 'Get PRO now!', 'regina-lite' ),
+    'separator' => '- or -'
+) ) );

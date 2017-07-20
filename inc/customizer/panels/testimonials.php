@@ -37,15 +37,12 @@ $wp_customize->add_setting( $prefix.'_testimonials_general_show',
         'default'           => 1
     )
 );
-$wp_customize->add_control(
-    $prefix.'_testimonials_general_show',
-    array(
-        'type'          => 'checkbox',
-        'label'         => esc_html__('Show this section?', 'regina-lite'),
-        //'description'   => esc_html__('Testimonials Show description.', 'regina-lite'),
-        'section'       => $prefix.'_testimonials_general',
-    )
-);
+$wp_customize->add_control( new Epsilon_Control_Toggle( $wp_customize, $prefix.'_testimonials_general_show', array(
+    'type'          => 'epsilon-toggle',
+    'label'         => esc_html__('Show this section?', 'regina-lite'),
+    //'description'   => esc_html__('Testimonials Show description.', 'regina-lite'),
+    'section'       => $prefix.'_testimonials_general',
+) ) );
 
 /* Image #1 */
 $wp_customize->add_setting( 

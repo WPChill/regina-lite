@@ -40,15 +40,12 @@
             'default' => 1
         )
     );
-    $wp_customize->add_control(
-        $prefix.'_enable_post_posted_on_blog_posts',
-        array(
-            'type'	=> 'checkbox',
-            'label' => esc_html__('Posted on meta on single blog post', 'regina-lite'),
-            'description' => esc_html__('This will disable the posted on zone as well as the author name', 'regina-lite'),
-            'section' => $prefix.'_blog_global_section',
-        )
-    );
+    $wp_customize->add_control( new Epsilon_Control_Toggle( $wp_customize, $prefix.'_enable_post_posted_on_blog_posts', array(
+        'type'	=> 'epsilon-toggle',
+        'label' => esc_html__('Posted on meta on single blog post', 'regina-lite'),
+        'description' => esc_html__('This will disable the posted on zone as well as the author name', 'regina-lite'),
+        'section' => $prefix.'_blog_global_section',
+    ) ) );
 
     /* Post Category on single blog posts */
     $wp_customize->add_setting( $prefix.'_enable_post_category_blog_posts',
@@ -57,15 +54,12 @@
             'default' => 1
         )
     );
-    $wp_customize->add_control(
-        $prefix.'_enable_post_category_blog_posts',
-        array(
-            'type'	=> 'checkbox',
-            'label' => esc_html__('Category meta on single blog post', 'regina-lite'),
-            'description' => esc_html__('This will disable the posted in zone.', 'regina-lite'),
-            'section' => $prefix.'_blog_global_section',
-        )
-    );
+    $wp_customize->add_control( new Epsilon_Control_Toggle( $wp_customize, $prefix.'_enable_post_category_blog_posts', array(
+        'type'	=> 'epsilon-toggle',
+        'label' => esc_html__('Category meta on single blog post', 'regina-lite'),
+        'description' => esc_html__('This will disable the posted in zone.', 'regina-lite'),
+        'section' => $prefix.'_blog_global_section',
+    ) ) );
 
     /* Post Tags on single blog posts */
     $wp_customize->add_setting( $prefix.'_enable_post_tags_blog_posts',
@@ -74,15 +68,12 @@
             'default' => 1
         )
     );
-    $wp_customize->add_control(
-        $prefix.'_enable_post_tags_blog_posts',
-        array(
-            'type'	=> 'checkbox',
-            'label' => esc_html__('Tags meta on single blog post', 'regina-lite'),
-            'description' => esc_html__('This will disable the tagged with zone.', 'regina-lite'),
-            'section' => $prefix.'_blog_global_section',
-        )
-    );
+    $wp_customize->add_control( new Epsilon_Control_Toggle( $wp_customize, $prefix.'_enable_post_tags_blog_posts', array(
+        'type'	=> 'epsilon-toggle',
+        'label' => esc_html__('Tags meta on single blog post', 'regina-lite'),
+        'description' => esc_html__('This will disable the tagged with zone.', 'regina-lite'),
+        'section' => $prefix.'_blog_global_section',
+    ) ) );
 
     /* Breadcrumbs on single blog posts */
     $wp_customize->add_setting( $prefix.'_enable_post_breadcrumbs',
@@ -92,15 +83,12 @@
         )
     );
 
-    $wp_customize->add_control(
-        $prefix.'_enable_post_breadcrumbs',
-        array(
-            'type'	=> 'checkbox',
-            'label' => esc_html__('Breadcrumbs on single blog posts', 'regina-lite'),
-            'description' => esc_html__('This will disable the breadcrumbs', 'regina-lite'),
-            'section' => $prefix.'_blog_global_section',
-        )
-    );
+    $wp_customize->add_control( new Epsilon_Control_Toggle( $wp_customize, $prefix.'_enable_post_breadcrumbs', array(
+        'type'	=> 'epsilon-toggle',
+        'label' => esc_html__('Breadcrumbs on single blog posts', 'regina-lite'),
+        'description' => esc_html__('This will disable the breadcrumbs', 'regina-lite'),
+        'section' => $prefix.'_blog_global_section',
+    ) ) );
 
 
     /* Author Info Box on single blog posts */
@@ -110,15 +98,12 @@
             'default' => 1
         )
     );
-    $wp_customize->add_control(
-        $prefix.'_enable_author_box_blog_posts',
-        array(
-            'type'	=> 'checkbox',
-            'label' => esc_html__('Author info box on single blog post', 'regina-lite'),
-            'description' => esc_html__('Displayed right at the end of the post', 'regina-lite'),
-            'section' => $prefix.'_blog_global_section',
-        )
-    );
+    $wp_customize->add_control( new Epsilon_Control_Toggle( $wp_customize, $prefix.'_enable_author_box_blog_posts', array(
+        'type'	=> 'epsilon-toggle',
+        'label' => esc_html__('Author info box on single blog post', 'regina-lite'),
+        'description' => esc_html__('Displayed right at the end of the post', 'regina-lite'),
+        'section' => $prefix.'_blog_global_section',
+    ) ) );
 
     /*  related posts carousel */
     $wp_customize->add_setting( $prefix.'_enable_related_blog_posts',
@@ -127,15 +112,12 @@
             'default' => 1
         )
     );
-    $wp_customize->add_control(
-        $prefix.'_enable_related_blog_posts',
-        array(
-            'type'	=> 'checkbox',
-            'label' => esc_html__('Related posts carousel ?', 'regina-lite'),
-            'description' => esc_html__('Displayed after the author box', 'regina-lite'),
-            'section' => $prefix.'_blog_global_section',
-        )
-    );
+    $wp_customize->add_control( new Epsilon_Control_Toggle( $wp_customize, $prefix.'_enable_related_blog_posts', array(
+        'type'	=> 'epsilon-toggle',
+        'label' => esc_html__('Related posts carousel ?', 'regina-lite'),
+        'description' => esc_html__('Displayed after the author box', 'regina-lite'),
+        'section' => $prefix.'_blog_global_section',
+    ) ) );
 
     /***********************************************/
     /************** Breadcrumb Settings  ***************/
@@ -156,15 +138,12 @@
             'default' => 0
         )
     );
-    $wp_customize->add_control(
-        $prefix.'_blog_breadcrumb_menu_post_category',
-	        array(
-	            'type' => 'checkbox',
-	            'label' => esc_html__('Show post category ?', 'regina-lite'),
-	            'description' => esc_html__('Show the post category in the breadcrumb ?', 'regina-lite'),
-	            'section' => $prefix.'_blog_breadcrumb_section',
-	        )
-    );
+    $wp_customize->add_control( new Epsilon_Control_Toggle( $wp_customize, $prefix.'_blog_breadcrumb_menu_post_category', array(
+        'type' => 'epsilon-toggle',
+        'label' => esc_html__('Show post category ?', 'regina-lite'),
+        'description' => esc_html__('Show the post category in the breadcrumb ?', 'regina-lite'),
+        'section' => $prefix.'_blog_breadcrumb_section',
+    ) ) );
 
 
     /***********************************************/
@@ -187,14 +166,11 @@
             'default' => 1
         )
     );
-    $wp_customize->add_control(
-        $prefix.'_enable_related_title_blog_posts',
-            array(
-                'type'  => 'checkbox',
-                'label' => esc_html__('Show posts title in the carousel?', 'regina-lite'),
-                'section' => $prefix.'_blog_related_section',
-            )
-    );
+    $wp_customize->add_control( new Epsilon_Control_Toggle( $wp_customize, $prefix.'_enable_related_title_blog_posts', array(
+        'type'  => 'epsilon-toggle',
+        'label' => esc_html__('Show posts title in the carousel?', 'regina-lite'),
+        'section' => $prefix.'_blog_related_section',
+    ) ) );
 
     /*  related posts date */
     $wp_customize->add_setting( $prefix.'_enable_related_date_blog_posts',
@@ -203,14 +179,11 @@
             'default' => 1
         )
     );
-    $wp_customize->add_control(
-        $prefix.'_enable_related_date_blog_posts',
-            array(
-                'type'  => 'checkbox',
-                'label' => esc_html__('Show posts date  ?', 'regina-lite'),
-                'section' => $prefix.'_blog_related_section',
-            )
-    );
+    $wp_customize->add_control( new Epsilon_Control_Toggle( $wp_customize, $prefix.'_enable_related_date_blog_posts', array(
+        'type'  => 'epsilon-toggle',
+        'label' => esc_html__('Show posts date  ?', 'regina-lite'),
+        'section' => $prefix.'_blog_related_section',
+    ) ) );
 
 
     /* Auto play carousel */
@@ -220,14 +193,11 @@
             'default' => 1,
         )
     );
-    $wp_customize->add_control(
-        $prefix.'_autoplay_blog_posts',
-            array(
-                'type'  => 'checkbox',
-                'label' => esc_html__('Autoplay related carousel ?', 'regina-lite'),
-                'section' => $prefix.'_blog_related_section',
-            )
-    );
+    $wp_customize->add_control( new Epsilon_Control_Toggle( $wp_customize, $prefix.'_autoplay_blog_posts', array(
+        'type'  => 'epsilon-toggle',
+        'label' => esc_html__('Autoplay related carousel ?', 'regina-lite'),
+        'section' => $prefix.'_blog_related_section',
+    ) ) );
 
     /* Number of related posts to display at once  */
     $wp_customize->add_setting( $prefix.'_howmany_blog_posts',
@@ -236,22 +206,18 @@
             'default' => 3
         )
     );
-    $wp_customize->add_control( new Regina_lite_Controls_Slider_Control($wp_customize,
-        $prefix.'_howmany_blog_posts',
-            array(
-                'type' => 'slider-selector',
-                'label' => esc_html__('How many blog posts to display in the carousel at once ?', 'regina-lite'),
-                'description' => esc_html__('No more than 4 posts at once;', 'regina-lite'),
-                'choices' => array(
-                    'min' => 1,
-                    'max' => 4,
-                    'step' => 1,
-                ),
-                'section' => $prefix.'_blog_related_section',
-                'default' => 3
-            )
-        )
-    );
+    $wp_customize->add_control( new Epsilon_Control_Slider($wp_customize, $prefix.'_howmany_blog_posts', array(
+        'type' => 'epsilon-slider',
+        'label' => esc_html__('How many blog posts to display in the carousel at once ?', 'regina-lite'),
+        'description' => esc_html__('No more than 4 posts at once;', 'regina-lite'),
+        'choices' => array(
+            'min' => 1,
+            'max' => 4,
+            'step' => 1,
+        ),
+        'section' => $prefix.'_blog_related_section',
+        'default' => 3
+    ) ) );
 
     /* Display pagination ?  */
     $wp_customize->add_setting( $prefix.'_pagination_blog_posts',
@@ -260,12 +226,9 @@
             'default' => 0
         )
     );
-    $wp_customize->add_control(
-            $prefix.'_pagination_blog_posts',
-            array(
-                'type'  => 'checkbox',
-                'label' => esc_html__('Display pagination controls ?', 'regina-lite'),
-                'description' => esc_html__('Will be displayed as navigation bullets', 'regina-lite'),
-                'section' => $prefix.'_blog_related_section',
-            )
-    );
+    $wp_customize->add_control( new Epsilon_Control_Toggle( $wp_customize, $prefix.'_pagination_blog_posts', array(
+        'type'  => 'epsilon-toggle',
+        'label' => esc_html__('Display pagination controls ?', 'regina-lite'),
+        'description' => esc_html__('Will be displayed as navigation bullets', 'regina-lite'),
+        'section' => $prefix.'_blog_related_section',
+    ) ) );

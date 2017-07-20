@@ -24,15 +24,12 @@ $wp_customize->add_setting( $prefix.'_speak_general_show',
         'default'           => 1
     )
 );
-$wp_customize->add_control(
-    $prefix.'_speak_general_show',
-    array(
-        'type'          => 'checkbox',
-        'label'         => esc_html__('Show this section?', 'regina-lite'),
-        //'description'   => esc_html__('Speak Show description.', 'regina-lite'),
-        'section'       => $prefix.'_speak_general',
-    )
-);
+$wp_customize->add_control( new Epsilon_Control_Toggle( $wp_customize, $prefix.'_speak_general_show', array(
+    'type'          => 'epsilon-toggle',
+    'label'         => esc_html__('Show this section?', 'regina-lite'),
+    //'description'   => esc_html__('Speak Show description.', 'regina-lite'),
+    'section'       => $prefix.'_speak_general',
+) ) );
 
 /* Title */
 $wp_customize->add_setting($prefix.'_speak_general_title',

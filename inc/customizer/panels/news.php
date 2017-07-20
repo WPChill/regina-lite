@@ -20,14 +20,11 @@ $wp_customize->add_setting( $prefix.'_latest_news_show',
 		'default'           => 1
 	)
 );
-$wp_customize->add_control(
-	$prefix.'_latest_news_show',
-	array(
-		'type'          => 'checkbox',
-		'label'         => esc_html__('Show this section?', 'regina-lite'),
-		'section'       => 'regina_lite_news_general',
-	)
-);
+$wp_customize->add_control( new Epsilon_Control_Toggle( $wp_customize, $prefix.'_latest_news_show', array(
+	'type'          => 'epsilon-toggle',
+	'label'         => esc_html__('Show this section?', 'regina-lite'),
+	'section'       => 'regina_lite_news_general',
+) ) );
 
 
 /* Section Title */
@@ -61,18 +58,13 @@ $wp_customize->add_setting( 'regina_lite_news_section_no_posts_per_slide', array
 		'transport'         => 'refresh',
 	) );
 
-$wp_customize->add_control( 'regina_lite_news_section_no_posts_per_slide', array(
-		'label'   => esc_html__( 'Number of post per slide', 'regina-lite' ),
-		'section' => 'regina_lite_news_general',
-		'default' => 4,
-	) );
-$wp_customize->add_control( 'regina_lite_news_section_no_posts_per_slide', array(
-		'type'    => 'select',
-		'choices' => array(
-			'1' => 1,
-			'2' => 2,
-			'4' => 4,
-		),
-		'label'   => esc_html__( 'Number of post per slide', 'regina-lite' ),
-		'section' => 'regina_lite_news_general',
-	) );
+$wp_customize->add_control( new Epsilon_Control_Slider( $wp_customize, 'regina_lite_news_section_no_posts_per_slide', array(
+	'type'    => 'epsilon-slider',
+	'choices' => array(
+		'min' => 1,
+        'max' => 4,
+        'step' => 1,
+	),
+	'label'   => esc_html__( 'Number of post per slide', 'regina-lite' ),
+	'section' => 'regina_lite_news_general',
+) ) );

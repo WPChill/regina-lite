@@ -191,33 +191,6 @@ if ( ! function_exists( 'regina_lite_get_page_id_by_template' ) ) {
 	}
 }
 
-/**
- *  Upsell
- */
-if ( ! function_exists( 'regina_lite_prefix_upsell_notice' ) ) {
-	/**
-	 * Display upgrade notice on customizer page
-	 *
-	 * @since Riba Lite 1.0.3
-	 */
-	function regina_lite_prefix_upsell_notice() {
-
-		// Enqueue the script
-		wp_enqueue_script( 'regina-lite-customizer-upsell', get_template_directory_uri() . '/inc/customizer/assets/js/upsell/upsell.js', array(), '1.0.0', true );
-
-		// Localize the script
-		wp_localize_script( 'regina-lite-customizer-upsell', 'prefixL10n', array(
-			# Upsell URL
-			'prefixUpsellURL'   => esc_url( 'https://www.machothemes.com/themes/regina-pro/' ),
-			'prefixUpsellLabel' => __( 'View PRO version', 'regina-lite' ),
-
-		) );
-
-	}
-
-	add_action( 'customize_controls_enqueue_scripts', 'regina_lite_prefix_upsell_notice' );
-}
-
 #
 # Custom Excerpt Length
 #

@@ -64,15 +64,12 @@
         )
     );
 
-    $wp_customize->add_control(
-        $prefix.'_enable_site_preloader',
-            array(
-                'type'	=> 'checkbox',
-                'label' => esc_html__('Enable site preloader', 'regina-lite'),
-                'description' => esc_html__('Initial status: enabled', 'regina-lite'),
-                'section' => $prefix.'_advanced_section'
-            )
-    );
+    $wp_customize->add_control( new Epsilon_Control_Toggle( $wp_customize, $prefix.'_enable_site_preloader', array(
+        'type'	=> 'epsilon-toggle',
+        'label' => esc_html__('Enable site preloader', 'regina-lite'),
+        'description' => esc_html__('Initial status: enabled', 'regina-lite'),
+        'section' => $prefix.'_advanced_section'
+    ) ) );
 
 
     // Enable Search Icon in Header
@@ -83,12 +80,9 @@
         )
     );
 
-    $wp_customize->add_control(
-        $prefix . '_enable_site_search_icon',
-            array(
-                'type'          => 'checkbox',
-                'label'         => esc_html__( 'Enable search box in header?', 'regina-lite' ),
-                'description'   => esc_html__( 'Initial status: enabled. If you don\'t like the fact that the search form is shown in the header, un-check this.', 'regina-lite' ),
-                'section'       => $prefix . '_advanced_section'
-            )
-    );
+    $wp_customize->add_control( new Epsilon_Control_Toggle( $wp_customize, $prefix . '_enable_site_search_icon', array(
+        'type'          => 'epsilon-toggle',
+        'label'         => esc_html__( 'Enable search box in header?', 'regina-lite' ),
+        'description'   => esc_html__( 'Initial status: enabled. If you don\'t like the fact that the search form is shown in the header, un-check this.', 'regina-lite' ),
+        'section'       => $prefix . '_advanced_section'
+    ) ) );

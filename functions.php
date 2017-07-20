@@ -248,3 +248,13 @@ function regina_lite_move_comment_field_to_bottom( $fields ) {
 
 	return $fields;
 }
+
+// Add Epsilon Framework
+require_once get_template_directory() . '/inc/libraries/epsilon-framework/class-epsilon-autoloader.php';
+$args = array(
+	'controls' => array( 'slider', 'toggle', 'upsell' ), // array of controls to load
+	'sections' => array( 'recommended-actions' ), // array of sections to load
+	'path'     => '/inc/libraries' // path to your epsilon framework in your theme, e.g. theme-name*/inc/libraries*/epsilon-framework
+);
+
+new Epsilon_Framework( $args );

@@ -64,18 +64,21 @@
 	$wp_customize->add_setting( $prefix . '_order_section', array(
 		'sanitize_callback' => $prefix . '_sanitize_pro_version',
 	) );
-
-	$wp_customize->add_control( new Regina_Lite_Upsell_Render_Panel(
-		$wp_customize,
-		$prefix . '_order_section',
-		array(
-		'section' => $prefix . '_order_section',
-		'choices' => array(
-			'title' => __( 'Drag & Drop section re-ordering is available in the PRO version of Regina.', 'regina-lite'),
-			'show_demo_button' => true,
-			'show_pro_button' => true
-			),
-	) ) );
+    $wp_customize->add_control( new Epsilon_Control_Upsell( $wp_customize, $prefix . '_order_section', array(
+        'section'      => $prefix . '_order_section',
+        'priority'     => 0,
+        'options'      => array(
+            esc_html__( 'Order Homepage Sections', 'regina-lite' ),
+        ),
+        'requirements' => array(
+            esc_html__( 'Drag & Drop section re-ordering is available in the PRO version of Regina.', 'regina-lite' ),
+        ),
+        'button_url'   => esc_url_raw( get_admin_url() . 'themes.php?page=regina-lite-welcome&tab=features' ),
+        'button_text'  => esc_html__( 'See PRO vs Lite', 'regina-lite' ),
+        'second_button_url'  => esc_url_raw( 'https://www.machothemes.com/theme/regina-pro/?utm_source=worg&utm_medium=customizer&utm_campaign=upsell' ),
+        'second_button_text' => esc_html__( 'Get PRO now!', 'regina-lite' ),
+        'separator' => '- or -'
+    ) ) );
 
 
 	// upsell - google maps
@@ -88,18 +91,21 @@
 	$wp_customize->add_setting( $prefix . '_maps_section', array(
 		'sanitize_callback' => $prefix . '_sanitize_pro_version',
 	) );
-
-	$wp_customize->add_control( new Regina_Lite_Upsell_Render_Panel(
-		$wp_customize,
-		$prefix . '_maps_section',
-		array(
-		'section' => $prefix . '_maps_section',
-		'choices' => array(
-			'title' => __( 'Unlimited Google Maps are available in the PRO version of Regina. ', 'regina-lite'),
-			'show_demo_button' => true,
-			'show_pro_button' => true
-		),
-	) ) );
+    $wp_customize->add_control( new Epsilon_Control_Upsell( $wp_customize, $prefix . '_maps_section', array(
+        'section'      => $prefix . '_maps_section',
+        'priority'     => 0,
+        'options'      => array(
+            esc_html__( 'Google Map Sections', 'regina-lite' ),
+        ),
+        'requirements' => array(
+            esc_html__( 'Unlimited Google Maps are available in the PRO version of Regina.', 'regina-lite' ),
+        ),
+        'button_url'   => esc_url_raw( get_admin_url() . 'themes.php?page=regina-lite-welcome&tab=features' ),
+        'button_text'  => esc_html__( 'See PRO vs Lite', 'regina-lite' ),
+        'second_button_url'  => esc_url_raw( 'https://www.machothemes.com/theme/regina-pro/?utm_source=worg&utm_medium=customizer&utm_campaign=upsell' ),
+        'second_button_text' => esc_html__( 'Get PRO now!', 'regina-lite' ),
+        'separator' => '- or -'
+    ) ) );
 
 
     /* Logo */
@@ -316,17 +322,14 @@
         )
     );
 
-    $wp_customize->add_control(
-        $prefix.'_footer_theme_copyright_enable',
-        array(
-            'type' => 'checkbox',
-            'label' => esc_html__( 'Enable footer theme copyright message', 'regina-lite' ),
-            'description' => esc_html__( 'This will display the theme name with a back-link to the site of the theme developers. Leave it if you wish to give credit where it\'s due', 'regina-lite' ),
-            'section'   => $prefix.'_general_footer_section',
-            'settings'   => $prefix.'_footer_theme_copyright_enable',
-            'priority' => 10
-        )
-    );
+    $wp_customize->add_control( new Epsilon_Control_Toggle( $wp_customize, $prefix.'_footer_theme_copyright_enable', array(
+        'type' => 'epsilon-toggle',
+        'label' => esc_html__( 'Enable footer theme copyright message', 'regina-lite' ),
+        'description' => esc_html__( 'This will display the theme name with a back-link to the site of the theme developers. Leave it if you wish to give credit where it\'s due', 'regina-lite' ),
+        'section'   => $prefix.'_general_footer_section',
+        'settings'   => $prefix.'_footer_theme_copyright_enable',
+        'priority' => 10
+    ) ) );
 
     # Footer Copyrigt: Message
     $wp_customize->add_setting( $prefix.'_footer_copyright',
