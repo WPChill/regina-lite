@@ -62,6 +62,7 @@ if ( ! function_exists( 'regina_lite_setup' ) ) :
 			'default-image' => get_template_directory_uri() . '/layout/images/home/slide-1.jpg',
 			'width'         => '1920',
 			'height'        => '560',
+			'header-text'   => false,
 		);
 		add_theme_support( 'custom-header', $custom_header_args );
 
@@ -91,6 +92,13 @@ if ( ! function_exists( 'regina_lite_setup' ) ) :
 		) );
 
 		/*
+         * Add selective refresh
+         */
+		add_theme_support( 'customize-selective-refresh-widgets' );
+
+		
+
+		/*
 		 * Add image sizes
 		 * @link http://codex.wordpress.org/Function_Reference/add_image_size
 		 */
@@ -98,6 +106,11 @@ if ( ! function_exists( 'regina_lite_setup' ) ) :
 		add_image_size( 'regina-lite-related-posts', 230, 231, true );
 		add_image_size( 'regina-lite-homepage-blog-posts', 250, 250, true );
 		add_image_size( 'regina-lite-slider-image-sizes', 1682, 560, true );
+
+		/**
+         *  Next compatible
+         */
+        require get_template_directory() . '/inc/next-compatible.php';
 	}
 
 	add_action( 'after_setup_theme', 'regina_lite_setup' );

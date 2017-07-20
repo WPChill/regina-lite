@@ -259,3 +259,21 @@ if ( ! function_exists( 'regina_lite_get_attachment_id' ) ) {
 		return $attachment_id;
 	}
 }
+
+function regina_lite_the_custom_logo() {
+	
+	if ( function_exists( 'the_custom_logo' ) ) {
+		the_custom_logo();
+	}
+
+}
+
+function regina_lite_has_custom_logo() {
+	
+	if ( function_exists( 'has_custom_logo' ) ) {
+		return has_custom_logo();
+	}else{
+		return false;
+	}
+
+}

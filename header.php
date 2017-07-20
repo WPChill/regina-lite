@@ -16,16 +16,8 @@
 		<div class="row">
 			<div class="col-lg-3 col-sm-12">
 				<div id="logo">
-					<?php
-					$img_logo  = get_theme_mod( 'regina_lite_img_logo' );
-					$text_logo = get_theme_mod( 'regina_lite_text_logo', __( 'Regina Lite', 'regina-lite' ) );
-					?>
-					<a href="<?php echo esc_url( get_site_url() ); ?>" title="<?php echo esc_attr( $text_logo ); ?>">
-						<?php if ( $img_logo ): ?>
-							<img src="<?php echo esc_url( $img_logo ); ?>" alt="<?php esc_attr( get_bloginfo( 'name' ) ); ?>" title="<?php esc_attr( get_bloginfo( 'name' ) ); ?>" />
-						<?php else: ?>
-							<span class="logo-title"><?php echo esc_html( $text_logo ); ?></span>
-						<?php endif; ?>
+					<a href="<?php echo esc_url( get_site_url() ); ?>" title="<?php echo esc_attr( get_bloginfo( 'title' ) ); ?>">
+						<?php regina_lite_custom_logo();  ?>
 					</a>
 				</div><!--#logo-->
 				<button class="mobile-nav-btn hidden-lg"><span class="nc-icon-glyph ui-2_menu-bold"></span></button>
