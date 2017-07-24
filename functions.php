@@ -111,6 +111,38 @@ if ( ! function_exists( 'regina_lite_setup' ) ) :
          *  Next compatible
          */
         require get_template_directory() . '/inc/next-compatible.php';
+
+        /*******************************************/
+		/*************  Welcome screen *************/
+		/*******************************************/
+
+		if ( is_admin() ) {
+
+			global $regina_required_actions, $regina_recommended_plugins;
+			require get_template_directory() . '/inc/libraries/class-regina-notify-system.php';
+
+			$regina_recommended_plugins = array(
+				'kiwi-social-share'        => array(
+					'recommended' => true,
+				),
+				'modula-best-grid-gallery' => array(
+					'recommended' => true,
+				),
+			);
+
+			/*
+             * id - unique id; required
+             * title
+             * description
+             * check - check for plugins (if installed)
+             * plugin_slug - the plugin's slug (used for installing the plugin)
+             *
+             */
+			$regina_required_actions  = array();
+
+			require get_template_directory() . '/inc/libraries/welcome-screen/class-regina-welcome-screen.php';
+		}// End if().
+
 	}
 
 	add_action( 'after_setup_theme', 'regina_lite_setup' );
