@@ -57,6 +57,9 @@ $wp_customize->add_control(
         'section'       => $prefix.'_ourteam_general',
     )
 );
+$wp_customize->selective_refresh->add_partial( $prefix.'_ourteam_general_title', array(
+    'selector' => '#team-section-block .section-info h2',
+) );
 
 /* Description */
 $wp_customize->add_setting($prefix.'_ourteam_general_description',
@@ -73,6 +76,9 @@ $wp_customize->add_control(
         'type'          => 'textarea'
     )
 );
+$wp_customize->selective_refresh->add_partial( $prefix.'_ourteam_general_description', array(
+    'selector' => '#team-section-block .section-info p',
+) );
 
 /***********************************************/
 /************ TEAM MEMBER 1 SECTION ************/

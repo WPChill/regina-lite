@@ -111,6 +111,11 @@
         'settings' => $prefix . '_img_logo'
     ) ) );
 
+    $custom_logo = $wp_customize->get_control( 'custom_logo' );
+    if ( $custom_logo ) {
+        $custom_logo->section = $prefix .'_general_section';
+    }
+
     /***********************************************/
     /************** Contact Details  ***************/
     /***********************************************/
@@ -141,6 +146,10 @@
 			'priority' => 10
 		)
 	);
+    $wp_customize->selective_refresh->add_partial( $prefix.'_contact_bar_facebook_url', array(
+        'selector' => '#sub-header .social-link-list li.regina-facebook',
+        'render_callback' => 'pixova_render_facebook_link',
+    ) );
 
 	/* Twitter URL */
 	$wp_customize->add_setting( $prefix.'_contact_bar_twitter_url',
@@ -159,6 +168,10 @@
 			'priority' => 10
 		)
 	);
+    $wp_customize->selective_refresh->add_partial( $prefix.'_contact_bar_twitter_url', array(
+        'selector' => '#sub-header .social-link-list li.regina-twitter',
+        'render_callback' => 'pixova_render_appointment_link',
+    ) );
 
 	/* YouTube URL */
 	$wp_customize->add_setting( $prefix.'_contact_bar_youtube_url',
@@ -177,6 +190,10 @@
 			'priority' => 10
 		)
 	);
+    $wp_customize->selective_refresh->add_partial( $prefix.'_contact_bar_youtube_url', array(
+        'selector' => '#sub-header .social-link-list li.regina-youtube',
+        'render_callback' => 'pixova_render_youtube_link',
+    ) );
 
 	/* LinkedIN URL */
 	$wp_customize->add_setting( $prefix.'_contact_bar_linkedin_url',
@@ -195,6 +212,10 @@
 			'priority' => 10
 		)
 	);
+    $wp_customize->selective_refresh->add_partial( $prefix.'_contact_bar_linkedin_url', array(
+        'selector' => '#sub-header .social-link-list li.regina-linkedin',
+        'render_callback' => 'pixova_render_linkedin_link',
+    ) );
 
 	/* Instagram URL */
 	$wp_customize->add_setting( $prefix.'_contact_bar_instagram_url',
@@ -213,6 +234,10 @@
 			'priority' => 10
 		)
 	);
+    $wp_customize->selective_refresh->add_partial( $prefix.'_contact_bar_instagram_url', array(
+        'selector' => '#sub-header .social-link-list li.regina-instagram',
+        'render_callback' => 'pixova_render_instagram_link',
+    ) );
 
 
 	/* email */
@@ -232,6 +257,11 @@
             'priority' => 10
         )
     );
+    $wp_customize->selective_refresh->add_partial( $prefix.'_email', array(
+        'selector' => '#sub-header .contact-bar .regina-email a',
+        'container_inclusive' => true,
+        'render_callback' => 'pixova_render_email_link',
+    ) );
 
 
     /* phone number */
@@ -251,24 +281,11 @@
             'priority' => 12
         )
     );
+    $wp_customize->selective_refresh->add_partial( $prefix.'_phone', array(
+        'selector' => '#sub-header .contact-bar .regina-phone',
+    ) );
 
-    /* Book Appointment URL */
-    $wp_customize->add_setting( $prefix.'_contact_bar_bookappointmenturl',
-        array(
-            'sanitize_callback' => 'esc_url',
-            'default' => '#'
-        )
-    );
-
-    $wp_customize->add_control( $prefix.'_contact_bar_bookappointmenturl',
-        array(
-            'label'   => esc_html__( 'Book Appointment URL:', 'regina-lite' ),
-            'description' => esc_html__('Enter the URL you want to use for the book appointment button.', 'regina-lite'),
-            'section' => $prefix.'_general_contact_section',
-            'settings'   => $prefix.'_contact_bar_bookappointmenturl',
-            'priority' => 13
-        )
-    );
+    
 
     /***********************************************/
     /************** Footer Details  ***************/
@@ -300,21 +317,19 @@
     ) ) );
 
     # Footer Copyrigt: Message
-    $wp_customize->add_setting( $prefix.'_footer_copyright',
-        array(
-            'sanitize_callback' => 'sanitize_text_field',
-            'default'           => esc_html__( '&copy; Copyright 2016. All Rights Reserved.', 'regina-lite' )
-        )
-    );
+    $wp_customize->add_setting( $prefix.'_footer_copyright', array(
+        'sanitize_callback' => 'sanitize_text_field',
+        'default'           => esc_html__( '&copy; Copyright 2016. All Rights Reserved.', 'regina-lite' )
+    ) );
 
-    $wp_customize->add_control(
-	    $prefix.'_footer_copyright',
-	        array(
-	            'type'  => 'textarea',
-	            'label'   => esc_html__( 'Footer Copyright.', 'regina-lite' ),
-	            'description' => esc_html__('Will be displayed in the footer', 'regina-lite'),
-	            'section' => $prefix.'_general_footer_section',
-	            'settings'   => $prefix.'_footer_copyright',
-	            'priority' => 11
-	        )
-    );
+    $wp_customize->add_control( $prefix.'_footer_copyright', array(
+        'type'  => 'textarea',
+        'label'   => esc_html__( 'Footer Copyright.', 'regina-lite' ),
+        'description' => esc_html__('Will be displayed in the footer', 'regina-lite'),
+        'section' => $prefix.'_general_footer_section',
+        'settings'   => $prefix.'_footer_copyright',
+        'priority' => 11
+    ) );
+    $wp_customize->selective_refresh->add_partial( $prefix.'_footer_copyright', array(
+        'selector' => '#sub-footer .copyright',
+    ) );

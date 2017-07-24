@@ -62,7 +62,7 @@ $book_appointment_button_label = get_theme_mod( 'regina_lite_book_appointment_bu
 		</div><!--.col-xs-12-->
 		<section id="services-block" class="home content-block">
 			<div class="spacer-5x visible-sm visible-xs"></div>
-			<div class="col-lg-3 col-sm-6">
+			<div class="col-lg-3 col-sm-6 service-1">
 				<div class="service">
 					<div class="icon">
 						<span class="nc-icon-outline health_heartbeat-16"></span>
@@ -80,7 +80,7 @@ $book_appointment_button_label = get_theme_mod( 'regina_lite_book_appointment_bu
 					<?php endif; ?>
 				</div><!--.service-->
 			</div><!--.col-lg-3-->
-			<div class="col-lg-3 col-sm-6">
+			<div class="col-lg-3 col-sm-6 service-2">
 				<div class="service">
 					<div class="icon">
 						<span class="nc-icon-outline food_apple"></span>
@@ -98,7 +98,7 @@ $book_appointment_button_label = get_theme_mod( 'regina_lite_book_appointment_bu
 					<?php endif; ?>
 				</div><!--.service-->
 			</div><!--.col-lg-3-->
-			<div class="col-lg-3 col-sm-6">
+			<div class="col-lg-3 col-sm-6 service-3">
 				<div class="service">
 					<div class="icon">
 						<span class="nc-icon-outline health_hospital-32"></span>
@@ -116,7 +116,7 @@ $book_appointment_button_label = get_theme_mod( 'regina_lite_book_appointment_bu
 					<?php endif; ?>
 				</div><!--.service-->
 			</div><!--.col-lg-3-->
-			<div class="col-lg-3 col-sm-6">
+			<div class="col-lg-3 col-sm-6 service-4">
 				<div class="service">
 					<div class="icon">
 						<span class="nc-icon-outline health_brain"></span>

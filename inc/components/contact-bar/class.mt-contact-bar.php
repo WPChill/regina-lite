@@ -68,20 +68,20 @@ if ( ! class_exists( 'MTL_Contact_Bar_Output' ) ) {
 				echo '<ul class="social-link-list">';
 
 				if ( $this->facebook_url ) {
-					echo '<li><a href="' . esc_url( $this->facebook_url ) . '" title="' . __( 'Facebook', 'regina-lite' ) . '"><span class="nc-icon-glyph socials-1_logo-facebook"></span></a></li>';
+					echo '<li class="regina-facebook"><a href="' . esc_url( $this->facebook_url ) . '" title="' . __( 'Facebook', 'regina-lite' ) . '"><span class="nc-icon-glyph socials-1_logo-facebook"></span></a></li>';
 				}
 				if ( $this->twitter_url ) {
-					echo '<li><a href="' . esc_url( $this->twitter_url ) . '" title="' . __( 'Twitter', 'regina-lite' ) . '"><span class="nc-icon-glyph socials-1_logo-twitter"></span></a></li>';
+					echo '<li class="regina-twitter"><a href="' . esc_url( $this->twitter_url ) . '" title="' . __( 'Twitter', 'regina-lite' ) . '"><span class="nc-icon-glyph socials-1_logo-twitter"></span></a></li>';
 				}
 				if ( $this->linkedin_url ) {
-					echo '<li><a href="' . esc_url( $this->linkedin_url ) . '" title="' . __( 'LinkedIn', 'regina-lite' ) . '"><span class="nc-icon-glyph socials-1_logo-linkedin"></span></a></li>';
+					echo '<li class="regina-linkedin"><a href="' . esc_url( $this->linkedin_url ) . '" title="' . __( 'LinkedIn', 'regina-lite' ) . '"><span class="nc-icon-glyph socials-1_logo-linkedin"></span></a></li>';
 				}
 				if ( $this->youtube_url ) {
-					echo '<li><a href="' . esc_url( $this->youtube_url ) . '" title="' . __( 'YouTube', 'regina-lite' ) . '"><span class="nc-icon-glyph socials-1_logo-youtube"></span></a></li>';
+					echo '<li class="regina-youtube"><a href="' . esc_url( $this->youtube_url ) . '" title="' . __( 'YouTube', 'regina-lite' ) . '"><span class="nc-icon-glyph socials-1_logo-youtube"></span></a></li>';
 				}
 
 				if ( $this->instagram_url ) {
-					echo '<li><a href="' . esc_url( $this->instagram_url ) . '" title="' . __( 'Instagram', 'regina-lite' ) . '"><span class="nc-icon-glyph socials-1_logo-instagram"></span></a></li>';
+					echo '<li class="regina-instagram"><a href="' . esc_url( $this->instagram_url ) . '" title="' . __( 'Instagram', 'regina-lite' ) . '"><span class="nc-icon-glyph socials-1_logo-instagram"></span></a></li>';
 				}
 				echo '</div>';
 				echo '</ul>';
@@ -107,10 +107,10 @@ if ( ! class_exists( 'MTL_Contact_Bar_Output' ) ) {
 				echo '<div class="pull-right">';
 
 				if ( $this->phone_number ) {
-					echo '<p><span class="nc-icon-glyph tech_mobile-button"></span>' . esc_html( $this->phone_number ) . '</p>';
+					echo '<p class="regina-phone"><span class="nc-icon-glyph tech_mobile-button"></span>' . esc_html( $this->phone_number ) . '</p>';
 				}
 				if ( $this->email_addr ) {
-					echo '<p><span class="nc-icon-glyph ui-1_email-83"></span><a href="mailto: ' . sanitize_email( $this->email_addr ) . '">' . sanitize_email( $this->email_addr ) . '</a></p>';
+					echo '<p class="regina-email"><span class="nc-icon-glyph ui-1_email-83"></span><a href="mailto: ' . sanitize_email( $this->email_addr ) . '">' . sanitize_email( $this->email_addr ) . '</a></p>';
 				}
 				echo '</div><!--/.col-sm-7-->';
 

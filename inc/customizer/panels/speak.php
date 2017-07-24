@@ -47,6 +47,9 @@ $wp_customize->add_control(
         'section'       => $prefix.'_speak_general'
     )
 );
+$wp_customize->selective_refresh->add_partial( $prefix.'_speak_general_title', array(
+    'selector' => '#speak-with-our-doctors .section-info h2',
+) );
 
 /* Description */
 $wp_customize->add_setting($prefix.'_speak_general_description',
@@ -64,6 +67,9 @@ $wp_customize->add_control(
         'type'			=> 'textarea'
     )
 );
+$wp_customize->selective_refresh->add_partial( $prefix.'_speak_general_description', array(
+    'selector' => '#speak-with-our-doctors .section-info p',
+) );
 
 /* Button URL */
 $wp_customize->add_setting( $prefix.'_speak_general_buttonurl',
@@ -80,3 +86,8 @@ $wp_customize->add_control( $prefix.'_speak_general_buttonurl',
         'settings'      => $prefix.'_speak_general_buttonurl',
     )
 );
+$wp_customize->selective_refresh->add_partial( $prefix.'_speak_general_buttonurl', array(
+    'selector' => '#speak-with-our-doctors .section-info a',
+    'container_inclusive' => true,
+    'render_callback' => 'pixova_render_spd_link',
+) );

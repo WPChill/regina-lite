@@ -251,6 +251,7 @@ if ( ! function_exists( 'regina_lite_customizer_preview_js' ) ) {
 	 */
 	function regina_lite_customizer_preview_js() {
 		// Customizer preview JS
+		wp_enqueue_style( 'rl-previewer-css', get_template_directory_uri() . '/inc/customizer/assets/css/preview.css' );
 		wp_enqueue_script( 'rl-customizer-script', get_template_directory_uri() . '/inc/customizer/assets/js/customizer.js', array( 'customize-preview' ), '1.0', true );
 	}
 
@@ -263,9 +264,89 @@ if ( ! function_exists( 'regina_lite_customizer_css_load' ) ) {
 	 * Function to load CSS into the customizer
 	 */
 	function regina_lite_customizer_css_load() {
-		wp_enqueue_style( 'mt-customizer-css', get_template_directory_uri() . '/inc/customizer/assets/css/pro/pro-version.css' );
+		wp_enqueue_style( 'mt-customizer-css', get_template_directory_uri() . '/inc/customizer/assets/css/pro-version.css' );
 
 	}
 
 	// add_action( 'customize_controls_print_styles', 'regina_lite_customizer_css_load' );
+}
+
+
+// Partials callback functions
+function pixova_render_appointment_link() {
+	$top_box_bookappointmenturl = $top_box_bookappointmenturl = get_theme_mod( 'regina_lite_top_box_bookappointmenturl' );
+	$book_appointment_button_label = get_theme_mod( 'regina_lite_book_appointment_button_label' );
+
+	return '<a href="' . esc_url( $top_box_bookappointmenturl ) . '" class="button white outline" title="' . esc_attr( $book_appointment_button_label ) . '">' . esc_attr( $book_appointment_button_label ) . '<span class="nc-icon-glyph arrows-1_bold-right"></span></a>';
+}
+
+function pixova_render_feature1_link() {
+	$feature_url   = get_theme_mod( 'regina_lite_features_feature1_buttonurl' );
+	return '<a href="' . esc_url( $features_feature1_buttonurl ) . '" class="link small">' . __( 'Read more', 'regina-lite' ) . '<span class="nc-icon-glyph arrows-1_bold-right"></span></a>';
+}
+
+function pixova_render_feature2_link() {
+	$feature_url   = get_theme_mod( 'regina_lite_features_feature2_buttonurl' );
+	return '<a href="' . esc_url( $features_feature1_buttonurl ) . '" class="link small">' . __( 'Read more', 'regina-lite' ) . '<span class="nc-icon-glyph arrows-1_bold-right"></span></a>';
+}
+
+function pixova_render_feature3_link() {
+	$feature_url   = get_theme_mod( 'regina_lite_features_feature3_buttonurl' );
+	return '<a href="' . esc_url( $features_feature1_buttonurl ) . '" class="link small">' . __( 'Read more', 'regina-lite' ) . '<span class="nc-icon-glyph arrows-1_bold-right"></span></a>';
+}
+
+function pixova_render_feature4_link() {
+	$feature_url   = get_theme_mod( 'regina_lite_features_feature4_buttonurl' );
+	return '<a href="' . esc_url( $features_feature1_buttonurl ) . '" class="link small">' . __( 'Read more', 'regina-lite' ) . '<span class="nc-icon-glyph arrows-1_bold-right"></span></a>';
+}
+
+function pixova_render_testimonial_image1() {
+	$testimonials_general_image = get_theme_mod( 'regina_lite_testimonials_general_image1' );
+	return '<img src="' . esc_url( $testimonials_general_image ) . '" data-original="' . esc_url( $testimonials_general_image ) . '" class="lazy">';
+}
+
+function pixova_render_testimonial_image2() {
+	$testimonials_general_image = get_theme_mod( 'regina_lite_testimonials_general_image2' );
+	return '<img src="' . esc_url( $testimonials_general_image ) . '" data-original="' . esc_url( $testimonials_general_image ) . '" class="lazy">';
+}
+
+function pixova_render_testimonial_image3() {
+	$testimonials_general_image = get_theme_mod( 'regina_lite_testimonials_general_image3' );
+	return '<img src="' . esc_url( $testimonials_general_image ) . '" data-original="' . esc_url( $testimonials_general_image ) . '" class="lazy">';
+}
+
+function pixova_render_testimonial_image4() {
+	$testimonials_general_image = get_theme_mod( 'regina_lite_testimonials_general_image4' );
+	return '<img src="' . esc_url( $testimonials_general_image ) . '" data-original="' . esc_url( $testimonials_general_image ) . '" class="lazy">';
+}
+
+function pixova_render_spd_link() {
+	$speak_general_buttonurl       = get_theme_mod( 'regina_lite_speak_general_buttonurl' );
+	$book_appointment_button_label = get_theme_mod( 'regina_lite_book_appointment_button_label', __( 'Book Appointment', 'regina-lite' ) );
+	return '<a href="' . esc_url( $speak_general_buttonurl ) . '" class="button" title="' . esc_attr( $book_appointment_button_label ) . '">' . esc_html( $book_appointment_button_label ) . '<span class="nc-icon-glyph arrows-1_bold-right"></span></a>';
+}
+
+function pixova_render_facebook_link(){
+	$facebook_url = get_theme_mod( 'regina_lite_contact_bar_facebook_url', '#' );
+	return '<a href="' . esc_url( $facebook_url ) . '" title="' . __( 'Facebook', 'regina-lite' ) . '"><span class="nc-icon-glyph socials-1_logo-facebook"></span></a>';
+}
+function pixova_render_twitter_link(){
+	$twitter_url = get_theme_mod( 'regina_lite_contact_bar_twitter_url', '#' );
+	return '<a href="' . esc_url( $twitter_url ) . '" title="' . __( 'Twitter', 'regina-lite' ) . '"><span class="nc-icon-glyph socials-1_logo-twitter"></span></a>';
+}
+function pixova_render_youtube_link(){
+	$youtube_url = get_theme_mod( 'regina_lite_contact_bar_youtube_url', '#' );
+	return '<a href="' . esc_url( $youtube_url ) . '" title="' . __( 'YouTube', 'regina-lite' ) . '"><span class="nc-icon-glyph socials-1_logo-youtube"></span></a>';
+}
+function pixova_render_linkedin_link(){
+	$linkedin_url = get_theme_mod( 'regina_lite_contact_bar_linkedin_url', '#' );
+	return '<a href="' . esc_url( $linkedin_url ) . '" title="' . __( 'LinkedIn', 'regina-lite' ) . '"><span class="nc-icon-glyph socials-1_logo-linkedin"></span></a>';
+}
+function pixova_render_instagram_link(){
+	$instagram_url = get_theme_mod( 'regina_lite_contact_bar_instagram_url', '#' );
+	return '<a href="' . esc_url( $instagram_url ) . '" title="' . __( 'Instagram', 'regina-lite' ) . '"><span class="nc-icon-glyph socials-1_logo-instagram"></span></a>';
+}
+function pixova_render_email_link(){
+	$email_addr = get_theme_mod( 'regina_lite_email' );
+	return '<a href="mailto: ' . sanitize_email( $email_addr ) . '">' . sanitize_email( $email_addr ) . '</a>';
 }

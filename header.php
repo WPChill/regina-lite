@@ -44,7 +44,7 @@
 						$book_appointment_url          = get_theme_mod( 'regina_lite_contact_bar_bookappointmenturl', '#' );
 						?>
 						<?php if ( ! empty( $book_appointment_url ) ) { ?>
-							<li class="hide-mobile">
+							<li class="hide-mobile appointment-url">
 								<a href="<?php echo $book_appointment_url; ?>" title="<?php echo esc_attr( $book_appointment_button_label ) ?>">
 									<span class="nc-icon-glyph ui-1_bell-53"></span>
 									<?php echo esc_attr( $book_appointment_button_label ); ?>

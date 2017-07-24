@@ -38,6 +38,9 @@ $wp_customize->add_control( 'regina_lite_news_section_title', array(
 		'label'    => esc_html__( 'Section title', 'regina-lite' ),
 		'section'  => 'regina_lite_news_general',
 	) );
+$wp_customize->selective_refresh->add_partial( $prefix.'_news_section_title', array(
+    'selector' => '#section-news .section-info h2',
+) );
 
 /* Section Sub-Title */
 $wp_customize->add_setting( 'regina_lite_news_section_sub_title', array(
@@ -50,6 +53,9 @@ $wp_customize->add_control( 'regina_lite_news_section_sub_title', array(
 		'label'    => esc_html__( 'Section sub-title', 'regina-lite' ),
 		'section'  => 'regina_lite_news_general',
 	) );
+$wp_customize->selective_refresh->add_partial( $prefix.'_news_section_sub_title', array(
+    'selector' => '#section-news .section-info p',
+) );
 
 /* Number of post per slide */
 $wp_customize->add_setting( 'regina_lite_news_section_no_posts_per_slide', array(

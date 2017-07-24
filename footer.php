@@ -60,12 +60,12 @@
         <div class="row">
             <div class="col-xs-12 text-center">
                 <?php
-                    if( $check_footer_theme_copyright_enable == 1 ) {
+                    if( 1 == $check_footer_theme_copyright_enable ) {
                         echo sprintf( 'Theme: <a href="%s" target="_blank" rel="nofollow" title="Regina Lite">Regina Lite</a>', esc_url( 'http://www.machothemes.com/themes/regina-lite/' ) ) . ' &middot; ';
                         echo 'Built by: <a href="https://www.machothemes.com/" rel="dofollow" title="Professional Responsive WordPress Themes">Macho Themes</a> ';
                     }
                     if( $text_footer_theme_copyright_message ) {
-                        echo $text_footer_theme_copyright_message;
+                        echo '<span class="copyright">' . $text_footer_theme_copyright_message . '</span>';
                     }
                 ?>
             </div>

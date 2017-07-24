@@ -55,6 +55,22 @@
 			'type'          => 'text'
 		)
 	);
+    $wp_customize->selective_refresh->add_partial( $prefix.'_book_appointment_button_label', array(
+        'selector' => '#navigation .appointment-url',
+    ) );
+
+    /* Book Appointment URL */
+    $wp_customize->add_setting( $prefix.'_contact_bar_bookappointmenturl', array(
+        'sanitize_callback' => 'esc_url',
+        'default' => '#'
+    ) );
+
+    $wp_customize->add_control( $prefix.'_contact_bar_bookappointmenturl', array(
+        'label'   => esc_html__( 'Book Appointment URL:', 'regina-lite' ),
+        'description' => esc_html__('Enter the URL you want to use for the book appointment button.', 'regina-lite'),
+        'section' => $prefix.'_advanced_section',
+        'settings'   => $prefix.'_contact_bar_bookappointmenturl',
+    ) );
 
     /* Enable Site Preloader*/
     $wp_customize->add_setting( $prefix.'_enable_site_preloader',

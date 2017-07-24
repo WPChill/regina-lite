@@ -57,6 +57,9 @@ $wp_customize->add_control(
         'section'       => $prefix.'_top_box',
     )
 );
+$wp_customize->selective_refresh->add_partial( $prefix.'_top_box_title', array(
+	'selector' => '#call-out h1',
+) );
 
 /* Description */
 $wp_customize->add_setting($prefix.'_top_box_description',
@@ -74,6 +77,9 @@ $wp_customize->add_control(
         'type'          => 'textarea'
     )
 );
+$wp_customize->selective_refresh->add_partial( $prefix.'_top_box_description', array(
+	'selector' => '#call-out p',
+) );
 
 $wp_customize->add_setting( $prefix.'_top_box_bookappointmenturl',
     array(
@@ -90,6 +96,12 @@ $wp_customize->add_control( $prefix.'_top_box_bookappointmenturl',
         'settings'      => $prefix.'_top_box_bookappointmenturl',
     )
 );
+$wp_customize->selective_refresh->add_partial( $prefix.'_top_box_bookappointmenturl', array(
+	'selector' => '#call-out a.button',
+	'container_inclusive' => true,
+	'render_callback' => 'pixova_render_appointment_link',
+) );
+
 
 /***********************************************/
 /************ GENERAL SECTION ******************/
@@ -129,6 +141,9 @@ $wp_customize->add_control(
         'section'       => $prefix.'_features_general',
     )
 );
+$wp_customize->selective_refresh->add_partial( $prefix.'_features_general_title', array(
+	'selector' => '#services-title-block h2',
+) );
 
 /* Description */
 $wp_customize->add_setting($prefix.'_features_general_description',
@@ -145,6 +160,9 @@ $wp_customize->add_control(
         'type'          => 'textarea'
     )
 );
+$wp_customize->selective_refresh->add_partial( $prefix.'_features_general_description', array(
+	'selector' => '#services-title-block p',
+) );
 
 /* Button Text */
 $wp_customize->add_setting($prefix.'_features_general_button_text',
@@ -160,6 +178,9 @@ $wp_customize->add_control(
         'section'       => $prefix.'_features_general',
     )
 );
+$wp_customize->selective_refresh->add_partial( $prefix.'_features_general_button_text', array(
+	'selector' => '#services-block > .col-xs-12 > a.button',
+) );
 
 /* Button URL */
 $wp_customize->add_setting( $prefix.'_features_general_button_url',
@@ -200,6 +221,9 @@ $wp_customize->add_control(
         'section'       => $prefix.'_features_feature1',
     )
 );
+$wp_customize->selective_refresh->add_partial( $prefix.'_features_feature1_title', array(
+	'selector' => '#services-block .service-1 h3',
+) );
 
 /* Description */
 $wp_customize->add_setting($prefix.'_features_feature1_description',
@@ -216,6 +240,9 @@ $wp_customize->add_control(
         'type'          => 'textarea'
     )
 );
+$wp_customize->selective_refresh->add_partial( $prefix.'_features_feature1_description', array(
+	'selector' => '#services-block .service-1 p',
+) );
 
 $wp_customize->add_setting( $prefix.'_features_feature1_buttonurl',
     array(
@@ -230,6 +257,11 @@ $wp_customize->add_control( $prefix.'_features_feature1_buttonurl',
         'settings'      => $prefix.'_features_feature1_buttonurl',
     )
 );
+$wp_customize->selective_refresh->add_partial( $prefix.'_features_feature1_buttonurl', array(
+	'selector' => '#services-block .service-1 a.link',
+	'container_inclusive' => true,
+	'render_callback' => 'pixova_render_feature1_link',
+) );
 
 $wp_customize->add_setting( $prefix . '_feature_1_pro', array(
     'sanitize_callback' => $prefix . '_sanitize_pro_version',
@@ -273,6 +305,9 @@ $wp_customize->add_control(
         'section'       => $prefix.'_features_feature2',
     )
 );
+$wp_customize->selective_refresh->add_partial( $prefix.'_features_feature2_title', array(
+	'selector' => '#services-block .service-2 h3',
+) );
 
 /* Description */
 $wp_customize->add_setting($prefix.'_features_feature2_description',
@@ -289,6 +324,9 @@ $wp_customize->add_control(
         'type'          => 'textarea'
     )
 );
+$wp_customize->selective_refresh->add_partial( $prefix.'_features_feature2_description', array(
+	'selector' => '#services-block .service-2 p',
+) );
 
 $wp_customize->add_setting( $prefix.'_features_feature2_buttonurl',
     array(
@@ -303,6 +341,11 @@ $wp_customize->add_control( $prefix.'_features_feature2_buttonurl',
         'settings'      => $prefix.'_features_feature2_buttonurl',
     )
 );
+$wp_customize->selective_refresh->add_partial( $prefix.'_features_feature2_buttonurl', array(
+	'selector' => '#services-block .service-2 a.link',
+	'container_inclusive' => true,
+	'render_callback' => 'pixova_render_feature2_link',
+) );
 
 $wp_customize->add_setting( $prefix . '_feature_2_pro', array(
     'sanitize_callback' => $prefix . '_sanitize_pro_version',
@@ -346,6 +389,9 @@ $wp_customize->add_control(
         'section'       => $prefix.'_features_feature3',
     )
 );
+$wp_customize->selective_refresh->add_partial( $prefix.'_features_feature3_title', array(
+	'selector' => '#services-block .service-3 h3',
+) );
 
 /* Description */
 $wp_customize->add_setting($prefix.'_features_feature3_description',
@@ -362,6 +408,9 @@ $wp_customize->add_control(
         'type'          => 'textarea'
     )
 );
+$wp_customize->selective_refresh->add_partial( $prefix.'_features_feature3_description', array(
+	'selector' => '#services-block .service-3 p',
+) );
 
 $wp_customize->add_setting( $prefix.'_features_feature3_buttonurl',
     array(
@@ -376,6 +425,11 @@ $wp_customize->add_control( $prefix.'_features_feature3_buttonurl',
         'settings'      => $prefix.'_features_feature3_buttonurl',
     )
 );
+$wp_customize->selective_refresh->add_partial( $prefix.'_features_feature3_buttonurl', array(
+	'selector' => '#services-block .service-3 a.link',
+	'container_inclusive' => true,
+	'render_callback' => 'pixova_render_feature3_link',
+) );
 
 $wp_customize->add_setting( $prefix . '_feature_3_pro', array(
     'sanitize_callback' => $prefix . '_sanitize_pro_version',
@@ -419,6 +473,9 @@ $wp_customize->add_control(
         'section'       => $prefix.'_features_feature4',
     )
 );
+$wp_customize->selective_refresh->add_partial( $prefix.'_features_feature4_title', array(
+	'selector' => '#services-block .service-4 h3',
+) );
 
 /* Description */
 $wp_customize->add_setting($prefix.'_features_feature4_description',
@@ -435,6 +492,9 @@ $wp_customize->add_control(
         'type'          => 'textarea'
     )
 );
+$wp_customize->selective_refresh->add_partial( $prefix.'_features_feature4_description', array(
+	'selector' => '#services-block .service-4 p',
+) );
 
 $wp_customize->add_setting( $prefix.'_features_feature4_buttonurl',
     array(
@@ -449,6 +509,11 @@ $wp_customize->add_control( $prefix.'_features_feature4_buttonurl',
         'settings'      => $prefix.'_features_feature4_buttonurl',
     )
 );
+$wp_customize->selective_refresh->add_partial( $prefix.'_features_feature4_buttonurl', array(
+	'selector' => '#services-block .service-4 a.link',
+	'container_inclusive' => true,
+	'render_callback' => 'pixova_render_feature4_link',
+) );
 
 $wp_customize->add_setting( $prefix . '_feature_4_pro', array(
     'sanitize_callback' => $prefix . '_sanitize_pro_version',

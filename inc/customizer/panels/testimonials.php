@@ -61,6 +61,10 @@ $wp_customize->add_control( new WP_Customize_Image_Control(
         ) 
     ) 
 );
+$wp_customize->selective_refresh->add_partial( $prefix.'_testimonials_general_image1', array(
+    'selector' => '#home-testimonials .testimonial-image-1',
+    'render_callback' => 'pixova_render_testimonial_image1',
+) );
 
 /* Image #2 */
 $wp_customize->add_setting( $prefix . '_testimonials_general_image2', array( 'default' => get_template_directory_uri() . '/layout/images/home/testimonial-2.jpg', 'sanitize_callback' => 'esc_url_raw' ) );
@@ -69,6 +73,10 @@ $wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, $pref
     'section'  => $prefix.'_testimonials_general',
     'settings' => $prefix . '_testimonials_general_image2',
 ) ) );
+$wp_customize->selective_refresh->add_partial( $prefix.'_testimonials_general_image2', array(
+    'selector' => '#home-testimonials .testimonial-image-2',
+    'render_callback' => 'pixova_render_testimonial_image2',
+) );
 
 /* Image #3 */
 $wp_customize->add_setting( $prefix . '_testimonials_general_image3', array( 'default' => get_template_directory_uri() . '/layout/images/home/testimonial-3.jpg', 'sanitize_callback' => 'esc_url_raw' ) );
@@ -77,6 +85,10 @@ $wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, $pref
     'section'  => $prefix.'_testimonials_general',
     'settings' => $prefix . '_testimonials_general_image3',
 ) ) );
+$wp_customize->selective_refresh->add_partial( $prefix.'_testimonials_general_image3', array(
+    'selector' => '#home-testimonials .testimonial-image-3',
+    'render_callback' => 'pixova_render_testimonial_image3',
+) );
 
 /* Image #4 */
 $wp_customize->add_setting( $prefix . '_testimonials_general_image4', array( 'default' => get_template_directory_uri() . '/layout/images/home/testimonial-4.jpg', 'sanitize_callback' => 'esc_url_raw' ) );
@@ -85,6 +97,10 @@ $wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, $pref
     'section'  => $prefix.'_testimonials_general',
     'settings' => $prefix . '_testimonials_general_image4',
 ) ) );
+$wp_customize->selective_refresh->add_partial( $prefix.'_testimonials_general_image4', array(
+    'selector' => '#home-testimonials .testimonial-image-4',
+    'render_callback' => 'pixova_render_testimonial_image4',
+) );
 
 /***********************************************/
 /************ TESTIMONIAL #1 SECTION ***********/
@@ -114,6 +130,7 @@ $wp_customize->add_control(
     )
 );
 
+
 /* Image */
 $wp_customize->add_setting( $prefix . '_testimonials_testimonial1_image', array( 'default' => get_template_directory_uri() . '/layout/images/home/testimonial-quote.jpg', 'sanitize_callback' => 'esc_url_raw' ) );
 $wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, $prefix . '_testimonials_testimonial1_image', array(
@@ -121,6 +138,7 @@ $wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, $pref
     'section'  => $prefix.'_testimonials_testimonial1',
     'settings' => $prefix . '_testimonials_testimonial1_image',
 ) ) );
+
 
 /* Name */
 $wp_customize->add_setting($prefix.'_testimonials_testimonial1_name',
@@ -138,6 +156,7 @@ $wp_customize->add_control(
     )
 );
 
+
 /* Position */
 $wp_customize->add_setting($prefix.'_testimonials_testimonial1_position',
     array(
@@ -153,6 +172,7 @@ $wp_customize->add_control(
         'section'       => $prefix.'_testimonials_testimonial1'
     )
 );
+
 
 /***********************************************/
 /************ TESTIMONIAL #2 SECTION ***********/

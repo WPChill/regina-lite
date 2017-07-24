@@ -35,35 +35,35 @@ $testimonials_testimonial5_position    = get_theme_mod( 'regina_lite_testimonial
 
 $image_id_1 = regina_lite_get_attachment_id( $testimonials_testimonial1_image );
 // get image meta by ID
-$image_meta_1 = get_post_meta( $image_id_1 );
+$image_alt_1 = get_post_meta( $image_id_1, '_wp_attachment_image_alt', true );
 
 $image_id_2 = regina_lite_get_attachment_id( $testimonials_testimonial2_image );
 // get image meta by ID
-$image_meta_2 = get_post_meta( $image_id_2 );
+$image_alt_2 = get_post_meta( $image_id_2, '_wp_attachment_image_alt', true );
 
 $image_id_3 = regina_lite_get_attachment_id( $testimonials_testimonial3_image );
 // get image meta by ID
-$image_meta_3 = get_post_meta( $image_id_3 );
+$image_alt_3 = get_post_meta( $image_id_3, '_wp_attachment_image_alt', true );
 
 $image_id_4 = regina_lite_get_attachment_id( $testimonials_testimonial4_image );
 // get image meta by ID
-$image_meta_4 = get_post_meta( $image_id_4 );
+$image_alt_4 = get_post_meta( $image_id_4, '_wp_attachment_image_alt', true );
 
 $image_id_general_1 = regina_lite_get_attachment_id( $testimonials_general_image1 );
 // get image meta by ID
-$image_meta_general_1 = get_post_meta( $image_id_general_1 );
+$image_alt_general_1 = get_post_meta( $image_id_general_1, '_wp_attachment_image_alt', true );
 
 $image_id_general_2 = regina_lite_get_attachment_id( $testimonials_general_image2 );
 // get image meta by ID
-$image_meta_general_2 = get_post_meta( $image_id_general_2 );
+$image_alt_general_2 = get_post_meta( $image_id_general_2, '_wp_attachment_image_alt', true );
 
 $image_id_general_3 = regina_lite_get_attachment_id( $testimonials_general_image3 );
 // get image meta by ID
-$image_meta_general_3 = get_post_meta( $image_id_general_3 );
+$image_alt_general_3 = get_post_meta( $image_id_general_3, '_wp_attachment_image_alt', true );
 
 $image_id_general_4 = regina_lite_get_attachment_id( $testimonials_general_image4 );
 // get image meta by ID
-$image_meta_general_4 = get_post_meta( $image_id_general_4 );
+$image_alt_general_4 = get_post_meta( $image_id_general_4, '_wp_attachment_image_alt', true );
 
 
 ?>
@@ -73,12 +73,12 @@ $image_meta_general_4 = get_post_meta( $image_id_general_4 );
 		<div id="testimonials-slider">
 			<ul class="bxslider">
 				<?php if ( $testimonials_testimonial1_description || $testimonials_testimonial1_image || $testimonials_testimonial1_name || $testimonials_testimonial1_position ): ?>
-					<li>
+					<li class="testimonial-1">
 						<?php if ( $testimonials_testimonial1_description ): ?>
 							<p class="quote"><?php echo esc_html( $testimonials_testimonial1_description ); ?></p>
 						<?php endif; ?>
 						<?php if ( $testimonials_testimonial1_image ): ?>
-							<img src="<?php echo esc_url( $testimonials_testimonial1_image ); ?>" alt="<?php echo esc_attr( $image_meta_1['_wp_attachment_image_alt']['0'] ); ?>" width="90">
+							<img src="<?php echo esc_url( $testimonials_testimonial1_image ); ?>" alt="<?php echo esc_attr( $image_alt_1 ); ?>" width="90">
 						<?php endif; ?>
 						<?php if ( $testimonials_testimonial1_name ): ?>
 							<h5 class="name"><?php echo esc_html( $testimonials_testimonial1_name ); ?></h5>
@@ -89,12 +89,12 @@ $image_meta_general_4 = get_post_meta( $image_id_general_4 );
 					</li>
 				<?php endif; ?>
 				<?php if ( $testimonials_testimonial2_description || $testimonials_testimonial2_image || $testimonials_testimonial2_name || $testimonials_testimonial2_position ): ?>
-					<li>
+					<li class="testimonial-2">
 						<?php if ( $testimonials_testimonial2_description ): ?>
 							<p class="quote"><?php echo esc_html( $testimonials_testimonial2_description ); ?></p>
 						<?php endif; ?>
 						<?php if ( $testimonials_testimonial2_image ): ?>
-							<img src="<?php echo esc_url( $testimonials_testimonial2_image ); ?>" alt="<?php echo esc_attr( $image_meta_2['_wp_attachment_image_alt']['0'] ); ?>" width="90">
+							<img src="<?php echo esc_url( $testimonials_testimonial2_image ); ?>" alt="<?php echo esc_attr( $image_alt_2 ); ?>" width="90">
 						<?php endif; ?>
 						<?php if ( $testimonials_testimonial2_name ): ?>
 							<h5 class="name"><?php echo esc_html( $testimonials_testimonial2_name ); ?></h5>
@@ -105,12 +105,12 @@ $image_meta_general_4 = get_post_meta( $image_id_general_4 );
 					</li>
 				<?php endif; ?>
 				<?php if ( $testimonials_testimonial3_description || $testimonials_testimonial3_image || $testimonials_testimonial3_name || $testimonials_testimonial3_position ): ?>
-					<li>
+					<li class="testimonial-3">
 						<?php if ( $testimonials_testimonial3_description ): ?>
 							<p class="quote"><?php echo esc_html( $testimonials_testimonial3_description ); ?></p>
 						<?php endif; ?>
 						<?php if ( $testimonials_testimonial3_image ): ?>
-							<img src="<?php echo esc_url( $testimonials_testimonial3_image ); ?>" alt="<?php echo esc_attr( $image_meta_3['_wp_attachment_image_alt']['0'] ); ?>" width="90">
+							<img src="<?php echo esc_url( $testimonials_testimonial3_image ); ?>" alt="<?php echo esc_attr( $image_alt_3 ); ?>" width="90">
 						<?php endif; ?>
 						<?php if ( $testimonials_testimonial3_name ): ?>
 							<h5 class="name"><?php echo esc_html( $testimonials_testimonial3_name ); ?></h5>
@@ -121,12 +121,12 @@ $image_meta_general_4 = get_post_meta( $image_id_general_4 );
 					</li>
 				<?php endif; ?>
 				<?php if ( $testimonials_testimonial4_description || $testimonials_testimonial4_image || $testimonials_testimonial4_name || $testimonials_testimonial4_position ): ?>
-					<li>
+					<li class="testimonial-4">
 						<?php if ( $testimonials_testimonial4_description ): ?>
 							<p class="quote"><?php echo esc_html( $testimonials_testimonial4_description ); ?></p>
 						<?php endif; ?>
 						<?php if ( $testimonials_testimonial4_image ): ?>
-							<img src="<?php echo esc_url( $testimonials_testimonial4_image ); ?>" alt="<?php echo esc_attr( $image_meta_4['_wp_attachment_image_alt']['0'] ); ?>" width="90">
+							<img src="<?php echo esc_url( $testimonials_testimonial4_image ); ?>" alt="<?php echo esc_attr( $image_alt_4 ); ?>" width="90">
 						<?php endif; ?>
 						<?php if ( $testimonials_testimonial4_name ): ?>
 							<h5 class="name"><?php echo esc_html( $testimonials_testimonial4_name ); ?></h5>
@@ -137,12 +137,12 @@ $image_meta_general_4 = get_post_meta( $image_id_general_4 );
 					</li>
 				<?php endif; ?>
 				<?php if ( $testimonials_testimonial5_description || $testimonials_testimonial5_image || $testimonials_testimonial5_name || $testimonials_testimonial5_position ): ?>
-					<li>
+					<li class="testimonial-5">
 						<?php if ( $testimonials_testimonial5_description ): ?>
 							<p class="quote"><?php echo esc_html( $testimonials_testimonial5_description ); ?></p>
 						<?php endif; ?>
 						<?php if ( $testimonials_testimonial5_image ): ?>
-							<img src="<?php echo esc_url( $testimonials_testimonial5_image ); ?>" alt="<?php if ( $testimonials_testimonial5_name ): echo esc_attr( $testimonials_testimonial5_name ); endif; ?>" title="<?php if ( $testimonials_testimonial5_name ): echo esc_attr( $testimonials_testimonial5_name ); endif; ?>" width="90">
+							<img src="<?php echo esc_url( $testimonials_testimonial5_image ); ?>" alt="<?php echo esc_attr( $image_alt_4 ); ?>" width="90">
 						<?php endif; ?>
 						<?php if ( $testimonials_testimonial5_name ): ?>
 							<h5 class="name"><?php echo esc_html( $testimonials_testimonial5_name ); ?></h5>
@@ -157,23 +157,23 @@ $image_meta_general_4 = get_post_meta( $image_id_general_4 );
 	</div><!--.testimonials-->
 	<ul class="images">
 		<?php if ( $testimonials_general_image1 ): ?>
-			<li>
-				<img src="<?php echo esc_url( $testimonials_general_image1 ); ?>" data-original="<?php echo esc_url( $testimonials_general_image1 ); ?>" alt="<?php echo esc_attr( $image_meta_general_1['_wp_attachment_image_alt']['0'] ); ?>" class="lazy">
+			<li class="testimonial-image-1">
+				<img src="<?php echo esc_url( $testimonials_general_image1 ); ?>" data-original="<?php echo esc_url( $testimonials_general_image1 ); ?>" alt="<?php echo esc_attr( $image_alt_general_1 ); ?>" class="lazy">
 			</li>
 		<?php endif; ?>
 		<?php if ( $testimonials_general_image2 ): ?>
-			<li>
-				<img src="<?php echo esc_url( $testimonials_general_image2 ); ?>" data-original="<?php echo esc_url( $testimonials_general_image2 ); ?>" alt="<?php echo esc_attr( $image_meta_general_2['_wp_attachment_image_alt']['0'] ); ?>" class="lazy">
+			<li class="testimonial-image-2">
+				<img src="<?php echo esc_url( $testimonials_general_image2 ); ?>" data-original="<?php echo esc_url( $testimonials_general_image2 ); ?>" alt="<?php echo esc_attr( $image_alt_general_2 ); ?>" class="lazy">
 			</li>
 		<?php endif; ?>
 		<?php if ( $testimonials_general_image3 ): ?>
-			<li>
-				<img src="<?php echo esc_url( $testimonials_general_image3 ); ?>" data-original="<?php echo esc_url( $testimonials_general_image3 ); ?>" alt="<?php echo esc_attr( $image_meta_general_3['_wp_attachment_image_alt']['0'] ); ?>" class="lazy">
+			<li class="testimonial-image-3">
+				<img src="<?php echo esc_url( $testimonials_general_image3 ); ?>" data-original="<?php echo esc_url( $testimonials_general_image3 ); ?>" alt="<?php echo esc_attr( $image_alt_general_3 ); ?>" class="lazy">
 			</li>
 		<?php endif; ?>
 		<?php if ( $testimonials_general_image4 ): ?>
-			<li>
-				<img src="<?php echo esc_url( $testimonials_general_image4 ); ?>" data-original="<?php echo esc_url( $testimonials_general_image4 ); ?>" alt="<?php echo esc_attr( $image_meta_general_4['_wp_attachment_image_alt']['0'] ); ?>" class="lazy">
+			<li class="testimonial-image-4">
+				<img src="<?php echo esc_url( $testimonials_general_image4 ); ?>" data-original="<?php echo esc_url( $testimonials_general_image4 ); ?>" alt="<?php echo esc_attr( $image_alt_general_4 ); ?>" class="lazy">
 			</li>
 		<?php endif; ?>
 	</ul>
