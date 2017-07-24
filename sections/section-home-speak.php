@@ -11,15 +11,15 @@ $book_appointment_button_label = get_theme_mod( 'regina_lite_book_appointment_bu
 		<div class="row">
 			<div class="col-xs-12">
 				<div class="section-info">
-					<?php if ( $speak_general_title ): ?>
+					<?php if ( $speak_general_title ) : ?>
 						<h2><?php echo esc_html( $speak_general_title ); ?></h2>
 						<hr>
 					<?php endif; ?>
-					<?php if ( $speak_general_description ): ?>
+					<?php if ( $speak_general_description ) : ?>
 						<p><?php echo esc_html( $speak_general_description ); ?></p>
 					<?php endif; ?>
 					<br>
-					<?php if ( $speak_general_buttonurl ): ?>
+					<?php if ( $speak_general_buttonurl ) : ?>
 						<a href="<?php echo esc_url( $speak_general_buttonurl ); ?>" class="button" title="<?php echo esc_attr( $book_appointment_button_label ); ?>"><?php echo esc_attr( $book_appointment_button_label ); ?>
 							<span class="nc-icon-glyph arrows-1_bold-right"></span></a>
 					<?php endif; ?>

@@ -8,17 +8,12 @@ function regina_lite_customize_register( $wp_customize ) {
 	$wp_customize->get_setting( 'blogname' )->transport        = 'postMessage';
 	$wp_customize->get_setting( 'blogdescription' )->transport = 'postMessage';
 
-
 	/**********************************************/
 	/*************** INIT ************************/
 	/**********************************************/
 
 	# Include Custom Controls
-	require get_template_directory() . '/inc/customizer/custom-controls/pro-controls-selector.php';
-	require get_template_directory() . '/inc/customizer/custom-controls/radio-img-selector.php';
-	require get_template_directory() . '/inc/customizer/custom-controls/slider-selector.php';
 	require get_template_directory() . '/inc/customizer/custom-controls/class-regina-custom-panel.php';
-
 
 	// Recomended actions
 	global $regina_required_actions, $regina_recommended_plugins;
@@ -50,7 +45,6 @@ function regina_lite_customize_register( $wp_customize ) {
 		'wp_review'                    => true,
 		'priority'                     => 0,
 	) ) );
-	
 
 	#
 	# Main Upsell features
@@ -59,7 +53,7 @@ function regina_lite_customize_register( $wp_customize ) {
 	$wp_customize->add_section( $prefix . '_color_controls', array(
 		'title'    => __( 'Color Controls', 'regina-lite' ),
 		'priority' => 0,
-		'panel' => 'regina_lite_panel_general'
+		'panel' => 'regina_lite_panel_general',
 	) );
 
 	$wp_customize->add_setting( $prefix . '_color_controls', array(
@@ -67,20 +61,20 @@ function regina_lite_customize_register( $wp_customize ) {
 	) );
 
 	$wp_customize->add_control( new Epsilon_Control_Upsell( $wp_customize, $prefix . '_color_controls', array(
-        'section'      => $prefix . '_color_controls',
-        'priority'     => 0,
-        'options'      => array(
-            esc_html__( 'More Color Options', 'regina-lite' ),
-        ),
-        'requirements' => array(
-            esc_html__( 'The PRO version of Regina allows for a greater degree of customisability. Get multiple professionally designed color schemes with the purchase of the PRO version. ', 'regina-lite' ),
-        ),
-        'button_url'   => esc_url_raw( get_admin_url() . 'themes.php?page=regina-lite-welcome&tab=features' ),
-        'button_text'  => esc_html__( 'See PRO vs Lite', 'regina-lite' ),
-        'second_button_url'  => esc_url_raw( 'https://www.machothemes.com/theme/regina-pro/?utm_source=worg&utm_medium=customizer&utm_campaign=upsell' ),
-        'second_button_text' => esc_html__( 'Get PRO now!', 'regina-lite' ),
-        'separator' => '- or -'
-    ) ) );
+		'section'      => $prefix . '_color_controls',
+		'priority'     => 0,
+		'options'      => array(
+			esc_html__( 'More Color Options', 'regina-lite' ),
+		),
+		'requirements' => array(
+			esc_html__( 'The PRO version of Regina allows for a greater degree of customisability. Get multiple professionally designed color schemes with the purchase of the PRO version. ', 'regina-lite' ),
+		),
+		'button_url'   => esc_url_raw( get_admin_url() . 'themes.php?page=regina-lite-welcome&tab=features' ),
+		'button_text'  => esc_html__( 'See PRO vs Lite', 'regina-lite' ),
+		'second_button_url'  => esc_url_raw( 'https://www.machothemes.com/theme/regina-pro/?utm_source=worg&utm_medium=customizer&utm_campaign=upsell' ),
+		'second_button_text' => esc_html__( 'Get PRO now!', 'regina-lite' ),
+		'separator' => '- or -',
+	) ) );
 
 	#
 	# END Up Sell Features
@@ -100,29 +94,27 @@ function regina_lite_customize_register( $wp_customize ) {
 	$wp_customize->add_section( $prefix . '_maps_section', array(
 		'title'    => __( 'Google Maps', 'regina-lite' ),
 		'priority' => 60,
-		'panel' => 'regina_lite_frontpage_sections'
+		'panel' => 'regina_lite_frontpage_sections',
 	) );
 
 	$wp_customize->add_setting( $prefix . '_maps_section', array(
 		'sanitize_callback' => $prefix . '_sanitize_pro_version',
 	) );
-    $wp_customize->add_control( new Epsilon_Control_Upsell( $wp_customize, $prefix . '_maps_section', array(
-        'section'      => $prefix . '_maps_section',
-        'priority'     => 0,
-        'options'      => array(
-            esc_html__( 'Google Map Sections', 'regina-lite' ),
-        ),
-        'requirements' => array(
-            esc_html__( 'Unlimited Google Maps are available in the PRO version of Regina.', 'regina-lite' ),
-        ),
-        'button_url'   => esc_url_raw( get_admin_url() . 'themes.php?page=regina-lite-welcome&tab=features' ),
-        'button_text'  => esc_html__( 'See PRO vs Lite', 'regina-lite' ),
-        'second_button_url'  => esc_url_raw( 'https://www.machothemes.com/theme/regina-pro/?utm_source=worg&utm_medium=customizer&utm_campaign=upsell' ),
-        'second_button_text' => esc_html__( 'Get PRO now!', 'regina-lite' ),
-        'separator' => '- or -'
-    ) ) );
-
-
+	$wp_customize->add_control( new Epsilon_Control_Upsell( $wp_customize, $prefix . '_maps_section', array(
+		'section'      => $prefix . '_maps_section',
+		'priority'     => 0,
+		'options'      => array(
+			esc_html__( 'Google Map Sections', 'regina-lite' ),
+		),
+		'requirements' => array(
+			esc_html__( 'Unlimited Google Maps are available in the PRO version of Regina.', 'regina-lite' ),
+		),
+		'button_url'   => esc_url_raw( get_admin_url() . 'themes.php?page=regina-lite-welcome&tab=features' ),
+		'button_text'  => esc_html__( 'See PRO vs Lite', 'regina-lite' ),
+		'second_button_url'  => esc_url_raw( 'https://www.machothemes.com/theme/regina-pro/?utm_source=worg&utm_medium=customizer&utm_campaign=upsell' ),
+		'second_button_text' => esc_html__( 'Get PRO now!', 'regina-lite' ),
+		'separator' => '- or -',
+	) ) );
 
 	/* General Site Panel */
 	require_once get_template_directory() . '/inc/customizer/panels/site.php';
@@ -180,7 +172,7 @@ if ( ! function_exists( 'regina_lite_sanitize_file_url' ) ) {
 		$output = '';
 
 		$filetype = wp_check_filetype( $url );
-		if ( $filetype["ext"] ) {
+		if ( $filetype['ext'] ) {
 			$output = esc_url( $url );
 		}
 
@@ -220,7 +212,7 @@ if ( ! function_exists( 'regina_lite_sanitize_checkbox' ) ) {
 	 * @return int
 	 */
 	function regina_lite_sanitize_checkbox( $value ) {
-		if ( $value == 1 ) {
+		if ( 1 == $value ) {
 			return 1;
 		} else {
 			return 0;
@@ -246,7 +238,7 @@ if ( ! function_exists( 'regina_lite_customizer_js_load' ) ) {
 			'jquery',
 			'customize-controls',
 		), '1.0', true );
-		
+
 	}
 
 	add_action( 'customize_controls_enqueue_scripts', 'regina_lite_customizer_js_load' );
@@ -274,14 +266,12 @@ if ( ! function_exists( 'regina_lite_customizer_css_load' ) ) {
 		wp_enqueue_style( 'mt-customizer-css', get_template_directory_uri() . '/inc/customizer/assets/css/pro-version.css' );
 
 	}
-
-	// add_action( 'customize_controls_print_styles', 'regina_lite_customizer_css_load' );
 }
 
 
 // Partials callback functions
 function regina_render_appointment_link() {
-	$top_box_bookappointmenturl = $top_box_bookappointmenturl = get_theme_mod( 'regina_lite_top_box_bookappointmenturl' );
+	$top_box_bookappointmenturl = get_theme_mod( 'regina_lite_top_box_bookappointmenturl' );
 	$book_appointment_button_label = get_theme_mod( 'regina_lite_book_appointment_button_label' );
 
 	return '<a href="' . esc_url( $top_box_bookappointmenturl ) . '" class="button white outline" title="' . esc_attr( $book_appointment_button_label ) . '">' . esc_attr( $book_appointment_button_label ) . '<span class="nc-icon-glyph arrows-1_bold-right"></span></a>';
@@ -333,27 +323,27 @@ function regina_render_spd_link() {
 	return '<a href="' . esc_url( $speak_general_buttonurl ) . '" class="button" title="' . esc_attr( $book_appointment_button_label ) . '">' . esc_html( $book_appointment_button_label ) . '<span class="nc-icon-glyph arrows-1_bold-right"></span></a>';
 }
 
-function regina_render_facebook_link(){
+function regina_render_facebook_link() {
 	$facebook_url = get_theme_mod( 'regina_lite_contact_bar_facebook_url', '#' );
 	return '<a href="' . esc_url( $facebook_url ) . '" title="' . __( 'Facebook', 'regina-lite' ) . '"><span class="nc-icon-glyph socials-1_logo-facebook"></span></a>';
 }
-function regina_render_twitter_link(){
+function regina_render_twitter_link() {
 	$twitter_url = get_theme_mod( 'regina_lite_contact_bar_twitter_url', '#' );
 	return '<a href="' . esc_url( $twitter_url ) . '" title="' . __( 'Twitter', 'regina-lite' ) . '"><span class="nc-icon-glyph socials-1_logo-twitter"></span></a>';
 }
-function regina_render_youtube_link(){
+function regina_render_youtube_link() {
 	$youtube_url = get_theme_mod( 'regina_lite_contact_bar_youtube_url', '#' );
 	return '<a href="' . esc_url( $youtube_url ) . '" title="' . __( 'YouTube', 'regina-lite' ) . '"><span class="nc-icon-glyph socials-1_logo-youtube"></span></a>';
 }
-function regina_render_linkedin_link(){
+function regina_render_linkedin_link() {
 	$linkedin_url = get_theme_mod( 'regina_lite_contact_bar_linkedin_url', '#' );
 	return '<a href="' . esc_url( $linkedin_url ) . '" title="' . __( 'LinkedIn', 'regina-lite' ) . '"><span class="nc-icon-glyph socials-1_logo-linkedin"></span></a>';
 }
-function regina_render_instagram_link(){
+function regina_render_instagram_link() {
 	$instagram_url = get_theme_mod( 'regina_lite_contact_bar_instagram_url', '#' );
 	return '<a href="' . esc_url( $instagram_url ) . '" title="' . __( 'Instagram', 'regina-lite' ) . '"><span class="nc-icon-glyph socials-1_logo-instagram"></span></a>';
 }
-function regina_render_email_link(){
+function regina_render_email_link() {
 	$email_addr = get_theme_mod( 'regina_lite_email' );
 	return '<a href="mailto: ' . sanitize_email( $email_addr ) . '">' . sanitize_email( $email_addr ) . '</a>';
 }

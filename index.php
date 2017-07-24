@@ -15,26 +15,26 @@
 <?php get_header(); ?>
 <?php get_template_part( 'sections/section', 'page-header' ); ?>
 <div class="container">
-    <div class="row">
-        <?php get_template_part( 'sections/section', 'breadcrumb' ); ?>
-        <section id="blog">
-            <div class="col-md-8">
-                <?php
-                if( have_posts() ):
-                    while( have_posts() ):
-                        the_post();
-                        do_action('mtl_inside_loop_before');
-                        get_template_part( 'template-parts/content', get_post_format() );
-                        do_action('mtl_inside_loop_after');
-                    endwhile;
-                else:
-                    get_template_part( 'template-parts/content', 'none' );
-                endif;
-                do_action('mtl_after_content_above_footer');
-                ?>
-            </div><!--.col-lg-8-->
-        </section><!--#blog.archive-->
-        <?php get_sidebar(); ?>
-    </div><!--.row-->
+	<div class="row">
+		<?php get_template_part( 'sections/section', 'breadcrumb' ); ?>
+		<section id="blog">
+			<div class="col-md-8">
+				<?php
+				if ( have_posts() ) :
+					while ( have_posts() ) :
+						the_post();
+						do_action( 'mtl_inside_loop_before' );
+						get_template_part( 'template-parts/content', get_post_format() );
+						do_action( 'mtl_inside_loop_after' );
+					endwhile;
+				else :
+					get_template_part( 'template-parts/content', 'none' );
+				endif;
+				do_action( 'mtl_after_content_above_footer' );
+				?>
+			</div><!--.col-lg-8-->
+		</section><!--#blog.archive-->
+		<?php get_sidebar(); ?>
+	</div><!--.row-->
 </div><!--.container-->
 <?php get_footer(); ?>

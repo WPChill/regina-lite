@@ -37,9 +37,9 @@ if ( version_compare( $GLOBALS['wp_version'], '4.4.2', '>' ) ) {
 			} else {
 				$output .= '<a href="' . esc_url( get_site_url() ) . '" title="' . esc_attr( get_bloginfo( 'title' ) ) . '"><span class="logo-title">' . esc_html( $text_logo ) . '</span></a>';
 			}
-		}elseif ( $img_logo ) {
+		} elseif ( $img_logo ) {
 			$output .= '<a href="' . esc_url( get_site_url() ) . '" title="' . esc_attr( get_bloginfo( 'title' ) ) . '"><img src="' . esc_url( $img_logo ) . '" alt="' . esc_attr( get_bloginfo( 'name' ) ) . '" title="' . esc_attr( get_bloginfo( 'name' ) ) . '" /></a>';
-		}else{
+		} else {
 			$output .= '<a href="' . esc_url( get_site_url() ) . '" title="' . esc_attr( get_bloginfo( 'title' ) ) . '"><span class="logo-title">' . esc_html( $text_logo ) . '</span></a>';
 		}
 		echo $output;

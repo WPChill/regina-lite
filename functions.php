@@ -19,13 +19,13 @@ if ( ! function_exists( 'regina_lite_setup' ) ) :
 		/**
 		 *    Require Once
 		 */
-		require_once( 'inc/components/nav-walker/class.mt-nav-walker.php' );
-		require_once( 'inc/components/pagination/class.mt-pagination.php' );
-		require_once( 'inc/components/author-box/class.mt-author-box.php' );
-		require_once( 'inc/components/breadcrumb/class.mt-breadcrumb.php' );
-		require_once( 'inc/components/entry-meta/class.mt-entry-meta.php' );
+		require_once( 'inc/components/nav-walker/class-mtl-extended-menu-walker.php' );
+		require_once( 'inc/components/pagination/class-mtl-pagination-output.php' );
+		require_once( 'inc/components/author-box/class-mtl-author-box-output.php' );
+		require_once( 'inc/components/breadcrumb/class-regina-breadcrumbs.php' );
+		require_once( 'inc/components/entry-meta/class-mtl-entry-meta-output.php' );
 		require_once( 'inc/components/related-posts/class.mt-related-posts.php' );
-		require_once( 'inc/components/contact-bar/class.mt-contact-bar.php' );
+		require_once( 'inc/components/contact-bar/class-mtl-contact-bar-output.php' );
 		require_once( 'inc/customizer/customizer.php' );
 
 		require_once( 'inc/template-tags.php' );
@@ -33,8 +33,8 @@ if ( ! function_exists( 'regina_lite_setup' ) ) :
 		require_once( 'inc/customizer/customizer.php' );
 		require_once( 'inc/jetpack.php' );
 
-		require_once( 'widgets/widget-contact.php' );
-		require_once( 'widgets/widget-address.php' );
+		require_once( 'widgets/class-regina-lite-widget-contact.php' );
+		require_once( 'widgets/class-regina-lite-widget-address.php' );
 
 		/*
 		 * Make theme available for translation.
@@ -96,8 +96,6 @@ if ( ! function_exists( 'regina_lite_setup' ) ) :
          */
 		add_theme_support( 'customize-selective-refresh-widgets' );
 
-		
-
 		/*
 		 * Add image sizes
 		 * @link http://codex.wordpress.org/Function_Reference/add_image_size
@@ -108,11 +106,11 @@ if ( ! function_exists( 'regina_lite_setup' ) ) :
 		add_image_size( 'regina-lite-slider-image-sizes', 1682, 560, true );
 
 		/**
-         *  Next compatible
-         */
-        require get_template_directory() . '/inc/next-compatible.php';
+		 *  Next compatible
+		 */
+		require get_template_directory() . '/inc/next-compatible.php';
 
-        /*******************************************/
+		/*******************************************/
 		/*************  Welcome screen *************/
 		/*******************************************/
 
@@ -234,7 +232,7 @@ function regina_lite_scripts() {
 	);
 
 	// WP Register Style
-	wp_register_style( 'google-fonts', add_query_arg( $google_fonts_args, "//fonts.googleapis.com/css" ), array(), null );
+	wp_register_style( 'google-fonts', add_query_arg( $google_fonts_args, '//fonts.googleapis.com/css' ), array(), null );
 
 	// WP Enqueue Style
 	wp_enqueue_style( 'bxslider-css', get_template_directory_uri() . '/layout/css/bxslider.min.css', array(), 'all' );
@@ -249,7 +247,7 @@ function regina_lite_scripts() {
 	wp_enqueue_style( 'google-fonts' );
 
 	// WP Enqueue Script
-	if ( $preloader_enabled == 1 ) {
+	if ( 1 == $preloader_enabled ) {
 		wp_enqueue_script( 'pace-min-js', get_template_directory_uri() . '/layout/js/plugins/pace/pace.min.js', array( 'jquery' ), '', false );
 		wp_enqueue_script( 'regina-lite-preloader', get_template_directory_uri() . '/layout/js/preloader.min.js', array(
 			'jquery',
@@ -258,7 +256,6 @@ function regina_lite_scripts() {
 		wp_enqueue_style( 'regina-lite-pace', get_template_directory_uri() . '/layout/css/pace.min.css', array(), '', 'all' );
 	}
 
-
 	wp_enqueue_script( 'regina-lite-jquery.bxslider.min', get_template_directory_uri() . '/layout/js/plugins/bxslider/bxslider.min.js', array( 'jquery' ), '', true );
 	wp_enqueue_script( 'regina-lite-owl-carousel-min', get_template_directory_uri() . '/layout/js/plugins/owl-carousel/owl-carousel.min.js', array( 'jquery' ), '', true );
 	wp_enqueue_script( 'regina-lite-scripts', get_template_directory_uri() . '/layout/js/plugins.js', array(
@@ -266,7 +263,7 @@ function regina_lite_scripts() {
 		'regina-lite-owl-carousel-min',
 	), '', true );
 
-	if ( $enable_site_lazyload == 1 ) {
+	if ( 1 == $enable_site_lazyload ) {
 		wp_enqueue_script( 'regina-lite-jquery.lazyload.min', get_template_directory_uri() . '/layout/js/plugins/lazyload/lazyload.min.js', array( 'jquery' ), '', true );
 	}
 
@@ -299,7 +296,7 @@ require_once get_template_directory() . '/inc/libraries/epsilon-framework/class-
 $args = array(
 	'controls' => array( 'slider', 'toggle', 'upsell' ), // array of controls to load
 	'sections' => array( 'recommended-actions' ), // array of sections to load
-	'path'     => '/inc/libraries' // path to your epsilon framework in your theme, e.g. theme-name*/inc/libraries*/epsilon-framework
+	'path'     => '/inc/libraries',// path to your epsilon framework in your theme, e.g. theme-name*/inc/libraries*/epsilon-framework
 );
 
 new Epsilon_Framework( $args );

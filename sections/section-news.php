@@ -14,23 +14,23 @@ $regina_lite_limit = get_option( 'posts_per_page', 4 );
 // Logic used to dynamically create the layout, based on how blog posts have been set in the reading options
 $regina_lite_cols      = '';
 $regina_lite_news_size = '';
-if ( $regina_lite_limit == 1 ) {
+if ( 1 == $regina_lite_limit ) {
 	$regina_lite_cols      = 'col-md-offset-4 col-sm-offset-3';
 	$regina_lite_news_size = 'col-md-4 col-sm-6 col-xs-12';
-} else if ( $regina_lite_limit == 2 ) {
+} elseif ( 2 == $regina_lite_limit ) {
 	$regina_lite_cols      = 'col-md-offset-2 col-sm-offset-1';
 	$regina_lite_news_size = 'col-md-4 col-sm-5 col-xs-12';
-} else if ( $regina_lite_limit == 3 ) {
+} elseif ( 3 == $regina_lite_limit ) {
 	$regina_lite_cols      = 'col-md-offset-1 col-xs-12';
 	$regina_lite_news_size = 'col-md-3 col-sm-4 col-xs-12';
-} else if ( $regina_lite_limit >= 4 ) {
+} elseif ( $regina_lite_limit >= 4 ) {
 	$regina_lite_cols      = 'col-xs-12';
 	$regina_lite_news_size = 'col-md-3 col-sm-6 col-xs-12';
 }
 # Logic used for getting the blog template page ID
 $page_which_uses_blog_template = regina_lite_get_page_id_by_template();
 
-if ( $regina_lite_news_section_show == 1 ) {
+if ( 1 == $regina_lite_news_section_show ) {
 	echo '<section class="bg-block-white" id="section-news">';
 	echo '<div class="container">';
 	echo '<div class="row">';
@@ -85,4 +85,4 @@ if ( $regina_lite_news_section_show == 1 ) {
 	echo '</div><!--/.container-->';
 
 	echo '</section>';
-}
+}// End if().

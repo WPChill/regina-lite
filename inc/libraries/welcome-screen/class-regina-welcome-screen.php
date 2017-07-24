@@ -385,7 +385,7 @@ class Regina_Welcome_Screen {
 				<a href="<?php echo esc_url( admin_url( 'themes.php?page=regina-welcome&tab=support' ) ); ?>"
 				   class="nav-tab <?php echo 'support' == $active_tab ? 'nav-tab-active' : ''; ?> "><?php echo esc_html__( 'Support', 'regina-lite' ); ?></a>
 				<a href="<?php echo esc_url( admin_url( 'themes.php?page=regina-welcome&tab=features' ) ); ?>"
-                   class="nav-tab <?php echo 'features' == $active_tab ? 'nav-tab-active' : ''; ?> "><?php echo esc_html__( 'Lite vs PRO', 'regina-lite' ); ?></a>
+				   class="nav-tab <?php echo 'features' == $active_tab ? 'nav-tab-active' : ''; ?> "><?php echo esc_html__( 'Lite vs PRO', 'regina-lite' ); ?></a>
 			</h2>
 
 			<?php

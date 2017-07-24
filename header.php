@@ -65,7 +65,7 @@
 global $wp_customize;
 $preloader_enabled = get_theme_mod( 'regina_lite_enable_site_preloader', 1 );
 
-if ( ! isset( $wp_customize ) && $preloader_enabled == 1 ) { ?>
+if ( ! isset( $wp_customize ) && 1 == $preloader_enabled ) { ?>
 
 	<!-- Site Preloader -->
 	<div id="page-loader">

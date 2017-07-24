@@ -39,19 +39,19 @@ $ourteam_teammembers = array(
 );
 
 
-foreach ( $ourteam_teammembers as $key => $ourteam_teammember ):
-	if ( $ourteam_teammember ):
+foreach ( $ourteam_teammembers as $key => $ourteam_teammember ) :
+	if ( $ourteam_teammember ) :
 		$ourteam_members[] = $ourteam_teammember;
 	endif;
 endforeach;
 
-if ( count( $ourteam_members ) == 1 ):
+if ( count( $ourteam_members ) == 1 ) :
 	$team_member_class = 'col-lg-12 col-sm-6';
-elseif ( count( $ourteam_members ) == 2 ):
+elseif ( count( $ourteam_members ) == 2 ) :
 	$team_member_class = 'col-lg-6 col-sm-6';
-elseif ( count( $ourteam_members ) == 3 ):
+elseif ( count( $ourteam_members ) == 3 ) :
 	$team_member_class = 'col-lg-4 col-sm-6';
-elseif ( count( $ourteam_members ) == 4 ):
+elseif ( count( $ourteam_members ) == 4 ) :
 	$team_member_class = 'col-lg-3 col-sm-6';
 endif;
 
@@ -80,42 +80,42 @@ $image_id_4 = regina_lite_get_attachment_id( $ourteam_teammember4_image );
 		<div class="row">
 			<div class="col-xs-12">
 				<div class="section-info">
-					<?php if ( $ourteam_general_title ): ?>
+					<?php if ( $ourteam_general_title ) : ?>
 						<h2><?php echo esc_html( $ourteam_general_title ); ?></h2>
 						<hr>
 					<?php endif; ?>
-					<?php if ( $ourteam_general_description ): ?>
+					<?php if ( $ourteam_general_description ) : ?>
 						<p><?php echo esc_html( $ourteam_general_description ); ?></p>
 					<?php endif; ?>
 				</div><!--.section-info-->
 			</div><!--.col-xs-12-->
 			<section id="team-block">
-				<?php if ( $ourteam_teammember1_image ): ?>
+				<?php if ( $ourteam_teammember1_image ) : ?>
 					<div class="<?php echo $team_member_class; ?>">
 						<div class="team-member">
-							<?php if ( $ourteam_teammember1_image ): ?>
+							<?php if ( $ourteam_teammember1_image ) : ?>
 								<img src="<?php echo esc_url( $ourteam_teammember1_image ); ?>" data-original="<?php echo esc_url( $ourteam_teammember1_image ); ?>" alt="<?php echo esc_attr( $image_meta_1['_wp_attachment_image_alt']['0'] ); ?>" class="lazy">
 							<?php endif; ?>
-							<?php if ( $ourteam_teammember1_name || $ourteam_teammember1_position ): ?>
+							<?php if ( $ourteam_teammember1_name || $ourteam_teammember1_position ) : ?>
 								<div class="inner">
-									<?php if ( $ourteam_teammember1_name ): ?>
+									<?php if ( $ourteam_teammember1_name ) : ?>
 										<h4 class="name"><?php echo esc_html( $ourteam_teammember1_name ); ?></h4>
 									<?php endif; ?>
-									<?php if ( $ourteam_teammember1_position ): ?>
+									<?php if ( $ourteam_teammember1_position ) : ?>
 										<p class="position">
 											<small><?php echo esc_html( $ourteam_teammember1_position ); ?></small>
 										</p>
 									<?php endif; ?>
 								</div>
 							<?php endif; ?>
-							<?php if ( $ourteam_teammember1_description || $ourteam_teammember1_buttonurl ): ?>
+							<?php if ( $ourteam_teammember1_description || $ourteam_teammember1_buttonurl ) : ?>
 								<div class="hover">
-									<?php if ( $ourteam_teammember1_description ): ?>
+									<?php if ( $ourteam_teammember1_description ) : ?>
 										<div class="description">
 											<p><?php echo esc_html( $ourteam_teammember1_description ); ?></p>
 										</div>
 									<?php endif; ?>
-									<?php if ( $ourteam_teammember1_buttonurl ): ?>
+									<?php if ( $ourteam_teammember1_buttonurl ) : ?>
 										<div class="read-more">
 											<a href="<?php echo esc_url( $ourteam_teammember1_buttonurl ); ?>" class="button white outline"><?php _e( 'Read more', 'regina-lite' ); ?>
 												<span class="nc-icon-glyph arrows-1_bold-right"></span></a>
@@ -126,32 +126,32 @@ $image_id_4 = regina_lite_get_attachment_id( $ourteam_teammember4_image );
 						</div><!--.team-member-->
 					</div><!--.col-lg-3-->
 				<?php endif; ?>
-				<?php if ( $ourteam_teammember2_image ): ?>
+				<?php if ( $ourteam_teammember2_image ) : ?>
 					<div class="<?php echo $team_member_class; ?>">
 						<div class="team-member">
-							<?php if ( $ourteam_teammember2_image ): ?>
+							<?php if ( $ourteam_teammember2_image ) : ?>
 								<img src="<?php echo esc_url( $ourteam_teammember2_image ); ?>" data-original="<?php echo esc_url( $ourteam_teammember2_image ); ?>" alt="<?php echo esc_attr( $image_meta_2['_wp_attachment_image_alt']['0'] ); ?>" class="lazy">
 							<?php endif; ?>
-							<?php if ( $ourteam_teammember2_name || $ourteam_teammember2_position ): ?>
+							<?php if ( $ourteam_teammember2_name || $ourteam_teammember2_position ) : ?>
 								<div class="inner">
-									<?php if ( $ourteam_teammember2_name ): ?>
+									<?php if ( $ourteam_teammember2_name ) : ?>
 										<h4 class="name"><?php echo esc_html( $ourteam_teammember2_name ); ?></h4>
 									<?php endif; ?>
-									<?php if ( $ourteam_teammember2_position ): ?>
+									<?php if ( $ourteam_teammember2_position ) : ?>
 										<p class="position">
 											<small><?php echo esc_html( $ourteam_teammember2_position ); ?></small>
 										</p>
 									<?php endif; ?>
 								</div>
 							<?php endif; ?>
-							<?php if ( $ourteam_teammember2_description || $ourteam_teammember2_buttonurl ): ?>
+							<?php if ( $ourteam_teammember2_description || $ourteam_teammember2_buttonurl ) : ?>
 								<div class="hover">
-									<?php if ( $ourteam_teammember2_description ): ?>
+									<?php if ( $ourteam_teammember2_description ) : ?>
 										<div class="description">
 											<p><?php echo esc_html( $ourteam_teammember2_description ); ?></p>
 										</div>
 									<?php endif; ?>
-									<?php if ( $ourteam_teammember2_buttonurl ): ?>
+									<?php if ( $ourteam_teammember2_buttonurl ) : ?>
 										<div class="read-more">
 											<a href="<?php echo esc_url( $ourteam_teammember2_buttonurl ); ?>" class="button white outline"><?php _e( 'Read more', 'regina-lite' ); ?>
 												<span class="nc-icon-glyph arrows-1_bold-right"></span></a>
@@ -162,32 +162,32 @@ $image_id_4 = regina_lite_get_attachment_id( $ourteam_teammember4_image );
 						</div><!--.team-member-->
 					</div><!--.col-lg-3-->
 				<?php endif; ?>
-				<?php if ( $ourteam_teammember3_image ): ?>
+				<?php if ( $ourteam_teammember3_image ) : ?>
 					<div class="<?php echo $team_member_class; ?>">
 						<div class="team-member">
-							<?php if ( $ourteam_teammember3_image ): ?>
+							<?php if ( $ourteam_teammember3_image ) : ?>
 								<img src="<?php echo esc_url( $ourteam_teammember3_image ); ?>" data-original="<?php echo esc_url( $ourteam_teammember3_image ); ?>" alt="<?php echo esc_attr( $image_meta_3['_wp_attachment_image_alt']['0'] ); ?>" class="lazy">
 							<?php endif; ?>
-							<?php if ( $ourteam_teammember3_name || $ourteam_teammember3_position ): ?>
+							<?php if ( $ourteam_teammember3_name || $ourteam_teammember3_position ) : ?>
 								<div class="inner">
-									<?php if ( $ourteam_teammember3_name ): ?>
+									<?php if ( $ourteam_teammember3_name ) : ?>
 										<h4 class="name"><?php echo esc_html( $ourteam_teammember3_name ); ?></h4>
 									<?php endif; ?>
-									<?php if ( $ourteam_teammember3_position ): ?>
+									<?php if ( $ourteam_teammember3_position ) : ?>
 										<p class="position">
 											<small><?php echo esc_html( $ourteam_teammember3_position ); ?></small>
 										</p>
 									<?php endif; ?>
 								</div>
 							<?php endif; ?>
-							<?php if ( $ourteam_teammember3_description || $ourteam_teammember3_buttonurl ): ?>
+							<?php if ( $ourteam_teammember3_description || $ourteam_teammember3_buttonurl ) : ?>
 								<div class="hover">
-									<?php if ( $ourteam_teammember3_description ): ?>
+									<?php if ( $ourteam_teammember3_description ) : ?>
 										<div class="description">
 											<p><?php echo esc_html( $ourteam_teammember3_description ); ?></p>
 										</div>
 									<?php endif; ?>
-									<?php if ( $ourteam_teammember3_buttonurl ): ?>
+									<?php if ( $ourteam_teammember3_buttonurl ) : ?>
 										<div class="read-more">
 											<a href="<?php echo esc_url( $ourteam_teammember3_buttonurl ); ?>" class="button white outline"><?php _e( 'Read more', 'regina-lite' ); ?>
 												<span class="nc-icon-glyph arrows-1_bold-right"></span></a>
@@ -198,32 +198,32 @@ $image_id_4 = regina_lite_get_attachment_id( $ourteam_teammember4_image );
 						</div><!--.team-member-->
 					</div><!--.col-lg-3-->
 				<?php endif; ?>
-				<?php if ( $ourteam_teammember4_image ): ?>
+				<?php if ( $ourteam_teammember4_image ) : ?>
 					<div class="<?php echo $team_member_class; ?>">
 						<div class="team-member">
-							<?php if ( $ourteam_teammember4_image ): ?>
+							<?php if ( $ourteam_teammember4_image ) : ?>
 								<img src="<?php echo esc_url( $ourteam_teammember4_image ); ?>" data-original="<?php echo esc_url( $ourteam_teammember4_image ); ?>" alt="<?php echo esc_attr( $image_meta_4['_wp_attachment_image_alt']['0'] ); ?>"  class="lazy">
 							<?php endif; ?>
-							<?php if ( $ourteam_teammember4_name || $ourteam_teammember4_position ): ?>
+							<?php if ( $ourteam_teammember4_name || $ourteam_teammember4_position ) : ?>
 								<div class="inner">
-									<?php if ( $ourteam_teammember4_name ): ?>
+									<?php if ( $ourteam_teammember4_name ) : ?>
 										<h4 class="name"><?php echo esc_html( $ourteam_teammember4_name ); ?></h4>
 									<?php endif; ?>
-									<?php if ( $ourteam_teammember4_position ): ?>
+									<?php if ( $ourteam_teammember4_position ) : ?>
 										<p class="position">
 											<small><?php echo esc_html( $ourteam_teammember4_position ); ?></small>
 										</p>
 									<?php endif; ?>
 								</div>
 							<?php endif; ?>
-							<?php if ( $ourteam_teammember4_description || $ourteam_teammember4_buttonurl ): ?>
+							<?php if ( $ourteam_teammember4_description || $ourteam_teammember4_buttonurl ) : ?>
 								<div class="hover">
-									<?php if ( $ourteam_teammember4_description ): ?>
+									<?php if ( $ourteam_teammember4_description ) : ?>
 										<div class="description">
 											<p><?php echo esc_html( $ourteam_teammember4_description ); ?></p>
 										</div>
 									<?php endif; ?>
-									<?php if ( $ourteam_teammember4_buttonurl ): ?>
+									<?php if ( $ourteam_teammember4_buttonurl ) : ?>
 										<div class="read-more">
 											<a href="<?php echo esc_url( $ourteam_teammember4_buttonurl ); ?>" class="button white outline"><?php _e( 'Read more', 'regina-lite' ); ?>
 												<span class="nc-icon-glyph arrows-1_bold-right"></span></a>

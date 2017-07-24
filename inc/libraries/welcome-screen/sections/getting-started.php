@@ -13,7 +13,7 @@ $count          = $this->count_actions();
 	<div class="col">
 		<h3><?php esc_html_e( 'Step 1 - Implement recommended actions', 'regina-lite' ); ?></h3>
 		<p><?php esc_html_e( 'We\'ve compiled a list of steps for you, to take make sure the experience you\'ll have using one of our products is very easy to follow.', 'regina-lite' ); ?></p>
-		<?php if ( $count == 0 ) { ?>
+		<?php if ( 0 == $count ) { ?>
 			<p><span class="dashicons dashicons-yes"></span>
 				<a href="<?php echo esc_url( admin_url( 'themes.php?page=regina-welcome&tab=recommended_actions' ) ); ?>"><?php esc_html_e( 'No recommended actions left to perform', 'regina-lite' ); ?></a>
 			</p>
@@ -21,7 +21,7 @@ $count          = $this->count_actions();
 			<p><span class="dashicons dashicons-no-alt"></span> <a
 					href="<?php echo esc_url( admin_url( 'themes.php?page=regina-welcome&tab=recommended_actions' ) ); ?>"><?php esc_html_e( 'Check recommended actions', 'regina-lite' ); ?></a>
 			</p> <?php
-		}; ?>
+}; ?>
 	</div><!--/.col-->
 
 	<div class="col">
@@ -37,7 +37,7 @@ $count          = $this->count_actions();
 		<h3><?php esc_html_e( 'Step 3 - Customize everything', 'regina-lite' ); ?></h3>
 		<p><?php esc_html_e( 'Using the WordPress Customizer you can easily customize every aspect of the theme.', 'regina-lite' ); ?></p>
 		<p><a target="_blank" href="<?php echo esc_url( $customizer_url ); ?>"
-		      class="button button-primary"><?php esc_html_e( 'Go to Customizer', 'regina-lite' ); ?></a>
+			  class="button button-primary"><?php esc_html_e( 'Go to Customizer', 'regina-lite' ); ?></a>
 		</p>
 	</div><!--/.col-->
 </div><!--/.feature-section-->

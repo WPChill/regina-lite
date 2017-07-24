@@ -8,7 +8,7 @@
  */
 ?>
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	<?php if ( has_post_thumbnail() ): ?>
+	<?php if ( has_post_thumbnail() ) : ?>
 		<div class="image">
 			<a href="<?php echo get_the_permalink(); ?>"><?php echo get_the_post_thumbnail( $post->ID, 'regina-lite-blog' ); ?></a>
 		</div>
