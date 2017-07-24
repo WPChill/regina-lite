@@ -22,10 +22,10 @@ module.exports = function( grunt ) {
             'x-poedit-keywordslist': true
           },
           processPot: function( pot, options ) {
-            pot.headers[ 'report-msgid-bugs-to' ] = 'https://www.colorlib.com/';
-            pot.headers[ 'language-team' ] = 'Colorlib <office@colorlib.com>';
-            pot.headers[ 'last-translator' ] = 'Colorlib <office@colorlib.com>';
-            pot.headers[ 'language-team' ] = 'Colorlib <office@colorlib.com>';
+            pot.headers[ 'report-msgid-bugs-to' ] = 'https://www.machothemes.com/';
+            pot.headers[ 'language-team' ] = 'MachoThemes <office@machothemes.com>';
+            pot.headers[ 'last-translator' ] = 'MachoThemes <office@machothemes.com>';
+            pot.headers[ 'language-team' ] = 'MachoThemes <office@machothemes.com>';
             return pot;
           },
           updateTimestamp: true,
@@ -187,9 +187,9 @@ module.exports = function( grunt ) {
         files: [
           {
             expand: true,
-            cwd: 'assets/img/',
+            cwd: 'layout/images/',
             src: [ '**/*.{png,jpg,gif}' ],
-            dest: 'assets/img/'
+            dest: 'layout/images/'
           } ]
       }
     },

@@ -9,7 +9,6 @@ matrix:
   - php: '5.6'
   - php: '7.0'
   - php: '7.1'
-    env: SNIFF=1
     env: DEPLOY=1
 before_script:
 - export PHPCS_DIR=/tmp/phpcs
@@ -60,15 +59,15 @@ cache:
   directories:
   - node_modules
 after_success:
-  - if [[ "$DEPLOY" == "1" ]]; then grunt build-archive; fi
-  - if [[ "$DEPLOY" == "1" ]]; then sh set_tags.sh; fi
+- if [[ "$DEPLOY" == "1" ]]; then grunt build-archive; fi
+- if [[ "$DEPLOY" == "1" ]]; then sh set_tags.sh; fi
 deploy:
   provider: releases
   skip_cleanup: true
   api_key:
-    secure: WZqEhBz8L7lKZ56/DWpdrMYEeT7wp6i8g6P9GFsPkMZ26SfKS5iKK49cjaZClp3B40bT7CmEFGPgrYrEgFZ721mRrQbEthI3/0goWsQLI2TPK0MlbjBiE/aNxdRFbf2pkR8y9FI3i8UE9o8ZSzaBPqJ/PEapHc2eI0udYfHvbYUnh8Bk5znkYp+zsWNhIidjx0DSS2qEM/NiB54mnWouMiR5DdlwGt7GhEjfEC4MgtkkxD9trBq68aZGEMkintmYpoaivKSUOLpHlLosHhGDhpuPiq1RTmIrOj7fRNMPSOy/H4zAjDBW4eLssnMVdmZY3z7hdOmfNHEGPT16OdIi8LbRTz18ZL3floPjvnmB7mu7i/bYrlO35N5qdsvhQnFWQTSJuLBtTUnV+oWVmP9RuAkDwQIz3aFJ9kLwph1KEnlRjH4iv/bim0QvObcc1nXB+baYLA+Ufu2xpDvcI5GuYgD6b8nd3YpT+tevzP1Viu8Ayl/D4SlRohyr4oSAMAj+z9Min7ul4YntJ3CILSyjAhUpQNqn+mg6qxl8tpA+GdQiE/pjOMokX8r3GzJxF8ozdCWsFaeTwGkB4cBzoBpj9SqBeaw7G/YTtar4qx0fXn+sSr6uuaGGIr3gWVxiz/nPlspeCRP4XAcdJ6UI30K1EcKTFz/eOzFfPsGR+sZXbrQ=
-  file: pixova-lite.zip
+    secure: D0woOPu14EtOKQiKoeK43FfgRYTpS4JaCKovgDGZsSS4upKPr3C04BuSJIYBxpg1N4XK5sElmHbu1qmX+GXE38Xies3m6kGLRpAe02KoE63AkXJ3b4CfC20plejR6ixE6YFuF0RTw7lhNQlmpR2vBLjd25a9AErDsQobk9mFpp6xAJFXWJpmLJ2d05UPGVGM6z2ikxRTp+2OB2hvvDNmtNvwd35+jwtHwKmjJpPTvy2JSVHQps7VJOTpTh01crzLeLcKwxuam2PE9lYtzyF1vqD6b8/FvcbjiHQ3K88TmLTOLYrjZb1OCDRpNQQDY0jmgCCPO5uABwzqB5JeCssdn7GTumCCEGcIRxCa587I5VV8NNbXeNRnmLoTFUOsTau+Ky4Nn+TeNgP+Y+GjRZTl7yYHTSqL7Gvj8LtoACs3jgzb3nqBsvAhv8k2V1Uvkbd7bo26ahRbFXvVU3Zv86ET7Fgk8VvLlfcfXbMEb+ioTRVk44LiLESY1VzYSWiEvpujYj/WHqln/7AEufiuJGf/h5vYXwsjAtuH6MXC7lP9Ae0yC+CcRutvGaILjx/uSK2NdZkSSwHzdzu1zx/vhLZ9MFVmpHJx9V3ZXZQvipm7wBzmvvVvgw3WjvkjQz+VMBNZR2FPFsyMnKb0Lie/Btk8MOCSfbawcx2cEhzd+UdgFUQ=
+  file: regina-lite.zip
   on:
-    repo: MachoThemes/pixova-lite
+    repo: MachoThemes/regina-lite
     branch: 'production'
     condition: "$DEPLOY = 1"

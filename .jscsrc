@@ -3,16 +3,7 @@
   "fileExtensions": [ ".js" ],
   "excludeFiles": [
     "layout/js/**.min.js",
-    "layout/js/bootstrap/*",
-    "layout/js/classie/*",
-    "layout/js/easypiechart/*",
-    "layout/js/owl-carousel/*",
-    "layout/js/pace/*",
-    "layout/js/parallax/*",
-    "layout/js/simpleplaceholder/*",
-    "layout/js/smoothscroll/*",
-    "layout/js/viewport/*",
-    "layout/js/wow/*"
+    "layout/js/plugins/*/*"
   ],
   "maxErrors": Infinity
 }
