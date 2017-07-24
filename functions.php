@@ -24,7 +24,7 @@ if ( ! function_exists( 'regina_lite_setup' ) ) :
 		require_once( 'inc/components/author-box/class-mtl-author-box-output.php' );
 		require_once( 'inc/components/breadcrumb/class-regina-breadcrumbs.php' );
 		require_once( 'inc/components/entry-meta/class-mtl-entry-meta-output.php' );
-		require_once( 'inc/components/related-posts/class.mt-related-posts.php' );
+		require_once( 'inc/components/related-posts/class-mtl-related-posts-output.php' );
 		require_once( 'inc/components/contact-bar/class-mtl-contact-bar-output.php' );
 		require_once( 'inc/customizer/customizer.php' );
 
@@ -294,7 +294,7 @@ function regina_lite_move_comment_field_to_bottom( $fields ) {
 // Add Epsilon Framework
 require_once get_template_directory() . '/inc/libraries/epsilon-framework/class-epsilon-autoloader.php';
 $args = array(
-	'controls' => array( 'slider', 'toggle', 'upsell' ), // array of controls to load
+	'controls' => array( 'slider', 'toggle', 'upsell', 'text-editor' ), // array of controls to load
 	'sections' => array( 'recommended-actions' ), // array of sections to load
 	'path'     => '/inc/libraries',// path to your epsilon framework in your theme, e.g. theme-name*/inc/libraries*/epsilon-framework
 );

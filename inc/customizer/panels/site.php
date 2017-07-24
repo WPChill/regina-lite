@@ -73,7 +73,7 @@
 		'button_text'  => esc_html__( 'See PRO vs Lite', 'regina-lite' ),
 		'second_button_url'  => esc_url_raw( 'https://www.machothemes.com/theme/regina-pro/?utm_source=worg&utm_medium=customizer&utm_campaign=upsell' ),
 		'second_button_text' => esc_html__( 'Get PRO now!', 'regina-lite' ),
-		'separator' => '- or -',
+		'separator' => ' or ',
 	) ) );
 
 	/* Logo */
@@ -320,18 +320,17 @@
 
 	# Footer Copyrigt: Message
 	$wp_customize->add_setting( $prefix . '_footer_copyright', array(
-		'sanitize_callback' => 'sanitize_text_field',
+		'sanitize_callback' => 'wp_kses_post',
 		'default'           => esc_html__( '&copy; Copyright 2016. All Rights Reserved.', 'regina-lite' ),
 	) );
 
-	$wp_customize->add_control( $prefix . '_footer_copyright', array(
-		'type'  => 'textarea',
+	$wp_customize->add_control( new Epsilon_Control_Text_Editor( $wp_customize, $prefix . '_footer_copyright', array(
 		'label'   => esc_html__( 'Footer Copyright.', 'regina-lite' ),
 		'description' => esc_html__( 'Will be displayed in the footer', 'regina-lite' ),
 		'section' => $prefix . '_general_footer_section',
 		'settings'   => $prefix . '_footer_copyright',
 		'priority' => 11,
-	) );
+	) ) );
 	$wp_customize->selective_refresh->add_partial( $prefix . '_footer_copyright', array(
 		'selector' => '#sub-footer .copyright',
 	) );

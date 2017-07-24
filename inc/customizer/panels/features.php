@@ -18,90 +18,6 @@ $wp_customize->add_panel( new Regina_Custom_Panel( $wp_customize, $panel_id, arr
 ) ) );
 
 
-/***********************************************/
-/**************** BOX **************************/
-/***********************************************/
-$wp_customize->add_section( $prefix . '_top_box' ,
-	array(
-		'title'       => esc_html__( 'Blue Box on Hero Image', 'regina-lite' ),
-		'description' => esc_html__( 'Use this section for your main call-to-action text.', 'regina-lite' ),
-		'panel'       => $panel_id,
-	)
-);
-
-/* Show this section? */
-$wp_customize->add_setting( $prefix . '_top_box_show',
-	array(
-		'sanitize_callback' => $prefix . '_sanitize_checkbox',
-		'default'           => 1,
-	)
-);
-$wp_customize->add_control( new Epsilon_Control_Toggle( $wp_customize, $prefix . '_top_box_show', array(
-	'type'          => 'epsilon-toggle',
-	'label'         => esc_html__( 'Show the blue box?', 'regina-lite' ),
-	'section'       => $prefix . '_top_box',
-) ) );
-
-/* Title */
-$wp_customize->add_setting($prefix . '_top_box_title',
-	array(
-		'sanitize_callback' => 'sanitize_text_field',
-		'default'           => __( 'We help people, like you.', 'regina-lite' ),
-
-	)
-);
-$wp_customize->add_control(
-	$prefix . '_top_box_title',
-	array(
-		'label'         => esc_html__( 'Title:', 'regina-lite' ),
-		'section'       => $prefix . '_top_box',
-	)
-);
-$wp_customize->selective_refresh->add_partial( $prefix . '_top_box_title', array(
-	'selector' => '#call-out h1',
-) );
-
-/* Description */
-$wp_customize->add_setting($prefix . '_top_box_description',
-	array(
-		'sanitize_callback' => 'sanitize_text_field',
-		'default'           => __( 'Our team of specialists is ready to help you. Book an appointment now!', 'regina-lite' ),
-
-	)
-);
-$wp_customize->add_control(
-	$prefix . '_top_box_description',
-	array(
-		'label'         => esc_html__( 'Description:', 'regina-lite' ),
-		'section'       => $prefix . '_top_box',
-		'type'          => 'textarea',
-	)
-);
-$wp_customize->selective_refresh->add_partial( $prefix . '_top_box_description', array(
-	'selector' => '#call-out p',
-) );
-
-$wp_customize->add_setting( $prefix . '_top_box_bookappointmenturl',
-	array(
-		'sanitize_callback' => 'esc_url',
-		'default'           => esc_url( '#' ),
-	)
-);
-
-$wp_customize->add_control( $prefix . '_top_box_bookappointmenturl',
-	array(
-		'label'         => esc_html__( 'Book Aappointment URL:', 'regina-lite' ),
-		'description'   => esc_html__( 'Tip: Use full URLs here instead of relative ones.', 'regina-lite' ),
-		'section'       => $prefix . '_top_box',
-		'settings'      => $prefix . '_top_box_bookappointmenturl',
-	)
-);
-$wp_customize->selective_refresh->add_partial( $prefix . '_top_box_bookappointmenturl', array(
-	'selector' => '#call-out a.button',
-	'container_inclusive' => true,
-	'render_callback' => 'pixova_render_appointment_link',
-) );
-
 
 /***********************************************/
 /************ GENERAL SECTION ******************/
@@ -148,18 +64,14 @@ $wp_customize->selective_refresh->add_partial( $prefix . '_features_general_titl
 /* Description */
 $wp_customize->add_setting($prefix . '_features_general_description',
 	array(
-		'sanitize_callback' => 'sanitize_text_field',
+		'sanitize_callback' => 'wp_kses_post',
 		'default'           => __( 'We offer various services lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt.', 'regina-lite' ),
 	)
 );
-$wp_customize->add_control(
-	$prefix . '_features_general_description',
-	array(
-		'label'         => esc_html__( 'Description:', 'regina-lite' ),
-		'section'       => $prefix . '_features_general',
-		'type'          => 'textarea',
-	)
-);
+$wp_customize->add_control( new Epsilon_Control_Text_Editor( $wp_customize, $prefix . '_features_general_description', array(
+	'label'         => esc_html__( 'Description:', 'regina-lite' ),
+	'section'       => $prefix . '_features_general',
+) ) );
 $wp_customize->selective_refresh->add_partial( $prefix . '_features_general_description', array(
 	'selector' => '#services-title-block p',
 ) );
@@ -228,18 +140,14 @@ $wp_customize->selective_refresh->add_partial( $prefix . '_features_feature1_tit
 /* Description */
 $wp_customize->add_setting($prefix . '_features_feature1_description',
 	array(
-		'sanitize_callback' => 'sanitize_text_field',
+		'sanitize_callback' => 'wp_kses_post',
 		'default'           => __( 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt.', 'regina-lite' ),
 	)
 );
-$wp_customize->add_control(
-	$prefix . '_features_feature1_description',
-	array(
-		'label'         => esc_html__( 'Description:', 'regina-lite' ),
-		'section'       => $prefix . '_features_feature1',
-		'type'          => 'textarea',
-	)
-);
+$wp_customize->add_control( new Epsilon_Control_Text_Editor( $wp_customize, $prefix . '_features_feature1_description', array(
+	'label'         => esc_html__( 'Description:', 'regina-lite' ),
+	'section'       => $prefix . '_features_feature1',
+) ) );
 $wp_customize->selective_refresh->add_partial( $prefix . '_features_feature1_description', array(
 	'selector' => '#services-block .service-1 p',
 ) );
@@ -278,7 +186,7 @@ $wp_customize->add_control( new Epsilon_Control_Upsell( $wp_customize, $prefix .
 	'button_text'  => esc_html__( 'See PRO vs Lite', 'regina-lite' ),
 	'second_button_url'  => esc_url_raw( 'https://www.machothemes.com/theme/regina-pro/?utm_source=worg&utm_medium=customizer&utm_campaign=upsell' ),
 	'second_button_text' => esc_html__( 'Get PRO now!', 'regina-lite' ),
-	'separator' => '- or -',
+	'separator' => ' or ',
 ) ) );
 
 /***********************************************/
@@ -312,18 +220,14 @@ $wp_customize->selective_refresh->add_partial( $prefix . '_features_feature2_tit
 /* Description */
 $wp_customize->add_setting($prefix . '_features_feature2_description',
 	array(
-		'sanitize_callback' => 'sanitize_text_field',
+		'sanitize_callback' => 'wp_kses_post',
 		'default'           => __( 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt.', 'regina-lite' ),
 	)
 );
-$wp_customize->add_control(
-	$prefix . '_features_feature2_description',
-	array(
-		'label'         => esc_html__( 'Description:', 'regina-lite' ),
-		'section'       => $prefix . '_features_feature2',
-		'type'          => 'textarea',
-	)
-);
+$wp_customize->add_control( new Epsilon_Control_Text_Editor( $wp_customize, $prefix . '_features_feature2_description', array(
+	'label'         => esc_html__( 'Description:', 'regina-lite' ),
+	'section'       => $prefix . '_features_feature2',
+) ) );
 $wp_customize->selective_refresh->add_partial( $prefix . '_features_feature2_description', array(
 	'selector' => '#services-block .service-2 p',
 ) );
@@ -362,7 +266,7 @@ $wp_customize->add_control( new Epsilon_Control_Upsell( $wp_customize, $prefix .
 	'button_text'  => esc_html__( 'See PRO vs Lite', 'regina-lite' ),
 	'second_button_url'  => esc_url_raw( 'https://www.machothemes.com/theme/regina-pro/?utm_source=worg&utm_medium=customizer&utm_campaign=upsell' ),
 	'second_button_text' => esc_html__( 'Get PRO now!', 'regina-lite' ),
-	'separator' => '- or -',
+	'separator' => ' or ',
 ) ) );
 
 /***********************************************/
@@ -396,18 +300,14 @@ $wp_customize->selective_refresh->add_partial( $prefix . '_features_feature3_tit
 /* Description */
 $wp_customize->add_setting($prefix . '_features_feature3_description',
 	array(
-		'sanitize_callback' => 'sanitize_text_field',
+		'sanitize_callback' => 'wp_kses_post',
 		'default'           => __( 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt.', 'regina-lite' ),
 	)
 );
-$wp_customize->add_control(
-	$prefix . '_features_feature3_description',
-	array(
-		'label'         => esc_html__( 'Description:', 'regina-lite' ),
-		'section'       => $prefix . '_features_feature3',
-		'type'          => 'textarea',
-	)
-);
+$wp_customize->add_control( new Epsilon_Control_Text_Editor( $wp_customize, $prefix . '_features_feature3_description', array(
+	'label'         => esc_html__( 'Description:', 'regina-lite' ),
+	'section'       => $prefix . '_features_feature3',
+) ) );
 $wp_customize->selective_refresh->add_partial( $prefix . '_features_feature3_description', array(
 	'selector' => '#services-block .service-3 p',
 ) );
@@ -446,7 +346,7 @@ $wp_customize->add_control( new Epsilon_Control_Upsell( $wp_customize, $prefix .
 	'button_text'  => esc_html__( 'See PRO vs Lite', 'regina-lite' ),
 	'second_button_url'  => esc_url_raw( 'https://www.machothemes.com/theme/regina-pro/?utm_source=worg&utm_medium=customizer&utm_campaign=upsell' ),
 	'second_button_text' => esc_html__( 'Get PRO now!', 'regina-lite' ),
-	'separator' => '- or -',
+	'separator' => ' or ',
 ) ) );
 
 /***********************************************/
@@ -480,18 +380,14 @@ $wp_customize->selective_refresh->add_partial( $prefix . '_features_feature4_tit
 /* Description */
 $wp_customize->add_setting($prefix . '_features_feature4_description',
 	array(
-		'sanitize_callback' => 'sanitize_text_field',
+		'sanitize_callback' => 'wp_kses_post',
 		'default'           => __( 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt.', 'regina-lite' ),
 	)
 );
-$wp_customize->add_control(
-	$prefix . '_features_feature4_description',
-	array(
-		'label'         => esc_html__( 'Description:', 'regina-lite' ),
-		'section'       => $prefix . '_features_feature4',
-		'type'          => 'textarea',
-	)
-);
+$wp_customize->add_control( new Epsilon_Control_Text_Editor( $wp_customize, $prefix . '_features_feature4_description', array(
+	'label'         => esc_html__( 'Description:', 'regina-lite' ),
+	'section'       => $prefix . '_features_feature4',
+) ) );
 $wp_customize->selective_refresh->add_partial( $prefix . '_features_feature4_description', array(
 	'selector' => '#services-block .service-4 p',
 ) );
@@ -530,5 +426,5 @@ $wp_customize->add_control( new Epsilon_Control_Upsell( $wp_customize, $prefix .
 	'button_text'  => esc_html__( 'See PRO vs Lite', 'regina-lite' ),
 	'second_button_url'  => esc_url_raw( 'https://www.machothemes.com/theme/regina-pro/?utm_source=worg&utm_medium=customizer&utm_campaign=upsell' ),
 	'second_button_text' => esc_html__( 'Get PRO now!', 'regina-lite' ),
-	'separator' => '- or -',
+	'separator' => ' or ',
 ) ) );

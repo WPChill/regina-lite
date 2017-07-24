@@ -109,14 +109,13 @@ $wp_customize->add_section( $prefix . '_testimonials_testimonial1', array(
 
 /* Description */
 $wp_customize->add_setting( $prefix . '_testimonials_testimonial1_description', array(
-	'sanitize_callback' => 'sanitize_text_field',
+	'sanitize_callback' => 'wp_kses_post',
 	'default'           => __( 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip.', 'regina-lite' ),
 ) );
-$wp_customize->add_control( $prefix . '_testimonials_testimonial1_description', array(
+$wp_customize->add_control( new Epsilon_Control_Text_Editor( $wp_customize, $prefix . '_testimonials_testimonial1_description', array(
 	'label'         => esc_html__( 'Description:', 'regina-lite' ),
 	'section'       => $prefix . '_testimonials_testimonial1',
-	'type'          => 'textarea',
-) );
+) ) );
 
 
 /* Image */
@@ -163,14 +162,13 @@ $wp_customize->add_section( $prefix . '_testimonials_testimonial2' , array(
 
 /* Description */
 $wp_customize->add_setting( $prefix . '_testimonials_testimonial2_description', array(
-	'sanitize_callback' => 'sanitize_text_field',
+	'sanitize_callback' => 'wp_kses_post',
 	'default'           => __( 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip.', 'regina-lite' ),
 ) );
-$wp_customize->add_control( $prefix . '_testimonials_testimonial2_description', array(
+$wp_customize->add_control( new Epsilon_Control_Text_Editor( $wp_customize, $prefix . '_testimonials_testimonial2_description', array(
 	'label'         => esc_html__( 'Description:', 'regina-lite' ),
 	'section'       => $prefix . '_testimonials_testimonial2',
-	'type'          => 'textarea',
-) );
+) ) );
 
 /* Image */
 $wp_customize->add_setting( $prefix . '_testimonials_testimonial2_image', array(
@@ -213,14 +211,13 @@ $wp_customize->add_section( $prefix . '_testimonials_testimonial3' , array(
 
 /* Description */
 $wp_customize->add_setting( $prefix . '_testimonials_testimonial3_description', array(
-	'sanitize_callback' => 'sanitize_text_field',
+	'sanitize_callback' => 'wp_kses_post',
 	'default'           => __( 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip.', 'regina-lite' ),
 ) );
-$wp_customize->add_control( $prefix . '_testimonials_testimonial3_description', array(
+$wp_customize->add_control( new Epsilon_Control_Text_Editor( $wp_customize, $prefix . '_testimonials_testimonial3_description', array(
 	'label'         => esc_html__( 'Description:', 'regina-lite' ),
 	'section'       => $prefix . '_testimonials_testimonial3',
-	'type'          => 'textarea',
-) );
+) ) );
 
 /* Image */
 $wp_customize->add_setting( $prefix . '_testimonials_testimonial3_image', array(
@@ -263,14 +260,13 @@ $wp_customize->add_section( $prefix . '_testimonials_testimonial4', array(
 
 /* Description */
 $wp_customize->add_setting( $prefix . '_testimonials_testimonial4_description', array(
-	'sanitize_callback' => 'sanitize_text_field',
+	'sanitize_callback' => 'wp_kses_post',
 	'default'           => __( 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip.', 'regina-lite' ),
 ) );
-$wp_customize->add_control( $prefix . '_testimonials_testimonial4_description', array(
+$wp_customize->add_control( new Epsilon_Control_Text_Editor( $wp_customize, $prefix . '_testimonials_testimonial4_description', array(
 	'label'         => esc_html__( 'Description:', 'regina-lite' ),
 	'section'       => $prefix . '_testimonials_testimonial4',
-	'type'          => 'textarea',
-) );
+) ) );
 
 /* Image */
 $wp_customize->add_setting( $prefix . '_testimonials_testimonial4_image', array(
@@ -313,14 +309,13 @@ $wp_customize->add_section( $prefix . '_testimonials_testimonial5', array(
 
 /* Description */
 $wp_customize->add_setting( $prefix . '_testimonials_testimonial5_description', array(
-	'sanitize_callback' => 'sanitize_text_field',
+	'sanitize_callback' => 'wp_kses_post',
 	'default'           => __( 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip.', 'regina-lite' ),
 ) );
-$wp_customize->add_control( $prefix . '_testimonials_testimonial5_description', array(
+$wp_customize->add_control( new Epsilon_Control_Text_Editor( $wp_customize, $prefix . '_testimonials_testimonial5_description', array(
 	'label'         => esc_html__( 'Description:', 'regina-lite' ),
 	'section'       => $prefix . '_testimonials_testimonial5',
-	'type'          => 'textarea',
-) );
+) ) );
 
 /* Image */
 $wp_customize->add_setting( $prefix . '_testimonials_testimonial5_image', array(

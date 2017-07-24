@@ -64,18 +64,14 @@ $wp_customize->selective_refresh->add_partial( $prefix . '_ourteam_general_title
 /* Description */
 $wp_customize->add_setting($prefix . '_ourteam_general_description',
 	array(
-		'sanitize_callback' => 'sanitize_text_field',
+		'sanitize_callback' => 'wp_kses_post',
 		'default'           => __( 'We offer various services lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt.', 'regina-lite' ),
 	)
 );
-$wp_customize->add_control(
-	$prefix . '_ourteam_general_description',
-	array(
-		'label'         => esc_html__( 'Description:', 'regina-lite' ),
-		'section'       => $prefix . '_ourteam_general',
-		'type'          => 'textarea',
-	)
-);
+$wp_customize->add_control( new Epsilon_Control_Text_Editor( $wp_customize, $prefix . '_ourteam_general_description', array(
+	'label'         => esc_html__( 'Description:', 'regina-lite' ),
+	'section'       => $prefix . '_ourteam_general',
+) ) );
 $wp_customize->selective_refresh->add_partial( $prefix . '_ourteam_general_description', array(
 	'selector' => '#team-section-block .section-info p',
 ) );
@@ -134,18 +130,14 @@ $wp_customize->add_control(
 /* Description */
 $wp_customize->add_setting($prefix . '_ourteam_teammember1_description',
 	array(
-		'sanitize_callback' => 'sanitize_text_field',
+		'sanitize_callback' => 'wp_kses_post',
 		'default'           => __( 'Dr. Steve Leeson was born and raised in Texas, USA. He received a Bachelor of Science degree in Chemistry from the University of Houston and a...', 'regina-lite' ),
 	)
 );
-$wp_customize->add_control(
-	$prefix . '_ourteam_teammember1_description',
-	array(
-		'label'         => esc_html__( 'Description:', 'regina-lite' ),
-		'section'       => $prefix . '_ourteam_teammember1',
-		'type'          => 'textarea',
-	)
-);
+$wp_customize->add_control( new Epsilon_Control_Text_Editor( $wp_customize, $prefix . '_ourteam_teammember1_description', array(
+	'label'         => esc_html__( 'Description:', 'regina-lite' ),
+	'section'       => $prefix . '_ourteam_teammember1',
+) ) );
 
 /* Button URL */
 $wp_customize->add_setting( $prefix . '_ourteam_teammember1_buttonurl',
@@ -217,18 +209,14 @@ $wp_customize->add_control(
 /* Description */
 $wp_customize->add_setting($prefix . '_ourteam_teammember2_description',
 	array(
-		'sanitize_callback' => 'sanitize_text_field',
+		'sanitize_callback' => 'wp_kses_post',
 		'default'           => __( 'Dr. Amanda Riss was born and raised in Texas, USA. He received a Bachelor of Science degree in Chemistry from the University of Houston and a...', 'regina-lite' ),
 	)
 );
-$wp_customize->add_control(
-	$prefix . '_ourteam_teammember2_description',
-	array(
-		'label'         => esc_html__( 'Description:', 'regina-lite' ),
-		'section'       => $prefix . '_ourteam_teammember2',
-		'type'          => 'textarea',
-	)
-);
+$wp_customize->add_control( new Epsilon_Control_Text_Editor( $wp_customize, $prefix . '_ourteam_teammember2_description', array(
+	'label'         => esc_html__( 'Description:', 'regina-lite' ),
+	'section'       => $prefix . '_ourteam_teammember2',
+) ) );
 
 /* Button URL */
 $wp_customize->add_setting( $prefix . '_ourteam_teammember2_buttonurl',
@@ -300,18 +288,14 @@ $wp_customize->add_control(
 /* Description */
 $wp_customize->add_setting($prefix . '_ourteam_teammember3_description',
 	array(
-		'sanitize_callback' => 'sanitize_text_field',
+		'sanitize_callback' => 'wp_kses_post',
 		'default'           => __( 'Dr. Mick Harold was born and raised in Texas, USA. He received a Bachelor of Science degree in Chemistry from the University of Houston and a...', 'regina-lite' ),
 	)
 );
-$wp_customize->add_control(
-	$prefix . '_ourteam_teammember3_description',
-	array(
-		'label'         => esc_html__( 'Description:', 'regina-lite' ),
-		'section'       => $prefix . '_ourteam_teammember3',
-		'type'          => 'textarea',
-	)
-);
+$wp_customize->add_control( new Epsilon_Control_Text_Editor( $wp_customize, $prefix . '_ourteam_teammember3_description', array(
+	'label'         => esc_html__( 'Description:', 'regina-lite' ),
+	'section'       => $prefix . '_ourteam_teammember3',
+) ) );
 
 /* Button URL */
 $wp_customize->add_setting( $prefix . '_ourteam_teammember3_buttonurl',
@@ -381,20 +365,14 @@ $wp_customize->add_control(
 );
 
 /* Description */
-$wp_customize->add_setting($prefix . '_ourteam_teammember4_description',
-	array(
-		'sanitize_callback' => 'sanitize_text_field',
-		'default'           => __( 'Dr. Jenna Crew was born and raised in Texas, USA. He received a Bachelor of Science degree in Chemistry from the University of Houston and a...', 'regina-lite' ),
-	)
-);
-$wp_customize->add_control(
-	$prefix . '_ourteam_teammember4_description',
-	array(
-		'label'         => esc_html__( 'Description:', 'regina-lite' ),
-		'section'       => $prefix . '_ourteam_teammember4',
-		'type'          => 'textarea',
-	)
-);
+$wp_customize->add_setting($prefix . '_ourteam_teammember4_description', array(
+	'sanitize_callback' => 'ep_kses_post',
+	'default'           => __( 'Dr. Jenna Crew was born and raised in Texas, USA. He received a Bachelor of Science degree in Chemistry from the University of Houston and a...', 'regina-lite' ),
+) );
+$wp_customize->add_control( new Epsilon_Control_Text_Editor( $wp_customize, $prefix . '_ourteam_teammember4_description', array(
+	'label'         => esc_html__( 'Description:', 'regina-lite' ),
+	'section'       => $prefix . '_ourteam_teammember4',
+) ) );
 
 /* Button URL */
 $wp_customize->add_setting( $prefix . '_ourteam_teammember4_buttonurl',

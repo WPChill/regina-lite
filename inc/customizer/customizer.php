@@ -73,7 +73,7 @@ function regina_lite_customize_register( $wp_customize ) {
 		'button_text'  => esc_html__( 'See PRO vs Lite', 'regina-lite' ),
 		'second_button_url'  => esc_url_raw( 'https://www.machothemes.com/theme/regina-pro/?utm_source=worg&utm_medium=customizer&utm_campaign=upsell' ),
 		'second_button_text' => esc_html__( 'Get PRO now!', 'regina-lite' ),
-		'separator' => '- or -',
+		'separator' => ' or ',
 	) ) );
 
 	#
@@ -85,10 +85,7 @@ function regina_lite_customize_register( $wp_customize ) {
 		'priority' => 30,
 	) ) );
 
-	// Change panel for Header Image
-	$site_title2        = $wp_customize->get_section( 'header_image' );
-	$site_title2->panel = 'regina_lite_frontpage_sections';
-	$site_title2->priority = 1;
+	
 
 	// upsell - google maps
 	$wp_customize->add_section( $prefix . '_maps_section', array(
@@ -113,11 +110,14 @@ function regina_lite_customize_register( $wp_customize ) {
 		'button_text'  => esc_html__( 'See PRO vs Lite', 'regina-lite' ),
 		'second_button_url'  => esc_url_raw( 'https://www.machothemes.com/theme/regina-pro/?utm_source=worg&utm_medium=customizer&utm_campaign=upsell' ),
 		'second_button_text' => esc_html__( 'Get PRO now!', 'regina-lite' ),
-		'separator' => '- or -',
+		'separator' => ' or ',
 	) ) );
 
 	/* General Site Panel */
 	require_once get_template_directory() . '/inc/customizer/panels/site.php';
+
+	/* Hero Panel */
+	require_once get_template_directory() . '/inc/customizer/panels/hero.php';
 
 	/* Features Panel */
 	require_once get_template_directory() . '/inc/customizer/panels/features.php';

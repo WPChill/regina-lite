@@ -52,21 +52,14 @@ $wp_customize->selective_refresh->add_partial( $prefix . '_speak_general_title',
 ) );
 
 /* Description */
-$wp_customize->add_setting($prefix . '_speak_general_description',
-	array(
-		'sanitize_callback' => 'sanitize_text_field',
-		'default'           => __( 'We offer various services lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt.', 'regina-lite' ),
-	)
-);
-$wp_customize->add_control(
-	$prefix . '_speak_general_description',
-	array(
-		'label'         => esc_html__( 'Description:', 'regina-lite' ),
-		//'description'   => esc_html__('Description description.','regina-lite'),
-		'section'       => $prefix . '_speak_general',
-		'type'          => 'textarea',
-	)
-);
+$wp_customize->add_setting($prefix . '_speak_general_description', array(
+	'sanitize_callback' => 'wp_kses_post',
+	'default'           => __( 'We offer various services lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt.', 'regina-lite' ),
+) );
+$wp_customize->add_control( new Epsilon_Control_Text_Editor( $wp_customize, $prefix . '_speak_general_description', array(
+	'label'         => esc_html__( 'Description:', 'regina-lite' ),
+	'section'       => $prefix . '_speak_general',
+) ) );
 $wp_customize->selective_refresh->add_partial( $prefix . '_speak_general_description', array(
 	'selector' => '#speak-with-our-doctors .section-info p',
 ) );
@@ -78,14 +71,11 @@ $wp_customize->add_setting( $prefix . '_speak_general_buttonurl',
 		'default'           => esc_url( '#' ),
 	)
 );
-$wp_customize->add_control( $prefix . '_speak_general_buttonurl',
-	array(
-		'label'         => esc_html__( 'Button URL:', 'regina-lite' ),
-		//'description'   => esc_html__('Button URL description.', 'regina-lite'),
-		'section'       => $prefix . '_speak_general',
-		'settings'      => $prefix . '_speak_general_buttonurl',
-	)
-);
+$wp_customize->add_control( $prefix . '_speak_general_buttonurl', array(
+	'label'         => esc_html__( 'Button URL:', 'regina-lite' ),
+	'section'       => $prefix . '_speak_general',
+	'settings'      => $prefix . '_speak_general_buttonurl',
+) );
 $wp_customize->selective_refresh->add_partial( $prefix . '_speak_general_buttonurl', array(
 	'selector' => '#speak-with-our-doctors .section-info a',
 	'container_inclusive' => true,
