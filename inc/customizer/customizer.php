@@ -257,18 +257,6 @@ if ( ! function_exists( 'regina_lite_customizer_preview_js' ) ) {
 	add_action( 'customize_preview_init', 'regina_lite_customizer_preview_js' );
 }
 
-
-if ( ! function_exists( 'regina_lite_customizer_css_load' ) ) {
-	/**
-	 * Function to load CSS into the customizer
-	 */
-	function regina_lite_customizer_css_load() {
-		wp_enqueue_style( 'mt-customizer-css', get_template_directory_uri() . '/inc/customizer/assets/css/pro-version.css' );
-
-	}
-}
-
-
 // Partials callback functions
 function regina_render_appointment_link() {
 	$top_box_bookappointmenturl = get_theme_mod( 'regina_lite_top_box_bookappointmenturl' );
