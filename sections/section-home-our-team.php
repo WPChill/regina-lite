@@ -91,7 +91,7 @@ $image_id_4 = regina_lite_get_attachment_id( $ourteam_teammember4_image );
 			</div><!--.col-xs-12-->
 			<section id="team-block">
 				<?php if ( $ourteam_teammember1_image ) : ?>
-					<div class="<?php echo $team_member_class; ?>">
+					<div class="<?php echo $team_member_class; ?> member-1">
 						<div class="team-member">
 							<?php if ( $ourteam_teammember1_image ) : ?>
 								<img src="<?php echo esc_url( $ourteam_teammember1_image ); ?>" data-original="<?php echo esc_url( $ourteam_teammember1_image ); ?>" alt="<?php echo esc_attr( $image_meta_1['_wp_attachment_image_alt']['0'] ); ?>" class="lazy">
@@ -127,7 +127,7 @@ $image_id_4 = regina_lite_get_attachment_id( $ourteam_teammember4_image );
 					</div><!--.col-lg-3-->
 				<?php endif; ?>
 				<?php if ( $ourteam_teammember2_image ) : ?>
-					<div class="<?php echo $team_member_class; ?>">
+					<div class="<?php echo $team_member_class; ?> member-2">
 						<div class="team-member">
 							<?php if ( $ourteam_teammember2_image ) : ?>
 								<img src="<?php echo esc_url( $ourteam_teammember2_image ); ?>" data-original="<?php echo esc_url( $ourteam_teammember2_image ); ?>" alt="<?php echo esc_attr( $image_meta_2['_wp_attachment_image_alt']['0'] ); ?>" class="lazy">
@@ -163,7 +163,7 @@ $image_id_4 = regina_lite_get_attachment_id( $ourteam_teammember4_image );
 					</div><!--.col-lg-3-->
 				<?php endif; ?>
 				<?php if ( $ourteam_teammember3_image ) : ?>
-					<div class="<?php echo $team_member_class; ?>">
+					<div class="<?php echo $team_member_class; ?> member-3">
 						<div class="team-member">
 							<?php if ( $ourteam_teammember3_image ) : ?>
 								<img src="<?php echo esc_url( $ourteam_teammember3_image ); ?>" data-original="<?php echo esc_url( $ourteam_teammember3_image ); ?>" alt="<?php echo esc_attr( $image_meta_3['_wp_attachment_image_alt']['0'] ); ?>" class="lazy">
@@ -199,7 +199,7 @@ $image_id_4 = regina_lite_get_attachment_id( $ourteam_teammember4_image );
 					</div><!--.col-lg-3-->
 				<?php endif; ?>
 				<?php if ( $ourteam_teammember4_image ) : ?>
-					<div class="<?php echo $team_member_class; ?>">
+					<div class="<?php echo $team_member_class; ?> member-4">
 						<div class="team-member">
 							<?php if ( $ourteam_teammember4_image ) : ?>
 								<img src="<?php echo esc_url( $ourteam_teammember4_image ); ?>" data-original="<?php echo esc_url( $ourteam_teammember4_image ); ?>" alt="<?php echo esc_attr( $image_meta_4['_wp_attachment_image_alt']['0'] ); ?>"  class="lazy">

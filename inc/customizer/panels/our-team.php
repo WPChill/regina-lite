@@ -97,6 +97,7 @@ $wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, $pref
 	'settings' => $prefix . '_ourteam_teammember1_image',
 ) ) );
 
+
 /* Name */
 $wp_customize->add_setting($prefix . '_ourteam_teammember1_name',
 	array(
@@ -111,6 +112,9 @@ $wp_customize->add_control(
 		'section'       => $prefix . '_ourteam_teammember1',
 	)
 );
+$wp_customize->selective_refresh->add_partial( $prefix . '_ourteam_teammember1_name', array(
+	'selector' => '#team-block .member-1 .name',
+) );
 
 /* Position */
 $wp_customize->add_setting($prefix . '_ourteam_teammember1_position',
@@ -126,6 +130,9 @@ $wp_customize->add_control(
 		'section'       => $prefix . '_ourteam_teammember1',
 	)
 );
+$wp_customize->selective_refresh->add_partial( $prefix . '_ourteam_teammember1_position', array(
+	'selector' => '#team-block .member-1 .position',
+) );
 
 /* Description */
 $wp_customize->add_setting($prefix . '_ourteam_teammember1_description',
@@ -138,6 +145,9 @@ $wp_customize->add_control( new Epsilon_Control_Text_Editor( $wp_customize, $pre
 	'label'         => esc_html__( 'Description:', 'regina-lite' ),
 	'section'       => $prefix . '_ourteam_teammember1',
 ) ) );
+$wp_customize->selective_refresh->add_partial( $prefix . '_ourteam_teammember1_description', array(
+	'selector' => '#team-block .member-1 .hover .description p',
+) );
 
 /* Button URL */
 $wp_customize->add_setting( $prefix . '_ourteam_teammember1_buttonurl',
@@ -153,6 +163,11 @@ $wp_customize->add_control( $prefix . '_ourteam_teammember1_buttonurl',
 		'settings'      => $prefix . '_ourteam_teammember1_buttonurl',
 	)
 );
+$wp_customize->selective_refresh->add_partial( $prefix . '_ourteam_teammember1_buttonurl', array(
+	'selector' => '#team-block .member-1 .hover .read-more a',
+	'container_inclusive' => true,
+	'render_callback' => 'pixova_render_member1_link',
+) );
 
 /***********************************************/
 /************ TEAM MEMBER 2 SECTION ************/
@@ -190,6 +205,9 @@ $wp_customize->add_control(
 		'section'       => $prefix . '_ourteam_teammember2',
 	)
 );
+$wp_customize->selective_refresh->add_partial( $prefix . '_ourteam_teammember2_name', array(
+	'selector' => '#team-block .member-2 .name',
+) );
 
 /* Position */
 $wp_customize->add_setting($prefix . '_ourteam_teammember2_position',
@@ -205,6 +223,9 @@ $wp_customize->add_control(
 		'section'       => $prefix . '_ourteam_teammember2',
 	)
 );
+$wp_customize->selective_refresh->add_partial( $prefix . '_ourteam_teammember2_position', array(
+	'selector' => '#team-block .member-2 .position',
+) );
 
 /* Description */
 $wp_customize->add_setting($prefix . '_ourteam_teammember2_description',
@@ -217,6 +238,9 @@ $wp_customize->add_control( new Epsilon_Control_Text_Editor( $wp_customize, $pre
 	'label'         => esc_html__( 'Description:', 'regina-lite' ),
 	'section'       => $prefix . '_ourteam_teammember2',
 ) ) );
+$wp_customize->selective_refresh->add_partial( $prefix . '_ourteam_teammember2_description', array(
+	'selector' => '#team-block .member-2 .hover .description p',
+) );
 
 /* Button URL */
 $wp_customize->add_setting( $prefix . '_ourteam_teammember2_buttonurl',
@@ -232,6 +256,11 @@ $wp_customize->add_control( $prefix . '_ourteam_teammember2_buttonurl',
 		'settings'      => $prefix . '_ourteam_teammember2_buttonurl',
 	)
 );
+$wp_customize->selective_refresh->add_partial( $prefix . '_ourteam_teammember2_buttonurl', array(
+	'selector' => '#team-block .member-2 .hover .read-more a',
+	'container_inclusive' => true,
+	'render_callback' => 'pixova_render_member2_link',
+) );
 
 /***********************************************/
 /************ TEAM MEMBER 3 SECTION ************/
@@ -269,6 +298,9 @@ $wp_customize->add_control(
 		'section'       => $prefix . '_ourteam_teammember3',
 	)
 );
+$wp_customize->selective_refresh->add_partial( $prefix . '_ourteam_teammember3_name', array(
+	'selector' => '#team-block .member-3 .name',
+) );
 
 /* Position */
 $wp_customize->add_setting($prefix . '_ourteam_teammember3_position',
@@ -284,6 +316,9 @@ $wp_customize->add_control(
 		'section'       => $prefix . '_ourteam_teammember3',
 	)
 );
+$wp_customize->selective_refresh->add_partial( $prefix . '_ourteam_teammember3_position', array(
+	'selector' => '#team-block .member-3 .position',
+) );
 
 /* Description */
 $wp_customize->add_setting($prefix . '_ourteam_teammember3_description',
@@ -296,6 +331,9 @@ $wp_customize->add_control( new Epsilon_Control_Text_Editor( $wp_customize, $pre
 	'label'         => esc_html__( 'Description:', 'regina-lite' ),
 	'section'       => $prefix . '_ourteam_teammember3',
 ) ) );
+$wp_customize->selective_refresh->add_partial( $prefix . '_ourteam_teammember3_description', array(
+	'selector' => '#team-block .member-3 .hover .description p',
+) );
 
 /* Button URL */
 $wp_customize->add_setting( $prefix . '_ourteam_teammember3_buttonurl',
@@ -311,6 +349,11 @@ $wp_customize->add_control( $prefix . '_ourteam_teammember3_buttonurl',
 		'settings'      => $prefix . '_ourteam_teammember3_buttonurl',
 	)
 );
+$wp_customize->selective_refresh->add_partial( $prefix . '_ourteam_teammember3_buttonurl', array(
+	'selector' => '#team-block .member-3 .hover .read-more a',
+	'container_inclusive' => true,
+	'render_callback' => 'pixova_render_member3_link',
+) );
 
 /***********************************************/
 /************ TEAM MEMBER 4 SECTION ************/
@@ -348,6 +391,9 @@ $wp_customize->add_control(
 		'section'       => $prefix . '_ourteam_teammember4',
 	)
 );
+$wp_customize->selective_refresh->add_partial( $prefix . '_ourteam_teammember4_name', array(
+	'selector' => '#team-block .member-4 .name',
+) );
 
 /* Position */
 $wp_customize->add_setting($prefix . '_ourteam_teammember4_position',
@@ -363,6 +409,9 @@ $wp_customize->add_control(
 		'section'       => $prefix . '_ourteam_teammember4',
 	)
 );
+$wp_customize->selective_refresh->add_partial( $prefix . '_ourteam_teammember4_position', array(
+	'selector' => '#team-block .member-4 .position',
+) );
 
 /* Description */
 $wp_customize->add_setting($prefix . '_ourteam_teammember4_description', array(
@@ -373,6 +422,9 @@ $wp_customize->add_control( new Epsilon_Control_Text_Editor( $wp_customize, $pre
 	'label'         => esc_html__( 'Description:', 'regina-lite' ),
 	'section'       => $prefix . '_ourteam_teammember4',
 ) ) );
+$wp_customize->selective_refresh->add_partial( $prefix . '_ourteam_teammember4_description', array(
+	'selector' => '#team-block .member-4 .hover .description p',
+) );
 
 /* Button URL */
 $wp_customize->add_setting( $prefix . '_ourteam_teammember4_buttonurl',
@@ -388,3 +440,8 @@ $wp_customize->add_control( $prefix . '_ourteam_teammember4_buttonurl',
 		'settings'      => $prefix . '_ourteam_teammember4_buttonurl',
 	)
 );
+$wp_customize->selective_refresh->add_partial( $prefix . '_ourteam_teammember4_buttonurl', array(
+	'selector' => '#team-block .member-4 .hover .read-more a',
+	'container_inclusive' => true,
+	'render_callback' => 'pixova_render_member4_link',
+) );

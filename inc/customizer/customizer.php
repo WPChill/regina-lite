@@ -347,3 +347,19 @@ function regina_render_email_link() {
 	$email_addr = get_theme_mod( 'regina_lite_email' );
 	return '<a href="mailto: ' . sanitize_email( $email_addr ) . '">' . sanitize_email( $email_addr ) . '</a>';
 }
+function pixova_render_member1_link() {
+	$ourteam_teammember_buttonurl   = get_theme_mod( 'regina_lite_ourteam_teammember1_buttonurl', '#' );
+	return '<a href="' . esc_url( $ourteam_teammember_buttonurl ) . '" class="button white outline">' . __( 'Read more', 'regina-lite' ) . '<span class="nc-icon-glyph arrows-1_bold-right"></span></a>';
+}
+function pixova_render_member2_link() {
+	$ourteam_teammember_buttonurl   = get_theme_mod( 'regina_lite_ourteam_teammember2_buttonurl', '#' );
+	return '<a href="' . esc_url( $ourteam_teammember_buttonurl ) . '" class="button white outline">' . __( 'Read more', 'regina-lite' ) . '<span class="nc-icon-glyph arrows-1_bold-right"></span></a>';
+}
+function pixova_render_member3_link() {
+	$ourteam_teammember_buttonurl   = get_theme_mod( 'regina_lite_ourteam_teammember3_buttonurl', '#' );
+	return '<a href="' . esc_url( $ourteam_teammember_buttonurl ) . '" class="button white outline">' . __( 'Read more', 'regina-lite' ) . '<span class="nc-icon-glyph arrows-1_bold-right"></span></a>';
+}
+function pixova_render_member4_link() {
+	$ourteam_teammember_buttonurl   = get_theme_mod( 'regina_lite_ourteam_teammember4_buttonurl', '#' );
+	return '<a href="' . esc_url( $ourteam_teammember_buttonurl ) . '" class="button white outline">' . __( 'Read more', 'regina-lite' ) . '<span class="nc-icon-glyph arrows-1_bold-right"></span></a>';
+}

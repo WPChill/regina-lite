@@ -116,6 +116,9 @@ $wp_customize->add_control( new Epsilon_Control_Text_Editor( $wp_customize, $pre
 	'label'         => esc_html__( 'Description:', 'regina-lite' ),
 	'section'       => $prefix . '_testimonials_testimonial1',
 ) ) );
+$wp_customize->selective_refresh->add_partial( $prefix . '_testimonials_testimonial1_description', array(
+	'selector' => '#testimonials-slider .bxslider .testimonial-1 .quote',
+) );
 
 
 /* Image */
@@ -139,6 +142,9 @@ $wp_customize->add_control( $prefix . '_testimonials_testimonial1_name', array(
 	'label'         => esc_html__( 'Name:', 'regina-lite' ),
 	'section'       => $prefix . '_testimonials_testimonial1',
 ) );
+$wp_customize->selective_refresh->add_partial( $prefix . '_testimonials_testimonial1_name', array(
+	'selector' => '#testimonials-slider .bxslider .testimonial-1 .name',
+) );
 
 
 /* Position */
@@ -149,6 +155,9 @@ $wp_customize->add_setting( $prefix . '_testimonials_testimonial1_position', arr
 $wp_customize->add_control( $prefix . '_testimonials_testimonial1_position', array(
 	'label'         => esc_html__( 'Position:', 'regina-lite' ),
 	'section'       => $prefix . '_testimonials_testimonial1',
+) );
+$wp_customize->selective_refresh->add_partial( $prefix . '_testimonials_testimonial1_position', array(
+	'selector' => '#testimonials-slider .bxslider .testimonial-1 .position',
 ) );
 
 
@@ -169,6 +178,9 @@ $wp_customize->add_control( new Epsilon_Control_Text_Editor( $wp_customize, $pre
 	'label'         => esc_html__( 'Description:', 'regina-lite' ),
 	'section'       => $prefix . '_testimonials_testimonial2',
 ) ) );
+$wp_customize->selective_refresh->add_partial( $prefix . '_testimonials_testimonial2_description', array(
+	'selector' => '#testimonials-slider .bxslider .testimonial-2 .quote',
+) );
 
 /* Image */
 $wp_customize->add_setting( $prefix . '_testimonials_testimonial2_image', array(
@@ -190,6 +202,9 @@ $wp_customize->add_control( $prefix . '_testimonials_testimonial2_name', array(
 	'label'         => esc_html__( 'Name:', 'regina-lite' ),
 	'section'       => $prefix . '_testimonials_testimonial2',
 ) );
+$wp_customize->selective_refresh->add_partial( $prefix . '_testimonials_testimonial2_name', array(
+	'selector' => '#testimonials-slider .bxslider .testimonial-2 .name',
+) );
 
 /* Position */
 $wp_customize->add_setting( $prefix . '_testimonials_testimonial2_position', array(
@@ -199,6 +214,9 @@ $wp_customize->add_setting( $prefix . '_testimonials_testimonial2_position', arr
 $wp_customize->add_control( $prefix . '_testimonials_testimonial2_position', array(
 	'label'         => esc_html__( 'Position:', 'regina-lite' ),
 	'section'       => $prefix . '_testimonials_testimonial2',
+) );
+$wp_customize->selective_refresh->add_partial( $prefix . '_testimonials_testimonial2_position', array(
+	'selector' => '#testimonials-slider .bxslider .testimonial-2 .position',
 ) );
 
 /***********************************************/
@@ -218,6 +236,9 @@ $wp_customize->add_control( new Epsilon_Control_Text_Editor( $wp_customize, $pre
 	'label'         => esc_html__( 'Description:', 'regina-lite' ),
 	'section'       => $prefix . '_testimonials_testimonial3',
 ) ) );
+$wp_customize->selective_refresh->add_partial( $prefix . '_testimonials_testimonial3_description', array(
+	'selector' => '#testimonials-slider .bxslider .testimonial-2 .quote',
+) );
 
 /* Image */
 $wp_customize->add_setting( $prefix . '_testimonials_testimonial3_image', array(
@@ -239,6 +260,9 @@ $wp_customize->add_control( $prefix . '_testimonials_testimonial3_name', array(
 	'label'         => esc_html__( 'Name:', 'regina-lite' ),
 	'section'       => $prefix . '_testimonials_testimonial3',
 ) );
+$wp_customize->selective_refresh->add_partial( $prefix . '_testimonials_testimonial3_name', array(
+	'selector' => '#testimonials-slider .bxslider .testimonial-3 .name',
+) );
 
 /* Position */
 $wp_customize->add_setting( $prefix . '_testimonials_testimonial3_position', array(
@@ -248,6 +272,9 @@ $wp_customize->add_setting( $prefix . '_testimonials_testimonial3_position', arr
 $wp_customize->add_control( $prefix . '_testimonials_testimonial3_position', array(
 	'label'         => esc_html__( 'Position:', 'regina-lite' ),
 	'section'       => $prefix . '_testimonials_testimonial3',
+) );
+$wp_customize->selective_refresh->add_partial( $prefix . '_testimonials_testimonial3_position', array(
+	'selector' => '#testimonials-slider .bxslider .testimonial-3 .position',
 ) );
 
 /***********************************************/
@@ -267,6 +294,9 @@ $wp_customize->add_control( new Epsilon_Control_Text_Editor( $wp_customize, $pre
 	'label'         => esc_html__( 'Description:', 'regina-lite' ),
 	'section'       => $prefix . '_testimonials_testimonial4',
 ) ) );
+$wp_customize->selective_refresh->add_partial( $prefix . '_testimonials_testimonial4_description', array(
+	'selector' => '#testimonials-slider .bxslider .testimonial-4 .quote',
+) );
 
 /* Image */
 $wp_customize->add_setting( $prefix . '_testimonials_testimonial4_image', array(
@@ -288,6 +318,9 @@ $wp_customize->add_control( $prefix . '_testimonials_testimonial4_name', array(
 	'label'         => esc_html__( 'Name:', 'regina-lite' ),
 	'section'       => $prefix . '_testimonials_testimonial4',
 ) );
+$wp_customize->selective_refresh->add_partial( $prefix . '_testimonials_testimonial4_name', array(
+	'selector' => '#testimonials-slider .bxslider .testimonial-4 .name',
+) );
 
 /* Position */
 $wp_customize->add_setting( $prefix . '_testimonials_testimonial4_position', array(
@@ -297,6 +330,9 @@ $wp_customize->add_setting( $prefix . '_testimonials_testimonial4_position', arr
 $wp_customize->add_control( $prefix . '_testimonials_testimonial4_position', array(
 	'label'         => esc_html__( 'Position:', 'regina-lite' ),
 	'section'       => $prefix . '_testimonials_testimonial4',
+) );
+$wp_customize->selective_refresh->add_partial( $prefix . '_testimonials_testimonial4_position', array(
+	'selector' => '#testimonials-slider .bxslider .testimonial-4 .position',
 ) );
 
 /***********************************************/
@@ -316,6 +352,9 @@ $wp_customize->add_control( new Epsilon_Control_Text_Editor( $wp_customize, $pre
 	'label'         => esc_html__( 'Description:', 'regina-lite' ),
 	'section'       => $prefix . '_testimonials_testimonial5',
 ) ) );
+$wp_customize->selective_refresh->add_partial( $prefix . '_testimonials_testimonial5_description', array(
+	'selector' => '#testimonials-slider .bxslider .testimonial-5 .quote',
+) );
 
 /* Image */
 $wp_customize->add_setting( $prefix . '_testimonials_testimonial5_image', array(
@@ -337,6 +376,9 @@ $wp_customize->add_control( $prefix . '_testimonials_testimonial5_name', array(
 	'label'         => esc_html__( 'Name:', 'regina-lite' ),
 	'section'       => $prefix . '_testimonials_testimonial5',
 ) );
+$wp_customize->selective_refresh->add_partial( $prefix . '_testimonials_testimonial5_name', array(
+	'selector' => '#testimonials-slider .bxslider .testimonial-5 .name',
+) );
 
 /* Position */
 $wp_customize->add_setting( $prefix . '_testimonials_testimonial5_position', array(
@@ -346,4 +388,7 @@ $wp_customize->add_setting( $prefix . '_testimonials_testimonial5_position', arr
 $wp_customize->add_control( $prefix . '_testimonials_testimonial5_position', array(
 	'label'         => esc_html__( 'Position:', 'regina-lite' ),
 	'section'       => $prefix . '_testimonials_testimonial5',
+) );
+$wp_customize->selective_refresh->add_partial( $prefix . '_testimonials_testimonial5_position', array(
+	'selector' => '#testimonials-slider .bxslider .testimonial-5 .position',
 ) );
