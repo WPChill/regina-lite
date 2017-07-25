@@ -11,15 +11,14 @@
 	/***********************************************/
 
 
-	$wp_customize->add_panel( $panel_id,
-		array(
-			'priority' => 57,
-			'capability' => 'edit_theme_options',
-			'theme_supports' => '',
-			'title' => esc_html__( 'Single Post Options', 'regina-lite' ),
-			'description' => esc_html__( 'Control various blog options from here. Most of the options from this panel refer to the blog single page view. If you\'re not familiar with that term, please perform a Google search.', 'regina-lite' ),
-		)
-	);
+	$wp_customize->add_panel( new Regina_Custom_Panel( $wp_customize, $panel_id, array(
+		'priority' => 57,
+		'capability' => 'edit_theme_options',
+		'theme_supports' => '',
+		'title' => esc_html__( 'Single Post Options', 'regina-lite' ),
+		'description' => esc_html__( 'Control various blog options from here. Most of the options from this panel refer to the blog single page view. If you\'re not familiar with that term, please perform a Google search.', 'regina-lite' ),
+		'panel' => $prefix . '_panel_general',
+	) ) );
 
 	/***********************************************/
 	/************** Global Blog Settings  ***************/

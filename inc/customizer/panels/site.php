@@ -35,15 +35,13 @@
 	/***********************************************/
 
 
-	$wp_customize->add_panel( $panel_id,
-		array(
-			'priority' => 29,
-			'capability' => 'edit_theme_options',
-			'theme_supports' => '',
-			'title' => esc_html__( 'Theme Options', 'regina-lite' ),
-			'description' => esc_html__( 'You can change the site layout in this area as well as your contact details (the ones displayed in the header & footer) ', 'regina-lite' ),
-		)
-	);
+	$wp_customize->add_panel( new Regina_Custom_Panel( $wp_customize, $panel_id, array(
+		'priority' => 29,
+		'capability' => 'edit_theme_options',
+		'theme_supports' => '',
+		'title' => esc_html__( 'Theme Options', 'regina-lite' ),
+		'description' => esc_html__( 'You can change the site layout in this area as well as your contact details (the ones displayed in the header & footer) ', 'regina-lite' ),
+	) ) );
 
 	/***********************************************/
 	/************** General Site Settings  ***************/
