@@ -69,14 +69,14 @@ class Regina_Lite_Widget_Contact extends WP_Widget {
 	 * @param array $instance Previously saved values from database.
 	 */
 	public function form( $instance ) {
-		$title = $instance['title'];
-		$phone = $instance['phone'];
-		$email = $instance['email'];
-		$facebook_link = $instance['facebook_link'];
-		$twitter_link = $instance['twitter_link'];
-		$linkedin_link = $instance['linkedin_link'];
-		$youtube_link = $instance['youtube_link'];
-		$instagram_link = $instance['instagram_link'];
+		$title = ( ! empty( $new_instance['title'] ) ) ? strip_tags( $new_instance['title'] ) : '';;
+		$phone = ( ! empty( $new_instance['phone'] ) ? $new_instance['phone'] : '' );
+		$email = ( ! empty( $new_instance['email'] ) ? $new_instance['email'] : '' );
+		$facebook_link = ( ! empty( $new_instance['facebook_link'] ) ? $new_instance['facebook_link'] : '' );
+		$twitter_link = ( ! empty( $new_instance['twitter_link'] ) ? $new_instance['twitter_link'] : '' );
+		$linkedin_link = ( ! empty( $new_instance['linkedin_link'] ) ? $new_instance['linkedin_link'] : '' );
+		$youtube_link = ( ! empty( $new_instance['youtube_link'] ) ? $new_instance['youtube_link'] : '' );
+		$instagram_link = ( ! empty( $new_instance['instagram_link'] ) ? $new_instance['instagram_link'] : '' );
 
 		?>
 		<p>
