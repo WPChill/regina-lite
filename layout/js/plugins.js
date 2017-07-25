@@ -9,7 +9,7 @@
 
         // Owl Carousel - used to create carousels throughout the site
         // http://owlgraphic.com/owlcarousel/
-        if ( 'undefined' === typeof $.fn.owlCarousel ) {
+        if ( 'undefined' !== typeof $.fn.owlCarousel ) {
 
             $( '.owlCarousel' ).each(function() {
 

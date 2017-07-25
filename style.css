@@ -12,31 +12,3 @@ Tags: grid-layout, footer-widgets, blog, education, e-commerce
 
 This theme, like WordPress, is licensed under the GPL.
 */
-#navigation ul li ul {
-    display: none;
-}
-.nav-menu-search {
-	position: relative;
-	margin-left: 20px;
-}
-body #sub-header .nav-menu-search button.icon {
-	position: absolute;
-    left: auto;
-    right: 2px;
-    top: 13.5px;
-}
-.social-links-container {
-	float: left;
-}
-.contact-bar {
-	float: right;
-}
-@media screen and ( max-width:500px ) {
-	.contact-bar .pull-right {
-		float: none !important;
-		display: inline-block;
-	}
-	.social-links-container {
-		float: none;
-	}
-}

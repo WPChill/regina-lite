@@ -90,63 +90,63 @@ endif; ?>
 	endif;
 
 	$nr_recommended_plugins = 0;
-	if ( $nr_actions_required == 0 || $nr_actions_required == $nr_action_dismissed ):
-		$regina_show_recommended_plugins = get_option( "regina_show_recommended_plugins" );
+	if ( 0 == $nr_actions_required || $nr_actions_required == $nr_action_dismissed ) :
+		$regina_show_recommended_plugins = get_option( 'regina_show_recommended_plugins' );
 		foreach ( $regina_recommended_plugins as $slug => $plugin_opt ) {
-			
-			if ( !$plugin_opt['recommended'] ) {
+
+			if ( ! $plugin_opt['recommended'] ) {
 				continue;
 			}
 			if ( Regina_Notify_System::has_import_plugin( $slug ) ) {
 				continue;
 			}
-			if ( $nr_recommended_plugins == 0 ) {
+			if ( 0 == $nr_recommended_plugins ) {
 				echo '<h3 class="hooray">' . __( 'Hooray! There are no required actions for you right now. But you can make your theme more powerful with next actions: ', 'regina-lite' ) . '</h3>';
 			}
 			$nr_recommended_plugins ++;
 			echo '<div class="regina-action-required-box">';
-			if ( isset($regina_show_recommended_plugins[$slug]) && false === $regina_show_recommended_plugins[$slug] ): ?>
+			if ( isset( $regina_show_recommended_plugins[ $slug ] ) && false === $regina_show_recommended_plugins[ $slug ] ) : ?>
 				<span data-action="add" class="dashicons dashicons-hidden regina-recommended-plugin-button"
-				      id="<?php echo esc_attr( $slug ); ?>"></span>
-			<?php else: ?>
+					  id="<?php echo esc_attr( $slug ); ?>"></span>
+			<?php else : ?>
 				<span data-action="dismiss" class="dashicons dashicons-visibility regina-recommended-plugin-button"
-				      id="<?php echo esc_attr( $slug ); ?>"></span>
+					  id="<?php echo esc_attr( $slug ); ?>"></span>
 			<?php endif;
 			$active = $this->check_active( $slug );
 			$url    = $this->create_action_link( $active['needs'], $slug );
 			$info   = $this->call_plugin_api( $slug );
 			$label  = '';
 			$class = '';
-			switch ( $active['needs'] ) {
-				case 'install':
-					$class = 'install-now button';
-					$label = __( 'Install', 'regina-lite' );
-					break;
-				case 'activate':
-					$class = 'activate-now button button-primary';
-					$label = __( 'Activate', 'regina-lite' );
-					break;
-				case 'deactivate':
-					$class = 'deactivate-now button';
-					$label = __( 'Deactivate', 'regina-lite' );
-					break;
-			}
+switch ( $active['needs'] ) {
+	case 'install':
+		$class = 'install-now button';
+		$label = __( 'Install', 'regina-lite' );
+		break;
+	case 'activate':
+		$class = 'activate-now button button-primary';
+		$label = __( 'Activate', 'regina-lite' );
+		break;
+	case 'deactivate':
+		$class = 'deactivate-now button';
+		$label = __( 'Deactivate', 'regina-lite' );
+		break;
+}
 			?>
-			<h3><?php echo $label .': '.$info->name ?></h3>
+			<h3><?php echo $label . ': ' . $info->name ?></h3>
 			<p>
 				<?php echo $info->short_description ?>
 			</p>
-			<p class="plugin-card-<?php echo esc_attr( $slug ) ?> action_button <?php echo ( $active['needs'] !== 'install' && $active['status'] ) ? 'active' : '' ?>">
+			<p class="plugin-card-<?php echo esc_attr( $slug ) ?> action_button <?php echo ( 'install' !== $active['needs'] && $active['status'] ) ? 'active' : '' ?>">
 				<a data-slug="<?php echo esc_attr( $slug ) ?>"
 				   class="<?php echo $class; ?>"
 				   href="<?php echo esc_url( $url ) ?>"> <?php echo $label ?> </a>
 			</p>
 			<?php
 			echo '</div>';
-		}
+		}// End foreach().
 	endif;
 
-	if ( $hooray && $nr_recommended_plugins == 0 ) :
+	if ( $hooray && 0 == $nr_recommended_plugins ) :
 		echo '<span class="hooray">' . __( 'Hooray! There are no required actions for you right now.', 'regina-lite' ) . '</span>';
 	endif;
 	?>

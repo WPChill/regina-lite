@@ -12599,3 +12599,35 @@ body {
 	display: block;
 	width: 100%;
 }
+
+#navigation ul li ul {
+    display: none;
+}
+.nav-menu-search {
+	position: relative;
+	margin-left: 20px;
+}
+.widget .nav-menu-search {
+	margin-left: 0;
+}
+body #sub-header .nav-menu-search button.icon {
+	position: absolute;
+    left: auto;
+    right: 2px;
+    top: 13.5px;
+}
+.social-links-container {
+	float: left;
+}
+.contact-bar {
+	float: right;
+}
+@media screen and ( max-width:500px ) {
+	.contact-bar .pull-right {
+		float: none !important;
+		display: inline-block;
+	}
+	.social-links-container {
+		float: none;
+	}
+}
