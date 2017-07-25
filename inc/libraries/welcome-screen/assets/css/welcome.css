@@ -138,7 +138,8 @@
     max-width: 100%;
 }
 
-.about-wrap .regina-dismiss-required-action {
+.about-wrap .regina-dismiss-required-action,
+.about-wrap .regina-recommended-plugin-button {
     position: absolute;
     top: 10px;
     right: 10px;

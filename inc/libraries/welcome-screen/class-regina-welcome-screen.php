@@ -29,6 +29,10 @@ class Regina_Welcome_Screen {
 			$this,
 			'regina_dismiss_required_action_callback',
 		) );
+		add_action( 'wp_ajax_regina_dismiss_recommended_plugins', array(
+			$this,
+			'regina_dismiss_recommended_plugins_callback'
+		) );
 
 		/**
 		 * Set the blog / static page automatically
@@ -192,6 +196,27 @@ class Regina_Welcome_Screen {
 
 		endif;
 
+		die(); // this is required to return a proper result
+	}
+
+	public function regina_dismiss_recommended_plugins_callback() {
+		$action_id = ( isset( $_GET['id'] ) ) ? $_GET['id'] : 0;
+		echo $action_id; /* this is needed and it's the id of the dismissable required action */
+		if ( ! empty( $action_id ) ):
+			/* if the option exists, update the record for the specified id */
+			$regina_show_recommended_plugins = get_option( 'regina_show_recommended_plugins' );
+				
+				switch ( $_GET['todo'] ) {
+					case 'add';
+						$regina_show_recommended_plugins[ $action_id ] = true;
+						break;
+					case 'dismiss';
+						$regina_show_recommended_plugins[ $action_id ] = false;
+						break;
+				}
+				update_option( 'regina_show_recommended_plugins', $regina_show_recommended_plugins );
+			/* create the new option,with false for the specified id */
+		endif;
 		die(); // this is required to return a proper result
 	}
 
