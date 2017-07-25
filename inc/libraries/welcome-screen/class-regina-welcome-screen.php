@@ -124,23 +124,6 @@ class Regina_Welcome_Screen {
 	}
 
 	/**
-	 * Load scripts for customizer page
-	 *
-	 */
-	public function regina_welcome_scripts_for_customizer() {
-
-		wp_enqueue_style( 'regina-welcome-screen-customizer', get_template_directory_uri() . '/inc/libraries/welcome-screen/assets/css/welcome_customizer.css' );
-		wp_enqueue_script( 'regina-welcome-screen-customizer', get_template_directory_uri() . '/inc/libraries/welcome-screen/assets/js/welcome_customizer.js', array( 'jquery' ), '20120206', true );
-
-		wp_localize_script( 'regina-welcome-screen-customizer', 'reginaWelcomeScreenCustomizerObject', array(
-			'nr_actions_required' => absint( $this->count_actions() ),
-			'aboutpage'           => esc_url( admin_url( 'themes.php?page=regina-welcome&tab=recommended_actions' ) ),
-			'customizerpage'      => esc_url( admin_url( 'customize.php#recommended_actions' ) ),
-			'themeinfo'           => __( 'View Theme Info', 'regina-lite' ),
-		) );
-	}
-
-	/**
 	 * Dismiss required actions
 	 *
 	 * @since 1.8.2.4
