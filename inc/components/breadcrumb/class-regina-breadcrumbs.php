@@ -221,9 +221,7 @@ class Regina_Breadcrumbs {
 				// 404 Page
 			} elseif ( is_404() ) {
 				// Special treatment for Events Calendar to avoid 404 messages on list view
-				if ( class_exists( 'TribeEvents' ) &&
-					tribe_is_event() || is_events_archive()
-				) {
+				if ( class_exists( 'TribeEvents' ) && ( tribe_is_event() || is_events_archive() ) ) {
 					$this->html_markup .= $this->get_breadcrumb_leaf_markup( 'events' );
 					// Default case
 				} else {
