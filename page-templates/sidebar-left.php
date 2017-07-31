@@ -1,6 +1,6 @@
 <?php
 /**
- *  Template name: Page width sidebar on the left
+ *  Template name: Page with sidebar on the left
  *
  *  The template for displaying Custom Page Template with sidebar on the left.
  *
