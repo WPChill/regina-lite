@@ -11952,7 +11952,12 @@ ol li {
 		text-align: justify;
 	}
 }
-
+@media (max-width: 1024px) {
+	#footer .back-to-top {
+		top: 27px;
+    	right: 15px;
+	}
+}
 /* New Search Form */
 .nav-menu-search {
 	vertical-align: middle;
