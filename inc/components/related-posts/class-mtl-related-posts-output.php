@@ -73,11 +73,11 @@ if ( ! class_exists( 'MTL_Related_Posts_Output' ) ) {
 		 */
 		public function get_related_posts( $post_id, $number_posts = -1 ) {
 
-			$related_postsuery = new WP_Query();
+			$related_postsquery = new WP_Query();
 			$args = '';
 
 			if ( 0 == $number_posts ) {
-				return $related_postsuery;
+				return $related_postsquery;
 			}
 
 			$args = wp_parse_args( $args, array(
@@ -88,13 +88,9 @@ if ( ! class_exists( 'MTL_Related_Posts_Output' ) ) {
 				'meta_key'              => '_thumbnail_id',
 			));
 
-			$related_postsuery = new WP_Query( $args );
+			$related_postsquery = new WP_Query( $args );
 
-			// reset post query
-			wp_reset_postdata();
-			wp_reset_query();
-
-			return $related_postsuery;
+			return $related_postsquery;
 		}
 
 		/**
@@ -115,30 +111,18 @@ if ( ! class_exists( 'MTL_Related_Posts_Output' ) ) {
 				// Auto play
 				$auto_play = get_theme_mod( 'regina_lite_autoplay_blog_posts', 1 );
 
-			if ( 0 == $auto_play ) {
-				$auto_play = false;
-			} else {
-				$auto_play = true;
-			}
-
 				// Pagination
 				$pagination = get_theme_mod( 'regina_lite_pagination_blog_posts', 0 );
-
-			if ( 0 == $pagination ) {
-				$pagination = false;
-			} else {
-				$pagination = true;
-			}
 
 				/*
                  * Heading
                  */
 				echo '<h3>' . __( 'Related posts: ', 'regina-lite' ) . '</h3>';
-				echo sprintf( '<div class="owlCarousel" data-slider-id="%s" id="owlCarousel-%s" data-slider-items="%s" data-slider-speed="400" data-slider-auto-play="%s" data-slider-navigation="false" data-slider-pagination="%s">', get_the_ID(), get_the_ID(), $limit, $auto_play, $pagination );
+				echo sprintf( '<div class="owlCarousel" data-slider-id="%s" id="owlCarousel-%s" data-slider-items="%s" data-slider-speed="400" data-slider-auto-play="%s" data-slider-navigation="0" data-slider-pagination="%s">', get_the_ID(), get_the_ID(), $limit, $auto_play, $pagination );
+
 			while ( $related_posts->have_posts() ) {
 				$related_posts->the_post();
-				global $post;
-				$featured_image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'regina-lite-related-posts' );
+				$featured_image = wp_get_attachment_image_src( get_post_thumbnail_id( get_the_ID() ), 'regina-lite-related-posts' );
 				$enable_related_title_blog_posts = get_theme_mod( 'regina_lite_enable_related_title_blog_posts', 1 );
 				$enable_related_date_blog_posts = get_theme_mod( 'regina_lite_enable_related_date_blog_posts', 1 );
 				$url = get_permalink();
@@ -151,7 +135,7 @@ if ( ! class_exists( 'MTL_Related_Posts_Output' ) ) {
 				}
 						echo '<div class="inner">';
 				if ( 1 == $enable_related_date_blog_posts ) {
-					echo '<h6 class="date">' . get_the_date( get_option( 'date-format' ), $related_posts->post->ID ) . '</h6>';
+					echo '<h6 class="date">' . get_the_date( get_option( 'date-format' ), get_the_ID() ) . '</h6>';
 				}
 				if ( 1 == $enable_related_title_blog_posts ) {
 					echo '<p class="title">' . esc_html( get_the_title() ) . '</p>';
