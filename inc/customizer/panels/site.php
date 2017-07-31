@@ -293,7 +293,7 @@
 	$wp_customize->add_section( $prefix . '_general_footer_section' ,
 		array(
 			'title'       => esc_html__( 'Footer Details', 'regina-lite' ),
-			'description' => esc_html__( 'Change the footer copyright message from here. Note: no HTML allowed.', 'regina-lite' ),
+			'description' => esc_html__( 'Change the footer copyright message from here.', 'regina-lite' ),
 			'priority'    => 4,
 			'panel' => $panel_id,
 		)
