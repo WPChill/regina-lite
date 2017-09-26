@@ -11075,7 +11075,11 @@ ol li {
 #blog .post .meta {
 	float: left;
 	font-size: 14px; }
-
+#blog .post .entry-meta:after {
+	content: "";
+	display: block;
+	clear: both;
+}
 #blog .post .comments {
 	float: right;
 	font-size: 14px; }

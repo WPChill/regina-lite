@@ -9,7 +9,7 @@ $prefix = 'regina_lite';
 /****************** OUR TEAM *******************/
 /***********************************************/
 $wp_customize->add_panel( new Regina_Custom_Panel( $wp_customize, $panel_id, array(
-	'priority'          => 20,
+	'priority'          => 30,
 	'capability'        => 'edit_theme_options',
 	'theme_supports'    => '',
 	'title'             => esc_html__( 'Our Team', 'regina-lite' ),
@@ -22,12 +22,29 @@ $wp_customize->add_panel( new Regina_Custom_Panel( $wp_customize, $panel_id, arr
 /***********************************************/
 
 
-$wp_customize->add_section( $prefix . '_ourteam_general' ,
-	array(
-		'title'       => esc_html__( 'General', 'regina-lite' ),
-		'panel'       => $panel_id,
-	)
-);
+$wp_customize->add_section( $prefix . '_ourteam_general', array(
+	'title'       => esc_html__( 'General', 'regina-lite' ),
+	'panel'       => $panel_id,
+) );
+
+// Upsell
+$wp_customize->add_setting( $prefix . '_ourteam_pro', array(
+	'sanitize_callback' => $prefix . '_sanitize_pro_version',
+) );
+$wp_customize->add_control( new Epsilon_Control_Upsell( $wp_customize, $prefix . '_ourteam_pro', array(
+	'section'      => $prefix . '_ourteam_general',
+	'options'      => array(
+		esc_html__( 'Unlimited Members', 'regina-lite' ),
+	),
+	'requirements' => array(
+		esc_html__( 'In Regina PRO you can add how many members you want.', 'regina-lite' ),
+	),
+	'button_url'   => esc_url_raw( get_admin_url() . 'themes.php?page=regina-welcome&tab=features' ),
+	'button_text'  => esc_html__( 'See PRO vs Lite', 'regina-lite' ),
+	'second_button_url'  => esc_url_raw( 'https://www.machothemes.com/theme/regina-pro/?utm_source=worg&utm_medium=customizer&utm_campaign=upsell' ),
+	'second_button_text' => esc_html__( 'Get PRO now!', 'regina-lite' ),
+	'separator' => ' or ',
+) ) );
 
 /* Show this section? */
 $wp_customize->add_setting( $prefix . '_ourteam_general_show',

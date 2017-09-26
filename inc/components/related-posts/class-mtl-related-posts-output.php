@@ -100,10 +100,14 @@ if ( ! class_exists( 'MTL_Related_Posts_Output' ) ) {
 		 **/
 		function output_related_posts() {
 
-			echo '<div id="related-posts" class="mt-related-posts">';
+			// Check if related posts should be shown
+			$related_posts = $this->get_related_posts( get_the_ID(), get_option( 'posts_per_page' ) );
 
-				// Check if related posts should be shown
-				$related_posts = $this->get_related_posts( get_the_ID(), get_option( 'posts_per_page' ) );
+			if ( ! $related_posts->have_posts() ) {
+				return;
+			}
+
+			echo '<div id="related-posts" class="mt-related-posts">';
 
 				// Number of posts to show / view
 				$limit = get_theme_mod( 'regina_lite_howmany_blog_posts', 3 );

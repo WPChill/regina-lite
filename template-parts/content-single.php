@@ -15,7 +15,9 @@
 		</div>
 	<?php endif; ?>
 	<h2 class="title"><?php the_title(); ?></h2>
+	
 	<?php do_action( 'mtl_entry_meta' ); ?>
+	
 	<div class="body markup-format">
 		<?php the_content(); ?>
 		<?php

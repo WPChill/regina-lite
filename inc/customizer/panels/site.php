@@ -10,9 +10,6 @@
 	$site_title        = $wp_customize->get_section( 'title_tagline' );
 	$site_title->panel = $panel_id;
 
-	// Remove sections from customizer front-view
-	$wp_customize->remove_section( 'colors' );
-
 	// Change panel for Background Image
 	$site_title2        = $wp_customize->get_section( 'background_image' );
 	$site_title2->panel = $panel_id;
@@ -47,41 +44,7 @@
 	/************** General Site Settings  ***************/
 	/***********************************************/
 
-
-	// upsell - section order
-	$wp_customize->add_section( $prefix . '_order_section', array(
-		'title'    => __( 'Section order', 'regina-lite' ),
-		'priority' => 1,
-		'panel' => $panel_id,
-	) );
-
-	$wp_customize->add_setting( $prefix . '_order_section', array(
-		'sanitize_callback' => $prefix . '_sanitize_pro_version',
-	) );
-	$wp_customize->add_control( new Epsilon_Control_Upsell( $wp_customize, $prefix . '_order_section', array(
-		'section'      => $prefix . '_order_section',
-		'priority'     => 0,
-		'options'      => array(
-			esc_html__( 'Order Homepage Sections', 'regina-lite' ),
-		),
-		'requirements' => array(
-			esc_html__( 'Drag & Drop section re-ordering is available in the PRO version of Regina.', 'regina-lite' ),
-		),
-		'button_url'   => esc_url_raw( get_admin_url() . 'themes.php?page=regina-lite-welcome&tab=features' ),
-		'button_text'  => esc_html__( 'See PRO vs Lite', 'regina-lite' ),
-		'second_button_url'  => esc_url_raw( 'https://www.machothemes.com/theme/regina-pro/?utm_source=worg&utm_medium=customizer&utm_campaign=upsell' ),
-		'second_button_text' => esc_html__( 'Get PRO now!', 'regina-lite' ),
-		'separator' => ' or ',
-	) ) );
-
 	/* Logo */
-	$wp_customize->add_section( $prefix . '_general_section' ,
-		array(
-			'title'       => esc_html__( 'Logo', 'regina-lite' ),
-			'priority'    => 2,
-			'panel'       => $panel_id,
-		)
-	);
 
 	/* Company text logo */
 	$wp_customize->add_setting($prefix . '_text_logo',
@@ -96,7 +59,7 @@
 		array(
 			'label'         => esc_html__( 'Enter company name', 'regina-lite' ),
 			'description'   => esc_html__( 'This field is best used when you don\'t have a professional image logo', 'regina-lite' ),
-			'section'       => $prefix . '_general_section',
+			'section'       => 'title_tagline',
 			'priority'      => 2,
 		)
 	);
@@ -107,14 +70,10 @@
 	) );
 	$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, $prefix . '_img_logo', array(
 		'label'    => __( 'Company Image Logo:', 'regina-lite' ),
-		'section'  => $prefix . '_general_section',
+		'section'  => 'title_tagline',
 		'settings' => $prefix . '_img_logo',
 	) ) );
 
-	$custom_logo = $wp_customize->get_control( 'custom_logo' );
-	if ( $custom_logo ) {
-		$custom_logo->section = $prefix . '_general_section';
-	}
 
 	/***********************************************/
 	/************** Contact Details  ***************/
@@ -122,12 +81,26 @@
 
 	$wp_customize->add_section( $prefix . '_general_contact_section' ,
 		array(
-			'title'       => esc_html__( 'Contact Details', 'regina-lite' ),
-			//'description' => esc_html__( 'These are the contact details displayed in the header & footer of the website.', 'regina-lite' ),
+			'title'       => esc_html__( 'Header Settings', 'regina-lite' ),
 			'priority'    => 3,
 			'panel' => $panel_id,
 		)
 	);
+
+	// Enable Search Icon in Header
+	$wp_customize->add_setting( $prefix . '_enable_site_search_icon',
+		array(
+			'sanitize_callback' => $prefix . '_sanitize_checkbox',
+			'default'           => 1,
+		)
+	);
+
+	$wp_customize->add_control( new Epsilon_Control_Toggle( $wp_customize, $prefix . '_enable_site_search_icon', array(
+		'type'          => 'epsilon-toggle',
+		'label'         => esc_html__( 'Enable search box in header?', 'regina-lite' ),
+		'description'   => esc_html__( 'Initial status: enabled. If you don\'t like the fact that the search form is shown in the header, un-check this.', 'regina-lite' ),
+		'section'       => $prefix . '_general_contact_section',
+	) ) );
 
 	/* Facebook URL */
 	$wp_customize->add_setting( $prefix . '_contact_bar_facebook_url',
@@ -292,10 +265,9 @@
 	/***********************************************/
 	$wp_customize->add_section( $prefix . '_general_footer_section' ,
 		array(
-			'title'       => esc_html__( 'Footer Details', 'regina-lite' ),
+			'title'       => esc_html__( 'Footer Settings', 'regina-lite' ),
 			'description' => esc_html__( 'Change the footer copyright message from here.', 'regina-lite' ),
-			'priority'    => 4,
-			'panel' => $panel_id,
+			'priority'    => 31,
 		)
 	);
 

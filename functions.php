@@ -30,6 +30,7 @@ if ( ! function_exists( 'regina_lite_setup' ) ) :
 
 		require_once( 'inc/template-tags.php' );
 		require_once( 'inc/extras.php' );
+		require_once( 'inc/customizer/customizer-active-callbacks.php' );
 		require_once( 'inc/customizer/customizer.php' );
 		require_once( 'inc/jetpack.php' );
 

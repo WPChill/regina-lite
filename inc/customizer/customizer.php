@@ -14,6 +14,14 @@ function regina_lite_customize_register( $wp_customize ) {
 
 	# Include Custom Controls
 	require get_template_directory() . '/inc/customizer/custom-controls/class-regina-custom-panel.php';
+	require get_template_directory() . '/inc/customizer/custom-controls/class-regina-text-custom-control.php';
+
+	$wp_customize->add_section( new Epsilon_Section_Pro( $wp_customize, 'regina-lite-section-pro', array(
+		'title'       => esc_html__( 'LITE vs PRO comparison', 'regina-lite' ),
+		'button_text' => esc_html__( 'Learn more', 'regina-lite' ),
+		'button_url'  => esc_url_raw( admin_url() . 'themes.php?page=regina-welcome&tab=features' ),
+		'priority'    => 0
+	) ) );
 
 	// Recomended actions
 	global $regina_required_actions, $regina_recommended_plugins;
@@ -46,22 +54,12 @@ function regina_lite_customize_register( $wp_customize ) {
 		'priority'                     => 0,
 	) ) );
 
-	#
-	# Main Upsell features
-	#
-
-	$wp_customize->add_section( $prefix . '_color_controls', array(
-		'title'    => __( 'Color Controls', 'regina-lite' ),
-		'priority' => 0,
-		'panel' => 'regina_lite_panel_general',
-	) );
-
 	$wp_customize->add_setting( $prefix . '_color_controls', array(
 		'sanitize_callback' => $prefix . '_sanitize_pro_version',
 	) );
 
 	$wp_customize->add_control( new Epsilon_Control_Upsell( $wp_customize, $prefix . '_color_controls', array(
-		'section'      => $prefix . '_color_controls',
+		'section'      => 'colors',
 		'priority'     => 0,
 		'options'      => array(
 			esc_html__( 'More Color Options', 'regina-lite' ),
@@ -69,7 +67,7 @@ function regina_lite_customize_register( $wp_customize ) {
 		'requirements' => array(
 			esc_html__( 'The PRO version of Regina allows for a greater degree of customisability. Get multiple professionally designed color schemes with the purchase of the PRO version. ', 'regina-lite' ),
 		),
-		'button_url'   => esc_url_raw( get_admin_url() . 'themes.php?page=regina-lite-welcome&tab=features' ),
+		'button_url'   => esc_url_raw( get_admin_url() . 'themes.php?page=regina-welcome&tab=features' ),
 		'button_text'  => esc_html__( 'See PRO vs Lite', 'regina-lite' ),
 		'second_button_url'  => esc_url_raw( 'https://www.machothemes.com/theme/regina-pro/?utm_source=worg&utm_medium=customizer&utm_campaign=upsell' ),
 		'second_button_text' => esc_html__( 'Get PRO now!', 'regina-lite' ),
@@ -85,28 +83,27 @@ function regina_lite_customize_register( $wp_customize ) {
 		'priority' => 30,
 	) ) );
 
-	
+	// upsell - section order
 
-	// upsell - google maps
-	$wp_customize->add_section( $prefix . '_maps_section', array(
-		'title'    => __( 'Google Maps', 'regina-lite' ),
-		'priority' => 60,
-		'panel' => 'regina_lite_frontpage_sections',
+	$wp_customize->add_section( $prefix . '_order_section', array(
+		'title'    => __( 'Section order', 'regina-lite' ),
+		'priority' => 0,
+		'panel' => 'regina_lite_frontpage_sections'
 	) );
 
-	$wp_customize->add_setting( $prefix . '_maps_section', array(
+	$wp_customize->add_setting( $prefix . '_order_section', array(
 		'sanitize_callback' => $prefix . '_sanitize_pro_version',
 	) );
-	$wp_customize->add_control( new Epsilon_Control_Upsell( $wp_customize, $prefix . '_maps_section', array(
-		'section'      => $prefix . '_maps_section',
+	$wp_customize->add_control( new Epsilon_Control_Upsell( $wp_customize, $prefix . '_order_section', array(
+		'section'      => $prefix . '_order_section',
 		'priority'     => 0,
 		'options'      => array(
-			esc_html__( 'Google Map Sections', 'regina-lite' ),
+			esc_html__( 'Order Homepage Sections', 'regina-lite' ),
 		),
 		'requirements' => array(
-			esc_html__( 'Unlimited Google Maps are available in the PRO version of Regina.', 'regina-lite' ),
+			esc_html__( 'Drag & Drop section re-ordering is available in the PRO version of Regina.', 'regina-lite' ),
 		),
-		'button_url'   => esc_url_raw( get_admin_url() . 'themes.php?page=regina-lite-welcome&tab=features' ),
+		'button_url'   => esc_url_raw( get_admin_url() . 'themes.php?page=regina-welcome&tab=features' ),
 		'button_text'  => esc_html__( 'See PRO vs Lite', 'regina-lite' ),
 		'second_button_url'  => esc_url_raw( 'https://www.machothemes.com/theme/regina-pro/?utm_source=worg&utm_medium=customizer&utm_campaign=upsell' ),
 		'second_button_text' => esc_html__( 'Get PRO now!', 'regina-lite' ),
@@ -233,11 +230,29 @@ if ( ! function_exists( 'regina_lite_customizer_js_load' ) ) {
 	 */
 	function regina_lite_customizer_js_load() {
 
+		// Customizer CSS
+		wp_enqueue_style( 'rl-customizer-css', get_template_directory_uri() . '/inc/customizer/assets/css/customizer.css' );
+
 		// Customizer JS
 		wp_enqueue_script( 'rl-customizer-script', get_template_directory_uri() . '/inc/customizer/assets/js/customizer_panel.js', array(
 			'jquery',
 			'customize-controls',
 		), '1.0', true );
+
+		$customizer_urls = array(
+			'postURL' => '',
+			'siteURL' => site_url(),
+		);
+
+		$last_post = get_posts( array(
+			'posts_per_page' => 1,
+		) );
+
+		if ( ! empty( $last_post ) ) {
+			$customizer_urls['postURL'] = get_permalink( $last_post[0]->ID );
+		}
+
+		wp_localize_script( 'rl-customizer-script', 'ReginaCustomizer', $customizer_urls );
 
 	}
 
@@ -251,7 +266,9 @@ if ( ! function_exists( 'regina_lite_customizer_preview_js' ) ) {
 	function regina_lite_customizer_preview_js() {
 		// Customizer preview JS
 		wp_enqueue_style( 'rl-previewer-css', get_template_directory_uri() . '/inc/customizer/assets/css/preview.css' );
+		wp_enqueue_script( 'rl-preview-scrollto-script', get_template_directory_uri() . '/inc/customizer/assets/js/jquery.scrollTo.js', false, '1.0', true );
 		wp_enqueue_script( 'rl-customizer-script', get_template_directory_uri() . '/inc/customizer/assets/js/customizer.js', array( 'customize-preview' ), '1.0', true );
+
 	}
 
 	add_action( 'customize_preview_init', 'regina_lite_customizer_preview_js' );

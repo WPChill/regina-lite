@@ -27,11 +27,12 @@ if ( ! class_exists( 'MTL_Entry_Meta_Output' ) ) {
 			$display_post_posted_on_meta = get_theme_mod( 'regina_lite_enable_post_posted_on_blog_posts', 1 );
 			$display_post_esrt_meta = get_theme_mod( 'regina_lite_enable_post_esrt_blog_posts', 1 );
 
-						echo '<p class="meta">';
 			if ( 1 == $display_post_posted_on_meta ) {
+				echo '<div class="entry-meta">';
 				echo $this->posted_on_output();
+				echo '</div>';
 			}
-			echo '</p>';
+			
 		}
 		/**
 		 * Private clone method to prevent cloning of the instance of the
@@ -68,6 +69,9 @@ if ( ! class_exists( 'MTL_Entry_Meta_Output' ) ) {
 		 */
 		function posted_on_output() {
 			global $post;
+
+			echo '<p class="meta">';
+
 			if ( get_post_format() !== false ) {
 				$display_author = get_theme_mod( 'regina_lite_post_' . esc_attr( get_post_format( $post->ID ) ) . '_enable_author', 1 );
 				$display_date = get_theme_mod( 'regina_lite_post_' . esc_attr( get_post_format( $post->ID ) ) . '_enable_posted', 1 );
@@ -94,6 +98,8 @@ if ( ! class_exists( 'MTL_Entry_Meta_Output' ) ) {
 			if ( 1 == $enable_post_category_blog_posts ) {
 				printf( '- in category %s', get_the_category_list( ', ' ) );
 			}
+
+			echo '</p>';
 
 			printf( '<p class="comments">%s</a></p>', regina_lite_get_number_of_comments( $post->ID ) );
 
