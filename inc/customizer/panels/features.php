@@ -46,12 +46,12 @@ $wp_customize->add_control( new Epsilon_Control_Upsell( $wp_customize, $prefix .
 ) ) );
 
 /* Show this section? */
-$wp_customize->add_setting( $prefix . '_subheader_features_show',
+$wp_customize->add_setting( new Regina_Custom_Setting( $wp_customize, $prefix . '_subheader_features_show',
 	array(
 		'sanitize_callback' => $prefix . '_sanitize_checkbox',
 		'default'           => 1,
 	)
-);
+) );
 $wp_customize->add_control( new Epsilon_Control_Toggle( $wp_customize, $prefix . '_subheader_features_show', array(
 	'type'          => 'epsilon-toggle',
 	'label'         => esc_html__( 'Show this section?', 'regina-lite' ),
@@ -59,30 +59,29 @@ $wp_customize->add_control( new Epsilon_Control_Toggle( $wp_customize, $prefix .
 ) ) );
 
 /* Title */
-$wp_customize->add_setting($prefix . '_features_general_title',
+$wp_customize->add_setting( new Regina_Custom_Setting( $wp_customize, $prefix . '_features_general_title',
 	array(
 		'sanitize_callback' => 'sanitize_text_field',
 		'default'           => __( 'Our Services', 'regina-lite' ),
 	)
-);
-$wp_customize->add_control(
-	$prefix . '_features_general_title',
+) );
+$wp_customize->add_control( new Regina_Custom_Control( $wp_customize, $prefix . '_features_general_title',
 	array(
 		'label'         => esc_html__( 'Title:', 'regina-lite' ),
 		'section'       => $prefix . '_features_general',
 	)
-);
+) );
 $wp_customize->selective_refresh->add_partial( $prefix . '_features_general_title', array(
 	'selector' => '#services-title-block h2',
 ) );
 
 /* Description */
-$wp_customize->add_setting($prefix . '_features_general_description',
+$wp_customize->add_setting( new Regina_Custom_Setting( $wp_customize, $prefix . '_features_general_description',
 	array(
 		'sanitize_callback' => 'wp_kses_post',
 		'default'           => __( 'We offer various services lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt.', 'regina-lite' ),
 	)
-);
+) );
 $wp_customize->add_control( new Epsilon_Control_Text_Editor( $wp_customize, $prefix . '_features_general_description', array(
 	'label'         => esc_html__( 'Description:', 'regina-lite' ),
 	'section'       => $prefix . '_features_general',
@@ -92,37 +91,36 @@ $wp_customize->selective_refresh->add_partial( $prefix . '_features_general_desc
 ) );
 
 /* Button Text */
-$wp_customize->add_setting($prefix . '_features_general_button_text',
+$wp_customize->add_setting( new Regina_Custom_Setting( $wp_customize, $prefix . '_features_general_button_text',
 	array(
 		'sanitize_callback' => 'sanitize_text_field',
 		'default'           => __( 'Our Services', 'regina-lite' ),
 	)
-);
-$wp_customize->add_control(
-	$prefix . '_features_general_button_text',
+) );
+$wp_customize->add_control( new Regina_Custom_Control( $wp_customize, $prefix . '_features_general_button_text',
 	array(
 		'label'         => esc_html__( 'Button Text:', 'regina-lite' ),
 		'section'       => $prefix . '_features_general',
 	)
-);
+) );
 $wp_customize->selective_refresh->add_partial( $prefix . '_features_general_button_text', array(
 	'selector' => '#services-block > .col-xs-12 > a.button',
 ) );
 
 /* Button URL */
-$wp_customize->add_setting( $prefix . '_features_general_button_url',
+$wp_customize->add_setting( new Regina_Custom_Setting( $wp_customize, $prefix . '_features_general_button_url',
 	array(
 		'sanitize_callback' => 'esc_url_raw',
 		'default'           => esc_url( '#' ),
 	)
-);
-$wp_customize->add_control( $prefix . '_features_general_button_url',
+) );
+$wp_customize->add_control( new Regina_Custom_Control( $wp_customize, $prefix . '_features_general_button_url',
 	array(
 		'label'         => esc_html__( 'Button URL:', 'regina-lite' ),
 		'section'       => $prefix . '_features_general',
 		'settings'      => $prefix . '_features_general_button_url',
 	)
-);
+) );
 
 /***********************************************/
 /************ FEATURE 1 SECTION ****************/
@@ -135,30 +133,29 @@ $wp_customize->add_section( $prefix . '_features_feature1' ,
 );
 
 /* Title */
-$wp_customize->add_setting($prefix . '_features_feature1_title',
+$wp_customize->add_setting( new Regina_Custom_Setting( $wp_customize, $prefix . '_features_feature1_title',
 	array(
 		'sanitize_callback' => 'sanitize_text_field',
 		'default'           => __( 'Free Support', 'regina-lite' ),
 	)
-);
-$wp_customize->add_control(
-	$prefix . '_features_feature1_title',
+) );
+$wp_customize->add_control( new Regina_Custom_Control( $wp_customize, $prefix . '_features_feature1_title',
 	array(
 		'label'         => esc_html__( 'Title:', 'regina-lite' ),
 		'section'       => $prefix . '_features_feature1',
 	)
-);
+) );
 $wp_customize->selective_refresh->add_partial( $prefix . '_features_feature1_title', array(
 	'selector' => '#services-block .service-1 h3',
 ) );
 
 /* Description */
-$wp_customize->add_setting($prefix . '_features_feature1_description',
+$wp_customize->add_setting( new Regina_Custom_Setting( $wp_customize, $prefix . '_features_feature1_description',
 	array(
 		'sanitize_callback' => 'wp_kses_post',
 		'default'           => __( 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt.', 'regina-lite' ),
 	)
-);
+) );
 $wp_customize->add_control( new Epsilon_Control_Text_Editor( $wp_customize, $prefix . '_features_feature1_description', array(
 	'label'         => esc_html__( 'Description:', 'regina-lite' ),
 	'section'       => $prefix . '_features_feature1',
@@ -167,19 +164,19 @@ $wp_customize->selective_refresh->add_partial( $prefix . '_features_feature1_des
 	'selector' => '#services-block .service-1 p',
 ) );
 
-$wp_customize->add_setting( $prefix . '_features_feature1_buttonurl',
+$wp_customize->add_setting( new Regina_Custom_Setting( $wp_customize, $prefix . '_features_feature1_buttonurl',
 	array(
 		'sanitize_callback' => 'esc_url',
 		'default'           => esc_url( '#' ),
 	)
-);
-$wp_customize->add_control( $prefix . '_features_feature1_buttonurl',
+) );
+$wp_customize->add_control( new Regina_Custom_Control( $wp_customize, $prefix . '_features_feature1_buttonurl',
 	array(
 		'label'         => esc_html__( 'Button URL:', 'regina-lite' ),
 		'section'       => $prefix . '_features_feature1',
 		'settings'      => $prefix . '_features_feature1_buttonurl',
 	)
-);
+) );
 $wp_customize->selective_refresh->add_partial( $prefix . '_features_feature1_buttonurl', array(
 	'selector' => '#services-block .service-1 a.link',
 	'container_inclusive' => true,
@@ -197,30 +194,29 @@ $wp_customize->add_section( $prefix . '_features_feature2' ,
 );
 
 /* Title */
-$wp_customize->add_setting($prefix . '_features_feature2_title',
+$wp_customize->add_setting( new Regina_Custom_Setting( $wp_customize, $prefix . '_features_feature2_title',
 	array(
 		'sanitize_callback' => 'sanitize_text_field',
 		'default'           => __( 'Medical Care', 'regina-lite' ),
 	)
-);
-$wp_customize->add_control(
-	$prefix . '_features_feature2_title',
+) );
+$wp_customize->add_control( new Regina_Custom_Control( $wp_customize, $prefix . '_features_feature2_title',
 	array(
 		'label'         => esc_html__( 'Title:', 'regina-lite' ),
 		'section'       => $prefix . '_features_feature2',
 	)
-);
+) );
 $wp_customize->selective_refresh->add_partial( $prefix . '_features_feature2_title', array(
 	'selector' => '#services-block .service-2 h3',
 ) );
 
 /* Description */
-$wp_customize->add_setting($prefix . '_features_feature2_description',
+$wp_customize->add_setting( new Regina_Custom_Setting( $wp_customize, $prefix . '_features_feature2_description',
 	array(
 		'sanitize_callback' => 'wp_kses_post',
 		'default'           => __( 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt.', 'regina-lite' ),
 	)
-);
+) );
 $wp_customize->add_control( new Epsilon_Control_Text_Editor( $wp_customize, $prefix . '_features_feature2_description', array(
 	'label'         => esc_html__( 'Description:', 'regina-lite' ),
 	'section'       => $prefix . '_features_feature2',
@@ -229,19 +225,19 @@ $wp_customize->selective_refresh->add_partial( $prefix . '_features_feature2_des
 	'selector' => '#services-block .service-2 p',
 ) );
 
-$wp_customize->add_setting( $prefix . '_features_feature2_buttonurl',
+$wp_customize->add_setting( new Regina_Custom_Setting( $wp_customize, $prefix . '_features_feature2_buttonurl',
 	array(
 		'sanitize_callback' => 'esc_url',
 		'default'           => esc_url( '#' ),
 	)
-);
-$wp_customize->add_control( $prefix . '_features_feature2_buttonurl',
+) );
+$wp_customize->add_control( new Regina_Custom_Control( $wp_customize, $prefix . '_features_feature2_buttonurl',
 	array(
 		'label'         => esc_html__( 'Button URL:', 'regina-lite' ),
 		'section'       => $prefix . '_features_feature2',
 		'settings'      => $prefix . '_features_feature2_buttonurl',
 	)
-);
+) );
 $wp_customize->selective_refresh->add_partial( $prefix . '_features_feature2_buttonurl', array(
 	'selector' => '#services-block .service-2 a.link',
 	'container_inclusive' => true,
@@ -259,30 +255,29 @@ $wp_customize->add_section( $prefix . '_features_feature3' ,
 );
 
 /* Title */
-$wp_customize->add_setting($prefix . '_features_feature3_title',
+$wp_customize->add_setting( new Regina_Custom_Setting( $wp_customize, $prefix . '_features_feature3_title',
 	array(
 		'sanitize_callback' => 'sanitize_text_field',
 		'default'           => __( 'Life Care', 'regina-lite' ),
 	)
-);
-$wp_customize->add_control(
-	$prefix . '_features_feature3_title',
+) );
+$wp_customize->add_control( new Regina_Custom_Control( $wp_customize, $prefix . '_features_feature3_title',
 	array(
 		'label'         => esc_html__( 'Title:', 'regina-lite' ),
 		'section'       => $prefix . '_features_feature3',
 	)
-);
+) );
 $wp_customize->selective_refresh->add_partial( $prefix . '_features_feature3_title', array(
 	'selector' => '#services-block .service-3 h3',
 ) );
 
 /* Description */
-$wp_customize->add_setting($prefix . '_features_feature3_description',
+$wp_customize->add_setting( new Regina_Custom_Setting( $wp_customize, $prefix . '_features_feature3_description',
 	array(
 		'sanitize_callback' => 'wp_kses_post',
 		'default'           => __( 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt.', 'regina-lite' ),
 	)
-);
+) );
 $wp_customize->add_control( new Epsilon_Control_Text_Editor( $wp_customize, $prefix . '_features_feature3_description', array(
 	'label'         => esc_html__( 'Description:', 'regina-lite' ),
 	'section'       => $prefix . '_features_feature3',
@@ -291,19 +286,19 @@ $wp_customize->selective_refresh->add_partial( $prefix . '_features_feature3_des
 	'selector' => '#services-block .service-3 p',
 ) );
 
-$wp_customize->add_setting( $prefix . '_features_feature3_buttonurl',
+$wp_customize->add_setting( new Regina_Custom_Setting( $wp_customize, $prefix . '_features_feature3_buttonurl',
 	array(
 		'sanitize_callback' => 'esc_url',
 		'default'           => esc_url( '#' ),
 	)
-);
-$wp_customize->add_control( $prefix . '_features_feature3_buttonurl',
+) );
+$wp_customize->add_control( new Regina_Custom_Control( $wp_customize, $prefix . '_features_feature3_buttonurl',
 	array(
 		'label'         => esc_html__( 'Button URL:', 'regina-lite' ),
 		'section'       => $prefix . '_features_feature3',
 		'settings'      => $prefix . '_features_feature3_buttonurl',
 	)
-);
+) );
 $wp_customize->selective_refresh->add_partial( $prefix . '_features_feature3_buttonurl', array(
 	'selector' => '#services-block .service-3 a.link',
 	'container_inclusive' => true,
@@ -321,30 +316,29 @@ $wp_customize->add_section( $prefix . '_features_feature4' ,
 );
 
 /* Title */
-$wp_customize->add_setting($prefix . '_features_feature4_title',
+$wp_customize->add_setting( new Regina_Custom_Setting( $wp_customize, $prefix . '_features_feature4_title',
 	array(
 		'sanitize_callback' => 'sanitize_text_field',
 		'default'           => __( 'Nervous System', 'regina-lite' ),
 	)
-);
-$wp_customize->add_control(
-	$prefix . '_features_feature4_title',
+) );
+$wp_customize->add_control( new Regina_Custom_Control( $wp_customize, $prefix . '_features_feature4_title',
 	array(
 		'label'         => esc_html__( 'Title:', 'regina-lite' ),
 		'section'       => $prefix . '_features_feature4',
 	)
-);
+) );
 $wp_customize->selective_refresh->add_partial( $prefix . '_features_feature4_title', array(
 	'selector' => '#services-block .service-4 h3',
 ) );
 
 /* Description */
-$wp_customize->add_setting($prefix . '_features_feature4_description',
+$wp_customize->add_setting( new Regina_Custom_Setting( $wp_customize, $prefix . '_features_feature4_description',
 	array(
 		'sanitize_callback' => 'wp_kses_post',
 		'default'           => __( 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt.', 'regina-lite' ),
 	)
-);
+) );
 $wp_customize->add_control( new Epsilon_Control_Text_Editor( $wp_customize, $prefix . '_features_feature4_description', array(
 	'label'         => esc_html__( 'Description:', 'regina-lite' ),
 	'section'       => $prefix . '_features_feature4',
@@ -353,19 +347,19 @@ $wp_customize->selective_refresh->add_partial( $prefix . '_features_feature4_des
 	'selector' => '#services-block .service-4 p',
 ) );
 
-$wp_customize->add_setting( $prefix . '_features_feature4_buttonurl',
+$wp_customize->add_setting( new Regina_Custom_Setting( $wp_customize, $prefix . '_features_feature4_buttonurl',
 	array(
 		'sanitize_callback' => 'esc_url',
 		'default'           => esc_url( '#' ),
 	)
-);
-$wp_customize->add_control( $prefix . '_features_feature4_buttonurl',
+) );
+$wp_customize->add_control( new Regina_Custom_Control( $wp_customize, $prefix . '_features_feature4_buttonurl',
 	array(
 		'label'         => esc_html__( 'Button URL:', 'regina-lite' ),
 		'section'       => $prefix . '_features_feature4',
 		'settings'      => $prefix . '_features_feature4_buttonurl',
 	)
-);
+) );
 $wp_customize->selective_refresh->add_partial( $prefix . '_features_feature4_buttonurl', array(
 	'selector' => '#services-block .service-4 a.link',
 	'container_inclusive' => true,

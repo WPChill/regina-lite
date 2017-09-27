@@ -37,7 +37,7 @@ if ( 1 == $regina_lite_news_section_show ) {
 	echo '<div class="section-info">';
 	echo '<h2>' . esc_html( $regina_lite_section_title ) . '</h2>';
 	echo '<hr>';
-	echo '<p>' . esc_html( $regina_lite_section_sub_title ) . '</p>';
+	echo '<p>' . wp_kses_post( $regina_lite_section_sub_title ) . '</p>';
 	echo '</div>';
 	echo '</div><!--/.row-->';
 

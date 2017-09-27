@@ -16,7 +16,7 @@ $book_appointment_button_label = get_theme_mod( 'regina_lite_book_appointment_bu
 						<hr>
 					<?php endif; ?>
 					<?php if ( $speak_general_description ) : ?>
-						<p><?php echo esc_html( $speak_general_description ); ?></p>
+						<p><?php echo wp_kses_post( $speak_general_description ); ?></p>
 					<?php endif; ?>
 					<br>
 					<?php if ( $speak_general_buttonurl ) : ?>

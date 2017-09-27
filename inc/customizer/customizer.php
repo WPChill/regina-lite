@@ -15,6 +15,9 @@ function regina_lite_customize_register( $wp_customize ) {
 	# Include Custom Controls
 	require get_template_directory() . '/inc/customizer/custom-controls/class-regina-custom-panel.php';
 	require get_template_directory() . '/inc/customizer/custom-controls/class-regina-text-custom-control.php';
+	require get_template_directory() . '/inc/customizer/custom-controls/class-regina-custom-control.php';
+	require get_template_directory() . '/inc/customizer/custom-controls/class-regina-custom-setting.php';
+	require get_template_directory() . '/inc/customizer/custom-controls/class-regina-custom-upload.php';
 
 	$wp_customize->add_section( new Epsilon_Section_Pro( $wp_customize, 'regina-lite-section-pro', array(
 		'title'       => esc_html__( 'LITE vs PRO comparison', 'regina-lite' ),

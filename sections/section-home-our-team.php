@@ -85,7 +85,7 @@ $image_id_4 = regina_lite_get_attachment_id( $ourteam_teammember4_image );
 						<hr>
 					<?php endif; ?>
 					<?php if ( $ourteam_general_description ) : ?>
-						<p><?php echo esc_html( $ourteam_general_description ); ?></p>
+						<p><?php echo wp_kses_post( $ourteam_general_description ); ?></p>
 					<?php endif; ?>
 				</div><!--.section-info-->
 			</div><!--.col-xs-12-->
@@ -112,7 +112,7 @@ $image_id_4 = regina_lite_get_attachment_id( $ourteam_teammember4_image );
 								<div class="hover">
 									<?php if ( $ourteam_teammember1_description ) : ?>
 										<div class="description">
-											<p><?php echo esc_html( $ourteam_teammember1_description ); ?></p>
+											<p><?php echo wp_kses_post( $ourteam_teammember1_description ); ?></p>
 										</div>
 									<?php endif; ?>
 									<?php if ( $ourteam_teammember1_buttonurl ) : ?>
@@ -148,7 +148,7 @@ $image_id_4 = regina_lite_get_attachment_id( $ourteam_teammember4_image );
 								<div class="hover">
 									<?php if ( $ourteam_teammember2_description ) : ?>
 										<div class="description">
-											<p><?php echo esc_html( $ourteam_teammember2_description ); ?></p>
+											<p><?php echo wp_kses_post( $ourteam_teammember2_description ); ?></p>
 										</div>
 									<?php endif; ?>
 									<?php if ( $ourteam_teammember2_buttonurl ) : ?>
@@ -184,7 +184,7 @@ $image_id_4 = regina_lite_get_attachment_id( $ourteam_teammember4_image );
 								<div class="hover">
 									<?php if ( $ourteam_teammember3_description ) : ?>
 										<div class="description">
-											<p><?php echo esc_html( $ourteam_teammember3_description ); ?></p>
+											<p><?php echo wp_kses_post( $ourteam_teammember3_description ); ?></p>
 										</div>
 									<?php endif; ?>
 									<?php if ( $ourteam_teammember3_buttonurl ) : ?>
@@ -220,7 +220,7 @@ $image_id_4 = regina_lite_get_attachment_id( $ourteam_teammember4_image );
 								<div class="hover">
 									<?php if ( $ourteam_teammember4_description ) : ?>
 										<div class="description">
-											<p><?php echo esc_html( $ourteam_teammember4_description ); ?></p>
+											<p><?php echo wp_kses_post( $ourteam_teammember4_description ); ?></p>
 										</div>
 									<?php endif; ?>
 									<?php if ( $ourteam_teammember4_buttonurl ) : ?>

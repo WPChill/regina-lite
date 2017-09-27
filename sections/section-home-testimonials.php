@@ -75,7 +75,7 @@ $image_alt_general_4 = get_post_meta( $image_id_general_4, '_wp_attachment_image
 				<?php if ( $testimonials_testimonial1_description || $testimonials_testimonial1_image || $testimonials_testimonial1_name || $testimonials_testimonial1_position ) : ?>
 					<li class="testimonial-1">
 						<?php if ( $testimonials_testimonial1_description ) : ?>
-							<p class="quote"><?php echo esc_html( $testimonials_testimonial1_description ); ?></p>
+							<div class="quote"><?php echo wp_kses_post( $testimonials_testimonial1_description ); ?></div>
 						<?php endif; ?>
 						<?php if ( $testimonials_testimonial1_image ) : ?>
 							<img src="<?php echo esc_url( $testimonials_testimonial1_image ); ?>" alt="<?php echo esc_attr( $image_alt_1 ); ?>" width="90">
@@ -91,7 +91,7 @@ $image_alt_general_4 = get_post_meta( $image_id_general_4, '_wp_attachment_image
 				<?php if ( $testimonials_testimonial2_description || $testimonials_testimonial2_image || $testimonials_testimonial2_name || $testimonials_testimonial2_position ) : ?>
 					<li class="testimonial-2">
 						<?php if ( $testimonials_testimonial2_description ) : ?>
-							<p class="quote"><?php echo esc_html( $testimonials_testimonial2_description ); ?></p>
+							<div class="quote"><?php echo wp_kses_post( $testimonials_testimonial2_description ); ?></div>
 						<?php endif; ?>
 						<?php if ( $testimonials_testimonial2_image ) : ?>
 							<img src="<?php echo esc_url( $testimonials_testimonial2_image ); ?>" alt="<?php echo esc_attr( $image_alt_2 ); ?>" width="90">
@@ -107,7 +107,7 @@ $image_alt_general_4 = get_post_meta( $image_id_general_4, '_wp_attachment_image
 				<?php if ( $testimonials_testimonial3_description || $testimonials_testimonial3_image || $testimonials_testimonial3_name || $testimonials_testimonial3_position ) : ?>
 					<li class="testimonial-3">
 						<?php if ( $testimonials_testimonial3_description ) : ?>
-							<p class="quote"><?php echo esc_html( $testimonials_testimonial3_description ); ?></p>
+							<div class="quote"><?php echo wp_kses_post( $testimonials_testimonial3_description ); ?></div>
 						<?php endif; ?>
 						<?php if ( $testimonials_testimonial3_image ) : ?>
 							<img src="<?php echo esc_url( $testimonials_testimonial3_image ); ?>" alt="<?php echo esc_attr( $image_alt_3 ); ?>" width="90">
@@ -123,7 +123,7 @@ $image_alt_general_4 = get_post_meta( $image_id_general_4, '_wp_attachment_image
 				<?php if ( $testimonials_testimonial4_description || $testimonials_testimonial4_image || $testimonials_testimonial4_name || $testimonials_testimonial4_position ) : ?>
 					<li class="testimonial-4">
 						<?php if ( $testimonials_testimonial4_description ) : ?>
-							<p class="quote"><?php echo esc_html( $testimonials_testimonial4_description ); ?></p>
+							<div class="quote"><?php echo wp_kses_post( $testimonials_testimonial4_description ); ?></div>
 						<?php endif; ?>
 						<?php if ( $testimonials_testimonial4_image ) : ?>
 							<img src="<?php echo esc_url( $testimonials_testimonial4_image ); ?>" alt="<?php echo esc_attr( $image_alt_4 ); ?>" width="90">
@@ -139,7 +139,7 @@ $image_alt_general_4 = get_post_meta( $image_id_general_4, '_wp_attachment_image
 				<?php if ( $testimonials_testimonial5_description || $testimonials_testimonial5_image || $testimonials_testimonial5_name || $testimonials_testimonial5_position ) : ?>
 					<li class="testimonial-5">
 						<?php if ( $testimonials_testimonial5_description ) : ?>
-							<p class="quote"><?php echo esc_html( $testimonials_testimonial5_description ); ?></p>
+							<div class="quote"><?php echo wp_kses_post( $testimonials_testimonial5_description ); ?></div>
 						<?php endif; ?>
 						<?php if ( $testimonials_testimonial5_image ) : ?>
 							<img src="<?php echo esc_url( $testimonials_testimonial5_image ); ?>" alt="<?php echo esc_attr( $image_alt_4 ); ?>" width="90">

@@ -39,7 +39,7 @@ $book_appointment_button_label = get_theme_mod( 'regina_lite_book_appointment_bu
 						<h1><?php echo esc_html( $top_box_title ); ?></h1>
 					<?php endif; ?>
 					<?php if ( $top_box_description ) : ?>
-						<p><?php echo esc_html( $top_box_description ); ?></p>
+						<div><?php echo wp_kses_post( $top_box_description ); ?></div>
 					<?php endif; ?>
 					<br />
 					<?php if ( $top_box_bookappointmenturl ) : ?>
@@ -57,7 +57,7 @@ endif; ?>">
 					<hr>
 				<?php endif; ?>
 				<?php if ( $features_general_description ) : ?>
-					<p><?php echo esc_html( $features_general_description ); ?></p>
+					<div><?php echo wp_kses_post( $features_general_description ); ?></div>
 				<?php endif; ?>
 			</div><!--.section-info-->
 		</div><!--.col-xs-12-->
@@ -72,7 +72,7 @@ endif; ?>">
 						<h3><?php echo esc_html( $features_feature1_title ); ?></h3>
 					<?php endif; ?>
 					<?php if ( $features_feature1_description ) : ?>
-						<p><?php echo esc_html( $features_feature1_description ); ?></p>
+						<div><?php echo wp_kses_post( $features_feature1_description ); ?></div>
 					<?php endif; ?>
 					<br>
 					<?php if ( $features_feature1_buttonurl ) : ?>
@@ -90,7 +90,7 @@ endif; ?>">
 						<h3><?php echo esc_html( $features_feature2_title ); ?></h3>
 					<?php endif; ?>
 					<?php if ( $features_feature2_description ) : ?>
-						<p><?php echo esc_html( $features_feature2_description ); ?></p>
+						<div><?php echo wp_kses_post( $features_feature2_description ); ?></div>
 					<?php endif; ?>
 					<br>
 					<?php if ( $features_feature2_buttonurl ) : ?>
@@ -108,7 +108,7 @@ endif; ?>">
 						<h3><?php echo esc_html( $features_feature3_title ); ?></h3>
 					<?php endif; ?>
 					<?php if ( $features_feature3_description ) : ?>
-						<p><?php echo esc_html( $features_feature3_description ); ?></p>
+						<div><?php echo wp_kses_post( $features_feature3_description ); ?></div>
 					<?php endif; ?>
 					<br>
 					<?php if ( $features_feature3_buttonurl ) : ?>
@@ -126,7 +126,7 @@ endif; ?>">
 						<h3><?php echo esc_html( $features_feature4_title ); ?></h3>
 					<?php endif; ?>
 					<?php if ( $features_feature4_description ) : ?>
-						<p><?php echo esc_html( $features_feature4_description ); ?></p>
+						<div><?php echo wp_kses_post( $features_feature4_description ); ?></div>
 					<?php endif; ?>
 					<br>
 					<?php if ( $features_feature4_buttonurl ) : ?>

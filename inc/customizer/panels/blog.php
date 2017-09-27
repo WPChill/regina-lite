@@ -150,8 +150,8 @@
 		'transport'         => 'postMessage',
 	) );
 	$wp_customize->add_control( new Regina_Text_Custom_Control( $wp_customize, $prefix . '_related_post_text', array(
-		'label'             => __( 'Related Posts Settings', 'illdy' ),
-		'description'       => __( 'Control various related posts settings from here. For a demo-like experience, we recommend you don\'t change these settings.', 'illdy' ),
+		'label'             => __( 'Related Posts Settings', 'regina-lite' ),
+		'description'       => __( 'Control various related posts settings from here. For a demo-like experience, we recommend you don\'t change these settings.', 'regina-lite' ),
 		'section'           => $prefix . '_single_post_section',
 	) ) );
 
