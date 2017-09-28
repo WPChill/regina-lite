@@ -68,6 +68,16 @@ if ( ! function_exists( 'regina_lite_setup' ) ) :
 		);
 		add_theme_support( 'custom-header', $custom_header_args );
 
+		// Custom Background
+		$custom_background_args = array(
+			'default-color'          => '#fff',
+			'default-image'          => false,
+			'default-repeat'         => false,
+			'default-position-x'     => false,
+			'default-attachment'     => false,
+		);
+		add_theme_support( 'custom-background', $custom_background_args );
+
 		/*
 		 * Enable support for Post Thumbnails on posts and pages.
 		 *

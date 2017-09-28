@@ -18,6 +18,7 @@ function regina_lite_customize_register( $wp_customize ) {
 	require get_template_directory() . '/inc/customizer/custom-controls/class-regina-custom-control.php';
 	require get_template_directory() . '/inc/customizer/custom-controls/class-regina-custom-setting.php';
 	require get_template_directory() . '/inc/customizer/custom-controls/class-regina-custom-upload.php';
+	require get_template_directory() . '/inc/customizer/custom-controls/class-regina-custom-section.php';
 
 	$wp_customize->add_section( new Epsilon_Section_Pro( $wp_customize, 'regina-lite-section-pro', array(
 		'title'       => esc_html__( 'LITE vs PRO comparison', 'regina-lite' ),
@@ -94,11 +95,8 @@ function regina_lite_customize_register( $wp_customize ) {
 		'panel' => 'regina_lite_frontpage_sections'
 	) );
 
-	$wp_customize->add_setting( $prefix . '_order_section', array(
-		'sanitize_callback' => $prefix . '_sanitize_pro_version',
-	) );
-	$wp_customize->add_control( new Epsilon_Control_Upsell( $wp_customize, $prefix . '_order_section', array(
-		'section'      => $prefix . '_order_section',
+	$wp_customize->add_section( new Regina_Section_Upsell( $wp_customize, $prefix . '_order_section', array(
+		'panel'      => 'regina_lite_frontpage_sections',
 		'priority'     => 0,
 		'options'      => array(
 			esc_html__( 'Order Homepage Sections', 'regina-lite' ),

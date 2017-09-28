@@ -28,11 +28,8 @@ $wp_customize->add_section( $prefix . '_ourteam_general', array(
 ) );
 
 // Upsell
-$wp_customize->add_setting( $prefix . '_ourteam_pro', array(
-	'sanitize_callback' => $prefix . '_sanitize_pro_version',
-) );
-$wp_customize->add_control( new Epsilon_Control_Upsell( $wp_customize, $prefix . '_ourteam_pro', array(
-	'section'      => $prefix . '_ourteam_general',
+$wp_customize->add_section( new Regina_Section_Upsell( $wp_customize, $prefix . '_ourteam_pro', array(
+	'panel'       => $panel_id,
 	'options'      => array(
 		esc_html__( 'Unlimited Members', 'regina-lite' ),
 	),
@@ -44,6 +41,7 @@ $wp_customize->add_control( new Epsilon_Control_Upsell( $wp_customize, $prefix .
 	'second_button_url'  => esc_url_raw( 'https://www.machothemes.com/theme/regina-pro/?utm_source=worg&utm_medium=customizer&utm_campaign=upsell' ),
 	'second_button_text' => esc_html__( 'Get PRO now!', 'regina-lite' ),
 	'separator' => ' or ',
+	'priority' => 0,
 ) ) );
 
 /* Show this section? */

@@ -22,16 +22,8 @@ $wp_customize->add_panel( new Regina_Custom_Panel( $wp_customize, $panel_id, arr
 /***********************************************/
 /************ GENERAL SECTION ******************/
 /***********************************************/
-$wp_customize->add_section( $prefix . '_features_general', array(
-	'title'       => esc_html__( 'General', 'regina-lite' ),
+$wp_customize->add_section( new Regina_Section_Upsell( $wp_customize, $prefix . '_features_pro', array(
 	'panel'       => $panel_id,
-) );
-
-$wp_customize->add_setting( $prefix . '_features_pro', array(
-	'sanitize_callback' => $prefix . '_sanitize_pro_version',
-) );
-$wp_customize->add_control( new Epsilon_Control_Upsell( $wp_customize, $prefix . '_features_pro', array(
-	'section'      => $prefix . '_features_general',
 	'options'      => array(
 		esc_html__( 'Custom Icons', 'regina-lite' ),
 	),
@@ -44,6 +36,11 @@ $wp_customize->add_control( new Epsilon_Control_Upsell( $wp_customize, $prefix .
 	'second_button_text' => esc_html__( 'Get PRO now!', 'regina-lite' ),
 	'separator' => ' or ',
 ) ) );
+
+$wp_customize->add_section( $prefix . '_features_general', array(
+	'title'       => esc_html__( 'General', 'regina-lite' ),
+	'panel'       => $panel_id,
+) );
 
 /* Show this section? */
 $wp_customize->add_setting( new Regina_Custom_Setting( $wp_customize, $prefix . '_subheader_features_show',

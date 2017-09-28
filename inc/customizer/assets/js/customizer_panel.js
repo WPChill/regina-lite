@@ -215,4 +215,22 @@
         } );
     } );
 
+    /**
+    * Regina Section Upsell Constructor
+    */
+    wp.customize.sectionConstructor[ 'regina-section-upsell' ] = wp.customize.Section.extend( {
+        attachEvents: function() {},
+        isContextuallyActive: function() {
+            return true;
+        },
+        ready: function() {
+            var section = this;
+            section.container.on( 'click', '.epsilon-upsell-label', function( e ) {
+                e.preventDefault();
+                jQuery( this ).toggleClass( 'opened' ).find('i').toggleClass('dashicons-arrow-down-alt2 dashicons-arrow-up-alt2');
+                section.container.find( '.epsilon-upsell-container' ).slideToggle( 200 );
+            } );
+        }
+    } );
+
 })( jQuery );
