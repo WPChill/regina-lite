@@ -259,7 +259,7 @@ function regina_lite_scripts() {
 	wp_enqueue_style( 'google-fonts' );
 
 	// WP Enqueue Script
-	if ( 1 == $preloader_enabled ) {
+	if ( 1 == $preloader_enabled  && ! is_customize_preview() ) {
 		wp_enqueue_script( 'pace-min-js', get_template_directory_uri() . '/layout/js/plugins/pace/pace.min.js', array( 'jquery' ), '', false );
 		wp_enqueue_script( 'regina-lite-preloader', get_template_directory_uri() . '/layout/js/preloader.min.js', array(
 			'jquery',
