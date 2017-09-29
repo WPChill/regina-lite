@@ -10,12 +10,22 @@ class Regina_Welcome_Screen {
 	/**
 	 * Constructor for the welcome screen
 	 */
-	public function __construct() {
+	public function __construct( $config = array() ) {
+
+		$theme    = wp_get_theme();
+
+		/**
+		 * Configure our welcome screen
+		 */
+		$this->theme_name    = $theme->get( 'Name' );
+		$this->theme_slug    = $theme->get( 'TextDomain' );
+		$this->author_logo   = get_template_directory_uri() . '/inc/libraries/welcome-screen/assets/img/macho-themes-logo.svg';
+
 		/* create dashbord page */
 		add_action( 'admin_menu', array( $this, 'regina_welcome_register_menu' ) );
 
 		/* activation notice */
-		add_action( 'load-themes.php', array( $this, 'regina_activation_admin_notice' ) );
+		// add_action( 'load-themes.php', array( $this, 'regina_activation_admin_notice' ) );
 
 		/* enqueue script and style for welcome screen */
 		add_action( 'admin_enqueue_scripts', array( $this, 'regina_welcome_style_and_scripts' ) );
@@ -34,10 +44,18 @@ class Regina_Welcome_Screen {
 			'regina_dismiss_recommended_plugins_callback'
 		) );
 
+		add_action( 'wp_ajax_regina_set_frontpage', array( $this, 'set_frontpage' ) );
+		add_action( 'wp_ajax_nopriv_regina_set_frontpage', array( $this, 'set_frontpage' ) );
+
 		/**
 		 * Set the blog / static page automatically
 		 */
 		add_action( 'admin_init', array( $this, 'regina_set_pages' ) );
+
+		/**
+		 * Add the notice in the admin backend
+		 */
+		$this->add_admin_notice();
 	}
 
 	/**
@@ -79,30 +97,55 @@ class Regina_Welcome_Screen {
 		) );
 	}
 
-	/**
-	 * Adds an admin notice upon successful activation.
-	 *
-	 */
-	public function regina_activation_admin_notice() {
-		global $pagenow;
-
-		if ( is_admin() && ( 'themes.php' == $pagenow ) && isset( $_GET['activated'] ) ) {
-			add_action( 'admin_notices', array( $this, 'regina_welcome_admin_notice' ), 99 );
+	private function add_admin_notice() {
+		if ( ! class_exists( 'Epsilon_Notifications' ) ) {
+			return;
 		}
-	}
+		$this->notice = '';
+		if ( empty( $this->notice ) ) {
+			if ( ! empty( $this->author_logo ) ) {
+				$this->notice .= '<img src="' . $this->author_logo . '" class="epsilon-author-logo" />';
+			}
+			/* Translators: Notice Title */
+			$this->notice .= '<h1>' . sprintf( esc_html__( 'Welcome to %1$s', 'epsilon-framework' ), $this->theme_name ) . '</h1>';
+			$this->notice .= '<p>';
+			$this->notice .=
+				sprintf( /* Translators: Notice */
+					esc_html__( 'Welcome! Thank you for choosing %3$s! To fully take advantage of the best our theme can offer please make sure you visit our %1$swelcome page%2$s.', 'epsilon-framework' ),
+					'<a href="' . esc_url( admin_url( 'themes.php?page=' . $this->theme_slug . '-welcome' ) ) . '">',
+					'</a>',
+					$this->theme_name
+				);
+			$this->notice .= '</p>';
+			/* Translators: Notice URL */
+			$this->notice .= '<p><a href="' . esc_url( admin_url( 'themes.php?page=regina-welcome' ) ) . '" class="button button-primary button-hero" style="text-decoration: none;"> ' . sprintf( esc_html__( 'Get started with %1$s', 'epsilon-framework' ), $this->theme_name ) . '</a></p>';
 
-	/**
-	 * Display an admin notice linking to the welcome screen
-	 *
-	 */
-	public function regina_welcome_admin_notice() {
-		?>
-		<div class="updated notice is-dismissible">
-			<p><?php echo sprintf( esc_html__( 'Welcome! Thank you for choosing Regina! To fully take advantage of the best our theme can offer please make sure you visit our %1$swelcome page%2$s.', 'regina-lite' ), '<a href="' . esc_url( admin_url( 'themes.php?page=regina-welcome' ) ) . '">', '</a>' ); ?></p>
-			<p><a href="<?php echo esc_url( admin_url( 'themes.php?page=regina-welcome' ) ); ?>" class="button"
-				  style="text-decoration: none;"><?php _e( 'Get started with Regina', 'regina-lite' ); ?></a></p>
-		</div>
-		<?php
+		}
+
+		$notifications = Epsilon_Notifications::get_instance();
+		$notifications->add_notice(
+			array(
+				'id'      => 'regina_welcome_notice',
+				'type'    => 'notice epsilon-big',
+				'message' => $this->notice,
+			)
+		);
+
+		if ( ! Regina_Notify_System::is_homepage_seted() ) {
+
+			$notice_content = esc_html__( 'We have made some changes to how the Homepage works in Regina. Now you need to create a page and use the "Homepage Template" and set it as a static front page. You can also make this automatically by pushing the button below.', 'epsilon-framework' );
+			$notice_content .= '<p><a id="regina-fix-homepage" href="#" class="button button-primary" style="text-decoration: none;"> ' . esc_html__( 'Fix Homepage', 'epsilon-framework' ) . '</a><span class="spinner" style="float:none"></span></p>';
+
+			$notifications->add_notice(
+				array(
+					'id'      => 'regina_fix_homepage_notice',
+					'type'    => 'notice updated',
+					'message' => $notice_content,
+				)
+			);
+
+		}
+
 	}
 
 	/**
@@ -424,6 +467,56 @@ class Regina_Welcome_Screen {
 
 		<?php
 	}
+
+	public function set_frontpage() {
+
+		if ( isset( $_POST['setfrontpage'] ) ) {
+			
+			$home = get_page_by_title( 'Homepage' );
+			$blog = get_page_by_title( 'Blog' );
+
+			if ( null === $home ) {
+				$id = wp_insert_post(
+					array(
+						'post_title'  => __( 'Homepage', 'epsilon-framework' ),
+						'post_type'   => 'page',
+						'post_status' => 'publish',
+					)
+				);
+
+				update_post_meta( $id, '_wp_page_template', 'page-templates/template-homepage.php' );
+
+				update_option( 'page_on_front', $id );
+				update_option( 'show_on_front', 'page' );
+			}else{
+				update_option( 'page_on_front', $home->ID );
+				update_option( 'show_on_front', 'page' );
+			}
+
+			if ( null === $blog ) {
+				$id = wp_insert_post(
+					array(
+						'post_title'  => __( 'Blog', 'epsilon-framework' ),
+						'post_type'   => 'page',
+						'post_status' => 'publish',
+					)
+				);
+
+				update_option( 'page_for_posts', $id );
+			}else{
+				update_option( 'page_for_posts', $blog->ID );
+			}
+
+			echo 'ok';
+			die();
+
+		}
+
+		echo 'nok';
+		die();
+
+	}
+
 }
 
 new Regina_Welcome_Screen();

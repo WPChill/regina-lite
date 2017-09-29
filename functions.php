@@ -148,7 +148,15 @@ if ( ! function_exists( 'regina_lite_setup' ) ) :
              * plugin_slug - the plugin's slug (used for installing the plugin)
              *
              */
-			$regina_required_actions  = array();
+			$regina_required_actions  = array(
+				array(
+                    'id' => 'regina-lite-homepage',
+                    'title'       => esc_html__( 'Set Static Front Page', 'regina-lite' ),
+					'description' => esc_html__( 'Clicking the button below will set static front page to your WordPress installation.', 'regina-lite' ),
+                    "help"        => '<p><a id="regina-fix-homepage" href="#" class="button button-primary" style="text-decoration: none;"> ' . esc_html__( 'Fix Homepage', 'epsilon-framework' ) . '</a><span class="spinner" style="float:none"></span></p>',
+                    'check'       => Regina_Notify_System::is_homepage_seted(),
+                ),
+			);
 
 			require get_template_directory() . '/inc/libraries/welcome-screen/class-regina-welcome-screen.php';
 		}// End if().

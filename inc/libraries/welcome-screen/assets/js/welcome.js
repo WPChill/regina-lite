@@ -54,5 +54,27 @@ jQuery(document).ready(function () {
             }
         });
     });
+
+    // Fix Home Page
+    jQuery( 'body' ).on( 'click', '#regina-fix-homepage', function ( evt ) {
+    	var button = jQuery(this);
+    	evt.preventDefault();
+        jQuery.ajax({
+            type      : "POST",
+            data      : { action: 'regina_set_frontpage', setfrontpage: 1 },
+            dataType  : "html",
+            url       : reginaWelcomeScreenObject.ajaxurl,
+            beforeSend: function (data, settings) {
+                button.next().addClass( 'is-active' );
+            },
+            success   : function (data) {
+                location.reload();
+                /* Remove loading gif */
+            },
+            error     : function (jqXHR, textStatus, errorThrown) {
+                console.log(jqXHR + " :: " + textStatus + " :: " + errorThrown);
+            }
+        });
+    });
 	
 });

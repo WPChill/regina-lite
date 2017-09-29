@@ -180,6 +180,20 @@ class Regina_Notify_System extends Epsilon_Notify_System {
 	public static function is_not_template_front_page() {
 		$page_id = get_option( 'page_on_front' );
 
-		return get_page_template_slug( $page_id ) == 'page-templates/frontpage-template.php' ? true : false;
+		return get_page_template_slug( $page_id ) == 'page-templates/template-homepage.php' ? true : false;
+	}
+
+	public static function is_homepage_seted(){
+
+		if ( ! Regina_Notify_System::is_not_static_page() ) {
+			return false;
+		}
+
+		if ( ! Regina_Notify_System::is_not_template_front_page() ) {
+			return false;
+		}
+
+		return true;
+
 	}
 }
