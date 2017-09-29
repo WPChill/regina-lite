@@ -26,6 +26,21 @@ $features = array(
 		'regina'     => '<span class="dashicons dashicons-no-alt"></span>',
 		'regina-pro' => '<span class="dashicons dashicons-yes"></span></i>',
 	),
+	'multiple-services' => array(
+		'label'       => 'Unlimited Services',
+		'regina'     => '<span class="dashicons dashicons-no-alt"></span>',
+		'regina-pro' => '<span class="dashicons dashicons-yes"></span></i>',
+	),
+	'multiple-members' => array(
+		'label'       => 'Unlimited Members',
+		'regina'     => '<span class="dashicons dashicons-no-alt"></span>',
+		'regina-pro' => '<span class="dashicons dashicons-yes"></span></i>',
+	),
+	'multiple-testimonials' => array(
+		'label'       => 'Unlimited Testimonials',
+		'regina'     => '<span class="dashicons dashicons-no-alt"></span>',
+		'regina-pro' => '<span class="dashicons dashicons-yes"></span></i>',
+	),
 	'custom-icons'    => array(
 		'label'       => 'Custom icons',
 		'regina'     => '<span class="dashicons dashicons-no-alt"></span>',
