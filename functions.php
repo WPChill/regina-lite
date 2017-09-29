@@ -153,7 +153,7 @@ if ( ! function_exists( 'regina_lite_setup' ) ) :
                     'id' => 'regina-lite-homepage',
                     'title'       => esc_html__( 'Set Static Front Page', 'regina-lite' ),
 					'description' => esc_html__( 'Clicking the button below will set static front page to your WordPress installation.', 'regina-lite' ),
-                    "help"        => '<p><a id="regina-fix-homepage" href="#" class="button button-primary" style="text-decoration: none;"> ' . esc_html__( 'Fix Homepage', 'epsilon-framework' ) . '</a><span class="spinner" style="float:none"></span></p>',
+                    "help"        => '<p><a id="regina-fix-homepage" href="#" class="button button-primary" style="text-decoration: none;"> ' . esc_html__( 'Set Homepage', 'epsilon-framework' ) . '</a><span class="spinner" style="float:none"></span></p>',
                     'check'       => Regina_Notify_System::is_homepage_seted(),
                 ),
 			);

@@ -26,9 +26,11 @@ $wp_customize->add_section( new Regina_Section_Upsell( $wp_customize, $prefix . 
 	'panel'       => $panel_id,
 	'options'      => array(
 		esc_html__( 'Custom Icons', 'regina-lite' ),
+		esc_html__( 'Unlimited Services', 'regina-lite' ),
 	),
 	'requirements' => array(
 		esc_html__( 'Regina PRO comes bundled with over 700 premium icons. You can also upload your own custom icons.', 'regina-lite' ),
+		esc_html__( 'In Regina PRO you can add how many services you want.', 'regina-lite' ),
 	),
 	'button_url'   => esc_url_raw( get_admin_url() . 'themes.php?page=regina-welcome&tab=features' ),
 	'button_text'  => esc_html__( 'See PRO vs Lite', 'regina-lite' ),

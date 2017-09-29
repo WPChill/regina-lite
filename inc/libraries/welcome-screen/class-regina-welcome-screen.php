@@ -109,38 +109,22 @@ class Regina_Welcome_Screen {
 			/* Translators: Notice Title */
 			$this->notice .= '<h1>' . sprintf( esc_html__( 'Welcome to %1$s', 'epsilon-framework' ), $this->theme_name ) . '</h1>';
 			$this->notice .= '<p>';
-			$this->notice .=
-				sprintf( /* Translators: Notice */
-					esc_html__( 'Welcome! Thank you for choosing %3$s! To fully take advantage of the best our theme can offer please make sure you visit our %1$swelcome page%2$s.', 'epsilon-framework' ),
-					'<a href="' . esc_url( admin_url( 'themes.php?page=' . $this->theme_slug . '-welcome' ) ) . '">',
-					'</a>',
-					$this->theme_name
-				);
+			$this->notice .= esc_html__( 'We have made some changes to how the Homepage works in Regina. Now you need to create a page and use the "Homepage Template" and set it as a static front page. You can also make this automatically by pushing the button below.', 'epsilon-framework' );
 			$this->notice .= '</p>';
 			/* Translators: Notice URL */
-			$this->notice .= '<p><a href="' . esc_url( admin_url( 'themes.php?page=regina-welcome' ) ) . '" class="button button-primary button-hero" style="text-decoration: none;"> ' . sprintf( esc_html__( 'Get started with %1$s', 'epsilon-framework' ), $this->theme_name ) . '</a></p>';
+			$this->notice .= '<p><a id="regina-fix-homepage" href="#" class="button button-primary" style="text-decoration: none;"> ' . esc_html__( 'Fix Homepage', 'epsilon-framework' ) . '</a><span class="spinner" style="float:none"></span></p>';
 
 		}
 
 		$notifications = Epsilon_Notifications::get_instance();
-		$notifications->add_notice(
-			array(
-				'id'      => 'regina_welcome_notice',
-				'type'    => 'notice epsilon-big',
-				'message' => $this->notice,
-			)
-		);
 
 		if ( ! Regina_Notify_System::is_homepage_seted() ) {
 
-			$notice_content = esc_html__( 'We have made some changes to how the Homepage works in Regina. Now you need to create a page and use the "Homepage Template" and set it as a static front page. You can also make this automatically by pushing the button below.', 'epsilon-framework' );
-			$notice_content .= '<p><a id="regina-fix-homepage" href="#" class="button button-primary" style="text-decoration: none;"> ' . esc_html__( 'Fix Homepage', 'epsilon-framework' ) . '</a><span class="spinner" style="float:none"></span></p>';
-
 			$notifications->add_notice(
 				array(
-					'id'      => 'regina_fix_homepage_notice',
-					'type'    => 'notice updated',
-					'message' => $notice_content,
+					'id'      => 'regina_welcome_notice',
+					'type'    => 'notice epsilon-big',
+					'message' => $this->notice,
 				)
 			);
 

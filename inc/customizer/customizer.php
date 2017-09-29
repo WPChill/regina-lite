@@ -100,9 +100,11 @@ function regina_lite_customize_register( $wp_customize ) {
 		'priority'     => 0,
 		'options'      => array(
 			esc_html__( 'Order Homepage Sections', 'regina-lite' ),
+			esc_html__( 'Unlimited Sections', 'regina-lite' ),
 		),
 		'requirements' => array(
 			esc_html__( 'Drag & Drop section re-ordering is available in the PRO version of Regina.', 'regina-lite' ),
+			esc_html__( 'In Regina PRO you can add how many sections you want.', 'regina-lite' ),
 		),
 		'button_url'   => esc_url_raw( get_admin_url() . 'themes.php?page=regina-welcome&tab=features' ),
 		'button_text'  => esc_html__( 'See PRO vs Lite', 'regina-lite' ),

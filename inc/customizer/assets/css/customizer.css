@@ -10,3 +10,9 @@
 .accordion-section.customize-control-epsilon-upsell {
 	margin-bottom: 0;
 }
+.accordion-section.customize-control-epsilon-upsell .epsilon-upsell-label {
+	padding: 14px 28px;
+}
+.accordion-section.customize-control-epsilon-upsell .epsilon-upsell-container {
+	border-bottom: 1px solid #ddd;
+}
