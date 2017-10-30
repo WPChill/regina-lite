@@ -32,7 +32,7 @@ if ( ! class_exists( 'MTL_Entry_Meta_Output' ) ) {
 				echo $this->posted_on_output();
 				echo '</div>';
 			}
-			
+
 		}
 		/**
 		 * Private clone method to prevent cloning of the instance of the

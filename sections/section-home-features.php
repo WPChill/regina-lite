@@ -9,26 +9,26 @@
 <?php
 // Get Theme Mod for Features Panel
 $top_box_show                  = get_theme_mod( 'regina_lite_top_box_show', 1 );
-$top_box_title                 = get_theme_mod( 'regina_lite_top_box_title', __( 'We help people, like you.', 'regina-lite' ) );
-$top_box_description           = get_theme_mod( 'regina_lite_top_box_description', __( 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.', 'regina-lite' ) );
-$top_box_bookappointmenturl    = get_theme_mod( 'regina_lite_top_box_bookappointmenturl', '#' );
-$features_general_title        = get_theme_mod( 'regina_lite_features_general_title', __( 'Our Services', 'regina-lite' ) );
-$features_general_description  = get_theme_mod( 'regina_lite_features_general_description', __( 'We offer various services lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt.', 'regina-lite' ) );
-$features_general_button_text  = get_theme_mod( 'regina_lite_features_general_button_text', __( 'Our Services', 'regina-lite' ) );
-$features_general_button_url   = get_theme_mod( 'regina_lite_features_general_button_url', esc_url( '#' ) );
-$features_feature1_title       = get_theme_mod( 'regina_lite_features_feature1_title', __( 'Free Support', 'regina-lite' ) );
-$features_feature1_description = get_theme_mod( 'regina_lite_features_feature1_description', __( 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt.', 'regina-lite' ) );
-$features_feature1_buttonurl   = get_theme_mod( 'regina_lite_features_feature1_buttonurl', '#' );
-$features_feature2_title       = get_theme_mod( 'regina_lite_features_feature2_title', __( 'Medical Care', 'regina-lite' ) );
-$features_feature2_description = get_theme_mod( 'regina_lite_features_feature2_description', __( 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt.', 'regina-lite' ) );
-$features_feature2_buttonurl   = get_theme_mod( 'regina_lite_features_feature2_buttonurl', '#' );
-$features_feature3_title       = get_theme_mod( 'regina_lite_features_feature3_title', __( 'Life Care', 'regina-lite' ) );
-$features_feature3_description = get_theme_mod( 'regina_lite_features_feature3_description', __( 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt.', 'regina-lite' ) );
-$features_feature3_buttonurl   = get_theme_mod( 'regina_lite_features_feature3_buttonurl', '#' );
-$features_feature4_title       = get_theme_mod( 'regina_lite_features_feature4_title', __( 'Nervous System', 'regina-lite' ) );
-$features_feature4_description = get_theme_mod( 'regina_lite_features_feature4_description', __( 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt.', 'regina-lite' ) );
-$features_feature4_buttonurl   = get_theme_mod( 'regina_lite_features_feature4_buttonurl', '#' );
-$book_appointment_button_label = get_theme_mod( 'regina_lite_book_appointment_button_label', __( 'Book Appointment', 'regina-lite' ) );
+$top_box_title                 = get_theme_mod( 'regina_lite_top_box_title' );
+$top_box_description           = get_theme_mod( 'regina_lite_top_box_description' );
+$top_box_bookappointmenturl    = get_theme_mod( 'regina_lite_top_box_bookappointmenturl' );
+$features_general_title        = get_theme_mod( 'regina_lite_features_general_title' );
+$features_general_description  = get_theme_mod( 'regina_lite_features_general_description' );
+$features_general_button_text  = get_theme_mod( 'regina_lite_features_general_button_text' );
+$features_general_button_url   = get_theme_mod( 'regina_lite_features_general_button_url' );
+$features_feature1_title       = get_theme_mod( 'regina_lite_features_feature1_title' );
+$features_feature1_description = get_theme_mod( 'regina_lite_features_feature1_description' );
+$features_feature1_buttonurl   = get_theme_mod( 'regina_lite_features_feature1_buttonurl' );
+$features_feature2_title       = get_theme_mod( 'regina_lite_features_feature2_title' );
+$features_feature2_description = get_theme_mod( 'regina_lite_features_feature2_description' );
+$features_feature2_buttonurl   = get_theme_mod( 'regina_lite_features_feature2_buttonurl' );
+$features_feature3_title       = get_theme_mod( 'regina_lite_features_feature3_title' );
+$features_feature3_description = get_theme_mod( 'regina_lite_features_feature3_description' );
+$features_feature3_buttonurl   = get_theme_mod( 'regina_lite_features_feature3_buttonurl' );
+$features_feature4_title       = get_theme_mod( 'regina_lite_features_feature4_title' );
+$features_feature4_description = get_theme_mod( 'regina_lite_features_feature4_description' );
+$features_feature4_buttonurl   = get_theme_mod( 'regina_lite_features_feature4_buttonurl' );
+$book_appointment_button_label = get_theme_mod( 'regina_lite_book_appointment_button_label' );
 ?>
 <div class="container">
 	<div class="row">
@@ -43,14 +43,19 @@ $book_appointment_button_label = get_theme_mod( 'regina_lite_book_appointment_bu
 					<?php endif; ?>
 					<br />
 					<?php if ( $top_box_bookappointmenturl ) : ?>
-						<a href="<?php echo esc_url( $top_box_bookappointmenturl ); ?>" class="button white outline" title="<?php echo esc_attr( $book_appointment_button_label ) ?>"><?php echo esc_attr( $book_appointment_button_label ); ?>
+						<a href="<?php echo esc_url( $top_box_bookappointmenturl ); ?>" class="button white outline" title="<?php echo esc_attr( $book_appointment_button_label ); ?>"><?php echo esc_attr( $book_appointment_button_label ); ?>
 							<span class="nc-icon-glyph arrows-1_bold-right"></span></a>
 					<?php endif; ?>
 				</div><!--#call-out-->
 			</div><!--.col-md-8-->
 		<?php endif; ?>
-		<div id="services-title-block" class="col-xs-12" style="<?php if ( 1 != $top_box_show ) : echo 'margin-top: 100px;';
-endif; ?>">
+		<div id="services-title-block" class="col-xs-12" style="
+		<?php
+		if ( 1 != $top_box_show ) :
+			echo 'margin-top: 100px;';
+endif;
+?>
+">
 			<div class="section-info">
 				<?php if ( $features_general_title ) : ?>
 					<h2><?php echo esc_html( $features_general_title ); ?></h2>

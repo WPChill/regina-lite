@@ -21,10 +21,12 @@
 	<div class="body markup-format">
 		<?php the_content(); ?>
 		<?php
-		wp_link_pages( array(
-			'before'    => '<div class="link-pages">' . __( 'Pages:', 'regina-lite' ),
-			'after'     => '</div><!--/.link-pages-->',
-		) );
+		wp_link_pages(
+			array(
+				'before'    => '<div class="link-pages">' . __( 'Pages:', 'regina-lite' ),
+				'after'     => '</div><!--/.link-pages-->',
+			)
+		);
 		?>
 	</div><!--/.markup-format-->
 	<?php do_action( 'mtl_single_after_content' ); ?>

@@ -37,21 +37,39 @@ wp_enqueue_script( 'updates' );
 				$nr_action_dismissed ++;
 			}
 			?>
-			<div class="regina-action-required-box">
+			<div class="regina-action-required-box action-required-box">
 				<?php if ( ! $hidden ) : ?>
-					<span data-action="dismiss" class="dashicons dashicons-visibility regina-required-action-button"
+					<span data-action="dismiss" class="dashicons dashicons-visibility regina-required-action-button required-action-button"
 						  id="<?php echo esc_attr( $regina_required_action_value['id'] ); ?>"></span>
 				<?php else : ?>
-					<span data-action="add" class="dashicons dashicons-hidden regina-required-action-button"
+					<span data-action="add" class="dashicons dashicons-hidden regina-required-action-button required-action-button"
 						  id="<?php echo esc_attr( $regina_required_action_value['id'] ); ?>"></span>
 				<?php endif; ?>
-				<h3><?php if ( ! empty( $regina_required_action_value['title'] ) ) : echo esc_html( $regina_required_action_value['title'] );
-endif; ?></h3>
+				<h3>
+				<?php
+				if ( ! empty( $regina_required_action_value['title'] ) ) :
+					echo esc_html( $regina_required_action_value['title'] );
+endif;
+?>
+</h3>
 				<p>
-					<?php if ( ! empty( $regina_required_action_value['description'] ) ) : echo esc_html( $regina_required_action_value['description'] );
-endif; ?>
-					<?php if ( ! empty( $regina_required_action_value['help'] ) ) : echo '<br/>' . wp_kses_post( $regina_required_action_value['help'] );
-endif; ?>
+					<?php
+					if ( ! empty( $regina_required_action_value['description'] ) ) :
+						echo esc_html( $regina_required_action_value['description'] );
+endif;
+?>
+					<?php
+					if ( ! empty( $regina_required_action_value['help'] ) ) {
+						if ( is_array( $regina_required_action_value['help'] ) && is_a( $regina_required_action_value['help'][0], 'Epsilon_Import_Data' ) ) {
+							$class = $regina_required_action_value['help'][0];
+							$func  = $regina_required_action_value['help'][1];
+
+							echo $class->$func();
+						} else {
+							echo '<br/>' . wp_kses_post( $regina_required_action_value['help'] );
+						}
+					}
+					?>
 				</p>
 				<?php
 				if ( ! empty( $regina_required_action_value['plugin_slug'] ) ) {
@@ -75,10 +93,10 @@ endif; ?>
 					}
 
 					?>
-					<p class="plugin-card-<?php echo esc_attr( $regina_required_action_value['plugin_slug'] ) ?> action_button <?php echo ( 'install' !== $active['needs'] && $active['status'] ) ? 'active' : '' ?>">
-						<a data-slug="<?php echo esc_attr( $regina_required_action_value['plugin_slug'] ) ?>"
+					<p class="plugin-card-<?php echo esc_attr( $regina_required_action_value['plugin_slug'] ); ?> action_button <?php echo ( 'install' !== $active['needs'] && $active['status'] ) ? 'active' : ''; ?>">
+						<a data-slug="<?php echo esc_attr( $regina_required_action_value['plugin_slug'] ); ?>"
 						   class="<?php echo esc_attr( $class ); ?>"
-						   href="<?php echo esc_url( $url ) ?>"> <?php echo esc_html( $label ) ?> </a>
+						   href="<?php echo esc_url( $url ); ?>"> <?php echo esc_html( $label ); ?> </a>
 					</p>
 					<?php
 				};
@@ -97,7 +115,7 @@ endif; ?>
 			if ( ! $plugin_opt['recommended'] ) {
 				continue;
 			}
-			if ( Regina_Notify_System::has_import_plugin( $slug ) ) {
+			if ( Regina_Notify_System::has_plugin( $slug ) ) {
 				continue;
 			}
 			if ( 0 == $nr_recommended_plugins ) {
@@ -105,13 +123,15 @@ endif; ?>
 			}
 			$nr_recommended_plugins ++;
 			echo '<div class="regina-action-required-box">';
-			if ( isset( $regina_show_recommended_plugins[ $slug ] ) && false === $regina_show_recommended_plugins[ $slug ] ) : ?>
+			if ( isset( $regina_show_recommended_plugins[ $slug ] ) && false === $regina_show_recommended_plugins[ $slug ] ) :
+			?>
 				<span data-action="add" class="dashicons dashicons-hidden regina-recommended-plugin-button"
 					  id="<?php echo esc_attr( $slug ); ?>"></span>
 			<?php else : ?>
 				<span data-action="dismiss" class="dashicons dashicons-visibility regina-recommended-plugin-button"
 					  id="<?php echo esc_attr( $slug ); ?>"></span>
-			<?php endif;
+			<?php
+			endif;
 			$active = $this->check_active( $slug );
 			$url    = $this->create_action_link( $active['needs'], $slug );
 			$info   = $this->call_plugin_api( $slug );
@@ -132,14 +152,14 @@ switch ( $active['needs'] ) {
 		break;
 }
 			?>
-			<h3><?php echo $label . ': ' . $info->name ?></h3>
+			<h3><?php echo $label . ': ' . $info->name; ?></h3>
 			<p>
-				<?php echo $info->short_description ?>
+				<?php echo $info->short_description; ?>
 			</p>
-			<p class="plugin-card-<?php echo esc_attr( $slug ) ?> action_button <?php echo ( 'install' !== $active['needs'] && $active['status'] ) ? 'active' : '' ?>">
-				<a data-slug="<?php echo esc_attr( $slug ) ?>"
+			<p class="plugin-card-<?php echo esc_attr( $slug ); ?> action_button <?php echo ( 'install' !== $active['needs'] && $active['status'] ) ? 'active' : ''; ?>">
+				<a data-slug="<?php echo esc_attr( $slug ); ?>"
 				   class="<?php echo $class; ?>"
-				   href="<?php echo esc_url( $url ) ?>"> <?php echo $label ?> </a>
+				   href="<?php echo esc_url( $url ); ?>"> <?php echo $label; ?> </a>
 			</p>
 			<?php
 			echo '</div>';

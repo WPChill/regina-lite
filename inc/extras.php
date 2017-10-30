@@ -74,12 +74,12 @@ if ( ! function_exists( 'regina_lite_content_nav' ) ) {
 		$nav_class = ( is_single() ) ? 'post-navigation clear' : 'paging-navigation clear';
 		?>
 		<nav role="navigation" id="post-navigation" class="<?php echo $nav_class; ?>">
-			<?php if ( is_single() ) : // navigation links for single posts ?>
+			<?php if ( is_single() ) : ?>
 
 				<?php previous_post_link( '%link', '<span class="nc-icon-glyph arrows-1_bold-left"></span> %title' ); ?>
 				<?php next_post_link( '%link', '%title <span class="nc-icon-glyph arrows-1_bold-right"></span>' ); ?>
 
-			<?php elseif ( $wp_query->max_num_pages > 1 && ( is_home() || is_archive() || is_search() ) ) : // navigation links for home, archive, and search pages ?>
+			<?php elseif ( $wp_query->max_num_pages > 1 && ( is_home() || is_archive() || is_search() ) ) : ?>
 
 				<?php if ( get_next_posts_link() ) : ?>
 					<?php next_posts_link( __( '<span class="meta-nav">&larr;</span> Older posts', 'regina-lite' ) ); ?>
@@ -103,14 +103,14 @@ if ( ! function_exists( 'regina_lite_content_nav' ) ) {
 function regina_lite_comment( $comment, $args, $depth ) {
 	$GLOBALS['comment'] = $comment;
 	switch ( $comment->comment_type ) :
-		case 'pingback' :
-		case 'trackback' :
+		case 'pingback':
+		case 'trackback':
 			?>
 			<li class="post pingback">
 			<p><?php _e( 'Pingback:', 'regina-lite' ); ?><?php comment_author_link(); ?><?php edit_comment_link( __( '(Edit)', 'regina-lite' ), ' ' ); ?></p>
 			<?php
 			break;
-		default :
+		default:
 			?>
 		<li <?php comment_class(); ?> id="li-comment-<?php comment_ID(); ?>">
 

@@ -1,9 +1,9 @@
 <?php
 // Get Theme Mod for Speak Panel
-$speak_general_title           = get_theme_mod( 'regina_lite_speak_general_title', __( 'Speak with our doctors', 'regina-lite' ) );
-$speak_general_description     = get_theme_mod( 'regina_lite_speak_general_description', __( 'We offer various services lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt.', 'regina-lite' ) );
-$speak_general_buttonurl       = get_theme_mod( 'regina_lite_speak_general_buttonurl', '#' );
-$book_appointment_button_label = get_theme_mod( 'regina_lite_book_appointment_button_label', __( 'Book Appointment', 'regina-lite' ) );
+$speak_general_title           = get_theme_mod( 'regina_lite_speak_general_title' );
+$speak_general_description     = get_theme_mod( 'regina_lite_speak_general_description' );
+$speak_general_buttonurl       = get_theme_mod( 'regina_lite_speak_general_buttonurl' );
+$book_appointment_button_label = get_theme_mod( 'regina_lite_book_appointment_button_label' );
 ?>
 
 <section id="speak-with-our-doctors" class="bg-block">

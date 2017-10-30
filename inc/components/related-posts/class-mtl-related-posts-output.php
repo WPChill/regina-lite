@@ -80,13 +80,15 @@ if ( ! class_exists( 'MTL_Related_Posts_Output' ) ) {
 				return $related_postsquery;
 			}
 
-			$args = wp_parse_args( $args, array(
-				'category__in'          => wp_get_post_categories( $post_id ),
-				'ignore_sticky_posts'   => 0,
-				'posts_per_page'        => $number_posts,
-				'post__not_in'          => array( $post_id ),
-				'meta_key'              => '_thumbnail_id',
-			));
+			$args = wp_parse_args(
+				$args, array(
+					'category__in'          => wp_get_post_categories( $post_id ),
+					'ignore_sticky_posts'   => 0,
+					'posts_per_page'        => $number_posts,
+					'post__not_in'          => array( $post_id ),
+					'meta_key'              => '_thumbnail_id',
+				)
+			);
 
 			$related_postsquery = new WP_Query( $args );
 

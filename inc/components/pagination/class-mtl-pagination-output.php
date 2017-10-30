@@ -71,16 +71,18 @@ if ( ! class_exists( 'MTL_Pagination_Output' ) ) {
 				}
 
 				echo '<nav id="blog-navigation">';
-				echo paginate_links(array(
-					'base'          => str_replace( $big, '%#%', esc_url( get_pagenum_link( $big ) ) ),
-					'format'        => $format,
-					'current'       => max( 1, get_query_var( 'paged' ) ),
-					'total'         => $total,
-					'mid_size'      => 3,
-					'type'          => 'list',
-					'prev_text'     => $prev_arrow,
-					'next_text'     => $next_arrow,
-				) );
+				echo paginate_links(
+					array(
+						'base'          => str_replace( $big, '%#%', esc_url( get_pagenum_link( $big ) ) ),
+						'format'        => $format,
+						'current'       => max( 1, get_query_var( 'paged' ) ),
+						'total'         => $total,
+						'mid_size'      => 3,
+						'type'          => 'list',
+						'prev_text'     => $prev_arrow,
+						'next_text'     => $next_arrow,
+					)
+				);
 				echo '</nav<!--/#blog-navigation-->';
 
 			}

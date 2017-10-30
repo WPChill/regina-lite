@@ -1,0 +1,55 @@
+{ 
+
+  "fontpage" : {
+
+    "title" : "Front Page Settings",
+    "options" : {
+      "setstaticfrontpage" : {
+        "title" : "Set Front Page as static page",
+        "action" : "set_frontpage"
+      }
+    }
+
+  },
+
+  "sections" : {
+    "title" : "Populate Sections with content",
+    "options" : {
+      "hero" : {
+        "title" : "Hero Section",
+        "action" : "populate_hero_section"
+      },
+      "services" : {
+        "title" : "Services Section",
+        "action" : "populate_services_section"
+      },
+      "team" : {
+        "title" : "Team Section",
+        "action" : "populate_team_section"
+      },
+      "testimonials" : {
+        "title" : "Testimonials Section",
+        "action" : "populate_testimonials_section"
+      },
+      "swods" : {
+        "title" : "Speak With Our Doctors Section",
+        "action" : "populate_swods_section"
+      },
+      "news" : {
+        "title" : "Latest News",
+        "action" : "populate_news_section"
+      }
+    }
+  },
+
+  "widgets" : {
+    "title" : "Import Widgets",
+    "options" : {
+      "footer" : {
+        "title" : "Footer Widgets",
+        "action" : "add_footer_widgets"
+      }
+    }
+  }
+
+}

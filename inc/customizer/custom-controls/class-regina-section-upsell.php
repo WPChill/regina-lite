@@ -138,6 +138,6 @@ class Regina_Section_Upsell extends WP_Customize_Section {
 				</div>
 			</div>
 		</li>
-		<?php //@formatter:on ?>
-	<?php }
+			<?php
+	}
 }

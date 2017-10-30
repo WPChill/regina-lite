@@ -18,14 +18,18 @@ function regina_lite_customize_register( $wp_customize ) {
 	require get_template_directory() . '/inc/customizer/custom-controls/class-regina-custom-control.php';
 	require get_template_directory() . '/inc/customizer/custom-controls/class-regina-custom-setting.php';
 	require get_template_directory() . '/inc/customizer/custom-controls/class-regina-custom-upload.php';
-	require get_template_directory() . '/inc/customizer/custom-controls/class-regina-custom-section.php';
+	require get_template_directory() . '/inc/customizer/custom-controls/class-regina-section-upsell.php';
 
-	$wp_customize->add_section( new Epsilon_Section_Pro( $wp_customize, 'regina-lite-section-pro', array(
-		'title'       => esc_html__( 'LITE vs PRO comparison', 'regina-lite' ),
-		'button_text' => esc_html__( 'Learn more', 'regina-lite' ),
-		'button_url'  => esc_url_raw( admin_url() . 'themes.php?page=regina-welcome&tab=features' ),
-		'priority'    => 0
-	) ) );
+	$wp_customize->add_section(
+		new Epsilon_Section_Pro(
+			$wp_customize, 'regina-lite-section-pro', array(
+				'title'       => esc_html__( 'LITE vs PRO comparison', 'regina-lite' ),
+				'button_text' => esc_html__( 'Learn more', 'regina-lite' ),
+				'button_url'  => esc_url_raw( admin_url() . 'themes.php?page=regina-welcome&tab=features' ),
+				'priority'    => 0,
+			)
+		)
+	);
 
 	// Recomended actions
 	global $regina_required_actions, $regina_recommended_plugins;
@@ -44,74 +48,94 @@ function regina_lite_customize_register( $wp_customize ) {
 		}
 	}
 	$theme_slug = 'regina';
-	$wp_customize->add_section( new Epsilon_Section_Recommended_Actions( $wp_customize, 'epsilon_recomended_section', array(
-		'title'                        => esc_html__( 'Recomended Actions', 'regina-lite' ),
-		'social_text'                  => esc_html__( 'We are social', 'regina-lite' ),
-		'plugin_text'                  => esc_html__( 'Recomended Plugins', 'regina-lite' ),
-		'actions'                      => $customizer_regina_required_actions,
-		'plugins'                      => $customizer_recommended_plugins,
-		'theme_specific_option'        => $theme_slug . '_show_required_actions',
-		'theme_specific_plugin_option' => $theme_slug . '_show_recommended_plugins',
-		'facebook'                     => 'https://www.facebook.com/machothemes',
-		'twitter'                      => 'https://twitter.com/MachoThemez',
-		'wp_review'                    => true,
-		'priority'                     => 0,
-	) ) );
+	$wp_customize->add_section(
+		new Epsilon_Section_Recommended_Actions(
+			$wp_customize, 'epsilon_recomended_section', array(
+				'title'                        => esc_html__( 'Recomended Actions', 'regina-lite' ),
+				'social_text'                  => esc_html__( 'We are social', 'regina-lite' ),
+				'plugin_text'                  => esc_html__( 'Recomended Plugins', 'regina-lite' ),
+				'actions'                      => $customizer_regina_required_actions,
+				'plugins'                      => $customizer_recommended_plugins,
+				'theme_specific_option'        => $theme_slug . '_show_required_actions',
+				'theme_specific_plugin_option' => $theme_slug . '_show_recommended_plugins',
+				'facebook'                     => 'https://www.facebook.com/machothemes',
+				'twitter'                      => 'https://twitter.com/MachoThemez',
+				'wp_review'                    => true,
+				'priority'                     => 0,
+			)
+		)
+	);
 
-	$wp_customize->add_setting( $prefix . '_color_controls', array(
-		'sanitize_callback' => $prefix . '_sanitize_pro_version',
-	) );
+	$wp_customize->add_setting(
+		$prefix . '_color_controls', array(
+			'sanitize_callback' => $prefix . '_sanitize_pro_version',
+		)
+	);
 
-	$wp_customize->add_control( new Epsilon_Control_Upsell( $wp_customize, $prefix . '_color_controls', array(
-		'section'      => 'colors',
-		'priority'     => 0,
-		'options'      => array(
-			esc_html__( 'More Color Options', 'regina-lite' ),
-		),
-		'requirements' => array(
-			esc_html__( 'The PRO version of Regina allows for a greater degree of customisability. Get multiple professionally designed color schemes with the purchase of the PRO version. ', 'regina-lite' ),
-		),
-		'button_url'   => esc_url_raw( get_admin_url() . 'themes.php?page=regina-welcome&tab=features' ),
-		'button_text'  => esc_html__( 'See PRO vs Lite', 'regina-lite' ),
-		'second_button_url'  => esc_url_raw( 'https://www.machothemes.com/theme/regina-pro/?utm_source=worg&utm_medium=customizer&utm_campaign=upsell' ),
-		'second_button_text' => esc_html__( 'Get PRO now!', 'regina-lite' ),
-		'separator' => ' or ',
-	) ) );
+	$wp_customize->add_control(
+		new Epsilon_Control_Upsell(
+			$wp_customize, $prefix . '_color_controls', array(
+				'section'      => 'colors',
+				'priority'     => 0,
+				'options'      => array(
+					esc_html__( 'More Color Options', 'regina-lite' ),
+				),
+				'requirements' => array(
+					esc_html__( 'The PRO version of Regina allows for a greater degree of customisability. Get multiple professionally designed color schemes with the purchase of the PRO version. ', 'regina-lite' ),
+				),
+				'button_url'   => esc_url_raw( get_admin_url() . 'themes.php?page=regina-welcome&tab=features' ),
+				'button_text'  => esc_html__( 'See PRO vs Lite', 'regina-lite' ),
+				'second_button_url'  => esc_url_raw( 'https://www.machothemes.com/theme/regina-pro/?utm_source=worg&utm_medium=customizer&utm_campaign=upsell' ),
+				'second_button_text' => esc_html__( 'Get PRO now!', 'regina-lite' ),
+				'separator' => ' or ',
+			)
+		)
+	);
 
 	#
 	# END Up Sell Features
 	#
 
-	$wp_customize->add_panel( new Regina_Custom_Panel( $wp_customize, 'regina_lite_frontpage_sections', array(
-		'title'    => esc_html__( 'Front Page Sections', 'regina-lite' ),
-		'priority' => 30,
-	) ) );
+	$wp_customize->add_panel(
+		new Regina_Custom_Panel(
+			$wp_customize, 'regina_lite_frontpage_sections', array(
+				'title'    => esc_html__( 'Front Page Sections', 'regina-lite' ),
+				'priority' => 30,
+			)
+		)
+	);
 
 	// upsell - section order
 
-	$wp_customize->add_section( $prefix . '_order_section', array(
-		'title'    => __( 'Section order', 'regina-lite' ),
-		'priority' => 0,
-		'panel' => 'regina_lite_frontpage_sections'
-	) );
+	$wp_customize->add_section(
+		$prefix . '_order_section', array(
+			'title'    => __( 'Section order', 'regina-lite' ),
+			'priority' => 0,
+			'panel' => 'regina_lite_frontpage_sections',
+		)
+	);
 
-	$wp_customize->add_section( new Regina_Section_Upsell( $wp_customize, $prefix . '_order_section', array(
-		'panel'      => 'regina_lite_frontpage_sections',
-		'priority'     => 0,
-		'options'      => array(
-			esc_html__( 'Order Homepage Sections', 'regina-lite' ),
-			esc_html__( 'Unlimited Sections', 'regina-lite' ),
-		),
-		'requirements' => array(
-			esc_html__( 'Drag & Drop section re-ordering is available in the PRO version of Regina.', 'regina-lite' ),
-			esc_html__( 'In Regina PRO you can add how many sections you want.', 'regina-lite' ),
-		),
-		'button_url'   => esc_url_raw( get_admin_url() . 'themes.php?page=regina-welcome&tab=features' ),
-		'button_text'  => esc_html__( 'See PRO vs Lite', 'regina-lite' ),
-		'second_button_url'  => esc_url_raw( 'https://www.machothemes.com/theme/regina-pro/?utm_source=worg&utm_medium=customizer&utm_campaign=upsell' ),
-		'second_button_text' => esc_html__( 'Get PRO now!', 'regina-lite' ),
-		'separator' => ' or ',
-	) ) );
+	$wp_customize->add_section(
+		new Regina_Section_Upsell(
+			$wp_customize, $prefix . '_order_section', array(
+				'panel'      => 'regina_lite_frontpage_sections',
+				'priority'     => 0,
+				'options'      => array(
+					esc_html__( 'Order Homepage Sections', 'regina-lite' ),
+					esc_html__( 'Unlimited Sections', 'regina-lite' ),
+				),
+				'requirements' => array(
+					esc_html__( 'Drag & Drop section re-ordering is available in the PRO version of Regina.', 'regina-lite' ),
+					esc_html__( 'In Regina PRO you can add how many sections you want.', 'regina-lite' ),
+				),
+				'button_url'   => esc_url_raw( get_admin_url() . 'themes.php?page=regina-welcome&tab=features' ),
+				'button_text'  => esc_html__( 'See PRO vs Lite', 'regina-lite' ),
+				'second_button_url'  => esc_url_raw( 'https://www.machothemes.com/theme/regina-pro/?utm_source=worg&utm_medium=customizer&utm_campaign=upsell' ),
+				'second_button_text' => esc_html__( 'Get PRO now!', 'regina-lite' ),
+				'separator' => ' or ',
+			)
+		)
+	);
 
 	/* General Site Panel */
 	require_once get_template_directory() . '/inc/customizer/panels/site.php';
@@ -237,19 +261,23 @@ if ( ! function_exists( 'regina_lite_customizer_js_load' ) ) {
 		wp_enqueue_style( 'rl-customizer-css', get_template_directory_uri() . '/inc/customizer/assets/css/customizer.css' );
 
 		// Customizer JS
-		wp_enqueue_script( 'rl-customizer-script', get_template_directory_uri() . '/inc/customizer/assets/js/customizer_panel.js', array(
-			'jquery',
-			'customize-controls',
-		), '1.0', true );
+		wp_enqueue_script(
+			'rl-customizer-script', get_template_directory_uri() . '/inc/customizer/assets/js/customizer_panel.js', array(
+				'jquery',
+				'customize-controls',
+			), '1.0', true
+		);
 
 		$customizer_urls = array(
 			'postURL' => '',
 			'siteURL' => site_url(),
 		);
 
-		$last_post = get_posts( array(
-			'posts_per_page' => 1,
-		) );
+		$last_post = get_posts(
+			array(
+				'posts_per_page' => 1,
+			)
+		);
 
 		if ( ! empty( $last_post ) ) {
 			$customizer_urls['postURL'] = get_permalink( $last_post[0]->ID );

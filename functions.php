@@ -35,9 +35,6 @@ if ( ! function_exists( 'regina_lite_setup' ) ) :
 		require_once( 'inc/customizer/customizer.php' );
 		require_once( 'inc/jetpack.php' );
 
-		require_once( 'widgets/class-regina-lite-widget-contact.php' );
-		require_once( 'widgets/class-regina-lite-widget-address.php' );
-
 		/*
 		 * Make theme available for translation.
 		 * Translations can be filed in the /languages/ directory.
@@ -86,22 +83,26 @@ if ( ! function_exists( 'regina_lite_setup' ) ) :
 		add_theme_support( 'post-thumbnails' );
 
 		// This theme uses wp_nav_menu() in one location.
-		register_nav_menus( array(
-			'primary'   => esc_html__( 'Primary Menu', 'regina-lite' ),
-			'secondary' => esc_html__( 'Secondary Menu', 'regina-lite' ),
-		) );
+		register_nav_menus(
+			array(
+				'primary'   => esc_html__( 'Primary Menu', 'regina-lite' ),
+				'secondary' => esc_html__( 'Secondary Menu', 'regina-lite' ),
+			)
+		);
 
 		/*
 		 * Switch default core markup for search form, comment form, and comments
 		 * to output valid HTML5.
 		 */
-		add_theme_support( 'html5', array(
-			'search-form',
-			'comment-form',
-			'comment-list',
-			'gallery',
-			'caption',
-		) );
+		add_theme_support(
+			'html5', array(
+				'search-form',
+				'comment-form',
+				'comment-list',
+				'gallery',
+				'caption',
+			)
+		);
 
 		/*
          * Add selective refresh
@@ -129,7 +130,8 @@ if ( ! function_exists( 'regina_lite_setup' ) ) :
 		if ( is_admin() ) {
 
 			global $regina_required_actions, $regina_recommended_plugins;
-			require get_template_directory() . '/inc/libraries/class-regina-notify-system.php';
+			require_once get_template_directory() . '/inc/libraries/class-regina-notify-system.php';
+			require_once get_template_directory() . '/inc/libraries/welcome-screen/inc/class-epsilon-import-data.php';
 
 			$regina_recommended_plugins = array(
 				'kiwi-social-share'        => array(
@@ -150,13 +152,25 @@ if ( ! function_exists( 'regina_lite_setup' ) ) :
              */
 			$regina_required_actions  = array(
 				array(
-                    'id' => 'regina-lite-homepage',
-                    'title'       => esc_html__( 'Set Static Front Page', 'regina-lite' ),
-					'description' => esc_html__( 'Clicking the button below will set static front page to your WordPress installation.', 'regina-lite' ),
-                    "help"        => '<p><a id="regina-fix-homepage" href="#" class="button button-primary" style="text-decoration: none;"> ' . esc_html__( 'Set Homepage', 'epsilon-framework' ) . '</a><span class="spinner" style="float:none"></span></p>',
-                    'check'       => Regina_Notify_System::is_homepage_seted(),
-                ),
+					'id'          => 'regina-lite-import-data',
+					'title'       => esc_html__( 'Easy 1-click theme setup', 'regina-lite' ),
+					'description' => esc_html__( 'Clicking the button below will add settings/widgets and recommended plugins to your WordPress installation. Click advanced to customize the import process.', 'regina-lite' ),
+					'help'        => array( Epsilon_Import_Data::get_instance(), 'generate_import_data_container' ),
+					'check'       => Regina_Notify_System::check_installed_data(),
+				),
+				array(
+					'id'          => 'regina-lite-fix-homepage',
+					'title'       => esc_html__( 'Fix Homepage', 'regina-lite' ),
+					'description' => esc_html__( 'We have made some changes to how the Homepage works in Regina. Now you need to create a page and use the "Homepage Template" and set it as a static front page. You can also make this automatically by pushing the button below.', 'regina-lite' ),
+					'help'        => '<p><a id="regina-fix-homepage" href="#" class="button button-primary" style="text-decoration: none;"> ' . esc_html__( 'Fix Homepage', 'epsilon-framework' ) . '</a><span class="spinner" style="float:none"></span></p>',
+					'check'       => Regina_Notify_System::show_fix_action(),
+				),
 			);
+
+			if ( is_customize_preview() ) {
+				$url                                = 'themes.php?page=%1$s-welcome&tab=%2$s';
+				$regina_required_actions[0]['help'] = '<a class="button button-primary" id="" href="' . esc_url( admin_url( sprintf( $url, 'regina', 'recommended-actions' ) ) ) . '">' . __( 'Easy 1-click theme setup', 'regina-lite' ) . '</a>';
+			}
 
 			require get_template_directory() . '/inc/libraries/welcome-screen/class-regina-welcome-screen.php';
 		}// End if().
@@ -186,54 +200,64 @@ add_action( 'after_setup_theme', 'regina_lite_content_width', 0 );
  */
 function regina_lite_widgets_init() {
 	// Blog Sidebar
-	register_sidebar( array(
-		'name'          => esc_html__( 'Blog Sidebar', 'regina-lite' ),
-		'id'            => 'blog-sidebar',
-		'before_widget' => '<div id="%1$s" class="widget %2$s">',
-		'after_widget'  => '</div>',
-		'before_title'  => '<h3>',
-		'after_title'   => '</h3>',
-	) );
+	register_sidebar(
+		array(
+			'name'          => esc_html__( 'Blog Sidebar', 'regina-lite' ),
+			'id'            => 'blog-sidebar',
+			'before_widget' => '<div id="%1$s" class="widget %2$s">',
+			'after_widget'  => '</div>',
+			'before_title'  => '<h3>',
+			'after_title'   => '</h3>',
+		)
+	);
 
 	// Footer Sidebar 1
-	register_sidebar( array(
-		'name'          => esc_html__( 'Footer Sidebar 1', 'regina-lite' ),
-		'id'            => 'footer-sidebar-1',
-		'before_widget' => '<div id="%1$s" class="widget %2$s">',
-		'after_widget'  => '</div>',
-		'before_title'  => '<h6><small>',
-		'after_title'   => '</small></h6>',
-	) );
+	register_sidebar(
+		array(
+			'name'          => esc_html__( 'Footer Sidebar 1', 'regina-lite' ),
+			'id'            => 'footer-sidebar-1',
+			'before_widget' => '<div id="%1$s" class="widget %2$s">',
+			'after_widget'  => '</div>',
+			'before_title'  => '<h6><small>',
+			'after_title'   => '</small></h6>',
+		)
+	);
 
 	// Footer Sidebar 2
-	register_sidebar( array(
-		'name'          => esc_html__( 'Footer Sidebar 2', 'regina-lite' ),
-		'id'            => 'footer-sidebar-2',
-		'before_widget' => '<div id="%1$s" class="widget %2$s">',
-		'after_widget'  => '</div>',
-		'before_title'  => '<h6><small>',
-		'after_title'   => '</small></h6>',
-	) );
+	register_sidebar(
+		array(
+			'name'          => esc_html__( 'Footer Sidebar 2', 'regina-lite' ),
+			'id'            => 'footer-sidebar-2',
+			'before_widget' => '<div id="%1$s" class="widget %2$s">',
+			'after_widget'  => '</div>',
+			'before_title'  => '<h6><small>',
+			'after_title'   => '</small></h6>',
+		)
+	);
 
 	// Footer Sidebar 3
-	register_sidebar( array(
-		'name'          => esc_html__( 'Footer Sidebar 3', 'regina-lite' ),
-		'id'            => 'footer-sidebar-3',
-		'before_widget' => '<div id="%1$s" class="widget %2$s">',
-		'after_widget'  => '</div>',
-		'before_title'  => '<h6><small>',
-		'after_title'   => '</small></h6>',
-	) );
+	register_sidebar(
+		array(
+			'name'          => esc_html__( 'Footer Sidebar 3', 'regina-lite' ),
+			'id'            => 'footer-sidebar-3',
+			'before_widget' => '<div id="%1$s" class="widget %2$s">',
+			'after_widget'  => '</div>',
+			'before_title'  => '<h6><small>',
+			'after_title'   => '</small></h6>',
+		)
+	);
 
 	// Footer Sidebar 4
-	register_sidebar( array(
-		'name'          => esc_html__( 'Footer Sidebar 4', 'regina-lite' ),
-		'id'            => 'footer-sidebar-4',
-		'before_widget' => '<div id="%1$s" class="widget %2$s">',
-		'after_widget'  => '</div>',
-		'before_title'  => '<h6><small>',
-		'after_title'   => '</small></h6>',
-	) );
+	register_sidebar(
+		array(
+			'name'          => esc_html__( 'Footer Sidebar 4', 'regina-lite' ),
+			'id'            => 'footer-sidebar-4',
+			'before_widget' => '<div id="%1$s" class="widget %2$s">',
+			'after_widget'  => '</div>',
+			'before_title'  => '<h6><small>',
+			'after_title'   => '</small></h6>',
+		)
+	);
 }
 
 add_action( 'widgets_init', 'regina_lite_widgets_init' );
@@ -267,21 +291,25 @@ function regina_lite_scripts() {
 	wp_enqueue_style( 'google-fonts' );
 
 	// WP Enqueue Script
-	if ( 1 == $preloader_enabled  && ! is_customize_preview() ) {
+	if ( 1 == $preloader_enabled && ! is_customize_preview() ) {
 		wp_enqueue_script( 'pace-min-js', get_template_directory_uri() . '/layout/js/plugins/pace/pace.min.js', array( 'jquery' ), '', false );
-		wp_enqueue_script( 'regina-lite-preloader', get_template_directory_uri() . '/layout/js/preloader.min.js', array(
-			'jquery',
-			'pace-min-js',
-		), '', false );
+		wp_enqueue_script(
+			'regina-lite-preloader', get_template_directory_uri() . '/layout/js/preloader.min.js', array(
+				'jquery',
+				'pace-min-js',
+			), '', false
+		);
 		wp_enqueue_style( 'regina-lite-pace', get_template_directory_uri() . '/layout/css/pace.min.css', array(), '', 'all' );
 	}
 
 	wp_enqueue_script( 'regina-lite-jquery.bxslider.min', get_template_directory_uri() . '/layout/js/plugins/bxslider/bxslider.min.js', array( 'jquery' ), '', true );
 	wp_enqueue_script( 'regina-lite-owl-carousel-min', get_template_directory_uri() . '/layout/js/plugins/owl-carousel/owl-carousel.min.js', array( 'jquery' ), '', true );
-	wp_enqueue_script( 'regina-lite-scripts', get_template_directory_uri() . '/layout/js/plugins.js', array(
-		'jquery',
-		'regina-lite-owl-carousel-min',
-	), '', true );
+	wp_enqueue_script(
+		'regina-lite-scripts', get_template_directory_uri() . '/layout/js/plugins.js', array(
+			'jquery',
+			'regina-lite-owl-carousel-min',
+		), '', true
+	);
 
 	if ( 1 == $enable_site_lazyload ) {
 		wp_enqueue_script( 'regina-lite-jquery.lazyload.min', get_template_directory_uri() . '/layout/js/plugins/lazyload/lazyload.min.js', array( 'jquery' ), '', true );
@@ -316,7 +344,9 @@ require_once get_template_directory() . '/inc/libraries/epsilon-framework/class-
 $args = array(
 	'controls' => array( 'slider', 'toggle', 'upsell', 'text-editor' ), // array of controls to load
 	'sections' => array( 'recommended-actions' ), // array of sections to load
-	'path'     => '/inc/libraries',// path to your epsilon framework in your theme, e.g. theme-name*/inc/libraries*/epsilon-framework
+	'path'     => '/inc/libraries', // path to your epsilon framework in your theme, e.g. theme-name*/inc/libraries*/epsilon-framework
+	'backup'   => false,
 );
 
 new Epsilon_Framework( $args );
+

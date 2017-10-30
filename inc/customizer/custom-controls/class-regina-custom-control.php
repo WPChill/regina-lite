@@ -16,8 +16,7 @@ if ( class_exists( 'WP_Customize_Control' ) && ! class_exists( 'Regina_Custom_Co
 				case 'checkbox':
 					?>
 					<label>
-						<input type="checkbox" value="<?php echo esc_attr( $this->get_value() ); ?>" <?php $this->link();
-						checked( $this->get_value() ); ?> />
+						<input type="checkbox" value="<?php echo esc_attr( $this->get_value() ); ?>" <?php $this->link(); ?> <?php checked( $this->get_value() ); ?> />
 						<?php echo esc_html( $this->label ); ?>
 						<?php if ( ! empty( $this->description ) ) : ?>
 							<span class="description customize-control-description"><?php echo $this->description; ?></span>
@@ -30,17 +29,25 @@ if ( class_exists( 'WP_Customize_Control' ) && ! class_exists( 'Regina_Custom_Co
 						return;
 					}
 					$name = '_customize-radio-' . $this->id;
-					if ( ! empty( $this->label ) ) : ?>
+					if ( ! empty( $this->label ) ) :
+					?>
 						<span class="customize-control-title"><?php echo esc_html( $this->label ); ?></span>
-					<?php endif;
-					if ( ! empty( $this->description ) ) : ?>
+					<?php
+					endif;
+					if ( ! empty( $this->description ) ) :
+					?>
 						<span class="description customize-control-description"><?php echo $this->description ; ?></span>
-					<?php endif;
+					<?php
+					endif;
 					foreach ( $this->choices as $value => $label ) :
 						?>
 						<label>
-							<input type="radio" value="<?php echo esc_attr( $value ); ?>" name="<?php echo esc_attr( $name ); ?>" <?php $this->link();
-							checked( $this->get_value(), $value ); ?> />
+							<input type="radio" value="<?php echo esc_attr( $value ); ?>" name="<?php echo esc_attr( $name ); ?>" 
+																	<?php
+																	$this->link();
+																	checked( $this->get_value(), $value );
+							?>
+							 />
 							<?php echo esc_html( $label ); ?><br/>
 						</label>
 						<?php
@@ -54,8 +61,10 @@ if ( class_exists( 'WP_Customize_Control' ) && ! class_exists( 'Regina_Custom_Co
 					<label>
 						<?php if ( ! empty( $this->label ) ) : ?>
 							<span class="customize-control-title"><?php echo esc_html( $this->label ); ?></span>
-						<?php endif;
-if ( ! empty( $this->description ) ) : ?>
+						<?php
+						endif;
+if ( ! empty( $this->description ) ) :
+?>
 							<span class="description customize-control-description"><?php echo $this->description; ?></span>
 						<?php endif; ?>
 
@@ -74,8 +83,10 @@ if ( ! empty( $this->description ) ) : ?>
 					<label>
 						<?php if ( ! empty( $this->label ) ) : ?>
 							<span class="customize-control-title"><?php echo esc_html( $this->label ); ?></span>
-						<?php endif;
-if ( ! empty( $this->description ) ) : ?>
+						<?php
+						endif;
+if ( ! empty( $this->description ) ) :
+?>
 							<span class="description customize-control-description"><?php echo $this->description; ?></span>
 						<?php endif; ?>
 						<textarea rows="5" <?php $this->input_attrs(); ?> <?php $this->link(); ?>><?php echo esc_textarea( $this->get_value() ); ?></textarea>
@@ -87,8 +98,10 @@ if ( ! empty( $this->description ) ) : ?>
 					<label>
 					<?php if ( ! empty( $this->label ) ) : ?>
 						<span class="customize-control-title"><?php echo esc_html( $this->label ); ?></span>
-					<?php endif;
-if ( ! empty( $this->description ) ) : ?>
+					<?php
+					endif;
+if ( ! empty( $this->description ) ) :
+?>
 						<span class="description customize-control-description"><?php echo $this->description; ?></span>
 					<?php endif; ?>
 
@@ -130,25 +143,30 @@ if ( ! empty( $this->description ) ) : ?>
 					echo $dropdown;
 					?>
 					</label>
-					<?php if ( $this->allow_addition && current_user_can( 'publish_pages' ) && current_user_can( 'edit_theme_options' ) ) : // Currently tied to menus functionality. ?>
-						<button type="button" class="button-link add-new-toggle"><?php
+					<?php if ( $this->allow_addition && current_user_can( 'publish_pages' ) && current_user_can( 'edit_theme_options' ) ) : ?>
+						<button type="button" class="button-link add-new-toggle">
+						<?php
 							/* translators: %s: add new page label */
 							printf( __( '+ %s', 'regina-lite' ), get_post_type_object( 'page' )->labels->add_new_item );
-						?></button>
+						?>
+						</button>
 						<div class="new-content-item">
 							<label for="create-input-<?php echo $this->id; ?>"><span class="screen-reader-text"><?php _e( 'New page title', 'regina-lite' ); ?></span></label>
 							<input type="text" id="create-input-<?php echo $this->id; ?>" class="create-item-input" placeholder="<?php esc_attr_e( 'New page title&hellip;', 'regina-lite' ); ?>">
 							<button type="button" class="button add-content"><?php _e( 'Add', 'regina-lite' ); ?></button>
 						</div>
-					<?php endif;
+					<?php
+					endif;
 					break;
 				default:
 					?>
 					<label>
 						<?php if ( ! empty( $this->label ) ) : ?>
 							<span class="customize-control-title"><?php echo esc_html( $this->label ); ?></span>
-						<?php endif;
-if ( ! empty( $this->description ) ) : ?>
+						<?php
+						endif;
+if ( ! empty( $this->description ) ) :
+?>
 							<span class="description customize-control-description"><?php echo $this->description; ?></span>
 						<?php endif; ?>
 						<input type="<?php echo esc_attr( $this->type ); ?>" <?php $this->input_attrs(); ?> value="<?php echo esc_attr( $this->get_value() ); ?>" <?php $this->link(); ?> />

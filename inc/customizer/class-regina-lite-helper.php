@@ -27,18 +27,22 @@ class Regina_Lite_Helper {
 		'regina_lite_ourteam_teammember1_image',
 		'regina_lite_ourteam_teammember1_name',
 		'regina_lite_ourteam_teammember1_description',
+		'regina_lite_ourteam_teammember1_position',
 		'regina_lite_ourteam_teammember1_buttonurl',
 		'regina_lite_ourteam_teammember2_image',
 		'regina_lite_ourteam_teammember2_name',
 		'regina_lite_ourteam_teammember2_description',
+		'regina_lite_ourteam_teammember2_position',
 		'regina_lite_ourteam_teammember2_buttonurl',
 		'regina_lite_ourteam_teammember3_image',
 		'regina_lite_ourteam_teammember3_name',
 		'regina_lite_ourteam_teammember3_description',
+		'regina_lite_ourteam_teammember3_position',
 		'regina_lite_ourteam_teammember3_buttonurl',
 		'regina_lite_ourteam_teammember4_image',
 		'regina_lite_ourteam_teammember4_name',
 		'regina_lite_ourteam_teammember4_description',
+		'regina_lite_ourteam_teammember4_position',
 		'regina_lite_ourteam_teammember4_buttonurl',
 		'regina_lite_testimonials_general_show',
 		'regina_lite_testimonials_general_image1',
@@ -298,7 +302,7 @@ function add_states_for_regina_settings_page( $post_states, $post ) {
 }
 
 add_action( 'customize_update_epsilon_page', 'regina_lite_save_custom_setting', 10, 2 );
-function regina_lite_save_custom_setting( $value, $setting ){
+function regina_lite_save_custom_setting( $value, $setting ) {
 
 	$existing_settings = Regina_Lite_Helper::parse_regina_settings();
 	$key = $setting->id;
@@ -306,7 +310,7 @@ function regina_lite_save_custom_setting( $value, $setting ){
 	$existing_settings[ $key ] = $value;
 
 	update_post_meta( Regina_Lite_Helper::get_setting_page_id(), 'regina-settings', $existing_settings );
-	
+
 	return true;
 
 }

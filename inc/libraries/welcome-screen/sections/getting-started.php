@@ -20,13 +20,15 @@ $count          = $this->count_actions();
 		<?php } else { ?>
 			<p><span class="dashicons dashicons-no-alt"></span> <a
 					href="<?php echo esc_url( admin_url( 'themes.php?page=regina-welcome&tab=recommended_actions' ) ); ?>"><?php esc_html_e( 'Check recommended actions', 'regina-lite' ); ?></a>
-			</p> <?php
-}; ?>
+			</p> 
+			<?php
+};
+?>
 	</div><!--/.col-->
 
 	<div class="col">
 		<h3><?php esc_html_e( 'Step 2 - Check our documentation', 'regina-lite' ); ?></h3>
-		<p><?php esc_html_e( 'Even if you\'re a long-time WordPress user, we still believe you should give our documentation a very quick Read.', 'regina-lite' ) ?></p>
+		<p><?php esc_html_e( 'Even if you\'re a long-time WordPress user, we still believe you should give our documentation a very quick Read.', 'regina-lite' ); ?></p>
 		<p>
 			<a target="_blank"
 			   href="<?php echo esc_url( 'http://docs.machothemes.com/' ); ?>"><?php esc_html_e( 'Full documentation', 'regina-lite' ); ?></a>

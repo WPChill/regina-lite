@@ -273,3 +273,17 @@
 .text-center{
     text-align:center;
 }
+.import-content-container .checkbox-group {
+    margin-bottom: 10px;
+    margin-top: 10px;
+    display: inline-block;
+    width: 100%;
+}
+
+.import-content-container .checkbox-group label {
+    margin-right: 15px;
+}
+
+.import-content-container {
+    display: none;
+}

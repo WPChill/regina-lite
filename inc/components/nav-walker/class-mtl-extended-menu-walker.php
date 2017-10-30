@@ -50,13 +50,15 @@ if ( ! class_exists( 'MTL_Extended_Menu_Walker' ) ) {
 			}
 
 			/* Check for children */
-			$children = get_posts( array(
-				'post_type' => 'nav_menu_item',
-				'nopaging' => true,
-				'numberposts' => 1,
-				'meta_key' => '_menu_item_menu_item_parent',
-				'meta_value' => $item->ID,
-			) );
+			$children = get_posts(
+				array(
+					'post_type' => 'nav_menu_item',
+					'nopaging' => true,
+					'numberposts' => 1,
+					'meta_key' => '_menu_item_menu_item_parent',
+					'meta_value' => $item->ID,
+				)
+			);
 
 			if ( ! empty( $children ) ) {
 				$classes[] = 'has-sub';

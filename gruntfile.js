@@ -220,6 +220,7 @@ module.exports = function( grunt ) {
 
   // Build task
   grunt.registerTask( 'build-archive', [
+    'checktextdomain',
     'mincss',
     'minjs',
     'clean:init',

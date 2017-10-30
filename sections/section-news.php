@@ -1,8 +1,8 @@
 <?php
 
 
-$regina_lite_section_title     = get_theme_mod( 'regina_lite_news_section_title', __( 'Latest News', 'regina-lite' ) );
-$regina_lite_section_sub_title = get_theme_mod( 'regina_lite_news_section_sub_title', __( 'Straight from our blog', 'regina-lite' ) );
+$regina_lite_section_title     = get_theme_mod( 'regina_lite_news_section_title' );
+$regina_lite_section_sub_title = get_theme_mod( 'regina_lite_news_section_sub_title' );
 
 $regina_lite_news_button_text                = get_theme_mod( 'regina_lite_news_section_button_text', __( 'See our blog', 'regina-lite' ) );
 $regina_lite_news_section_no_posts_per_slide = get_theme_mod( 'regina_lite_news_section_no_posts_per_slide', 4 );

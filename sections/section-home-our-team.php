@@ -8,28 +8,28 @@
 ?>
 <?php
 // Get Theme Mod for Our Team Panel
-$ourteam_general_title           = get_theme_mod( 'regina_lite_ourteam_general_title', __( 'Our team can help you!', 'regina-lite' ) );
-$ourteam_general_description     = get_theme_mod( 'regina_lite_ourteam_general_description', __( 'We offer various services lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt.', 'regina-lite' ) );
-$ourteam_teammember1_image       = get_theme_mod( 'regina_lite_ourteam_teammember1_image', get_template_directory_uri() . '/layout/images/team/team-member-1.jpg' );
-$ourteam_teammember1_name        = get_theme_mod( 'regina_lite_ourteam_teammember1_name', __( 'Dr. Steve Leeson', 'regina-lite' ) );
-$ourteam_teammember1_position    = get_theme_mod( 'regina_lite_ourteam_teammember1_position', __( 'Cardiac Clinic, Primary Healthcare', 'regina-lite' ) );
-$ourteam_teammember1_description = get_theme_mod( 'regina_lite_ourteam_teammember1_description', __( 'Dr. Steve Leeson was born and raised in Texas, USA. He received a Bachelor of Science degree in Chemistry from the University of Houston and a...', 'regina-lite' ) );
-$ourteam_teammember1_buttonurl   = get_theme_mod( 'regina_lite_ourteam_teammember1_buttonurl', '#' );
-$ourteam_teammember2_image       = get_theme_mod( 'regina_lite_ourteam_teammember2_image', get_template_directory_uri() . '/layout/images/team/team-member-2.jpg' );
-$ourteam_teammember2_name        = get_theme_mod( 'regina_lite_ourteam_teammember2_name', __( 'Dr. Amanda Riss', 'regina-lite' ) );
-$ourteam_teammember2_position    = get_theme_mod( 'regina_lite_ourteam_teammember2_position', __( 'Cardiac Clinic, Primary Healthcare', 'regina-lite' ) );
-$ourteam_teammember2_description = get_theme_mod( 'regina_lite_ourteam_teammember2_description', __( 'Dr. Amanda Riss was born and raised in Texas, USA. He received a Bachelor of Science degree in Chemistry from the University of Houston and a...', 'regina-lite' ) );
-$ourteam_teammember2_buttonurl   = get_theme_mod( 'regina_lite_ourteam_teammember2_buttonurl', '#' );
-$ourteam_teammember3_image       = get_theme_mod( 'regina_lite_ourteam_teammember3_image', get_template_directory_uri() . '/layout/images/team/team-member-3.jpg' );
-$ourteam_teammember3_name        = get_theme_mod( 'regina_lite_ourteam_teammember3_name', __( 'Dr. Mick Harold', 'regina-lite' ) );
-$ourteam_teammember3_position    = get_theme_mod( 'regina_lite_ourteam_teammember3_position', __( 'Cardiac Clinic, Primary Healthcare', 'regina-lite' ) );
-$ourteam_teammember3_description = get_theme_mod( 'regina_lite_ourteam_teammember3_description', __( 'Dr. Mick Harold was born and raised in Texas, USA. He received a Bachelor of Science degree in Chemistry from the University of Houston and a...', 'regina-lite' ) );
-$ourteam_teammember3_buttonurl   = get_theme_mod( 'regina_lite_ourteam_teammember3_buttonurl', '#' );
-$ourteam_teammember4_image       = get_theme_mod( 'regina_lite_ourteam_teammember4_image', get_template_directory_uri() . '/layout/images/team/team-member-4.jpg' );
-$ourteam_teammember4_name        = get_theme_mod( 'regina_lite_ourteam_teammember4_name', __( 'Dr. Jenna Crew', 'regina-lite' ) );
-$ourteam_teammember4_position    = get_theme_mod( 'regina_lite_ourteam_teammember4_position', __( 'Cardiac Clinic, Primary Healthcare', 'regina-lite' ) );
-$ourteam_teammember4_description = get_theme_mod( 'regina_lite_ourteam_teammember4_description', __( 'Dr. Jenna Crew was born and raised in Texas, USA. He received a Bachelor of Science degree in Chemistry from the University of Houston and a...', 'regina-lite' ) );
-$ourteam_teammember4_buttonurl   = get_theme_mod( 'regina_lite_ourteam_teammember4_buttonurl', '#' );
+$ourteam_general_title           = get_theme_mod( 'regina_lite_ourteam_general_title' );
+$ourteam_general_description     = get_theme_mod( 'regina_lite_ourteam_general_description' );
+$ourteam_teammember1_image       = get_theme_mod( 'regina_lite_ourteam_teammember1_image' );
+$ourteam_teammember1_name        = get_theme_mod( 'regina_lite_ourteam_teammember1_name' );
+$ourteam_teammember1_position    = get_theme_mod( 'regina_lite_ourteam_teammember1_position' );
+$ourteam_teammember1_description = get_theme_mod( 'regina_lite_ourteam_teammember1_description' );
+$ourteam_teammember1_buttonurl   = get_theme_mod( 'regina_lite_ourteam_teammember1_buttonurl' );
+$ourteam_teammember2_image       = get_theme_mod( 'regina_lite_ourteam_teammember2_image' );
+$ourteam_teammember2_name        = get_theme_mod( 'regina_lite_ourteam_teammember2_name' );
+$ourteam_teammember2_position    = get_theme_mod( 'regina_lite_ourteam_teammember2_position' );
+$ourteam_teammember2_description = get_theme_mod( 'regina_lite_ourteam_teammember2_description' );
+$ourteam_teammember2_buttonurl   = get_theme_mod( 'regina_lite_ourteam_teammember2_buttonurl' );
+$ourteam_teammember3_image       = get_theme_mod( 'regina_lite_ourteam_teammember3_image' );
+$ourteam_teammember3_name        = get_theme_mod( 'regina_lite_ourteam_teammember3_name' );
+$ourteam_teammember3_position    = get_theme_mod( 'regina_lite_ourteam_teammember3_position' );
+$ourteam_teammember3_description = get_theme_mod( 'regina_lite_ourteam_teammember3_description' );
+$ourteam_teammember3_buttonurl   = get_theme_mod( 'regina_lite_ourteam_teammember3_buttonurl' );
+$ourteam_teammember4_image       = get_theme_mod( 'regina_lite_ourteam_teammember4_image' );
+$ourteam_teammember4_name        = get_theme_mod( 'regina_lite_ourteam_teammember4_name' );
+$ourteam_teammember4_position    = get_theme_mod( 'regina_lite_ourteam_teammember4_position' );
+$ourteam_teammember4_description = get_theme_mod( 'regina_lite_ourteam_teammember4_description' );
+$ourteam_teammember4_buttonurl   = get_theme_mod( 'regina_lite_ourteam_teammember4_buttonurl' );
 
 $ourteam_teammembers = array(
 	$ourteam_teammember1_image,
@@ -38,7 +38,7 @@ $ourteam_teammembers = array(
 	$ourteam_teammember4_image,
 );
 
-
+$ourteam_members = array();
 foreach ( $ourteam_teammembers as $key => $ourteam_teammember ) :
 	if ( $ourteam_teammember ) :
 		$ourteam_members[] = $ourteam_teammember;

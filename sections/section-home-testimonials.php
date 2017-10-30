@@ -8,30 +8,30 @@
 ?>
 <?php
 // Get Theme Mod for Testimonials Panel
-$testimonials_general_image1           = get_theme_mod( 'regina_lite_testimonials_general_image1', get_template_directory_uri() . '/layout/images/home/testimonial-1.jpg' );
-$testimonials_general_image2           = get_theme_mod( 'regina_lite_testimonials_general_image2', get_template_directory_uri() . '/layout/images/home/testimonial-2.jpg' );
-$testimonials_general_image3           = get_theme_mod( 'regina_lite_testimonials_general_image3', get_template_directory_uri() . '/layout/images/home/testimonial-3.jpg' );
-$testimonials_general_image4           = get_theme_mod( 'regina_lite_testimonials_general_image4', get_template_directory_uri() . '/layout/images/home/testimonial-4.jpg' );
-$testimonials_testimonial1_description = get_theme_mod( 'regina_lite_testimonials_testimonial1_description', __( 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip.', 'regina-lite' ) );
-$testimonials_testimonial1_image       = get_theme_mod( 'regina_lite_testimonials_testimonial1_image', get_template_directory_uri() . '/layout/images/home/testimonial-quote.jpg' );
-$testimonials_testimonial1_name        = get_theme_mod( 'regina_lite_testimonials_testimonial1_name', __( 'Jenny Royal', 'regina-lite' ) );
-$testimonials_testimonial1_position    = get_theme_mod( 'regina_lite_testimonials_testimonial1_position', __( 'Manager @ REQ', 'regina-lite' ) );
-$testimonials_testimonial2_description = get_theme_mod( 'regina_lite_testimonials_testimonial2_description', __( 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip.', 'regina-lite' ) );
-$testimonials_testimonial2_image       = get_theme_mod( 'regina_lite_testimonials_testimonial2_image', get_template_directory_uri() . '/layout/images/home/testimonial-quote.jpg' );
-$testimonials_testimonial2_name        = get_theme_mod( 'regina_lite_testimonials_testimonial2_name', __( 'Jenny Royal', 'regina-lite' ) );
-$testimonials_testimonial2_position    = get_theme_mod( 'regina_lite_testimonials_testimonial2_position', __( 'Manager @ REQ', 'regina-lite' ) );
-$testimonials_testimonial3_description = get_theme_mod( 'regina_lite_testimonials_testimonial3_description', __( 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip.', 'regina-lite' ) );
-$testimonials_testimonial3_image       = get_theme_mod( 'regina_lite_testimonials_testimonial3_image', get_template_directory_uri() . '/layout/images/home/testimonial-quote.jpg' );
-$testimonials_testimonial3_name        = get_theme_mod( 'regina_lite_testimonials_testimonial3_name', __( 'Jenny Royal', 'regina-lite' ) );
-$testimonials_testimonial3_position    = get_theme_mod( 'regina_lite_testimonials_testimonial3_position', __( 'Manager @ REQ', 'regina-lite' ) );
-$testimonials_testimonial4_description = get_theme_mod( 'regina_lite_testimonials_testimonial4_description', __( 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip.', 'regina-lite' ) );
-$testimonials_testimonial4_image       = get_theme_mod( 'regina_lite_testimonials_testimonial4_image', get_template_directory_uri() . '/layout/images/home/testimonial-quote.jpg' );
-$testimonials_testimonial4_name        = get_theme_mod( 'regina_lite_testimonials_testimonial4_name', __( 'Jenny Royal', 'regina-lite' ) );
-$testimonials_testimonial4_position    = get_theme_mod( 'regina_lite_testimonials_testimonial4_position', __( 'Manager @ REQ', 'regina-lite' ) );
-$testimonials_testimonial5_description = get_theme_mod( 'regina_lite_testimonials_testimonial5_description', __( 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip.', 'regina-lite' ) );
-$testimonials_testimonial5_image       = get_theme_mod( 'regina_lite_testimonials_testimonial5_image', get_template_directory_uri() . '/layout/images/home/testimonial-quote.jpg' );
-$testimonials_testimonial5_name        = get_theme_mod( 'regina_lite_testimonials_testimonial5_name', __( 'Jenny Royal', 'regina-lite' ) );
-$testimonials_testimonial5_position    = get_theme_mod( 'regina_lite_testimonials_testimonial5_position', __( 'Manager @ REQ', 'regina-lite' ) );
+$testimonials_general_image1           = get_theme_mod( 'regina_lite_testimonials_general_image1' );
+$testimonials_general_image2           = get_theme_mod( 'regina_lite_testimonials_general_image2' );
+$testimonials_general_image3           = get_theme_mod( 'regina_lite_testimonials_general_image3' );
+$testimonials_general_image4           = get_theme_mod( 'regina_lite_testimonials_general_image4' );
+$testimonials_testimonial1_description = get_theme_mod( 'regina_lite_testimonials_testimonial1_description' );
+$testimonials_testimonial1_image       = get_theme_mod( 'regina_lite_testimonials_testimonial1_image' );
+$testimonials_testimonial1_name        = get_theme_mod( 'regina_lite_testimonials_testimonial1_name' );
+$testimonials_testimonial1_position    = get_theme_mod( 'regina_lite_testimonials_testimonial1_position' );
+$testimonials_testimonial2_description = get_theme_mod( 'regina_lite_testimonials_testimonial2_description' );
+$testimonials_testimonial2_image       = get_theme_mod( 'regina_lite_testimonials_testimonial2_image' );
+$testimonials_testimonial2_name        = get_theme_mod( 'regina_lite_testimonials_testimonial2_name' );
+$testimonials_testimonial2_position    = get_theme_mod( 'regina_lite_testimonials_testimonial2_position' );
+$testimonials_testimonial3_description = get_theme_mod( 'regina_lite_testimonials_testimonial3_description' );
+$testimonials_testimonial3_image       = get_theme_mod( 'regina_lite_testimonials_testimonial3_image' );
+$testimonials_testimonial3_name        = get_theme_mod( 'regina_lite_testimonials_testimonial3_name' );
+$testimonials_testimonial3_position    = get_theme_mod( 'regina_lite_testimonials_testimonial3_position' );
+$testimonials_testimonial4_description = get_theme_mod( 'regina_lite_testimonials_testimonial4_description' );
+$testimonials_testimonial4_image       = get_theme_mod( 'regina_lite_testimonials_testimonial4_image' );
+$testimonials_testimonial4_name        = get_theme_mod( 'regina_lite_testimonials_testimonial4_name' );
+$testimonials_testimonial4_position    = get_theme_mod( 'regina_lite_testimonials_testimonial4_position' );
+$testimonials_testimonial5_description = get_theme_mod( 'regina_lite_testimonials_testimonial5_description' );
+$testimonials_testimonial5_image       = get_theme_mod( 'regina_lite_testimonials_testimonial5_image' );
+$testimonials_testimonial5_name        = get_theme_mod( 'regina_lite_testimonials_testimonial5_name' );
+$testimonials_testimonial5_position    = get_theme_mod( 'regina_lite_testimonials_testimonial5_position' );
 
 $image_id_1 = regina_lite_get_attachment_id( $testimonials_testimonial1_image );
 // get image meta by ID
