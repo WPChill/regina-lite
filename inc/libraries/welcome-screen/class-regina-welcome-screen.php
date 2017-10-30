@@ -53,14 +53,18 @@ class Regina_Welcome_Screen {
 		/**
 		 * Ajax callbacks
 		 */
-		add_action( 'wp_ajax_welcome_screen_ajax_callback', array(
-			$this,
-			'welcome_screen_ajax_callback',
-		) );
-		add_action( 'wp_ajax_nopriv_welcome_screen_ajax_callback', array(
-			$this,
-			'welcome_screen_ajax_callback',
-		) );
+		add_action(
+			'wp_ajax_welcome_screen_ajax_callback', array(
+				$this,
+				'welcome_screen_ajax_callback',
+			)
+		);
+		add_action(
+			'wp_ajax_nopriv_welcome_screen_ajax_callback', array(
+				$this,
+				'welcome_screen_ajax_callback',
+			)
+		);
 
 		add_action( 'wp_ajax_regina_set_frontpage', array( $this, 'set_frontpage' ) );
 		add_action( 'wp_ajax_nopriv_regina_set_frontpage', array( $this, 'set_frontpage' ) );
@@ -141,15 +145,12 @@ class Regina_Welcome_Screen {
 				$this->notice .= '</p>';
 				/* Translators: Notice URL */
 				$this->notice .= '<p><a href="' . esc_url( admin_url( 'themes.php?page=regina-welcome&tab=recommended_actions' ) ) . '" class="button button-primary button-hero" style="text-decoration: none;"> ' . sprintf( esc_html__( 'Get started with %1$s', 'epsilon-framework' ), $this->theme_name ) . '</a></p>';
-			}else{
+			} else {
 				$this->notice .= esc_html__( 'We have made some changes to how the Homepage works in Regina. Now you need to create a page and use the "Homepage Template" and set it as a static front page. You can also make this automatically by pushing the button below.', 'epsilon-framework' );
 				$this->notice .= '</p>';
 				/* Translators: Notice URL */
 				$this->notice .= '<p><a id="regina-fix-homepage" href="#" class="button button-primary" style="text-decoration: none;"> ' . esc_html__( 'Fix Homepage', 'epsilon-framework' ) . '</a><span class="spinner" style="float:none"></span></p>';
 			}
-
-			
-
 		}
 
 		$notifications = Epsilon_Notifications::get_instance();
@@ -517,10 +518,9 @@ class Regina_Welcome_Screen {
 
 		if ( 'dismiss' === $args['do'] ) {
 			$actions_left[ $args['id'] ] = false;
-		}else{
+		} else {
 			$actions_left[ $args['id'] ] = true;
 		}
-		
 
 		update_option( 'regina_show_required_actions', $actions_left );
 
@@ -532,7 +532,7 @@ class Regina_Welcome_Screen {
 
 		if ( 'dismiss' === $args['do'] ) {
 			$actions_left[ $args['id'] ] = false;
-		}else{
+		} else {
 			$actions_left[ $args['id'] ] = true;
 		}
 

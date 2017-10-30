@@ -299,7 +299,7 @@ class Epsilon_Import_Data {
 		);
 
 		$settings = get_post_meta( $page_id, 'regina-settings', true );
-		if ( !is_array( $settings ) ) {
+		if ( ! is_array( $settings ) ) {
 			$settings = array();
 		}
 		foreach ( $options as $option_name => $value ) {
@@ -344,7 +344,7 @@ class Epsilon_Import_Data {
 		);
 
 		$settings = get_post_meta( $page_id, 'regina-settings', true );
-		if ( !is_array( $settings ) ) {
+		if ( ! is_array( $settings ) ) {
 			$settings = array();
 		}
 		foreach ( $options as $option_name => $value ) {
@@ -391,7 +391,7 @@ class Epsilon_Import_Data {
 		);
 
 		$settings = get_post_meta( $page_id, 'regina-settings', true );
-		if ( !is_array( $settings ) ) {
+		if ( ! is_array( $settings ) ) {
 			$settings = array();
 		}
 		foreach ( $options as $option_name => $value ) {
@@ -417,7 +417,7 @@ class Epsilon_Import_Data {
 		);
 
 		$settings = get_post_meta( $page_id, 'regina-settings', true );
-		if ( !is_array( $settings ) ) {
+		if ( ! is_array( $settings ) ) {
 			$settings = array();
 		}
 		foreach ( $options as $option_name => $value ) {
@@ -440,7 +440,7 @@ class Epsilon_Import_Data {
 		);
 
 		$settings = get_post_meta( $page_id, 'regina-settings', true );
-		if ( !is_array( $settings ) ) {
+		if ( ! is_array( $settings ) ) {
 			$settings = array();
 		}
 		foreach ( $options as $option_name => $value ) {
@@ -457,31 +457,39 @@ class Epsilon_Import_Data {
 	 */
 	public function add_footer_widgets() {
 
-		$footer_1 = array( array(
-			'id'     => 'text',
-			'title'  => esc_html__( 'About Regina Lite', 'regina-lite' ),
-            'text'   => esc_html__( 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud.', 'regina-lite' ),
-            'filter' => 1,
-            'visual' => 1,
-		) );
-		$footer_2 = array( array(
-			'id'         => 'meta',
-			'title'      => esc_html( '' ),
-		) );
-		$footer_3 = array( array(
-			'id'     => 'text',
-			'title'  => esc_html__( 'Contact', 'regina-lite' ),
-            'text'   => wp_kses_post( '<p><span class="nc-icon-glyph tech_mobile-button white"></span>&nbsp;&nbsp; (650) 652-8500</p><p><span class="nc-icon-glyph ui-1_email-83 white"></span>&nbsp;&nbsp; <a href="mailto: contact@mediplus.com" title="contact@mediplus.com">contact@mediplus.com</a></p><ul class="social-link-list"><li><a href="#" title="Facebook" target="_blank"><span class="nc-icon-glyph socials-1_logo-facebook"></span></a></li><li><a href="#" title="Twitter" target="_blank"><span class="nc-icon-glyph socials-1_logo-twitter"></span></a></li><li><a href="#" title="LinkedIn" target="_blank"><span class="nc-icon-glyph socials-1_logo-linkedin"></span></a></li><li><a href="#" title="YouTube" target="_blank"><span class="nc-icon-glyph socials-1_logo-youtube"></span></a></li><li><a href="#" title="Instagram" target="_blank"><span class="nc-icon-glyph socials-1_logo-instagram"></span></a></li></ul>' ),
-            'filter' => 1,
-            'visual' => 1,
-		) );
-		$footer_4 = array( array(
-			'id'     => 'text',
-			'title'  => esc_html__( 'Address', 'regina-lite' ),
-            'text'   => wp_kses_post( '<span class="nc-icon-glyph location_pin white" style="float:left;"></span><p style="float:left; margin:-7px 0 0 10px;">Medplus<br>33 Farlane Street<br>Keilor East<br>VIC 3033, New York</p>' ),
-            'filter' => 1,
-            'visual' => 1,
-		) );
+		$footer_1 = array(
+			array(
+				'id'     => 'text',
+				'title'  => esc_html__( 'About Regina Lite', 'regina-lite' ),
+				'text'   => esc_html__( 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud.', 'regina-lite' ),
+				'filter' => 1,
+				'visual' => 1,
+			),
+		);
+		$footer_2 = array(
+			array(
+				'id'         => 'meta',
+				'title'      => esc_html( '' ),
+			),
+		);
+		$footer_3 = array(
+			array(
+				'id'     => 'text',
+				'title'  => esc_html__( 'Contact', 'regina-lite' ),
+				'text'   => wp_kses_post( '<p><span class="nc-icon-glyph tech_mobile-button white"></span>&nbsp;&nbsp; (650) 652-8500</p><p><span class="nc-icon-glyph ui-1_email-83 white"></span>&nbsp;&nbsp; <a href="mailto: contact@mediplus.com" title="contact@mediplus.com">contact@mediplus.com</a></p><ul class="social-link-list"><li><a href="#" title="Facebook" target="_blank"><span class="nc-icon-glyph socials-1_logo-facebook"></span></a></li><li><a href="#" title="Twitter" target="_blank"><span class="nc-icon-glyph socials-1_logo-twitter"></span></a></li><li><a href="#" title="LinkedIn" target="_blank"><span class="nc-icon-glyph socials-1_logo-linkedin"></span></a></li><li><a href="#" title="YouTube" target="_blank"><span class="nc-icon-glyph socials-1_logo-youtube"></span></a></li><li><a href="#" title="Instagram" target="_blank"><span class="nc-icon-glyph socials-1_logo-instagram"></span></a></li></ul>' ),
+				'filter' => 1,
+				'visual' => 1,
+			),
+		);
+		$footer_4 = array(
+			array(
+				'id'     => 'text',
+				'title'  => esc_html__( 'Address', 'regina-lite' ),
+				'text'   => wp_kses_post( '<span class="nc-icon-glyph location_pin white" style="float:left;"></span><p style="float:left; margin:-7px 0 0 10px;">Medplus<br>33 Farlane Street<br>Keilor East<br>VIC 3033, New York</p>' ),
+				'filter' => 1,
+				'visual' => 1,
+			),
+		);
 
 		$this->add_widgets_to_sidebar( 'footer-sidebar-1', $footer_1 );
 		$this->add_widgets_to_sidebar( 'footer-sidebar-2', $footer_2 );

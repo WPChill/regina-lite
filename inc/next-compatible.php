@@ -60,7 +60,7 @@ if ( version_compare( $GLOBALS['wp_version'], '4.4.2', '>' ) ) {
 	// Check for old widgets
 	$widgets_updated = get_option( 'regina-widgets-removed', false );
 	if ( ! $widgets_updated ) {
-		
+
 		$all_sidebars = get_option( 'sidebars_widgets' );
 
 		$contact_widget = get_option( 'widget_regina_lite_contact' );
@@ -73,7 +73,7 @@ if ( version_compare( $GLOBALS['wp_version'], '4.4.2', '>' ) ) {
 				$aux = $text_widgets;
 				unset( $aux['_multiwidget'] );
 				$keys = array_keys( $aux );
-			}else{
+			} else {
 				$keys = array_keys( $text_widgets );
 			}
 
@@ -88,7 +88,7 @@ if ( version_compare( $GLOBALS['wp_version'], '4.4.2', '>' ) ) {
 								'title' => '',
 								'text' => '',
 								'filter' => 1,
-            					'visual' => 1,
+								'visual' => 1,
 							);
 							$current_index = str_replace( 'regina_lite_contact-', '', $widget );
 							$current_widget = $contact_widget[ $current_index ];
@@ -124,7 +124,7 @@ if ( version_compare( $GLOBALS['wp_version'], '4.4.2', '>' ) ) {
 								$social_html .= '<li><a href="' . $current_widget['youtube_link'] . '" title="YouTube" target="_blank"><span class="nc-icon-glyph socials-1_logo-youtube"></span></a></li>';
 							}
 
-							if ( isset( $current_widget['instagram_link'] ) && '' != $current_widget['instagram_link'] )  {
+							if ( isset( $current_widget['instagram_link'] ) && '' != $current_widget['instagram_link'] ) {
 								$social_html .= '<li><a href="' . $current_widget['instagram_link'] . '" title="Instagram" target="_blank"><span class="nc-icon-glyph socials-1_logo-instagram"></span></a></li>';
 							}
 
@@ -136,13 +136,13 @@ if ( version_compare( $GLOBALS['wp_version'], '4.4.2', '>' ) ) {
 							$all_sidebars[ $sidebar_key ][ $widget_key ] = 'text-' . $text_widget_index;
 							$text_widget_index++;
 
-						}elseif ( strpos( $widget, 'regina_lite_address' ) !== false ) {
+						} elseif ( strpos( $widget, 'regina_lite_address' ) !== false ) {
 
 							$args = array(
 								'title' => '',
 								'text' => '',
 								'filter' => 1,
-            					'visual' => 1,
+								'visual' => 1,
 							);
 							$current_index = str_replace( 'regina_lite_address-', '', $widget );
 							$current_widget = $address_widget[ $current_index ];
@@ -161,7 +161,6 @@ if ( version_compare( $GLOBALS['wp_version'], '4.4.2', '>' ) ) {
 						}
 					}
 				}
-				
 			}
 
 			// Update sidebar
@@ -172,7 +171,5 @@ if ( version_compare( $GLOBALS['wp_version'], '4.4.2', '>' ) ) {
 			update_option( 'regina-widgets-removed', 1 );
 
 		}
-
 	}
-
 }// End if().
