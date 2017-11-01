@@ -351,7 +351,6 @@
 		new Epsilon_Control_Text_Editor(
 			$wp_customize, $prefix . '_footer_copyright', array(
 				'label'   => esc_html__( 'Footer Copyright.', 'regina-lite' ),
-				'description' => esc_html__( 'Will be displayed in the footer', 'regina-lite' ),
 				'section' => $prefix . '_general_footer_section',
 				'settings'   => $prefix . '_footer_copyright',
 				'priority' => 11,

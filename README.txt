@@ -2,8 +2,8 @@
 Contributors: cristianraiber-1
 Tags: light, black,blue, silver, dark, fixed-layout, fluid-layout, responsive-layout, one-column, two-columns, three-columns, four-columns, left-sidebar, right-sidebar, custom-background, custom-colors, custom-header, custom-menu, editor-style, featured-image-header, featured-images, flexible-header, full-width-template, microformats, rtl-language-support, sticky-post, threaded-comments, translation-ready
 Requires at least: 4.0
-Tested up to: 4.5.2
-Stable tag: 1.0.15
+Tested up to: 4.8.3
+Stable tag: 2.0.0
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 

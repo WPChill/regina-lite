@@ -2,7 +2,7 @@
   "name": "regina-lite",
   "main": "Gruntfile.js",
   "author": "Macho Themes",
-  "version": "1.1.1",
+  "version": "2.0.0",
   "repository": "https://github.com/MachoThemes/regina-lite",
   "license": "GPL v3",
   "devDependencies": {
