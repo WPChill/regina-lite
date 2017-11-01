@@ -1,0 +1,19 @@
+.social-link-list li .customize-partial-edit-shortcut button {
+	left: 0;
+	top: 40px;
+}
+#navigation .appointment-url .customize-partial-edit-shortcut button {
+	left: -20px;
+    top: 43px;
+}
+#home-testimonials .images li .customize-partial-edit-shortcut button {
+	left: 2px;
+}
+#testimonials-slider p.quote .customize-partial-edit-shortcut button {
+	left: 2px;
+}
+
+#testimonials-slider h5.name .customize-partial-edit-shortcut button,
+#testimonials-slider p.position .customize-partial-edit-shortcut button {
+    top: -7px;
+}

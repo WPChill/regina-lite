@@ -1,0 +1,18 @@
+.accordion-section .customize-control-epsilon-upsell {
+    width: calc( 100% + 24px );
+}
+#sub-accordion-section-regina_lite_features_general .customize-control-epsilon-upsell,
+#sub-accordion-section-regina_lite_order_section .customize-control-epsilon-upsell,
+#sub-accordion-section-regina_lite_testimonials_general .customize-control-epsilon-upsell,
+#sub-accordion-section-regina_lite_ourteam_general .customize-control-epsilon-upsell {
+	margin-top: -15px;
+}
+.accordion-section.customize-control-epsilon-upsell {
+	margin-bottom: 0;
+}
+.accordion-section.customize-control-epsilon-upsell .epsilon-upsell-label {
+	padding: 14px 28px;
+}
+.accordion-section.customize-control-epsilon-upsell .epsilon-upsell-container {
+	border-bottom: 1px solid #ddd;
+}

@@ -1,19 +1,5 @@
 <?php
-/**
- * Custom functions that act independently of the theme templates.
- *
- * Eventually, some of the functionality here could be replaced by core features.
- *
- * @package regina-lite
- */
 
-/**
- * Adds custom classes to the array of body classes.
- *
- * @param array $classes Classes for the body element.
- *
- * @return array
- */
 function regina_lite_body_classes( $classes ) {
 	// Adds a class of group-blog to blogs with more than 1 published author.
 	if ( is_multi_author() ) {
@@ -32,7 +18,7 @@ if ( ! function_exists( 'regina_lite_breadcrumbs' ) ) {
 	 * @return void
 	 */
 	function regina_lite_breadcrumbs() {
-		$breadcrumbs = new Riba_Breadcrumbs();
+		$breadcrumbs = new Regina_Breadcrumbs();
 		$breadcrumbs->get_breadcrumbs();
 	}
 
@@ -46,7 +32,7 @@ if ( ! function_exists( 'regina_lite_get_number_of_comments' ) ) {
 	function regina_lite_get_number_of_comments( $post_id ) {
 		$num_comments = get_comments_number( $post_id ); // get_comments_number returns only a numeric value
 		if ( comments_open() ) {
-			if ( $num_comments == 0 ) {
+			if ( 0 == $num_comments ) {
 				$comments = __( 'No Comments', 'regina-lite' );
 			} elseif ( $num_comments > 1 ) {
 				$comments = $num_comments . __( ' Comments', 'regina-lite' );
@@ -88,12 +74,12 @@ if ( ! function_exists( 'regina_lite_content_nav' ) ) {
 		$nav_class = ( is_single() ) ? 'post-navigation clear' : 'paging-navigation clear';
 		?>
 		<nav role="navigation" id="post-navigation" class="<?php echo $nav_class; ?>">
-			<?php if ( is_single() ) : // navigation links for single posts ?>
+			<?php if ( is_single() ) : ?>
 
 				<?php previous_post_link( '%link', '<span class="nc-icon-glyph arrows-1_bold-left"></span> %title' ); ?>
 				<?php next_post_link( '%link', '%title <span class="nc-icon-glyph arrows-1_bold-right"></span>' ); ?>
 
-			<?php elseif ( $wp_query->max_num_pages > 1 && ( is_home() || is_archive() || is_search() ) ) : // navigation links for home, archive, and search pages ?>
+			<?php elseif ( $wp_query->max_num_pages > 1 && ( is_home() || is_archive() || is_search() ) ) : ?>
 
 				<?php if ( get_next_posts_link() ) : ?>
 					<?php next_posts_link( __( '<span class="meta-nav">&larr;</span> Older posts', 'regina-lite' ) ); ?>
@@ -108,7 +94,7 @@ if ( ! function_exists( 'regina_lite_content_nav' ) ) {
 		</nav><!-- #post-navigation -->
 		<?php
 	}
-}
+} // End if().
 
 
 /**
@@ -117,14 +103,14 @@ if ( ! function_exists( 'regina_lite_content_nav' ) ) {
 function regina_lite_comment( $comment, $args, $depth ) {
 	$GLOBALS['comment'] = $comment;
 	switch ( $comment->comment_type ) :
-		case 'pingback' :
-		case 'trackback' :
+		case 'pingback':
+		case 'trackback':
 			?>
 			<li class="post pingback">
 			<p><?php _e( 'Pingback:', 'regina-lite' ); ?><?php comment_author_link(); ?><?php edit_comment_link( __( '(Edit)', 'regina-lite' ), ' ' ); ?></p>
 			<?php
 			break;
-		default :
+		default:
 			?>
 		<li <?php comment_class(); ?> id="li-comment-<?php comment_ID(); ?>">
 
@@ -134,18 +120,20 @@ function regina_lite_comment( $comment, $args, $depth ) {
 				</div><!--.col-xs-1-->
 				<div class="col-xs-10">
 					<div class="content">
-						<p class="name"><?php printf( __( '%s', 'regina-lite' ), sprintf( '%s', get_comment_author_link() ) ); ?></p>
+						<p class="name"><?php echo get_comment_author_link(); ?></p>
 						<p class="meta"><?php printf( __( '%1$s at %2$s', 'regina-lite' ), get_comment_date(), get_comment_time() ); ?></p>
 						<?php comment_text(); ?>
 						<?php
-						if ( $comment->comment_approved == '0' ):
+						if ( '0' == $comment->comment_approved ) :
 							_e( 'Your comment is awaiting moderation.', 'regina-lite' );
 						endif;
-						?>
-						<?php comment_reply_link( array_merge( $args, array(
+
+						comment_reply_link( array_merge( $args, array(
 							'depth'     => $depth,
 							'max_depth' => $args['max_depth'],
-						) ) ); ?>
+						) ) );
+
+						?>
 					</div>
 				</div>
 			</div><!--.row-->
@@ -180,7 +168,7 @@ if ( ! function_exists( 'regina_lite_get_page_id_by_template' ) ) {
 			foreach ( $pages as $page ) {
 				$pages_which_use_template[] = $page;
 			}
-		} else if ( ! is_array( $pages ) ) {
+		} elseif ( ! is_array( $pages ) ) {
 			$pages_which_use_template = $pages;
 		} else {
 			$pages_which_use_template = '';
@@ -189,34 +177,7 @@ if ( ! function_exists( 'regina_lite_get_page_id_by_template' ) ) {
 		return $pages_which_use_template;
 
 	}
-}
-
-/**
- *  Upsell
- */
-if ( ! function_exists( 'regina_lite_prefix_upsell_notice' ) ) {
-	/**
-	 * Display upgrade notice on customizer page
-	 *
-	 * @since Riba Lite 1.0.3
-	 */
-	function regina_lite_prefix_upsell_notice() {
-
-		// Enqueue the script
-		wp_enqueue_script( 'regina-lite-customizer-upsell', get_template_directory_uri() . '/inc/customizer/assets/js/upsell/upsell.js', array(), '1.0.0', true );
-
-		// Localize the script
-		wp_localize_script( 'regina-lite-customizer-upsell', 'prefixL10n', array(
-			# Upsell URL
-			'prefixUpsellURL'   => esc_url( 'https://www.machothemes.com/themes/regina-pro/' ),
-			'prefixUpsellLabel' => __( 'View PRO version', 'regina-lite' ),
-
-		) );
-
-	}
-
-	add_action( 'customize_controls_enqueue_scripts', 'regina_lite_prefix_upsell_notice' );
-}
+} // End if().
 
 #
 # Custom Excerpt Length
@@ -235,8 +196,6 @@ function regina_lite_excerpt_more( $more ) {
 	$return_string = '<div class="read-more-wrapper">';
 	$return_string .= '<a class="link small" href="' . esc_url( get_the_permalink() ) . '" role="button">' . __( 'Read more', 'regina-lite' ) . '<span class="nc-icon-glyph arrows-1_bold-right"></span></a>';
 	$return_string .= '</div>';
-
-
 	return $return_string;
 
 }
@@ -285,4 +244,4 @@ if ( ! function_exists( 'regina_lite_get_attachment_id' ) ) {
 
 		return $attachment_id;
 	}
-}
+} // End if().

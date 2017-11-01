@@ -1,8 +1,8 @@
 <?php
 
 
-$regina_lite_section_title     = get_theme_mod( 'regina_lite_news_section_title', __( 'Latest News', 'regina-lite' ) );
-$regina_lite_section_sub_title = get_theme_mod( 'regina_lite_news_section_sub_title', __( 'Straight from our blog', 'regina-lite' ) );
+$regina_lite_section_title     = get_theme_mod( 'regina_lite_news_section_title' );
+$regina_lite_section_sub_title = get_theme_mod( 'regina_lite_news_section_sub_title' );
 
 $regina_lite_news_button_text                = get_theme_mod( 'regina_lite_news_section_button_text', __( 'See our blog', 'regina-lite' ) );
 $regina_lite_news_section_no_posts_per_slide = get_theme_mod( 'regina_lite_news_section_no_posts_per_slide', 4 );
@@ -14,30 +14,30 @@ $regina_lite_limit = get_option( 'posts_per_page', 4 );
 // Logic used to dynamically create the layout, based on how blog posts have been set in the reading options
 $regina_lite_cols      = '';
 $regina_lite_news_size = '';
-if ( $regina_lite_limit == 1 ) {
+if ( 1 == $regina_lite_limit ) {
 	$regina_lite_cols      = 'col-md-offset-4 col-sm-offset-3';
 	$regina_lite_news_size = 'col-md-4 col-sm-6 col-xs-12';
-} else if ( $regina_lite_limit == 2 ) {
+} elseif ( 2 == $regina_lite_limit ) {
 	$regina_lite_cols      = 'col-md-offset-2 col-sm-offset-1';
 	$regina_lite_news_size = 'col-md-4 col-sm-5 col-xs-12';
-} else if ( $regina_lite_limit == 3 ) {
+} elseif ( 3 == $regina_lite_limit ) {
 	$regina_lite_cols      = 'col-md-offset-1 col-xs-12';
 	$regina_lite_news_size = 'col-md-3 col-sm-4 col-xs-12';
-} else if ( $regina_lite_limit >= 4 ) {
+} elseif ( $regina_lite_limit >= 4 ) {
 	$regina_lite_cols      = 'col-xs-12';
 	$regina_lite_news_size = 'col-md-3 col-sm-6 col-xs-12';
 }
 # Logic used for getting the blog template page ID
 $page_which_uses_blog_template = regina_lite_get_page_id_by_template();
 
-if ( $regina_lite_news_section_show == 1 ) {
+if ( 1 == $regina_lite_news_section_show ) {
 	echo '<section class="bg-block-white" id="section-news">';
 	echo '<div class="container">';
 	echo '<div class="row">';
 	echo '<div class="section-info">';
 	echo '<h2>' . esc_html( $regina_lite_section_title ) . '</h2>';
 	echo '<hr>';
-	echo '<p>' . esc_html( $regina_lite_section_sub_title ) . '</p>';
+	echo '<p>' . wp_kses_post( $regina_lite_section_sub_title ) . '</p>';
 	echo '</div>';
 	echo '</div><!--/.row-->';
 
@@ -85,4 +85,4 @@ if ( $regina_lite_news_section_show == 1 ) {
 	echo '</div><!--/.container-->';
 
 	echo '</section>';
-}
+}// End if().

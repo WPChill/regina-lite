@@ -1,3 +1,7 @@
+= 2.0.0 =
+*Adjusted this theme in concordance with WordPress' guidelines
+*Reordered Customizer panels to be more intuitive
+
 = 1.1.0 =
 * Fixed Blog related posts URL not working
 * Fixed Content images responsive height issue
