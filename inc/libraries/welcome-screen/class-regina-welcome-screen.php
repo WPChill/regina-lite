@@ -559,10 +559,10 @@ class Regina_Welcome_Screen {
 
 		<div class="wrap about-wrap epsilon-wrap">
 
-			<h1><?php echo __( 'Welcome to regina! - Version ', 'regina-lite' ) . esc_html( $regina['Version'] ); ?></h1>
+			<h1><?php echo __( 'Welcome to Regina Lite - v', 'regina-lite' ) . esc_html( $regina['Version'] ); ?></h1>
 
 			<div
-				class="about-text"><?php echo esc_html__( 'regina is now installed and ready to use! Get ready to build something beautiful. We hope you enjoy it! We want to make sure you have the best experience using regina and that is why we gathered here all the necessary information for you. We hope you will enjoy using regina, as much as we enjoy creating great products.', 'regina-lite' ); ?></div>
+				class="about-text"><?php echo esc_html__( 'Regina Lite is now installed and ready to use! Get ready to build something beautiful. We hope you enjoy it! We want to make sure you have the best experience using regina and that is why we gathered here all the necessary information for you. We hope you will enjoy using Regina Lite, as much as we enjoy creating great products.', 'regina-lite' ); ?></div>
 
 			<div class="wp-badge epsilon-welcome-logo"></div>
 

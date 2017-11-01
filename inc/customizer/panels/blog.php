@@ -10,26 +10,47 @@
 	/************** BLOG OPTIONS  ***************/
 	/***********************************************/
 
+	$wp_customize->add_panel( $panel_id, array(
+		'priority' => 29,
+		'capability' => 'edit_theme_options',
+		'theme_supports' => '',
+		'title' => esc_html__( 'Blog Settings', 'regina-lite' ),
+	) );
+
+	$wp_customize->add_section(
+		new Regina_Section_Upsell(
+			$wp_customize, $prefix . '_blog_upsell', array(
+				'panel'      => $panel_id,
+				'priority'     => 0,
+				'options'      => array(
+					esc_html__( 'Categories Page Options', 'regina-lite' ),
+					esc_html__( 'Tags Page Options', 'regina-lite' ),
+					esc_html__( 'Author Page Options', 'regina-lite' ),
+					esc_html__( 'Archives Page Options', 'regina-lite' ),
+					esc_html__( 'Search Page Options', 'regina-lite' ),
+				),
+				'requirements' => array(
+					esc_html__( 'On the categories\' page you can select the layout of the page: with/without sidebar,  add a header image, enable or disable the breadcrumbs.', 'regina-lite' ),
+					esc_html__( 'On the Tags\' page you can select the layout of the page: with/without sidebar,  add a header image, enable or disable the breadcrumbs.', 'regina-lite' ),
+					esc_html__( 'On the Author\'s page you can select the layout of the page: with/without sidebar,  add a header image, enable or disable the breadcrumbs.', 'regina-lite' ),
+					esc_html__( 'On the Archives\' page you can select the layout of the page: with/without sidebar,  add a header image, enable or disable the breadcrumbs.', 'regina-lite' ),
+					esc_html__( 'On the Search\'s page you can select the layout of the page: with/without sidebar,  add a header image, enable or disable the breadcrumbs.', 'regina-lite' ),
+				),
+				'button_url'   => esc_url_raw( get_admin_url() . 'themes.php?page=regina-welcome&tab=features' ),
+				'button_text'  => esc_html__( 'See PRO vs Lite', 'regina-lite' ),
+				'second_button_url'  => esc_url_raw( 'https://www.machothemes.com/theme/regina-pro/?utm_source=worg&utm_medium=customizer&utm_campaign=upsell' ),
+				'second_button_text' => esc_html__( 'Get PRO now!', 'regina-lite' ),
+				'separator' => ' or ',
+			)
+		)
+	);
+
 	$wp_customize->add_section(
 		$prefix . '_single_post_section' ,
 		array(
 			'title'       => esc_html__( 'Single Post Options', 'regina-lite' ),
 			'description' => esc_html__( 'Control various blog options from here. Most of the options from this panel refer to the blog single page view. If you\'re not familiar with that term, please perform a Google search.', 'regina-lite' ),
-			'panel' => $prefix . '_panel_general',
-		)
-	);
-
-
-	$wp_customize->add_panel(
-		new Regina_Custom_Panel(
-			$wp_customize, $panel_id, array(
-				'priority' => 57,
-				'capability' => 'edit_theme_options',
-				'theme_supports' => '',
-				'title' => esc_html__( 'Single Post Options', 'regina-lite' ),
-				'description' => esc_html__( 'Control various blog options from here. Most of the options from this panel refer to the blog single page view. If you\'re not familiar with that term, please perform a Google search.', 'regina-lite' ),
-				'panel' => $prefix . '_panel_general',
-			)
+			'panel' => $panel_id,
 		)
 	);
 

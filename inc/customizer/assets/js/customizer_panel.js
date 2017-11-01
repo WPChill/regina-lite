@@ -200,7 +200,7 @@
     });
 
     // Redirect previewer to single post
-    api.section( 'regina_single_post_section', function( section ) {
+    api.section( 'regina_lite_single_post_section', function( section ) {
         section.expanded.bind( function( isExpanding ) {
             var newURL = ReginaCustomizer.postURL;
             if ( isExpanding ) {
