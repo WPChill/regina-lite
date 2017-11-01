@@ -8,25 +8,25 @@
 	<div class="container">
 		<div class="row">
 			<?php if ( is_active_sidebar( 'footer-sidebar-1' ) ) { ?>
-				<div class="col-sm-3 col-xs-12">
+				<div class="col-md-3 col-sm-6 col-xs-12">
 					<?php dynamic_sidebar( 'footer-sidebar-1' ); ?>
 				</div><!--.col-sm-3-->
 			<?php } ?>
 
 			<?php if ( is_active_sidebar( 'footer-sidebar-2' ) ) { ?>
-				<div class="col-sm-3 col-xs-12">
+				<div class="col-md-3 col-sm-6 col-xs-12">
 					<?php dynamic_sidebar( 'footer-sidebar-2' ); ?>
 				</div><!--.col-sm-3-->
 			<?php } ?>
 
 			<?php if ( is_active_sidebar( 'footer-sidebar-3' ) ) { ?>
-				<div class="col-sm-3 col-xs-12">
+				<div class="col-md-3 col-sm-6 col-xs-12">
 					<?php dynamic_sidebar( 'footer-sidebar-3' ); ?>
 				</div><!--.col-lg-3-->
 			<?php } ?>
 
 			<?php if ( is_active_sidebar( 'footer-sidebar-4' ) ) { ?>
-				<div class="col-sm-3 col-xs-12">
+				<div class="col-md-3 col-sm-6 col-xs-12">
 					<?php dynamic_sidebar( 'footer-sidebar-4' ); ?>
 				</div><!--.col-lg-3-->
 			<?php } ?>

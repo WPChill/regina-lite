@@ -9930,6 +9930,9 @@ Created using IcoMoon - icomoon.io
 	.icon-list.three-col li {
 		float: left;
 		width: 100%; }
+	#footer .col-md-3:nth-child( 2n + 1 ) {
+		clear: left;
+	}
 }
 
 /* ---------------------------------------------------------------------- */
@@ -10497,6 +10500,9 @@ ol li {
 #footer .back-to-top:hover {
 	opacity: 0.6;
 	color: #FFF !important;
+}
+#footer .widget {
+	margin-bottom: 20px;
 }
 
 #sub-footer {
