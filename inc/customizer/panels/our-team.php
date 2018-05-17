@@ -607,7 +607,7 @@ $wp_customize->selective_refresh->add_partial(
 $wp_customize->add_setting(
 	new Regina_Custom_Setting(
 		$wp_customize, $prefix . '_ourteam_teammember4_description', array(
-			'sanitize_callback' => 'ep_kses_post',
+			'sanitize_callback' => 'wp_kses_post',
 			'default'           => __( 'Dr. Jenna Crew was born and raised in Texas, USA. He received a Bachelor of Science degree in Chemistry from the University of Houston and a...', 'regina-lite' ),
 		)
 	)
