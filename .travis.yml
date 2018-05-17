@@ -1,10 +1,9 @@
 sudo: false
 language: php
-dist: precise
+dist: trusty
 matrix:
   fast_finish: true
   include:
-  - php: '5.3'
   - php: '5.4'
   - php: '5.5'
   - php: '5.6'
@@ -58,6 +57,7 @@ script:
   fi
 notifications:
   email: false
+  slack: macho-themes:5bB622LBK5MkZwDevzAZGC5E
 cache:
   directories:
   - node_modules
