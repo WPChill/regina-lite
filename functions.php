@@ -135,7 +135,7 @@ if ( ! function_exists( 'regina_lite_setup' ) ) :
 
 			$regina_recommended_plugins = array(
 				'kiwi-social-share'        => array(
-					'recommended' => true,
+					'recommended' => false,
 				),
 				'modula-best-grid-gallery' => array(
 					'recommended' => true,
@@ -298,9 +298,9 @@ function regina_lite_scripts() {
 		wp_enqueue_script( 'pace-min-js', get_template_directory_uri() . '/layout/js/plugins/pace/pace.min.js', array( 'jquery' ), '', false );
 		wp_enqueue_script(
 			'regina-lite-preloader', get_template_directory_uri() . '/layout/js/preloader.min.js', array(
-				'jquery',
-				'pace-min-js',
-			), '', false
+			'jquery',
+			'pace-min-js',
+		), '', false
 		);
 		wp_enqueue_style( 'regina-lite-pace', get_template_directory_uri() . '/layout/css/pace.min.css', array(), '', 'all' );
 	}
@@ -309,9 +309,9 @@ function regina_lite_scripts() {
 	wp_enqueue_script( 'regina-lite-owl-carousel-min', get_template_directory_uri() . '/layout/js/plugins/owl-carousel/owl-carousel.min.js', array( 'jquery' ), '', true );
 	wp_enqueue_script(
 		'regina-lite-scripts', get_template_directory_uri() . '/layout/js/plugins.js', array(
-			'jquery',
-			'regina-lite-owl-carousel-min',
-		), '', true
+		'jquery',
+		'regina-lite-owl-carousel-min',
+	), '', true
 	);
 
 	if ( 1 == $enable_site_lazyload ) {
