@@ -33,7 +33,7 @@ class Regina_Notify_System extends Epsilon_Notify_System {
 
 	public static function has_old_content() {
 
-		$fields = Regina_Lite_Helper::$regina_fields;
+		$fields     = Regina_Lite_Helper::$regina_fields;
 		$theme_mods = get_theme_mods();
 		foreach ( $fields as $field ) {
 			if ( in_array( $field, $theme_mods ) ) {

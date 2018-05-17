@@ -67,11 +67,11 @@ if ( ! function_exists( 'regina_lite_setup' ) ) :
 
 		// Custom Background
 		$custom_background_args = array(
-			'default-color'          => '#fff',
-			'default-image'          => false,
-			'default-repeat'         => false,
-			'default-position-x'     => false,
-			'default-attachment'     => false,
+			'default-color'      => '#fff',
+			'default-image'      => false,
+			'default-repeat'     => false,
+			'default-position-x' => false,
+			'default-attachment' => false,
 		);
 		add_theme_support( 'custom-background', $custom_background_args );
 
@@ -105,8 +105,8 @@ if ( ! function_exists( 'regina_lite_setup' ) ) :
 		);
 
 		/*
-         * Add selective refresh
-         */
+		 * Add selective refresh
+		 */
 		add_theme_support( 'customize-selective-refresh-widgets' );
 
 		/*
@@ -140,17 +140,20 @@ if ( ! function_exists( 'regina_lite_setup' ) ) :
 				'modula-best-grid-gallery' => array(
 					'recommended' => true,
 				),
+				'simple-author-box'        => array(
+					'recommended' => true,
+				),
 			);
 
-			/*
-             * id - unique id; required
-             * title
-             * description
-             * check - check for plugins (if installed)
-             * plugin_slug - the plugin's slug (used for installing the plugin)
-             *
-             */
-			$regina_required_actions  = array(
+			/**
+			 * id - unique id; required
+			 * title
+			 * description
+			 * check - check for plugins (if installed)
+			 * plugin_slug - the plugin's slug (used for installing the plugin)
+			 *
+			 */
+			$regina_required_actions = array(
 				array(
 					'id'          => 'regina-lite-import-data',
 					'title'       => esc_html__( 'Easy 1-click theme setup', 'regina-lite' ),
@@ -342,9 +345,12 @@ function regina_lite_move_comment_field_to_bottom( $fields ) {
 // Add Epsilon Framework
 require_once get_template_directory() . '/inc/libraries/epsilon-framework/class-epsilon-autoloader.php';
 $args = array(
-	'controls' => array( 'slider', 'toggle', 'upsell', 'text-editor' ), // array of controls to load
-	'sections' => array( 'recommended-actions' ), // array of sections to load
-	'path'     => '/inc/libraries', // path to your epsilon framework in your theme, e.g. theme-name*/inc/libraries*/epsilon-framework
+	'controls' => array( 'slider', 'toggle', 'upsell', 'text-editor' ),
+	// array of controls to load
+	'sections' => array( 'recommended-actions' ),
+	// array of sections to load
+	'path'     => '/inc/libraries',
+	// path to your epsilon framework in your theme, e.g. theme-name*/inc/libraries*/epsilon-framework
 	'backup'   => false,
 );
 

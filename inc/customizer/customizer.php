@@ -75,19 +75,19 @@ function regina_lite_customize_register( $wp_customize ) {
 	$wp_customize->add_control(
 		new Epsilon_Control_Upsell(
 			$wp_customize, $prefix . '_color_controls', array(
-				'section'      => 'colors',
-				'priority'     => 0,
-				'options'      => array(
+				'section'            => 'colors',
+				'priority'           => 0,
+				'options'            => array(
 					esc_html__( 'More Color Options', 'regina-lite' ),
 				),
-				'requirements' => array(
+				'requirements'       => array(
 					esc_html__( 'The PRO version of Regina allows for a greater degree of customisability. Get multiple professionally designed color schemes with the purchase of the PRO version. ', 'regina-lite' ),
 				),
-				'button_url'   => esc_url_raw( get_admin_url() . 'themes.php?page=regina-welcome&tab=features' ),
-				'button_text'  => esc_html__( 'See PRO vs Lite', 'regina-lite' ),
+				'button_url'         => esc_url_raw( get_admin_url() . 'themes.php?page=regina-welcome&tab=features' ),
+				'button_text'        => esc_html__( 'See PRO vs Lite', 'regina-lite' ),
 				'second_button_url'  => esc_url_raw( 'https://www.machothemes.com/theme/regina-pro/?utm_source=worg&utm_medium=customizer&utm_campaign=upsell' ),
 				'second_button_text' => esc_html__( 'Get PRO now!', 'regina-lite' ),
-				'separator' => ' or ',
+				'separator'          => ' or ',
 			)
 		)
 	);
@@ -111,28 +111,28 @@ function regina_lite_customize_register( $wp_customize ) {
 		$prefix . '_order_section', array(
 			'title'    => __( 'Section order', 'regina-lite' ),
 			'priority' => 0,
-			'panel' => 'regina_lite_frontpage_sections',
+			'panel'    => 'regina_lite_frontpage_sections',
 		)
 	);
 
 	$wp_customize->add_section(
 		new Regina_Section_Upsell(
 			$wp_customize, $prefix . '_order_section', array(
-				'panel'      => 'regina_lite_frontpage_sections',
-				'priority'     => 0,
-				'options'      => array(
+				'panel'              => 'regina_lite_frontpage_sections',
+				'priority'           => 0,
+				'options'            => array(
 					esc_html__( 'Order Homepage Sections', 'regina-lite' ),
 					esc_html__( 'Unlimited Sections', 'regina-lite' ),
 				),
-				'requirements' => array(
+				'requirements'       => array(
 					esc_html__( 'Drag & Drop section re-ordering is available in the PRO version of Regina.', 'regina-lite' ),
 					esc_html__( 'In Regina PRO you can add how many sections you want.', 'regina-lite' ),
 				),
-				'button_url'   => esc_url_raw( get_admin_url() . 'themes.php?page=regina-welcome&tab=features' ),
-				'button_text'  => esc_html__( 'See PRO vs Lite', 'regina-lite' ),
+				'button_url'         => esc_url_raw( get_admin_url() . 'themes.php?page=regina-welcome&tab=features' ),
+				'button_text'        => esc_html__( 'See PRO vs Lite', 'regina-lite' ),
 				'second_button_url'  => esc_url_raw( 'https://www.machothemes.com/theme/regina-pro/?utm_source=worg&utm_medium=customizer&utm_campaign=upsell' ),
 				'second_button_text' => esc_html__( 'Get PRO now!', 'regina-lite' ),
-				'separator' => ' or ',
+				'separator'          => ' or ',
 			)
 		)
 	);
@@ -307,29 +307,29 @@ if ( ! function_exists( 'regina_lite_customizer_preview_js' ) ) {
 
 // Partials callback functions
 function regina_render_appointment_link() {
-	$top_box_bookappointmenturl = get_theme_mod( 'regina_lite_top_box_bookappointmenturl' );
+	$top_box_bookappointmenturl    = get_theme_mod( 'regina_lite_top_box_bookappointmenturl' );
 	$book_appointment_button_label = get_theme_mod( 'regina_lite_book_appointment_button_label' );
 
 	return '<a href="' . esc_url( $top_box_bookappointmenturl ) . '" class="button white outline" title="' . esc_attr( $book_appointment_button_label ) . '">' . esc_attr( $book_appointment_button_label ) . '<span class="nc-icon-glyph arrows-1_bold-right"></span></a>';
 }
 
 function regina_render_feature1_link() {
-	$feature_url   = get_theme_mod( 'regina_lite_features_feature1_buttonurl' );
+	$feature_url = get_theme_mod( 'regina_lite_features_feature1_buttonurl' );
 	return '<a href="' . esc_url( $features_feature1_buttonurl ) . '" class="link small">' . __( 'Read more', 'regina-lite' ) . '<span class="nc-icon-glyph arrows-1_bold-right"></span></a>';
 }
 
 function regina_render_feature2_link() {
-	$feature_url   = get_theme_mod( 'regina_lite_features_feature2_buttonurl' );
+	$feature_url = get_theme_mod( 'regina_lite_features_feature2_buttonurl' );
 	return '<a href="' . esc_url( $features_feature1_buttonurl ) . '" class="link small">' . __( 'Read more', 'regina-lite' ) . '<span class="nc-icon-glyph arrows-1_bold-right"></span></a>';
 }
 
 function regina_render_feature3_link() {
-	$feature_url   = get_theme_mod( 'regina_lite_features_feature3_buttonurl' );
+	$feature_url = get_theme_mod( 'regina_lite_features_feature3_buttonurl' );
 	return '<a href="' . esc_url( $features_feature1_buttonurl ) . '" class="link small">' . __( 'Read more', 'regina-lite' ) . '<span class="nc-icon-glyph arrows-1_bold-right"></span></a>';
 }
 
 function regina_render_feature4_link() {
-	$feature_url   = get_theme_mod( 'regina_lite_features_feature4_buttonurl' );
+	$feature_url = get_theme_mod( 'regina_lite_features_feature4_buttonurl' );
 	return '<a href="' . esc_url( $features_feature1_buttonurl ) . '" class="link small">' . __( 'Read more', 'regina-lite' ) . '<span class="nc-icon-glyph arrows-1_bold-right"></span></a>';
 }
 
@@ -384,18 +384,18 @@ function regina_render_email_link() {
 	return '<a href="mailto: ' . sanitize_email( $email_addr ) . '">' . sanitize_email( $email_addr ) . '</a>';
 }
 function pixova_render_member1_link() {
-	$ourteam_teammember_buttonurl   = get_theme_mod( 'regina_lite_ourteam_teammember1_buttonurl', '#' );
+	$ourteam_teammember_buttonurl = get_theme_mod( 'regina_lite_ourteam_teammember1_buttonurl', '#' );
 	return '<a href="' . esc_url( $ourteam_teammember_buttonurl ) . '" class="button white outline">' . __( 'Read more', 'regina-lite' ) . '<span class="nc-icon-glyph arrows-1_bold-right"></span></a>';
 }
 function pixova_render_member2_link() {
-	$ourteam_teammember_buttonurl   = get_theme_mod( 'regina_lite_ourteam_teammember2_buttonurl', '#' );
+	$ourteam_teammember_buttonurl = get_theme_mod( 'regina_lite_ourteam_teammember2_buttonurl', '#' );
 	return '<a href="' . esc_url( $ourteam_teammember_buttonurl ) . '" class="button white outline">' . __( 'Read more', 'regina-lite' ) . '<span class="nc-icon-glyph arrows-1_bold-right"></span></a>';
 }
 function pixova_render_member3_link() {
-	$ourteam_teammember_buttonurl   = get_theme_mod( 'regina_lite_ourteam_teammember3_buttonurl', '#' );
+	$ourteam_teammember_buttonurl = get_theme_mod( 'regina_lite_ourteam_teammember3_buttonurl', '#' );
 	return '<a href="' . esc_url( $ourteam_teammember_buttonurl ) . '" class="button white outline">' . __( 'Read more', 'regina-lite' ) . '<span class="nc-icon-glyph arrows-1_bold-right"></span></a>';
 }
 function pixova_render_member4_link() {
-	$ourteam_teammember_buttonurl   = get_theme_mod( 'regina_lite_ourteam_teammember4_buttonurl', '#' );
+	$ourteam_teammember_buttonurl = get_theme_mod( 'regina_lite_ourteam_teammember4_buttonurl', '#' );
 	return '<a href="' . esc_url( $ourteam_teammember_buttonurl ) . '" class="button white outline">' . __( 'Read more', 'regina-lite' ) . '<span class="nc-icon-glyph arrows-1_bold-right"></span></a>';
 }

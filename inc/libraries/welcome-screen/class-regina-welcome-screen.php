@@ -12,14 +12,14 @@ class Regina_Welcome_Screen {
 	 */
 	public function __construct( $config = array() ) {
 
-		$theme    = wp_get_theme();
+		$theme = wp_get_theme();
 
 		/**
 		 * Configure our welcome screen
 		 */
-		$this->theme_name    = $theme->get( 'Name' );
-		$this->theme_slug    = $theme->get( 'TextDomain' );
-		$this->author_logo   = get_template_directory_uri() . '/inc/libraries/welcome-screen/assets/img/macho-themes-logo.svg';
+		$this->theme_name  = $theme->get( 'Name' );
+		$this->theme_slug  = $theme->get( 'TextDomain' );
+		$this->author_logo = get_template_directory_uri() . '/inc/libraries/welcome-screen/assets/img/macho-themes-logo.svg';
 
 		/* create dashbord page */
 		add_action( 'admin_menu', array( $this, 'regina_welcome_register_menu' ) );
@@ -358,13 +358,13 @@ class Regina_Welcome_Screen {
 
 			return array(
 				'status' => is_plugin_active( $slug . '/' . $slug . '.php' ),
-				'needs' => $needs,
+				'needs'  => $needs,
 			);
 		}
 
 		return array(
 			'status' => false,
-			'needs' => 'install',
+			'needs'  => 'install',
 		);
 	}
 
@@ -551,7 +551,7 @@ class Regina_Welcome_Screen {
 		require_once( ABSPATH . 'wp-admin/admin.php' );
 		require_once( ABSPATH . 'wp-admin/admin-header.php' );
 
-		$regina      = wp_get_theme();
+		$regina       = wp_get_theme();
 		$active_tab   = isset( $_GET['tab'] ) ? $_GET['tab'] : 'getting_started';
 		$action_count = $this->count_actions();
 

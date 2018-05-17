@@ -6,73 +6,73 @@ if ( ! defined( 'WPINC' ) ) {
  * Features
  */
 $features = array(
-	'homepage-slider' => array(
-		'label'       => 'Homepage Slider',
+	'homepage-slider'         => array(
+		'label'      => 'Homepage Slider',
 		'regina'     => '<span class="dashicons dashicons-no-alt"></span>',
 		'regina-pro' => '<span class="dashicons dashicons-yes"></span></i>',
 	),
-	'homepage-gmaps'     => array(
-		'label'       => 'Google Map section',
+	'homepage-gmaps'          => array(
+		'label'      => 'Google Map section',
 		'regina'     => '<span class="dashicons dashicons-no-alt"></span>',
 		'regina-pro' => '<span class="dashicons dashicons-yes"></span></i>',
 	),
-	'multiple-sections' => array(
-		'label'       => 'Unlimited Sections',
+	'multiple-sections'       => array(
+		'label'      => 'Unlimited Sections',
 		'regina'     => '<span class="dashicons dashicons-no-alt"></span>',
 		'regina-pro' => '<span class="dashicons dashicons-yes"></span></i>',
 	),
 	'order-homepage-sections' => array(
-		'label'       => 'Order Homepage Sections',
+		'label'      => 'Order Homepage Sections',
 		'regina'     => '<span class="dashicons dashicons-no-alt"></span>',
 		'regina-pro' => '<span class="dashicons dashicons-yes"></span></i>',
 	),
-	'multiple-services' => array(
-		'label'       => 'Unlimited Services',
+	'multiple-services'       => array(
+		'label'      => 'Unlimited Services',
 		'regina'     => '<span class="dashicons dashicons-no-alt"></span>',
 		'regina-pro' => '<span class="dashicons dashicons-yes"></span></i>',
 	),
-	'multiple-members' => array(
-		'label'       => 'Unlimited Members',
+	'multiple-members'        => array(
+		'label'      => 'Unlimited Members',
 		'regina'     => '<span class="dashicons dashicons-no-alt"></span>',
 		'regina-pro' => '<span class="dashicons dashicons-yes"></span></i>',
 	),
-	'multiple-testimonials' => array(
-		'label'       => 'Unlimited Testimonials',
+	'multiple-testimonials'   => array(
+		'label'      => 'Unlimited Testimonials',
 		'regina'     => '<span class="dashicons dashicons-no-alt"></span>',
 		'regina-pro' => '<span class="dashicons dashicons-yes"></span></i>',
 	),
-	'custom-icons'    => array(
-		'label'       => 'Custom icons',
+	'custom-icons'            => array(
+		'label'      => 'Custom icons',
 		'regina'     => '<span class="dashicons dashicons-no-alt"></span>',
 		'regina-pro' => '<span class="dashicons dashicons-yes"></span></i>',
 	),
-	'dropdown-menu'    => array(
-		'label'       => '3rd level drop-down menus',
+	'dropdown-menu'           => array(
+		'label'      => '3rd level drop-down menus',
 		'regina'     => '<span class="dashicons dashicons-no-alt"></span>',
 		'regina-pro' => '<span class="dashicons dashicons-yes"></span></i>',
 	),
-	'header-layout'    => array(
-		'label'       => 'Header Layouts',
+	'header-layout'           => array(
+		'label'      => 'Header Layouts',
 		'regina'     => '1',
 		'regina-pro' => '3',
 	),
-	'color-schemes'    => array(
-		'label'       => 'Color schemes',
+	'color-schemes'           => array(
+		'label'      => 'Color schemes',
 		'regina'     => '<span class="dashicons dashicons-no-alt"></span>',
 		'regina-pro' => '<span class="dashicons dashicons-yes"></span></i>',
 	),
-	'typography'       => array(
-		'label'       => 'Typography',
+	'typography'              => array(
+		'label'      => 'Typography',
 		'regina'     => '<span class="dashicons dashicons-no-alt"></span>',
 		'regina-pro' => '<span class="dashicons dashicons-yes"></span></i>',
 	),
-	'priority-support' => array(
-		'label'       => 'Priority support',
+	'priority-support'        => array(
+		'label'      => 'Priority support',
 		'regina'     => '<span class="dashicons dashicons-no-alt"></span>',
 		'regina-pro' => '<span class="dashicons dashicons-yes"></span></i>',
 	),
-	'security-updates' => array(
-		'label'       => 'Security updates & feature releases',
+	'security-updates'        => array(
+		'label'      => 'Security updates & feature releases',
 		'regina'     => '<span class="dashicons dashicons-no-alt"></span>',
 		'regina-pro' => '<span class="dashicons dashicons-yes"></span></i>',
 	),

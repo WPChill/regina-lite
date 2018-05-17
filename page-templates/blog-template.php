@@ -16,11 +16,11 @@
 			<div class="col-md-8">
 				<?php
 				$post_query_args = array(
-					'post_type'                 => array( 'post' ),
-					'ignore_sticky_posts'       => false,
-					'cache_results'             => true,
-					'update_post_meta_cache'    => true,
-					'update_post_term_cache'    => true,
+					'post_type'              => array( 'post' ),
+					'ignore_sticky_posts'    => false,
+					'cache_results'          => true,
+					'update_post_meta_cache' => true,
+					'update_post_term_cache' => true,
 				);
 
 				$post_query = new WP_Query( $post_query_args );

@@ -12,7 +12,7 @@ $url = $custom_header->url;
 $image_alt = get_bloginfo( 'name' );
 if ( isset( $custom_header->attachment_i ) ) {
 	$image_meta = get_post_meta( $custom_header->attachment_id );
-	$image_alt = $image_meta['_wp_attachment_image_alt']['0'];
+	$image_alt  = $image_meta['_wp_attachment_image_alt']['0'];
 }
 
 ?>

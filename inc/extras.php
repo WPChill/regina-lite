@@ -128,10 +128,14 @@ function regina_lite_comment( $comment, $args, $depth ) {
 							_e( 'Your comment is awaiting moderation.', 'regina-lite' );
 						endif;
 
-						comment_reply_link( array_merge( $args, array(
-							'depth'     => $depth,
-							'max_depth' => $args['max_depth'],
-						) ) );
+						comment_reply_link(
+							array_merge(
+								$args, array(
+									'depth'     => $depth,
+									'max_depth' => $args['max_depth'],
+								)
+							)
+						);
 
 						?>
 					</div>
@@ -193,7 +197,7 @@ add_filter( 'excerpt_length', 'regina_lite_excerpt_length', 999 );
 #
 function regina_lite_excerpt_more( $more ) {
 
-	$return_string = '<div class="read-more-wrapper">';
+	$return_string  = '<div class="read-more-wrapper">';
 	$return_string .= '<a class="link small" href="' . esc_url( get_the_permalink() ) . '" role="button">' . __( 'Read more', 'regina-lite' ) . '<span class="nc-icon-glyph arrows-1_bold-right"></span></a>';
 	$return_string .= '</div>';
 	return $return_string;

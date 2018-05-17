@@ -123,4 +123,4 @@ function regina_lite_category_transient_flusher() {
 	delete_transient( 'regina_lite_categories' );
 }
 add_action( 'edit_category', 'regina_lite_category_transient_flusher' );
-add_action( 'save_post',     'regina_lite_category_transient_flusher' );
+add_action( 'save_post', 'regina_lite_category_transient_flusher' );

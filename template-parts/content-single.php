@@ -23,8 +23,8 @@
 		<?php
 		wp_link_pages(
 			array(
-				'before'    => '<div class="link-pages">' . __( 'Pages:', 'regina-lite' ),
-				'after'     => '</div><!--/.link-pages-->',
+				'before' => '<div class="link-pages">' . __( 'Pages:', 'regina-lite' ),
+				'after'  => '</div><!--/.link-pages-->',
 			)
 		);
 		?>

@@ -8,10 +8,10 @@
 
 $wp_customize->add_section(
 	'regina_lite_news_general', array(
-		'title'    => esc_html__( 'Latest News', 'regina-lite' ),
+		'title'       => esc_html__( 'Latest News', 'regina-lite' ),
 		'description' => esc_html__( 'Latest News Section is displayed as a slider on the homepage. Controls from this section are applied to that slider.', 'regina-lite' ),
-		'priority' => 60,
-		'panel' => 'regina_lite_frontpage_sections',
+		'priority'    => 60,
+		'panel'       => 'regina_lite_frontpage_sections',
 	)
 );
 
@@ -26,9 +26,9 @@ $wp_customize->add_setting(
 $wp_customize->add_control(
 	new Epsilon_Control_Toggle(
 		$wp_customize, $prefix . '_latest_news_show', array(
-			'type'          => 'epsilon-toggle',
-			'label'         => esc_html__( 'Show this section?', 'regina-lite' ),
-			'section'       => 'regina_lite_news_general',
+			'type'    => 'epsilon-toggle',
+			'label'   => esc_html__( 'Show this section?', 'regina-lite' ),
+			'section' => 'regina_lite_news_general',
 		)
 	)
 );
@@ -45,8 +45,8 @@ $wp_customize->add_setting(
 
 $wp_customize->add_control(
 	'regina_lite_news_section_title', array(
-		'label'    => esc_html__( 'Section title', 'regina-lite' ),
-		'section'  => 'regina_lite_news_general',
+		'label'   => esc_html__( 'Section title', 'regina-lite' ),
+		'section' => 'regina_lite_news_general',
 	)
 );
 $wp_customize->selective_refresh->add_partial(
@@ -66,8 +66,8 @@ $wp_customize->add_setting(
 
 $wp_customize->add_control(
 	'regina_lite_news_section_sub_title', array(
-		'label'    => esc_html__( 'Section sub-title', 'regina-lite' ),
-		'section'  => 'regina_lite_news_general',
+		'label'   => esc_html__( 'Section sub-title', 'regina-lite' ),
+		'section' => 'regina_lite_news_general',
 	)
 );
 $wp_customize->selective_refresh->add_partial(
@@ -90,8 +90,8 @@ $wp_customize->add_control(
 		$wp_customize, 'regina_lite_news_section_no_posts_per_slide', array(
 			'type'    => 'epsilon-slider',
 			'choices' => array(
-				'min' => 1,
-				'max' => 4,
+				'min'  => 1,
+				'max'  => 4,
 				'step' => 1,
 			),
 			'label'   => esc_html__( 'Number of post per slide', 'regina-lite' ),

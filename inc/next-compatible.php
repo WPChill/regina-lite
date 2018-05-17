@@ -5,8 +5,8 @@
 if ( version_compare( $GLOBALS['wp_version'], '4.4.2', '>' ) ) {
 
 	/*
-     * Custom Logo
-     */
+	 * Custom Logo
+	 */
 	add_theme_support(
 		'custom-logo', array(
 			'height'      => 80,
@@ -84,13 +84,13 @@ if ( version_compare( $GLOBALS['wp_version'], '4.4.2', '>' ) ) {
 					foreach ( $sidebar as $widget_key => $widget ) {
 						if ( strpos( $widget, 'regina_lite_contact' ) !== false ) {
 
-							$args = array(
-								'title' => '',
-								'text' => '',
+							$args           = array(
+								'title'  => '',
+								'text'   => '',
 								'filter' => 1,
 								'visual' => 1,
 							);
-							$current_index = str_replace( 'regina_lite_contact-', '', $widget );
+							$current_index  = str_replace( 'regina_lite_contact-', '', $widget );
 							$current_widget = $contact_widget[ $current_index ];
 
 							// print_r( $current_widget );
@@ -132,19 +132,19 @@ if ( version_compare( $GLOBALS['wp_version'], '4.4.2', '>' ) ) {
 								$args['text'] .= '<ul class="social-link-list">' . $social_html . '</ul>';
 							}
 
-							$text_widgets[ $text_widget_index ] = $args;
+							$text_widgets[ $text_widget_index ]          = $args;
 							$all_sidebars[ $sidebar_key ][ $widget_key ] = 'text-' . $text_widget_index;
 							$text_widget_index++;
 
 						} elseif ( strpos( $widget, 'regina_lite_address' ) !== false ) {
 
-							$args = array(
-								'title' => '',
-								'text' => '',
+							$args           = array(
+								'title'  => '',
+								'text'   => '',
 								'filter' => 1,
 								'visual' => 1,
 							);
-							$current_index = str_replace( 'regina_lite_address-', '', $widget );
+							$current_index  = str_replace( 'regina_lite_address-', '', $widget );
 							$current_widget = $address_widget[ $current_index ];
 
 							if ( isset( $current_widget['title'] ) ) {
@@ -155,7 +155,7 @@ if ( version_compare( $GLOBALS['wp_version'], '4.4.2', '>' ) ) {
 								$args['text'] = $current_widget['address'];
 							}
 
-							$text_widgets[ $text_widget_index ] = $args;
+							$text_widgets[ $text_widget_index ]          = $args;
 							$all_sidebars[ $sidebar_key ][ $widget_key ] = 'text-' . $text_widget_index;
 							$text_widget_index++;
 						}

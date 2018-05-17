@@ -81,8 +81,8 @@ class Regina_Section_Upsell extends WP_Customize_Section {
 		 */
 		$json['separator'] = $this->separator;
 		$json['allowed']   = $this->allowed;
-		$arr = array();
-		$i   = 0;
+		$arr               = array();
+		$i                 = 0;
 		foreach ( $this->options as $option ) {
 			$arr[ $i ]['option'] = $option;
 			$i ++;
@@ -93,7 +93,7 @@ class Regina_Section_Upsell extends WP_Customize_Section {
 			$i ++;
 		}
 		$json['options'] = $arr;
-		$json['id']    = $this->id;
+		$json['id']      = $this->id;
 		return $json;
 	}
 	/**

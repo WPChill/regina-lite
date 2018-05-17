@@ -22,26 +22,26 @@ if ( ! class_exists( 'MTL_Extended_Menu_Walker' ) ) {
 
 		var $db_fields = array(
 			'parent' => 'menu_item_parent',
-			'id' => 'db_id',
+			'id'     => 'db_id',
 		);
 
 		function start_lvl( &$output, $depth = 0, $args = array() ) {
-			$indent = str_repeat( "\t", $depth );
+			$indent  = str_repeat( "\t", $depth );
 			$output .= "\n$indent<ul>\n";
 		}
 
 		function end_lvl( &$output, $depth = 0, $args = array() ) {
-			$indent = str_repeat( "\t", $depth );
+			$indent  = str_repeat( "\t", $depth );
 			$output .= "$indent</ul>\n";
 		}
 
 		function start_el( &$output, $item, $depth = 0, $args = array(), $id = 0 ) {
 
 			global $wp_query;
-			$indent = $depth ? str_repeat( "\t", $depth ) : '';
+			$indent      = $depth ? str_repeat( "\t", $depth ) : '';
 			$class_names = '';
-			$value = '';
-			$classes = empty( $item->classes ) ? array() : (array) $item->classes;
+			$value       = '';
+			$classes     = empty( $item->classes ) ? array() : (array) $item->classes;
 
 			/* Add active class */
 			if ( in_array( 'current-menu-item', $classes ) ) {
@@ -52,11 +52,11 @@ if ( ! class_exists( 'MTL_Extended_Menu_Walker' ) ) {
 			/* Check for children */
 			$children = get_posts(
 				array(
-					'post_type' => 'nav_menu_item',
-					'nopaging' => true,
+					'post_type'   => 'nav_menu_item',
+					'nopaging'    => true,
 					'numberposts' => 1,
-					'meta_key' => '_menu_item_menu_item_parent',
-					'meta_value' => $item->ID,
+					'meta_key'    => '_menu_item_menu_item_parent',
+					'meta_value'  => $item->ID,
 				)
 			);
 
@@ -72,12 +72,12 @@ if ( ! class_exists( 'MTL_Extended_Menu_Walker' ) ) {
 
 			$output .= $indent . '<li' . $id . $value . $class_names . '>';
 
-			$attributes = ! empty( $item->attr_title ) ? ' title="' . esc_attr( $item->attr_title ) . '"' : '';
+			$attributes  = ! empty( $item->attr_title ) ? ' title="' . esc_attr( $item->attr_title ) . '"' : '';
 			$attributes .= ! empty( $item->target ) ? ' target="' . esc_attr( $item->target ) . '"' : '';
 			$attributes .= ! empty( $item->xfn ) ? ' rel="' . esc_attr( $item->xfn ) . '"' : '';
 			$attributes .= ! empty( $item->url ) ? ' href="' . esc_attr( $item->url ) . '"' : '';
 
-			$item_output = $args->before;
+			$item_output  = $args->before;
 			$item_output .= '<a' . $attributes . '><span>';
 			$item_output .= $args->link_before . apply_filters( 'the_title', $item->title, $item->ID ) . $args->link_after;
 			$item_output .= '</span></a>';

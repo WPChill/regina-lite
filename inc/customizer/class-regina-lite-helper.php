@@ -106,7 +106,7 @@ class Regina_Lite_Helper {
 	// use $arguments[0] if value doesn't exist.
 	public static function __callStatic( $name, $arguments ) {
 
-		$settings_id = str_replace( '_get_', '', $name );
+		$settings_id   = str_replace( '_get_', '', $name );
 		$setting_value = Regina_Lite_Helper::get_regina_setting( $settings_id );
 
 		if ( false === $setting_value ) {
@@ -123,10 +123,10 @@ class Regina_Lite_Helper {
 
 		$sections = array(
 			array(
-				'title' => __( 'Services Section', 'regina-lite' ),
+				'title'  => __( 'Services Section', 'regina-lite' ),
 				'fields' => array(
 					'regina_lite_subheader_features_show' => __( 'Sho/Hide Services Section', 'regina-lite' ),
-					'regina_lite_features_general_title' => __( 'Section Title', 'regina-lite' ),
+					'regina_lite_features_general_title'  => __( 'Section Title', 'regina-lite' ),
 					'regina_lite_features_general_description' => __( 'Section Description', 'regina-lite' ),
 					'regina_lite_features_general_button_text' => __( 'Section Button Text', 'regina-lite' ),
 					'regina_lite_features_general_button_url' => __( 'Section Button URL', 'regina-lite' ),
@@ -145,10 +145,10 @@ class Regina_Lite_Helper {
 				),
 			),
 			array(
-				'title' => __( 'Our Team Section', 'regina-lite' ),
+				'title'  => __( 'Our Team Section', 'regina-lite' ),
 				'fields' => array(
-					'regina_lite_ourteam_general_show' => __( 'Sho/Hide Section', 'regina-lite' ),
-					'regina_lite_ourteam_general_title' => __( 'Section Title', 'regina-lite' ),
+					'regina_lite_ourteam_general_show'     => __( 'Sho/Hide Section', 'regina-lite' ),
+					'regina_lite_ourteam_general_title'    => __( 'Section Title', 'regina-lite' ),
 					'regina_lite_ourteam_general_description' => __( 'Section Description', 'regina-lite' ),
 					'regina_lite_ourteam_teammember1_image' => __( 'Member 1 Image', 'regina-lite' ),
 					'regina_lite_ourteam_teammember1_name' => __( 'Member 1 Name', 'regina-lite' ),
@@ -169,7 +169,7 @@ class Regina_Lite_Helper {
 				),
 			),
 			array(
-				'title' => __( 'Testimonials Section', 'regina-lite' ),
+				'title'  => __( 'Testimonials Section', 'regina-lite' ),
 				'fields' => array(
 					'regina_lite_testimonials_general_show' => __( 'Sho/Hide Section', 'regina-lite' ),
 					'regina_lite_testimonials_general_image1' => __( 'Gallery Image 1', 'regina-lite' ),
@@ -199,10 +199,10 @@ class Regina_Lite_Helper {
 				),
 			),
 			array(
-				'title' => __( 'Recent Works Section', 'regina-lite' ),
+				'title'  => __( 'Recent Works Section', 'regina-lite' ),
 				'fields' => array(
-					'regina_lite_speak_general_show' => __( 'Sho/Hide Section', 'regina-lite' ),
-					'regina_lite_speak_general_title' => __( 'Section Title', 'regina-lite' ),
+					'regina_lite_speak_general_show'      => __( 'Sho/Hide Section', 'regina-lite' ),
+					'regina_lite_speak_general_title'     => __( 'Section Title', 'regina-lite' ),
 					'regina_lite_speak_general_description' => __( 'Section Description', 'regina-lite' ),
 					'regina_lite_speak_general_buttonurl' => __( 'Section Button URL', 'regina-lite' ),
 				),
@@ -244,9 +244,9 @@ class Regina_Lite_Helper {
 		} else {
 
 			$page_args = array(
-				'post_title' => 'Regina Settings',
+				'post_title'  => 'Regina Settings',
 				'post_status' => 'draft',
-				'post_type' => 'page',
+				'post_type'   => 'page',
 				'post_author' => 0,
 			);
 
@@ -305,7 +305,7 @@ add_action( 'customize_update_epsilon_page', 'regina_lite_save_custom_setting', 
 function regina_lite_save_custom_setting( $value, $setting ) {
 
 	$existing_settings = Regina_Lite_Helper::parse_regina_settings();
-	$key = $setting->id;
+	$key               = $setting->id;
 
 	$existing_settings[ $key ] = $value;
 

@@ -13,10 +13,10 @@
 
 	/* Advanced */
 	$wp_customize->add_section(
-		$prefix . '_advanced_section' ,
+		$prefix . '_advanced_section',
 		array(
-			'title'       => esc_html__( 'Advanced Settings', 'regina-lite' ),
-			'panel'       => $panel_id,
+			'title' => esc_html__( 'Advanced Settings', 'regina-lite' ),
+			'panel' => $panel_id,
 		)
 	);
 
@@ -25,7 +25,7 @@
 		$prefix . '_page_header_bg',
 		array(
 			'sanitize_callback' => 'esc_url',
-			'default' => '',
+			'default'           => '',
 		)
 	);
 
@@ -34,9 +34,9 @@
 			$wp_customize,
 			$prefix . '_page_header_bg',
 			array(
-				'label'    => __( 'Page Header Image:', 'regina-lite' ),
+				'label'       => __( 'Page Header Image:', 'regina-lite' ),
 				'description' => __( 'Image to be used as background for all page titles. ', 'regina-lite' ),
-				'section'  => $prefix . '_advanced_section',
+				'section'     => $prefix . '_advanced_section',
 			)
 		)
 	);
@@ -52,10 +52,10 @@
 	$wp_customize->add_control(
 		$prefix . '_book_appointment_button_label',
 		array(
-			'label'         => esc_html__( 'Book Appointment Button Label:', 'regina-lite' ),
-			'description'   => esc_html__( 'This setting will affect all instances of the Book Appointment button.','regina-lite' ),
-			'section'       => $prefix . '_advanced_section',
-			'type'          => 'text',
+			'label'       => esc_html__( 'Book Appointment Button Label:', 'regina-lite' ),
+			'description' => esc_html__( 'This setting will affect all instances of the Book Appointment button.', 'regina-lite' ),
+			'section'     => $prefix . '_advanced_section',
+			'type'        => 'text',
 		)
 	);
 	$wp_customize->selective_refresh->add_partial(
@@ -68,16 +68,16 @@
 	$wp_customize->add_setting(
 		$prefix . '_contact_bar_bookappointmenturl', array(
 			'sanitize_callback' => 'esc_url',
-			'default' => '#',
+			'default'           => '#',
 		)
 	);
 
 	$wp_customize->add_control(
 		$prefix . '_contact_bar_bookappointmenturl', array(
-			'label'   => esc_html__( 'Book Appointment URL:', 'regina-lite' ),
+			'label'       => esc_html__( 'Book Appointment URL:', 'regina-lite' ),
 			'description' => esc_html__( 'Enter the URL you want to use for the book appointment button.', 'regina-lite' ),
-			'section' => $prefix . '_advanced_section',
-			'settings'   => $prefix . '_contact_bar_bookappointmenturl',
+			'section'     => $prefix . '_advanced_section',
+			'settings'    => $prefix . '_contact_bar_bookappointmenturl',
 		)
 	);
 
@@ -86,17 +86,17 @@
 		$prefix . '_enable_site_preloader',
 		array(
 			'sanitize_callback' => $prefix . '_sanitize_checkbox',
-			'default' => 1,
+			'default'           => 1,
 		)
 	);
 
 	$wp_customize->add_control(
 		new Epsilon_Control_Toggle(
 			$wp_customize, $prefix . '_enable_site_preloader', array(
-				'type'  => 'epsilon-toggle',
-				'label' => esc_html__( 'Enable site preloader', 'regina-lite' ),
+				'type'        => 'epsilon-toggle',
+				'label'       => esc_html__( 'Enable site preloader', 'regina-lite' ),
 				'description' => esc_html__( 'Initial status: enabled', 'regina-lite' ),
-				'section' => $prefix . '_advanced_section',
+				'section'     => $prefix . '_advanced_section',
 			)
 		)
 	);

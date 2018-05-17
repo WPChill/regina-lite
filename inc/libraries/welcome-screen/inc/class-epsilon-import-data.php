@@ -93,7 +93,7 @@ class Epsilon_Import_Data {
 	 * Build the HTML Container
 	 */
 	public function generate_import_data_container() {
-		$html = '<p><a class="button button-primary epsilon-ajax-button" id="add_default_sections" href="#">' . __( 'Click me to start the set-up process!', 'epsilon-framework' ) . '</a>';
+		$html  = '<p><a class="button button-primary epsilon-ajax-button" id="add_default_sections" href="#">' . __( 'Click me to start the set-up process!', 'epsilon-framework' ) . '</a>';
 		$html .= '<a class="button epsilon-hidden-content-toggler" href="#" data-toggle="welcome-hidden-content">' . __( 'Advanced', 'epsilon-framework' ) . '</a></p>';
 		$html .= '<div class="import-content-container" id="welcome-hidden-content">';
 
@@ -258,9 +258,9 @@ class Epsilon_Import_Data {
 	public function populate_hero_section() {
 
 		$options = array(
-			'regina_lite_top_box_title'      => wp_kses_post( 'We help people, like you.' ),
-			'regina_lite_top_box_description' => esc_html( 'Our team of specialists is ready to help you. Book an appointment now!' ),
-			'regina_lite_top_box_bookappointmenturl'   => esc_url_raw( '#' ),
+			'regina_lite_top_box_title'              => wp_kses_post( 'We help people, like you.' ),
+			'regina_lite_top_box_description'        => esc_html( 'Our team of specialists is ready to help you. Book an appointment now!' ),
+			'regina_lite_top_box_bookappointmenturl' => esc_url_raw( '#' ),
 		);
 
 		foreach ( $options as $option_name => $value ) {
@@ -280,22 +280,22 @@ class Epsilon_Import_Data {
 		$page_id = Regina_Lite_Helper::get_setting_page_id();
 
 		$options = array(
-			'regina_lite_features_general_title' => esc_html( 'Our Services' ),
-			'regina_lite_features_general_description' => esc_html( 'We offer various services lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt.' ),
-			'regina_lite_features_general_button_text' => esc_html( 'Our Services' ),
-			'regina_lite_features_general_button_url' => esc_url_raw( '#' ),
-			'regina_lite_features_feature1_title' => esc_html( 'Free Support' ),
+			'regina_lite_features_general_title'        => esc_html( 'Our Services' ),
+			'regina_lite_features_general_description'  => esc_html( 'We offer various services lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt.' ),
+			'regina_lite_features_general_button_text'  => esc_html( 'Our Services' ),
+			'regina_lite_features_general_button_url'   => esc_url_raw( '#' ),
+			'regina_lite_features_feature1_title'       => esc_html( 'Free Support' ),
 			'regina_lite_features_feature1_description' => esc_html( 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt.' ),
-			'regina_lite_features_feature1_buttonurl' => esc_url_raw( '#' ),
-			'regina_lite_features_feature2_title' => esc_html( 'Medical Care' ),
+			'regina_lite_features_feature1_buttonurl'   => esc_url_raw( '#' ),
+			'regina_lite_features_feature2_title'       => esc_html( 'Medical Care' ),
 			'regina_lite_features_feature2_description' => esc_html( 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt.' ),
-			'regina_lite_features_feature2_buttonurl' => esc_url_raw( '#' ),
-			'regina_lite_features_feature3_title' => esc_html( 'Life Care' ),
+			'regina_lite_features_feature2_buttonurl'   => esc_url_raw( '#' ),
+			'regina_lite_features_feature3_title'       => esc_html( 'Life Care' ),
 			'regina_lite_features_feature3_description' => esc_html( 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt.' ),
-			'regina_lite_features_feature3_buttonurl' => esc_url_raw( '#' ),
-			'regina_lite_features_feature4_title' => esc_html( 'Nervous System' ),
+			'regina_lite_features_feature3_buttonurl'   => esc_url_raw( '#' ),
+			'regina_lite_features_feature4_title'       => esc_html( 'Nervous System' ),
 			'regina_lite_features_feature4_description' => esc_html( 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt.' ),
-			'regina_lite_features_feature4_buttonurl' => esc_url_raw( '#' ),
+			'regina_lite_features_feature4_buttonurl'   => esc_url_raw( '#' ),
 		);
 
 		$settings = get_post_meta( $page_id, 'regina-settings', true );
@@ -319,28 +319,28 @@ class Epsilon_Import_Data {
 		$page_id = Regina_Lite_Helper::get_setting_page_id();
 
 		$options = array(
-			'regina_lite_ourteam_general_title' => esc_html( 'Our team can help you!' ),
-			'regina_lite_ourteam_general_description' => esc_html( 'We offer various services lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt.' ),
-			'regina_lite_ourteam_teammember1_image' => esc_url( get_template_directory_uri() . '/layout/images/team/team-member-1.jpg' ),
-			'regina_lite_ourteam_teammember1_name' => esc_html( 'Dr. Steve Leeson' ),
-			'regina_lite_ourteam_teammember1_position' => esc_html( 'Cardiac Clinic, Primary Healthcare' ),
+			'regina_lite_ourteam_general_title'           => esc_html( 'Our team can help you!' ),
+			'regina_lite_ourteam_general_description'     => esc_html( 'We offer various services lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt.' ),
+			'regina_lite_ourteam_teammember1_image'       => esc_url( get_template_directory_uri() . '/layout/images/team/team-member-1.jpg' ),
+			'regina_lite_ourteam_teammember1_name'        => esc_html( 'Dr. Steve Leeson' ),
+			'regina_lite_ourteam_teammember1_position'    => esc_html( 'Cardiac Clinic, Primary Healthcare' ),
 			'regina_lite_ourteam_teammember1_description' => esc_html( 'Dr. Steve Leeson was born and raised in Texas, USA. He received a Bachelor of Science degree in Chemistry from the University of Houston and a...' ),
-			'regina_lite_ourteam_teammember1_buttonurl' => esc_url_raw( '#' ),
-			'regina_lite_ourteam_teammember2_image' => esc_url( get_template_directory_uri() . '/layout/images/team/team-member-2.jpg' ),
-			'regina_lite_ourteam_teammember2_name' => esc_html( 'Dr. Amanda Riss' ),
-			'regina_lite_ourteam_teammember2_position' => esc_html( 'Cardiac Clinic, Primary Healthcare' ),
+			'regina_lite_ourteam_teammember1_buttonurl'   => esc_url_raw( '#' ),
+			'regina_lite_ourteam_teammember2_image'       => esc_url( get_template_directory_uri() . '/layout/images/team/team-member-2.jpg' ),
+			'regina_lite_ourteam_teammember2_name'        => esc_html( 'Dr. Amanda Riss' ),
+			'regina_lite_ourteam_teammember2_position'    => esc_html( 'Cardiac Clinic, Primary Healthcare' ),
 			'regina_lite_ourteam_teammember2_description' => esc_html( 'Dr. Amanda Riss was born and raised in Texas, USA. He received a Bachelor of Science degree in Chemistry from the University of Houston and a...' ),
-			'regina_lite_ourteam_teammember2_buttonurl' => esc_url_raw( '#' ),
-			'regina_lite_ourteam_teammember3_image' => esc_url( get_template_directory_uri() . '/layout/images/team/team-member-3.jpg' ),
-			'regina_lite_ourteam_teammember3_name' => esc_html( 'Dr. Mick Harold' ),
-			'regina_lite_ourteam_teammember3_position' => esc_html( 'Cardiac Clinic, Primary Healthcare' ),
+			'regina_lite_ourteam_teammember2_buttonurl'   => esc_url_raw( '#' ),
+			'regina_lite_ourteam_teammember3_image'       => esc_url( get_template_directory_uri() . '/layout/images/team/team-member-3.jpg' ),
+			'regina_lite_ourteam_teammember3_name'        => esc_html( 'Dr. Mick Harold' ),
+			'regina_lite_ourteam_teammember3_position'    => esc_html( 'Cardiac Clinic, Primary Healthcare' ),
 			'regina_lite_ourteam_teammember3_description' => esc_html( 'Dr. Mick Harold was born and raised in Texas, USA. He received a Bachelor of Science degree in Chemistry from the University of Houston and a...' ),
-			'regina_lite_ourteam_teammember3_buttonurl' => esc_url_raw( '#' ),
-			'regina_lite_ourteam_teammember4_image' => esc_url( get_template_directory_uri() . '/layout/images/team/team-member-4.jpg' ),
-			'regina_lite_ourteam_teammember4_name' => esc_html( 'Dr. Jenna Crew' ),
-			'regina_lite_ourteam_teammember4_position' => esc_html( 'Cardiac Clinic, Primary Healthcare' ),
+			'regina_lite_ourteam_teammember3_buttonurl'   => esc_url_raw( '#' ),
+			'regina_lite_ourteam_teammember4_image'       => esc_url( get_template_directory_uri() . '/layout/images/team/team-member-4.jpg' ),
+			'regina_lite_ourteam_teammember4_name'        => esc_html( 'Dr. Jenna Crew' ),
+			'regina_lite_ourteam_teammember4_position'    => esc_html( 'Cardiac Clinic, Primary Healthcare' ),
 			'regina_lite_ourteam_teammember4_description' => esc_html( 'Dr. Jenna Crew was born and raised in Texas, USA. He received a Bachelor of Science degree in Chemistry from the University of Houston and a...' ),
-			'regina_lite_ourteam_teammember4_buttonurl' => esc_url_raw( '#' ),
+			'regina_lite_ourteam_teammember4_buttonurl'   => esc_url_raw( '#' ),
 		);
 
 		$settings = get_post_meta( $page_id, 'regina-settings', true );
@@ -364,29 +364,29 @@ class Epsilon_Import_Data {
 		$page_id = Regina_Lite_Helper::get_setting_page_id();
 
 		$options = array(
-			'regina_lite_testimonials_general_image1' => esc_url( get_template_directory_uri() . '/layout/images/home/testimonial-1.jpg' ),
-			'regina_lite_testimonials_general_image2' => esc_url( get_template_directory_uri() . '/layout/images/home/testimonial-2.jpg' ),
-			'regina_lite_testimonials_general_image3' => esc_url( get_template_directory_uri() . '/layout/images/home/testimonial-3.jpg' ),
-			'regina_lite_testimonials_general_image4' => esc_url( get_template_directory_uri() . '/layout/images/home/testimonial-4.jpg' ),
+			'regina_lite_testimonials_general_image1'     => esc_url( get_template_directory_uri() . '/layout/images/home/testimonial-1.jpg' ),
+			'regina_lite_testimonials_general_image2'     => esc_url( get_template_directory_uri() . '/layout/images/home/testimonial-2.jpg' ),
+			'regina_lite_testimonials_general_image3'     => esc_url( get_template_directory_uri() . '/layout/images/home/testimonial-3.jpg' ),
+			'regina_lite_testimonials_general_image4'     => esc_url( get_template_directory_uri() . '/layout/images/home/testimonial-4.jpg' ),
 			'regina_lite_testimonials_testimonial1_description' => esc_html( 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip.' ),
 			'regina_lite_testimonials_testimonial1_image' => esc_url( get_template_directory_uri() . '/layout/images/home/testimonial-quote.jpg' ),
-			'regina_lite_testimonials_testimonial1_name' => esc_html( 'Jenny Royal' ),
+			'regina_lite_testimonials_testimonial1_name'  => esc_html( 'Jenny Royal' ),
 			'regina_lite_testimonials_testimonial1_position' => esc_html( 'Manager @ REQ' ),
 			'regina_lite_testimonials_testimonial2_description' => esc_html( 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip.' ),
 			'regina_lite_testimonials_testimonial2_image' => esc_url( get_template_directory_uri() . '/layout/images/home/testimonial-quote.jpg' ),
-			'regina_lite_testimonials_testimonial2_name' => esc_html( 'Jenny Royal' ),
+			'regina_lite_testimonials_testimonial2_name'  => esc_html( 'Jenny Royal' ),
 			'regina_lite_testimonials_testimonial2_position' => esc_html( 'Manager @ REQ' ),
 			'regina_lite_testimonials_testimonial3_description' => esc_html( 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip.' ),
 			'regina_lite_testimonials_testimonial3_image' => esc_url( get_template_directory_uri() . '/layout/images/home/testimonial-quote.jpg' ),
-			'regina_lite_testimonials_testimonial3_name' => esc_html( 'Jenny Royal' ),
+			'regina_lite_testimonials_testimonial3_name'  => esc_html( 'Jenny Royal' ),
 			'regina_lite_testimonials_testimonial3_position' => esc_html( 'Manager @ REQ' ),
 			'regina_lite_testimonials_testimonial4_description' => esc_html( 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip.' ),
 			'regina_lite_testimonials_testimonial4_image' => esc_url( get_template_directory_uri() . '/layout/images/home/testimonial-quote.jpg' ),
-			'regina_lite_testimonials_testimonial4_name' => esc_html( 'Jenny Royal' ),
+			'regina_lite_testimonials_testimonial4_name'  => esc_html( 'Jenny Royal' ),
 			'regina_lite_testimonials_testimonial4_position' => esc_html( 'Manager @ REQ' ),
 			'regina_lite_testimonials_testimonial5_description' => esc_html( 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip.' ),
 			'regina_lite_testimonials_testimonial5_image' => esc_url( get_template_directory_uri() . '/layout/images/home/testimonial-quote.jpg' ),
-			'regina_lite_testimonials_testimonial5_name' => esc_html( 'Jenny Royal' ),
+			'regina_lite_testimonials_testimonial5_name'  => esc_html( 'Jenny Royal' ),
 			'regina_lite_testimonials_testimonial5_position' => esc_html( 'Manager @ REQ' ),
 		);
 
@@ -411,9 +411,9 @@ class Epsilon_Import_Data {
 		$page_id = Regina_Lite_Helper::get_setting_page_id();
 
 		$options = array(
-			'regina_lite_speak_general_title' => esc_html( 'Speak with our doctors' ),
+			'regina_lite_speak_general_title'       => esc_html( 'Speak with our doctors' ),
 			'regina_lite_speak_general_description' => esc_html( 'We offer various services lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt.' ),
-			'regina_lite_speak_general_buttonurl' => esc_url_raw( '#' ),
+			'regina_lite_speak_general_buttonurl'   => esc_url_raw( '#' ),
 		);
 
 		$settings = get_post_meta( $page_id, 'regina-settings', true );
@@ -435,8 +435,8 @@ class Epsilon_Import_Data {
 	public function populate_news_section() {
 
 		$options = array(
-			'regina_lite_news_section_title' => esc_html( 'Your success is our most important priority' ),
-			'regina_lite_news_section_sub_title'   => esc_html( 'Your success is our most important priority' ),
+			'regina_lite_news_section_title'     => esc_html( 'Your success is our most important priority' ),
+			'regina_lite_news_section_sub_title' => esc_html( 'Your success is our most important priority' ),
 		);
 
 		$settings = get_post_meta( $page_id, 'regina-settings', true );
@@ -468,8 +468,8 @@ class Epsilon_Import_Data {
 		);
 		$footer_2 = array(
 			array(
-				'id'         => 'meta',
-				'title'      => esc_html( '' ),
+				'id'    => 'meta',
+				'title' => esc_html( '' ),
 			),
 		);
 		$footer_3 = array(

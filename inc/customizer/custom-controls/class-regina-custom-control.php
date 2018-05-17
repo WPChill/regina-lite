@@ -36,7 +36,7 @@ if ( class_exists( 'WP_Customize_Control' ) && ! class_exists( 'Regina_Custom_Co
 					endif;
 					if ( ! empty( $this->description ) ) :
 					?>
-						<span class="description customize-control-description"><?php echo $this->description ; ?></span>
+						<span class="description customize-control-description"><?php echo $this->description; ?></span>
 					<?php
 					endif;
 					foreach ( $this->choices as $value => $label ) :
@@ -106,10 +106,10 @@ if ( ! empty( $this->description ) ) :
 					<?php endif; ?>
 
 					<?php
-					$dropdown_name = '_customize-dropdown-pages-' . $this->id;
-					$show_option_none = __( '&mdash; Select &mdash;', 'regina-lite' );
+					$dropdown_name     = '_customize-dropdown-pages-' . $this->id;
+					$show_option_none  = __( '&mdash; Select &mdash;', 'regina-lite' );
 					$option_none_value = '0';
-					$dropdown = wp_dropdown_pages(
+					$dropdown          = wp_dropdown_pages(
 						array(
 							'name'              => $dropdown_name,
 							'echo'              => 0,
@@ -119,7 +119,7 @@ if ( ! empty( $this->description ) ) :
 						)
 					);
 					if ( empty( $dropdown ) ) {
-						$dropdown = sprintf( '<select id="%1$s" name="%1$s">', esc_attr( $dropdown_name ) );
+						$dropdown  = sprintf( '<select id="%1$s" name="%1$s">', esc_attr( $dropdown_name ) );
 						$dropdown .= sprintf( '<option value="%1$s">%2$s</option>', esc_attr( $option_none_value ), esc_html( $show_option_none ) );
 						$dropdown .= '</select>';
 					}

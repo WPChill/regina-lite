@@ -57,10 +57,12 @@ if ( post_password_required() ) {
 		</h3>
 		<ul class="comments">
 			<?php
-			wp_list_comments( array(
-				'callback'  => 'regina_lite_comment',
-				'max_depth' => 5,
-			) );
+			wp_list_comments(
+				array(
+					'callback'  => 'regina_lite_comment',
+					'max_depth' => 5,
+				)
+			);
 			?>
 		</ul><!--/.comments-->
 	</div><!--/#comments-list-->
@@ -88,8 +90,8 @@ if ( ! comments_open() && '0' != get_comments_number() && post_type_supports( ge
 
 <?php
 $commenter = wp_get_current_commenter();
-$req = get_option( 'require_name_email' );
-$aria_req = ( $req ? " aria-required='true'" : '' );
+$req       = get_option( 'require_name_email' );
+$aria_req  = ( $req ? " aria-required='true'" : '' );
 
 if ( '' != $commenter['comment_author'] ) {
 	$name = esc_attr( $commenter['comment_author'] );
@@ -110,9 +112,9 @@ if ( '' != $commenter['comment_author_url'] ) {
 }
 
 $fields = array(
-	'author'    => '<div class="row"><div class="col-md-4"><input placeholder="Name" name="author" type="text" value="' . $name . '" ' . $aria_req . ' /></div>',
-	'email'     => '<div class="col-md-4"><input placeholder="E-mail" name="email" type="email" value="' . $email . '" ' . $aria_req . ' /></div>',
-	'url'       => '<div class="col-md-4"><input placeholder="Website" name="url" type="url" value="' . $url . '" /></div>',
+	'author' => '<div class="row"><div class="col-md-4"><input placeholder="Name" name="author" type="text" value="' . $name . '" ' . $aria_req . ' /></div>',
+	'email'  => '<div class="col-md-4"><input placeholder="E-mail" name="email" type="email" value="' . $email . '" ' . $aria_req . ' /></div>',
+	'url'    => '<div class="col-md-4"><input placeholder="Website" name="url" type="url" value="' . $url . '" /></div>',
 );
 if ( is_user_logged_in() ) {
 	$comment_textarea = '<div class="row"><div class="col-xs-12"><textarea placeholder="Your Comment" name="comment" aria-required="true"></textarea></div></div>';
@@ -120,12 +122,14 @@ if ( is_user_logged_in() ) {
 	$comment_textarea = '<div class="col-xs-12"><textarea placeholder="Your Comment" name="comment" aria-required="true"></textarea></div></div>';
 }
 ?>
-<?php comment_form( array(
-	'fields' => $fields,
-	'comment_field' => $comment_textarea,
-	'id_submit' => 'button',
-	'label_submit' => esc_attr__( 'Post Comment', 'regina-lite' ),
-	'title_reply' => esc_attr__( 'Leave a comment', 'regina-lite' ),
-	/* translators: %s: post title */
-	'title_reply_to' => esc_attr__( 'Leave a comment to %s', 'regina-lite' ),
-) ); ?>
+<?php comment_form(
+	array(
+		'fields'         => $fields,
+		'comment_field'  => $comment_textarea,
+		'id_submit'      => 'button',
+		'label_submit'   => esc_attr__( 'Post Comment', 'regina-lite' ),
+		'title_reply'    => esc_attr__( 'Leave a comment', 'regina-lite' ),
+		/* translators: %s: post title */
+		'title_reply_to' => esc_attr__( 'Leave a comment to %s', 'regina-lite' ),
+	)
+); ?>

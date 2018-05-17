@@ -52,31 +52,31 @@ class Regina_Breadcrumbs {
 	 */
 	public function __construct() {
 		// Initialize object variables
-		$this->post    = ( isset( $GLOBALS['post'] ) ? $GLOBALS['post'] : null );
+		$this->post = ( isset( $GLOBALS['post'] ) ? $GLOBALS['post'] : null );
 		// Setup default array for changeable variables
 		$defaults = array(
-			'home_prefix'               => get_theme_mod( 'regina_lite_blog_breadcrumb_menu_prefix', __( 'You Are Here', 'regina-lite' ) ),
-			'separator'                 => get_theme_mod( 'regina_lite_blog_breadcrumb_menu_separator', 'rarr' ),
-			'enable_post_breadcrumbs'   => get_theme_mod( 'regina_lite_enable_post_breadcrumbs', 1 ),
-			'show_post_type_archive'    => '1',
-			'show_terms'                => get_theme_mod( 'regina_lite_blog_breadcrumb_menu_post_category', 1 ),
-			'home_label'                => esc_html__( 'Home', 'regina-lite' ),
-			'tag_archive_prefix'        => esc_html__( 'Tag:', 'regina-lite' ),
-			'search_prefix'             => esc_html__( 'Search:', 'regina-lite' ),
-			'error_prefix'              => esc_html__( '404 - Page not Found', 'regina-lite' ),
+			'home_prefix'             => get_theme_mod( 'regina_lite_blog_breadcrumb_menu_prefix', __( 'You Are Here', 'regina-lite' ) ),
+			'separator'               => get_theme_mod( 'regina_lite_blog_breadcrumb_menu_separator', 'rarr' ),
+			'enable_post_breadcrumbs' => get_theme_mod( 'regina_lite_enable_post_breadcrumbs', 1 ),
+			'show_post_type_archive'  => '1',
+			'show_terms'              => get_theme_mod( 'regina_lite_blog_breadcrumb_menu_post_category', 1 ),
+			'home_label'              => esc_html__( 'Home', 'regina-lite' ),
+			'tag_archive_prefix'      => esc_html__( 'Tag:', 'regina-lite' ),
+			'search_prefix'           => esc_html__( 'Search:', 'regina-lite' ),
+			'error_prefix'            => esc_html__( '404 - Page not Found', 'regina-lite' ),
 		);
 		// Setup a filter for changeable variables and meger it with the defaults
-		$args = apply_filters( 'riba_breadcrumbs_defaults', $defaults );
-		$defaults = wp_parse_args( $args, $defaults );
-		$this->home_prefix              = $defaults['home_prefix'];
-		$this->separator                = $defaults['separator'];
-		$this->enable_post_breadcrumbs  = $defaults['enable_post_breadcrumbs'];
-		$this->show_post_type_archive   = $defaults['show_post_type_archive'];
-		$this->show_terms               = $defaults['show_terms'];
-		$this->home_label               = $defaults['home_label'];
-		$this->tag_archive_prefix       = $defaults['tag_archive_prefix'];
-		$this->search_prefix            = $defaults['search_prefix'];
-		$this->error_prefix             = $defaults['error_prefix'];
+		$args                          = apply_filters( 'riba_breadcrumbs_defaults', $defaults );
+		$defaults                      = wp_parse_args( $args, $defaults );
+		$this->home_prefix             = $defaults['home_prefix'];
+		$this->separator               = $defaults['separator'];
+		$this->enable_post_breadcrumbs = $defaults['enable_post_breadcrumbs'];
+		$this->show_post_type_archive  = $defaults['show_post_type_archive'];
+		$this->show_terms              = $defaults['show_terms'];
+		$this->home_label              = $defaults['home_label'];
+		$this->tag_archive_prefix      = $defaults['tag_archive_prefix'];
+		$this->search_prefix           = $defaults['search_prefix'];
+		$this->error_prefix            = $defaults['error_prefix'];
 		// Set separator
 		if ( 'rarr' == $this->separator ) {
 			$this->separator = '&rarr;';
@@ -197,7 +197,7 @@ class Regina_Breadcrumbs {
 				if ( is_month() ||
 					 is_day()
 				) {
-					$month = get_query_var( 'monthnum' );
+					$month      = get_query_var( 'monthnum' );
 					$month_name = $wp_locale->get_month( $month );
 				}
 				// Year Archive, only is a leaf
@@ -303,10 +303,10 @@ class Regina_Breadcrumbs {
 		if ( 'post' == $this->post->post_type ) {
 			$taxonomy = 'category';
 			/*
-            // Muscle Core Portfolio
-            } elseif ( $this->post->post_type == 'project' ) {
-                $taxonomy = 'project_category';
-            */
+			// Muscle Core Portfolio
+			} elseif ( $this->post->post_type == 'project' ) {
+				$taxonomy = 'project_category';
+			*/
 			// Woocommerce
 		} elseif ( 'product' == $this->post->post_type && class_exists( 'WooCommerce' ) && is_woocommerce() ) {
 			$taxonomy = 'product_cat';
@@ -342,8 +342,8 @@ class Regina_Breadcrumbs {
 			// If the term has a parent we need its ancestors for a full tree
 			if ( $term_parent ) {
 				// Get space separated string of term tree in slugs
-				$term_tree = get_ancestors( $terms[0]->term_id, $taxonomy );
-				$term_tree = array_reverse( $term_tree );
+				$term_tree   = get_ancestors( $terms[0]->term_id, $taxonomy );
+				$term_tree   = array_reverse( $term_tree );
 				$term_tree[] = get_term( $terms[0]->term_id, $taxonomy );
 				// Loop through the term tree
 				foreach ( $term_tree as $term_id ) {
@@ -362,7 +362,7 @@ class Regina_Breadcrumbs {
 			array_shift( $terms );
 			// Loop through the rest of the terms, and add them to string comma separated
 			$max_index = count( $terms );
-			$i = 0;
+			$i         = 0;
 			foreach ( $terms as $term ) {
 				// For the last index also add the separator
 				if ( ++$i == $max_index ) {
@@ -385,7 +385,7 @@ class Regina_Breadcrumbs {
 		$post_ancestor_ids = array_reverse( get_post_ancestors( $this->post ) );
 		// Loop through the ids to get the full tree
 		foreach ( $post_ancestor_ids as $post_ancestor_id ) {
-			$post_ancestor = get_post( $post_ancestor_id );
+			$post_ancestor     = get_post( $post_ancestor_id );
 			$ancestors_markup .= $this->get_single_breadcrumb_markup( $post_ancestor->post_title, get_permalink( $post_ancestor->ID ) );
 		}
 		return $ancestors_markup;
@@ -397,7 +397,7 @@ class Regina_Breadcrumbs {
 	 */
 	private function get_taxonomies() {
 		global $wp_query;
-		$term = $wp_query->get_queried_object();
+		$term         = $wp_query->get_queried_object();
 		$terms_markup = '';
 		// Make sure we have hierarchical taxonomy and parents
 		if ( 0 != $term->parent &&
@@ -407,7 +407,7 @@ class Regina_Breadcrumbs {
 			$term_ancestors = array_reverse( $term_ancestors );
 			// Loop through ancestors to get the full tree
 			foreach ( $term_ancestors as $term_ancestor ) {
-				$term_object = get_term( $term_ancestor, $term->taxonomy );
+				$term_object   = get_term( $term_ancestor, $term->taxonomy );
 				$terms_markup .= $this->get_single_breadcrumb_markup( $term_object->name, get_term_link( $term_object->term_id, $term->taxonomy ) );
 			}
 		}
@@ -420,9 +420,9 @@ class Regina_Breadcrumbs {
 	 */
 	private function get_post_type_archive( $linked = true ) {
 		global $wp_query;
-		$post_type = $wp_query->queried_object->post_type;
+		$post_type        = $wp_query->queried_object->post_type;
 		$post_type_object = get_post_type_object( $post_type );
-		$link = '';
+		$link             = '';
 		// Check if we have a post type object
 		if ( is_object( $post_type_object ) ) {
 			// Woocommerce: archive name should be same as shop page name
@@ -469,17 +469,17 @@ class Regina_Breadcrumbs {
 	 */
 	private function get_woocommerce_shop_page( $linked = true ) {
 		global $wp_query;
-		$post_type = 'product';
+		$post_type        = 'product';
 		$post_type_object = get_post_type_object( $post_type );
 		$shop_page_markup = '';
-		$link = '';
+		$link             = '';
 		// Make sure we are on a woocommerce page
 		if ( is_object( $post_type_object ) &&
 			 class_exists( 'WooCommerce' ) &&
 			 ( is_woocommerce() || is_cart() || is_checkout() || is_account_page() )
 		) {
 			// Get shop page id and then its name
-			$shop_page_id = wc_get_page_id( 'shop' );
+			$shop_page_id   = wc_get_page_id( 'shop' );
 			$shop_page_name = wc_get_page_id( 'shop' ) ? get_the_title( wc_get_page_id( 'shop' ) ) : '';
 			// Use the archive name if no shop page was set.
 			if ( ! $shop_page_name ) {
@@ -512,7 +512,7 @@ class Regina_Breadcrumbs {
 		global $wp_query, $wp_locale;
 		switch ( $object_type ) {
 			case 'term':
-				$term = $wp_query->get_queried_object();
+				$term  = $wp_query->get_queried_object();
 				$title = $term->name;
 				break;
 			case 'year':
@@ -525,7 +525,7 @@ class Regina_Breadcrumbs {
 				$title = get_query_var( 'day' );
 				break;
 			case 'author':
-				$user = $wp_query->get_queried_object();
+				$user  = $wp_query->get_queried_object();
 				$title = $user->display_name;
 				break;
 			case 'search':
@@ -539,7 +539,7 @@ class Regina_Breadcrumbs {
 				break;
 			case 'bbpress_user':
 				$current_user = wp_get_current_user();
-				$title = $current_user->user_nicename;
+				$title        = $current_user->user_nicename;
 				break;
 			case 'events':
 				$title = tribe_get_events_title();
@@ -562,14 +562,14 @@ class Regina_Breadcrumbs {
 	private function get_single_breadcrumb_markup( $title, $link = '', $separator = false, $microdata = false ) {
 		// Init vars
 		$microdata_itemscope = '';
-		$microdata_url = '';
-		$microdata_title = '';
-		$separator_markup = '';
+		$microdata_url       = '';
+		$microdata_title     = '';
+		$separator_markup    = '';
 		// Setup the elements attributes for breadcrumb microdata rich snippets
 		if ( $microdata ) {
 			$microdata_itemscope = 'itemscope itemtype="http://data-vocabulary.org/Breadcrumb"';
-			$microdata_url = 'itemprop="url"';
-			$microdata_title = 'itemprop="title"';
+			$microdata_url       = 'itemprop="url"';
+			$microdata_title     = 'itemprop="title"';
 		}
 		$breadcrumb_content = sprintf( '<span %s>%s</span>', $microdata_title, $title );
 		// If a link is set add its markup

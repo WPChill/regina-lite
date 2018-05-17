@@ -16,7 +16,7 @@ wp_enqueue_script( 'updates' );
 
 	<?php
 	global $regina_required_actions, $regina_recommended_plugins;
-	$hooray = true;
+	$hooray              = true;
 	$nr_actions_required = 0;
 	$nr_action_dismissed = 0;
 	if ( ! empty( $regina_required_actions ) ) :
@@ -136,7 +136,7 @@ endif;
 			$url    = $this->create_action_link( $active['needs'], $slug );
 			$info   = $this->call_plugin_api( $slug );
 			$label  = '';
-			$class = '';
+			$class  = '';
 switch ( $active['needs'] ) {
 	case 'install':
 		$class = 'install-now button';
