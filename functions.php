@@ -316,8 +316,8 @@ function regina_lite_scripts() {
 
 	wp_localize_script(
 		'regina-lite-scripts', 'ReginaLite', array(
-			'prevText' => __( '12', 'regina-lite' ),
-			'nextText' => __( '34', 'regina-lite' ),
+			'prevText' => __( 'prev', 'regina-lite' ),
+			'nextText' => __( 'next', 'regina-lite' ),
 		)
 	);
 
