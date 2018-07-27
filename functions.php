@@ -143,6 +143,9 @@ if ( ! function_exists( 'regina_lite_setup' ) ) :
 				'simple-author-box'        => array(
 					'recommended' => true,
 				),
+				'wpforms-lite'        => array(
+					'recommended' => true,
+				),
 			);
 
 			/**
