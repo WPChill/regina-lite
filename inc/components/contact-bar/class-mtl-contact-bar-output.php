@@ -52,7 +52,7 @@ if ( ! class_exists( 'MTL_Contact_Bar_Output' ) ) {
 			echo '<header id="sub-header">';
 			echo '<div class="container">';
 
-			if ( $this->facebook_url || $this->twitter_url || $this->linkedin_url || $this->youtube_url ) {
+			if ( $this->facebook_url || $this->twitter_url || $this->linkedin_url || $this->youtube_url || $this->instagram_url ) {
 				echo '<div class="text-left-lg text-left-md text-left-sm text-center-xs social-links-container">';
 				echo '<ul class="social-link-list">';
 
