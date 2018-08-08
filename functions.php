@@ -134,9 +134,6 @@ if ( ! function_exists( 'regina_lite_setup' ) ) :
 			require_once get_template_directory() . '/inc/libraries/welcome-screen/inc/class-epsilon-import-data.php';
 
 			$regina_recommended_plugins = array(
-				'kiwi-social-share'        => array(
-					'recommended' => false,
-				),
 				'modula-best-grid-gallery' => array(
 					'recommended' => true,
 				),
@@ -145,6 +142,9 @@ if ( ! function_exists( 'regina_lite_setup' ) ) :
 				),
 				'wpforms-lite'        => array(
 					'recommended' => true,
+				),
+				'kiwi-social-share'        => array(
+					'recommended' => false,
 				),
 			);
 

@@ -1,3 +1,6 @@
+= 2.0.1 =
+Minor Fixes
+
 = 2.0.0 =
 *Adjusted this theme in concordance with WordPress' guidelines
 *Reordered Customizer panels to be more intuitive
@@ -25,7 +28,6 @@
 = 1.0.18 =
 * Header improvements - added search form
 * Footer improvements - center aligned the copyright message and removed some words
-
 
 = 1.0.17 =
 * Removed Kiwi
