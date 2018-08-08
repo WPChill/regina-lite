@@ -30,7 +30,7 @@
         }
 
         // Pager
-        if (0 === sliderPagination || 'false' === sliderPagination) {
+        if ( 0 === sliderPagination || 'false' === sliderPagination ) {
           sliderPagination = false
         } else {
           sliderPagination = true

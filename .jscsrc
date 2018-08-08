@@ -3,6 +3,7 @@
   "fileExtensions": [ ".js" ],
   "excludeFiles": [
     "layout/js/**.min.js",
+    "layout/js/plugins.js",
     "layout/js/plugins/*/*"
   ],
   "maxErrors": Infinity
