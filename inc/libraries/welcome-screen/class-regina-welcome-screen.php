@@ -127,11 +127,8 @@ class Regina_Welcome_Screen {
 		}
 		$this->notice = '';
 		if ( empty( $this->notice ) ) {
-			if ( ! empty( $this->author_logo ) ) {
-				$this->notice .= '<img src="' . $this->author_logo . '" class="epsilon-author-logo" />';
-			}
 			/* Translators: Notice Title */
-			$this->notice .= '<h1>' . sprintf( esc_html__( 'Welcome to %1$s', 'epsilon-framework' ), $this->theme_name ) . '</h1>';
+			$this->notice .= '<h3>' . sprintf( esc_html__( 'Welcome to %1$s', 'epsilon-framework' ), $this->theme_name ) . '</h3>';
 			$this->notice .= '<p>';
 
 			if ( Regina_Notify_System::show_fix_action() ) {
@@ -144,7 +141,7 @@ class Regina_Welcome_Screen {
 					);
 				$this->notice .= '</p>';
 				/* Translators: Notice URL */
-				$this->notice .= '<p><a href="' . esc_url( admin_url( 'themes.php?page=regina-welcome&tab=recommended_actions' ) ) . '" class="button button-primary button-hero" style="text-decoration: none;"> ' . sprintf( esc_html__( 'Get started with %1$s', 'epsilon-framework' ), $this->theme_name ) . '</a></p>';
+				$this->notice .= '<p><a href="' . esc_url( admin_url( 'themes.php?page=regina-welcome&tab=recommended_actions' ) ) . '" class="button button-primary" style="text-decoration: none;"> ' . sprintf( esc_html__( 'Get started with %1$s', 'epsilon-framework' ), $this->theme_name ) . '</a></p>';
 			} else {
 				$this->notice .= esc_html__( 'We have made some changes to how the Homepage works in Regina. Now you need to create a page and use the "Homepage Template" and set it as a static front page. You can also make this automatically by pushing the button below.', 'epsilon-framework' );
 				$this->notice .= '</p>';
@@ -160,7 +157,7 @@ class Regina_Welcome_Screen {
 			$notifications->add_notice(
 				array(
 					'id'      => 'regina_welcome_notice',
-					'type'    => 'notice epsilon-big',
+					'type'    => 'notice notice-success',
 					'message' => $this->notice,
 				)
 			);
