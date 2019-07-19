@@ -134,13 +134,13 @@ if ( ! function_exists( 'regina_lite_setup' ) ) :
 			require_once get_template_directory() . '/inc/libraries/welcome-screen/inc/class-epsilon-import-data.php';
 
 			$regina_recommended_plugins = array(
+				'kali-forms' => array(
+					'recommended' => true,
+				),
 				'modula-best-grid-gallery' => array(
 					'recommended' => true,
 				),
 				'simple-author-box'        => array(
-					'recommended' => true,
-				),
-				'wpforms-lite'        => array(
 					'recommended' => true,
 				),
 				'kiwi-social-share'        => array(
