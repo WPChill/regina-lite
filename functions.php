@@ -143,9 +143,6 @@ if ( ! function_exists( 'regina_lite_setup' ) ) :
 				'simple-author-box'        => array(
 					'recommended' => true,
 				),
-				'kiwi-social-share'        => array(
-					'recommended' => false,
-				),
 			);
 
 			/**

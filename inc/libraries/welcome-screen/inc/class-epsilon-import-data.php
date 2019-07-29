@@ -62,31 +62,31 @@ class Epsilon_Import_Data {
 	 * @return bool|array|mixed
 	 */
 	public function handle_json( $path = '' ) {
-		if ( empty( $path ) ) {
-			$path = dirname( dirname( __FILE__ ) ) . '/data/demo.json';
-		}
+		// if ( empty( $path ) ) {
+		// 	$path = dirname( dirname( __FILE__ ) ) . '/data/demo.json';
+		// }
 
-		if ( ! file_exists( $path ) ) {
-			return false;
-		}
+		// if ( ! file_exists( $path ) ) {
+		// 	return false;
+		// }
 
-		global $wp_filesystem;
-		if ( empty( $wp_filesystem ) ) {
-			require_once( ABSPATH . '/wp-admin/includes/file.php' );
-			WP_Filesystem();
-		}
+		// global $wp_filesystem;
+		// if ( empty( $wp_filesystem ) ) {
+		// 	require_once( ABSPATH . '/wp-admin/includes/file.php' );
+		// 	WP_Filesystem();
+		// }
 
-		$json = $wp_filesystem->get_contents( $path );
-		$json = json_decode( $json, true );
+		// $json = $wp_filesystem->get_contents( $path );
+		// $json = json_decode( $json, true );
 
 		/**
 		 * In case the json could not be decoded, we return a new stdClass
 		 */
-		if ( null === $json ) {
-			return false;
-		}
+		// if ( null === $json ) {
+		// 	return false;
+		// }
 
-		$this->import_options = $json;
+		$this->import_options = json_decode( '{"fontpage":{"title":"Front Page Settings","options":{"setstaticfrontpage":{"title":"Set Front Page as static page","action":"set_frontpage"}}},"sections":{"title":"Populate Sections with content","options":{"hero":{"title":"Hero Section","action":"populate_hero_section"},"services":{"title":"Services Section","action":"populate_services_section"},"team":{"title":"Team Section","action":"populate_team_section"},"testimonials":{"title":"Testimonials Section","action":"populate_testimonials_section"},"swods":{"title":"Speak With Our Doctors Section","action":"populate_swods_section"},"news":{"title":"Latest News","action":"populate_news_section"}}},"widgets":{"title":"Import Widgets","options":{"footer":{"title":"Footer Widgets","action":"add_footer_widgets"}}}}', true );
 	}
 
 	/**

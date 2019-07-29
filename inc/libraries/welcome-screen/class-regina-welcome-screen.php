@@ -37,12 +37,7 @@ class Regina_Welcome_Screen {
 				'regina_dismiss_required_action_callback',
 			)
 		);
-		add_action(
-			'wp_ajax_nopriv_regina_dismiss_required_action', array(
-				$this,
-				'regina_dismiss_required_action_callback',
-			)
-		);
+
 		add_action(
 			'wp_ajax_regina_dismiss_recommended_plugins', array(
 				$this,
@@ -59,15 +54,9 @@ class Regina_Welcome_Screen {
 				'welcome_screen_ajax_callback',
 			)
 		);
-		add_action(
-			'wp_ajax_nopriv_welcome_screen_ajax_callback', array(
-				$this,
-				'welcome_screen_ajax_callback',
-			)
-		);
+
 
 		add_action( 'wp_ajax_regina_set_frontpage', array( $this, 'set_frontpage' ) );
-		add_action( 'wp_ajax_nopriv_regina_set_frontpage', array( $this, 'set_frontpage' ) );
 
 		/**
 		 * Set the blog / static page automatically
