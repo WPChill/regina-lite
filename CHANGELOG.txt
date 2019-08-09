@@ -1,3 +1,6 @@
+= 2.0.4 =
+Improved accesibility with keyboard navigation
+
 = 2.0.3 =
 Minor Backend Tweaks
 
