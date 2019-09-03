@@ -1,3 +1,5 @@
 node_modules/*
 .idea/*
 regina-lite.zip
+package-lock.json
+.standard.json
