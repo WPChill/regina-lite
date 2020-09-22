@@ -5,13 +5,14 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 	<!-- HTML5 Shiv -->
 	<!--[if lt IE 9]>
-	<script src="<?php echo get_template_directory_uri(); ?>/layout/js/plugins/html5shiv/html5.js"></script>
+	<script src="<?php echo esc_url(get_template_directory_uri()); ?>/layout/js/plugins/html5shiv/html5.js"></script>
 	<![endif]-->
 	<?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>
 <?php do_action( 'mtl_before_header' ); ?>
 <header id="header">
+	<?php wp_body_open() ?>
 	<div class="container">
 		<div class="row">
 			<div class="col-lg-3 col-sm-12">

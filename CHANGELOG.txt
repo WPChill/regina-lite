@@ -1,3 +1,6 @@
+= 2.0.6 =
+Security fixes regarding nonce verification and nopriv AJAX
+
 = 2.0.4 =
 Improved accesibility with keyboard navigation
 

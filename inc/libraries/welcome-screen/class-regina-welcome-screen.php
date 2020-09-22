@@ -38,13 +38,6 @@ class Regina_Welcome_Screen {
 			)
 		);
 
-		add_action(
-			'wp_ajax_regina_dismiss_recommended_plugins', array(
-				$this,
-				'regina_dismiss_recommended_plugins_callback',
-			)
-		);
-
 		/**
 		 * Ajax callbacks
 		 */
@@ -422,9 +415,20 @@ class Regina_Welcome_Screen {
 	 * AJAX Handler
 	 */
 	public function welcome_screen_ajax_callback() {
-		if ( isset( $_POST['args'], $_POST['args']['nonce'] ) && ! wp_verify_nonce( sanitize_key( $_POST['args']['nonce'] ), 'welcome_nonce' ) ) {
+		if ( !isset( $_POST['args'], $_POST['args']['nonce'] ) || ! wp_verify_nonce( sanitize_key( $_POST['args']['nonce'] ), 'welcome_nonce' ) ) {
 			wp_die(
 				wp_json_encode(
+					array(
+						'status' => false,
+						'error'  => esc_html__( 'Not allowed', 'epsilon-framework' ),
+					)
+				)
+			);
+		}
+
+		if ( ! current_user_can( 'manage_options' ) ) {
+		    wp_die(
+				json_encode(
 					array(
 						'status' => false,
 						'error'  => esc_html__( 'Not allowed', 'epsilon-framework' ),
@@ -437,6 +441,17 @@ class Regina_Welcome_Screen {
 
 		if ( count( $args_action ) !== 2 ) {
 			wp_die(
+				wp_json_encode(
+					array(
+						'status' => false,
+						'error'  => esc_html__( 'Not allowed', 'epsilon-framework' ),
+					)
+				)
+			);
+		}
+
+		if ( ! in_array( $args_action[0], array( 'Epsilon_Import_Data', 'Regina_Welcome_Screen' ) ) ) {
+			 wp_die(
 				wp_json_encode(
 					array(
 						'status' => false,

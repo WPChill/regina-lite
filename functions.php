@@ -140,7 +140,7 @@ if ( ! function_exists( 'regina_lite_setup' ) ) :
 				'modula-best-grid-gallery' => array(
 					'recommended' => true,
 				),
-				'simple-author-box'        => array(
+				'strong-testimonials'        => array(
 					'recommended' => true,
 				),
 			);
@@ -362,4 +362,10 @@ $args = array(
 );
 
 new Epsilon_Framework( $args );
+
+if ( ! function_exists( 'wp_body_open' ) ) {
+    function wp_body_open() {
+        do_action( 'wp_body_open' );
+    }
+}
 
