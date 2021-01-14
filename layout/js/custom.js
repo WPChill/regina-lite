@@ -9,7 +9,7 @@ jQuery( document ).ready(function( $ ) {// jscs:ignore validateLineBreaks
 
 	/* Menu */
 
-	$( '.mobile-nav-btn' ).click(function() {
+	$( '.mobile-nav-btn' ).on('click', function() {
 		$( '#navigation' ).slideToggle();
 	});
 
