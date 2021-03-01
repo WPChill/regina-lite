@@ -143,6 +143,12 @@ if ( ! function_exists( 'regina_lite_setup' ) ) :
 				'strong-testimonials'        => array(
 					'recommended' => true,
 				),
+				'kb-support'        => array(
+					'recommended' => true,
+				),
+				'rsvp'        => array(
+					'recommended' => true,
+				)
 			);
 
 			/**

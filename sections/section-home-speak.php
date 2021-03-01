@@ -20,7 +20,7 @@ $book_appointment_button_label = get_theme_mod( 'regina_lite_book_appointment_bu
 					<?php endif; ?>
 					<br>
 					<?php if ( $speak_general_buttonurl ) : ?>
-						<a href="<?php echo esc_url( $speak_general_buttonurl ); ?>" class="button" title="<?php echo esc_attr( $book_appointment_button_label ); ?>"><?php echo esc_attr( $book_appointment_button_label ); ?>
+						<a href="<?php echo esc_url( $speak_general_buttonurl ); ?>" class="button" title="<?php echo esc_attr( $book_appointment_button_label ); ?>"><?php echo esc_html( $book_appointment_button_label ); ?>
 							<span class="nc-icon-glyph arrows-1_bold-right"></span></a>
 					<?php endif; ?>
 				</div><!--.section-info-->

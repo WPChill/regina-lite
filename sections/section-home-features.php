@@ -43,7 +43,7 @@ $book_appointment_button_label = get_theme_mod( 'regina_lite_book_appointment_bu
 					<?php endif; ?>
 					<br />
 					<?php if ( $top_box_bookappointmenturl ) : ?>
-						<a href="<?php echo esc_url( $top_box_bookappointmenturl ); ?>" class="button white outline" title="<?php echo esc_attr( $book_appointment_button_label ); ?>"><?php echo esc_attr( $book_appointment_button_label ); ?>
+						<a href="<?php echo esc_url( $top_box_bookappointmenturl ); ?>" class="button white outline" title="<?php echo esc_attr( $book_appointment_button_label ); ?>"><?php echo esc_html( $book_appointment_button_label ); ?>
 							<span class="nc-icon-glyph arrows-1_bold-right"></span></a>
 					<?php endif; ?>
 				</div><!--#call-out-->
