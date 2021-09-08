@@ -1,4 +1,7 @@
-= 2.0.7 = 
+= 2.0.8 =
+Theme Standards
+
+= 2.0.7 =
 Jquery Update
 Minor backend tweaks
 

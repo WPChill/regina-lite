@@ -12773,3 +12773,8 @@ body #sub-header .nav-menu-search button.icon {
 .gallery-columns-9 .gallery-item:nth-child(9n+1) {
 	clear: left;
 }
+
+/** Theme Standards */
+article .entry-meta a, article .body, #comments-list a, #respond a {
+	text-decoration: underline;
+}
